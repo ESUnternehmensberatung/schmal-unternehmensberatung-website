@@ -1,0 +1,46 @@
+---
+import Base from '../layouts/Base.astro';
+import Hero from '../components/sections/Hero.astro';
+import Lage from '../components/sections/Lage.astro';
+import Leistungen from '../components/sections/Leistungen.astro';
+import Ablauf from '../components/sections/Ablauf.astro';
+import UeberMich from '../components/sections/UeberMich.astro';
+import Ergebnisse from '../components/sections/Ergebnisse.astro';
+import Concierge from '../components/sections/Concierge.astro';
+import Faq from '../components/sections/Faq.astro';
+import Abschluss from '../components/sections/Abschluss.astro';
+import { site } from '../config/site';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ProfessionalService',
+  name: site.name,
+  founder: { '@type': 'Person', name: site.owner },
+  url: site.url,
+  email: site.email,
+  telephone: '+4941724319017',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Im Kamp 7',
+    postalCode: '21376',
+    addressLocality: 'Eyendorf',
+    addressCountry: 'DE',
+  },
+  areaServed: 'DE',
+};
+---
+<Base
+  title="Digitale Transformation und KI im Mittelstand | ES | Schmal Unternehmensberatung"
+  description="KI-Einführung, Coaching und Training für familiengeführte KMU. 20 Jahre Führungs- und Prozesspraxis, verbunden mit KI. Kostenfreie Quick-Win-Analyse in 45 Minuten."
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <Hero />
+  <Lage />
+  <Leistungen />
+  <Ablauf />
+  <UeberMich />
+  <Ergebnisse />
+  <Concierge />
+  <Faq />
+  <Abschluss />
+</Base>

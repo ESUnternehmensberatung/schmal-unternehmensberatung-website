@@ -1,0 +1,104 @@
+---
+import { site } from '../config/site';
+const year = new Date().getFullYear();
+---
+<footer class="footer dark">
+  <div class="wrap grid">
+    <div class="brand">
+      <p class="brand-line"><span class="mark">ES</span> Schmal Unternehmensberatung</p>
+      <p class="muted-dark">Digitale Transformation und KI für den Mittelstand.</p>
+    </div>
+    <address>
+      {site.owner}<br />
+      {site.address[0]}<br />
+      {site.address[1]}
+    </address>
+    <p class="contact">
+      <a href={`mailto:${site.email}`}>{site.email}</a><br />
+      <a href={site.phoneHref}>{site.phone}</a>
+    </p>
+    <nav aria-label="Rechtliches und Blog">
+      <ul>
+        <li><a href="/blog/">Blog</a></li>
+        <li><a href="/impressum/">Impressum</a></li>
+        <li><a href="/datenschutz/">Datenschutz</a></li>
+      </ul>
+    </nav>
+  </div>
+  <div class="wrap base">
+    <p>© {year} {site.owner}</p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    border-top: 1px solid var(--line-dark);
+    padding-block: 4rem 2rem;
+    font-size: 1rem;
+    color: var(--on-dark-muted);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.4fr 1fr;
+    gap: 2.5rem;
+  }
+
+  .brand-line {
+    font-size: 1.125rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+  }
+
+  .mark {
+    font-family: var(--serif);
+    font-weight: 600;
+    color: var(--gold);
+    margin-right: 0.35rem;
+  }
+
+  address {
+    font-style: normal;
+  }
+
+  .footer a {
+    color: var(--on-dark-muted);
+    text-decoration: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .footer a:hover {
+      color: var(--gold);
+    }
+  }
+
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .base {
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line-dark);
+    font-size: 0.9375rem;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .brand {
+      grid-column: 1 / -1;
+    }
+  }
+
+  @media (max-width: 520px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

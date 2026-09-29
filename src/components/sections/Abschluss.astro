@@ -1,0 +1,135 @@
+---
+import Icon from '../Icon.astro';
+import { site } from '../../config/site';
+---
+<section class="whitepaper" aria-labelledby="whitepaper-title">
+  <div class="wrap row" data-reveal>
+    <div>
+      <p class="kontext">Noch nicht bereit für ein Gespräch?</p>
+      <h2 id="whitepaper-title">Whitepaper: Die 5 größten Fehler bei der digitalen Transformation im Mittelstand</h2>
+      <p class="muted">Erscheint in Kürze. Merken Sie sich vor, dann erhalten Sie es per E-Mail, sobald es fertig ist.</p>
+    </div>
+    <a class="btn btn-outline" href={site.links.whitepaper}>Whitepaper vormerken</a>
+  </div>
+</section>
+
+<section class="section abschluss dark" id="kontakt" aria-labelledby="abschluss-title">
+  <div class="wrap">
+    <h2 id="abschluss-title" data-reveal>Zwei konkrete Hebel. In <em class="accent">45 Minuten.</em></h2>
+    <p class="lead" data-reveal style="--i: 1">
+      In der Quick-Win-Analyse schildern Sie Ihre Lage. Sie gehen mit zwei konkreten Hebeln raus, die Ihr Team sofort
+      entlasten. Kostenfrei und unverbindlich.
+    </p>
+    <div class="actions" data-reveal style="--i: 2">
+      <a class="btn btn-primary" href={site.links.quickWin}>
+        Quick-Win-Analyse anfragen <Icon name="arrow-right" />
+      </a>
+      <a class="btn btn-ghost" href={site.links.angebot}>Angebot anfordern</a>
+    </div>
+    <ul class="direkt" data-reveal style="--i: 3">
+      <li>
+        <Icon name="envelope-simple" />
+        <a href={`mailto:${site.email}`}>{site.email}</a>
+      </li>
+      <li>
+        <Icon name="phone" />
+        <a href={site.phoneHref}>{site.phone}</a>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<style>
+  .whitepaper {
+    background: var(--ivory);
+    padding-block: clamp(3.5rem, 6vw, 5rem);
+    border-top: 1px solid var(--line);
+  }
+
+  .row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2.5rem;
+  }
+
+  .kontext {
+    font-weight: 600;
+    color: var(--gold-deep);
+    margin-bottom: 0.5rem;
+  }
+
+  .whitepaper h2 {
+    font-size: var(--step-2);
+    max-width: 30em;
+  }
+
+  .whitepaper .muted {
+    margin-top: 0.75rem;
+    font-size: 1.0625rem;
+  }
+
+  .abschluss h2 {
+    font-size: clamp(2.5rem, 1.6rem + 3.4vw, 4.25rem);
+    max-width: 16em;
+  }
+
+  .lead {
+    margin-top: 1.5rem;
+    color: var(--on-dark);
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    margin-top: 2.5rem;
+  }
+
+  .direkt {
+    list-style: none;
+    margin: 3rem 0 0;
+    padding: 1.75rem 0 0;
+    border-top: 1px solid var(--line-dark);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+  }
+
+  .direkt li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+  }
+
+  .direkt :global(svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: var(--gold);
+  }
+
+  .direkt a {
+    color: var(--on-dark);
+    text-decoration: none;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .direkt a:hover {
+      color: var(--gold);
+    }
+  }
+
+  @media (max-width: 760px) {
+    .row {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

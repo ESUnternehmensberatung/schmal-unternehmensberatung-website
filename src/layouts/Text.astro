@@ -1,0 +1,42 @@
+---
+import Base from './Base.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  heading: string;
+  meta?: string;
+}
+const { title, description, heading, meta } = Astro.props;
+---
+<Base title={title} description={description}>
+  <article class="section">
+    <div class="wrap">
+      <header class="kopf">
+        <h1>{heading}</h1>
+        {meta && <p class="meta">{meta}</p>}
+        <slot name="vorspann" />
+      </header>
+      <div class="prose">
+        <slot />
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style>
+  .kopf {
+    max-width: 44rem;
+    margin-bottom: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+  h1 {
+    font-size: var(--step-3);
+  }
+  .meta {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--stone);
+  }
+</style>

@@ -1,0 +1,119 @@
+---
+import Icon from '../Icon.astro';
+import { site } from '../../config/site';
+
+const schritte = [
+  { titel: 'Quick-Win-Analyse', text: 'Wir besprechen Ihre größten Schmerzpunkte. 45 Minuten, kostenfrei.' },
+  { titel: 'Ist-Aufnahme', text: 'Ich schaue mir die betroffenen Prozesse und Ihre vorhandenen Bordmittel an.' },
+  { titel: 'Umsetzungsplan', text: 'Sie erhalten den Plan inklusive technischer Komponenten und aller Kosten.' },
+  { titel: 'Umsetzung und Testlauf', text: 'Wir setzen um und testen im echten Betrieb, bevor es live geht.' },
+  { titel: 'Übergabe', text: 'Die Lösung läuft produktiv, Ihr Team ist geschult.' },
+];
+---
+<section class="section ablauf dark" id="ablauf" aria-labelledby="ablauf-title">
+  <div class="wrap">
+    <h2 id="ablauf-title" data-reveal>Quick Wins zuerst. Dann das System.</h2>
+    <p class="lead" data-reveal style="--i: 1">
+      Erst lösen wir, was Ihr Team heute am meisten bremst. Das schafft Luft für die eigentliche Transformation, bis ein
+      System steht, das von allein weiterlebt. Ohne Foliendecks, ohne endlose Vorab-Meetings.
+    </p>
+
+    <ol class="steps">
+      {
+        schritte.map((s, i) => (
+          <li data-reveal style={`--i: ${i}`}>
+            <span class="nr" aria-hidden="true">{i + 1}</span>
+            <h3>{s.titel}</h3>
+            <p>{s.text}</p>
+          </li>
+        ))
+      }
+    </ol>
+
+    <div class="cta" data-reveal>
+      <a class="btn btn-primary" href={site.links.quickWin}>
+        Quick-Win-Analyse anfragen <Icon name="arrow-right" />
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .lead {
+    margin-top: 1.5rem;
+    color: var(--on-dark);
+  }
+
+  .steps {
+    list-style: none;
+    margin: clamp(3.5rem, 6vw, 5rem) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 2rem;
+    counter-reset: step;
+  }
+
+  li {
+    position: relative;
+    padding-top: 2rem;
+    border-top: 1px solid var(--line-dark);
+  }
+
+  li::before {
+    content: '';
+    position: absolute;
+    top: -4px;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    background: var(--gold);
+    border-radius: 50%;
+  }
+
+  .nr {
+    display: block;
+    font-family: var(--serif);
+    font-size: 3rem;
+    line-height: 1;
+    color: var(--gold);
+    margin-bottom: 1rem;
+    font-variant-numeric: lining-nums;
+  }
+
+  h3 {
+    font-size: 1.375rem;
+    margin-bottom: 0.6rem;
+  }
+
+  li p {
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--on-dark-muted);
+  }
+
+  .cta {
+    margin-top: clamp(3rem, 5vw, 4rem);
+  }
+
+  @media (max-width: 1024px) {
+    .steps {
+      grid-template-columns: 1fr;
+      gap: 0;
+      border-left: 1px solid var(--line-dark);
+      margin-left: 0.25rem;
+    }
+    li {
+      border-top: 0;
+      padding: 0 0 2.25rem 2rem;
+    }
+    li::before {
+      top: 0.9rem;
+      left: -4px;
+    }
+    .nr {
+      font-size: 2.25rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+</style>

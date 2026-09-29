@@ -1,0 +1,77 @@
+---
+import { getCollection } from 'astro:content';
+import Text from '../../layouts/Text.astro';
+import { site } from '../../config/site';
+
+const artikel = (await getCollection('blog', ({ data }) => !data.entwurf)).sort(
+  (a, b) => b.data.datum.valueOf() - a.data.datum.valueOf(),
+);
+const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' });
+---
+<Text
+  title="Blog | ES | Schmal Unternehmensberatung"
+  description="Erfahrungsberichte zu Werkzeugen, die ich im Mittelstand einsetze."
+  heading="Blog"
+>
+  <p slot="vorspann" class="vorspann">
+    Erfahrungsberichte zu den Werkzeugen aus dem Business-Concierge: wofür ich sie einsetze, was sie kosten, wo ihre Grenzen
+    liegen. Ich erhalte bei Vermittlung eine Provision. Ihr Preis ändert sich dadurch nicht.
+  </p>
+
+  {
+    artikel.length === 0 ? (
+      <div class="leer">
+        <p>Die ersten Artikel sind in Arbeit.</p>
+        <p>
+          Bis dahin beantworte ich Fragen zu Langdock und anderen Werkzeugen gern direkt:{' '}
+          <a href={`mailto:${site.email}`}>{site.email}</a>
+        </p>
+      </div>
+    ) : (
+      <ul class="liste">
+        {artikel.map((a) => (
+          <li>
+            <p class="meta">
+              {a.data.produkt}, {datum.format(a.data.datum)}
+            </p>
+            <h2>
+              <a href={`/blog/${a.id}/`}>{a.data.title}</a>
+            </h2>
+            <p>{a.data.description}</p>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</Text>
+
+<style>
+  .vorspann {
+    margin-top: 1.25rem;
+    color: var(--stone);
+  }
+  .leer {
+    padding: 2rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    display: grid;
+    gap: 0.75rem;
+  }
+  .liste {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 2.5rem;
+  }
+  .liste h2 {
+    margin: 0.25rem 0 0.5rem;
+  }
+  .liste h2 a {
+    text-decoration: none;
+  }
+  .meta {
+    font-size: 0.9375rem;
+    color: var(--stone);
+  }
+</style>

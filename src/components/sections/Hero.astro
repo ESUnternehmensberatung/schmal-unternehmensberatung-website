@@ -1,0 +1,265 @@
+---
+import { Picture } from 'astro:assets';
+import heroImg from '../../../assets/hero.png';
+import Icon from '../Icon.astro';
+import { site } from '../../config/site';
+
+const kennzahlen = [
+  { zahl: '1,5 Stellen', label: 'in wenigen Wochen durch Automatisierung eingespart' },
+  { zahl: '3 Tage', label: 'Arbeit pro Monat gespart durch automatische Preisschilder' },
+  { zahl: '4 Wochen', label: 'Arbeitszeit pro Jahr gespart durch automatische Palettenbeschriftung' },
+];
+---
+<section class="hero dark" aria-labelledby="hero-title">
+  <div class="media">
+    <Picture
+      src={heroImg}
+      formats={['avif', 'webp']}
+      fallbackFormat="jpg"
+      quality={78}
+      widths={[640, 960, 1280, 1671]}
+      sizes="(max-width: 860px) 100vw, 100vw"
+      alt="Eduard Schmal im Anzug in einem hellen Büro"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+
+  <div class="wrap content">
+    <div class="copy">
+      <p class="eyebrow">KI-Einführung, Coaching und Training für den Mittelstand</p>
+      <h1 id="hero-title">Digitale Transformation im <em class="accent">Mittelstand.</em></h1>
+      <p class="sub">
+        Ich verbinde 20 Jahre Führungs- und Prozesspraxis mit KI. Für spürbare Entlastung in Wochen, nicht in Jahren.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary" href={site.links.quickWin}>
+          Quick-Win-Analyse anfragen <Icon name="arrow-right" />
+        </a>
+        <a class="btn btn-ghost" href={site.links.angebot}>Angebot anfordern</a>
+      </div>
+      <p class="micro">
+        45 Minuten, kostenfrei. Sie gehen mit zwei konkreten Hebeln raus, die Ihr Team sofort entlasten.
+      </p>
+    </div>
+  </div>
+
+  <div class="figures">
+    <ul class="wrap" aria-label="Ergebnisse aus Projekten">
+      {
+        kennzahlen.map((k) => (
+          <li>
+            <strong>{k.zahl}</strong>
+            <span>{k.label}</span>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    min-height: min(calc(100dvh - 4.5rem), 880px);
+    overflow: hidden;
+    isolation: isolate;
+  }
+
+  .media {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  .media :global(img) {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 72% 30%;
+  }
+
+  /* Einziger Verlauf der Seite: Navy-Overlay über dem Foto (DESIGN.md) */
+  .media::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgb(15 36 56 / 0.97) 0%,
+      rgb(15 36 56 / 0.93) 34%,
+      rgb(15 36 56 / 0.55) 56%,
+      rgb(15 36 56 / 0) 74%
+    );
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    padding-block: clamp(3rem, 7vh, 5.5rem);
+  }
+
+  .copy {
+    max-width: 50rem;
+  }
+
+  .copy > :not(h1) {
+    max-width: 37rem;
+  }
+
+  .eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+  }
+
+  h1 {
+    color: var(--white);
+    font-size: clamp(2.5rem, 1.5rem + 3.4vw, 4.5rem);
+    line-height: 1.06;
+    padding-bottom: 0.08em;
+  }
+
+  .sub {
+    margin-top: 1.5rem;
+    font-size: var(--step-1);
+    line-height: 1.5;
+    color: var(--on-dark);
+    max-width: 30em;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.875rem;
+    margin-top: 2.25rem;
+  }
+
+  .micro {
+    margin-top: 1rem;
+    font-size: 1rem;
+    color: var(--on-dark-muted);
+    max-width: 30em;
+  }
+
+  .figures {
+    border-top: 1px solid var(--line-dark);
+    background: rgb(15 36 56 / 0.9);
+  }
+
+  .figures ul {
+    list-style: none;
+    margin-block: 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .figures li {
+    display: grid;
+    gap: 0.35rem;
+    align-content: start;
+    padding: 1.6rem 2rem 1.75rem;
+    border-left: 1px solid var(--line-dark);
+  }
+
+  .figures li:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
+  .figures strong {
+    font-family: var(--serif);
+    font-size: clamp(1.75rem, 1.3rem + 1.2vw, 2.375rem);
+    font-weight: 500;
+    line-height: 1.1;
+    color: var(--gold);
+    font-variant-numeric: lining-nums;
+  }
+
+  .figures span {
+    font-size: 1rem;
+    line-height: 1.45;
+    color: var(--on-dark-muted);
+    max-width: 22em;
+  }
+
+  /* Ein Moment beim Laden: Foto setzt sich, Text folgt. */
+  @media (prefers-reduced-motion: no-preference) {
+    .media :global(img) {
+      animation: settle 1600ms var(--ease-out) both;
+    }
+    .copy > * {
+      animation: rise 900ms var(--ease-out) both;
+    }
+    .copy > :nth-child(2) {
+      animation-delay: 80ms;
+    }
+    .copy > :nth-child(3) {
+      animation-delay: 160ms;
+    }
+    .copy > :nth-child(4) {
+      animation-delay: 240ms;
+    }
+    .copy > :nth-child(5) {
+      animation-delay: 300ms;
+    }
+  }
+
+  @keyframes settle {
+    from {
+      transform: scale(1.045);
+    }
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+  }
+
+  @media (max-width: 860px) {
+    .hero {
+      min-height: 0;
+      grid-template-rows: auto auto auto;
+    }
+    .media {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      z-index: 0;
+    }
+    .media :global(img) {
+      object-position: 76% 20%;
+    }
+    .media::after {
+      background: linear-gradient(0deg, rgb(15 36 56 / 1) 0%, rgb(15 36 56 / 0) 38%);
+    }
+    .content {
+      padding-block: 0.5rem 3rem;
+    }
+    .figures ul {
+      grid-template-columns: 1fr;
+    }
+    .figures li,
+    .figures li:first-child {
+      padding: 1.25rem 0;
+      border-left: 0;
+      border-top: 1px solid var(--line-dark);
+    }
+    .figures li:first-child {
+      border-top: 0;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>
