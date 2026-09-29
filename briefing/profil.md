@@ -17,14 +17,29 @@ Operative Führungserfahrung + KI-Qualifikation.
 | Neue Abteilung aufgebaut (Produktion, B2B, B2C-Franchise) | ebd. | ? |
 | Erreichbarkeit +75 % | Service Center, Versicherung, fast 50 MA | ? |
 
-## Fallbeispiele (Kandidaten)
-1. **Lebensmittelhersteller** – KI-Tools in Verwaltung und Betrieb → 1,5 Stellen
-   in 2 Monaten.
-2. **Handelsunternehmen, mehrere Standorte** – Digitale Kommunikation,
-   Softphone, digitale Formulare (Aufmaß → Angebot), Intranet mit
-   Wissensdatenbank, KI in Kommunikation und Doku → > 25 % Zeitersparnis.
-3. **Service Center Versicherung** – Schnittstellen, Prozesse, Technik →
-   Erreichbarkeit +75 %.
+## Kernaussage
+20 Jahre als Manager und Führungskraft – in allen Projekten mit starker
+Technikkomponente. Dieses Know-how verbinde ich jetzt mit KI, um schnell
+Ergebnisse zu liefern.
+
+## Fallstudien (vom Inhaber benannt)
+| # | Schmerz | Lösung | Ergebnis |
+|---|---|---|---|
+| 1 | Angebote dauern zu lange | Angebotsmanagement beschleunigt | Angebot in 1–24 h beim Kunden, je nach Komplexität |
+| 2 | Akquise / Nachfassen | Eigenes Mail-Marketing-Tool mit automatischem Follow-up | *Kennzahl?* |
+| 3 | Akquise / Reichweite | LinkedIn-Automatisierung eingeführt | *Kennzahl?* |
+| 4 | Buchhaltung | Rechnungsworkflow komplett digitalisiert – mit vorhandenen Bordmitteln | deutlich geringere Buchhaltungskosten |
+| 5 | Beschwerdebearbeitung | Prozess umgebaut | 2–3 h → 10–15 min je Beschwerde, inkl. Rücksprache und Freigabe |
+| 6 | Berichterstellung (Dienstleister) | Automatisierte, individuelle Berichte in hoher Qualität | *Kennzahl?* |
+| 7 | Transparenz Innendienst | Interaktives Kanban-Board für den gesamten Innendienst entwickelt und ausgerollt | *Kennzahl?* |
+| 8 | Support / Marketing | Service-Agents: von IT-Helpdesk bis Marketing-Unterstützung, rund um die Uhr | *Kennzahl?* |
+| 9 | Online-Auftritt | Homepages und Landingpages für verschiedene Projekte | – |
+
+Zusätzlich aus dem CV: 1,5 Vollzeitstellen in 2 Monaten eingespart ·
+> 25 % Zeitersparnis durch digitalisierte Kernprozesse · Erreichbarkeit +75 %.
+
+**Top 3 für die Startseite (Vorschlag):** #5 Beschwerden (stärkster Vorher/Nachher-
+Kontrast), #1 Angebote (größter Schmerz laut Umfrage), #4 Rechnungen (Bordmittel-Beweis).
 
 ## Qualifikationen (für „Warum ich“)
 - Manager für angewandte KI-Transformation (IHK) – mit Auszeichnung
