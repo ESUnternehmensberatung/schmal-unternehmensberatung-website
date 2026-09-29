@@ -31,7 +31,13 @@ stehen, nur die URLs in `src/config/site.ts` ersetzen.
 
 `.github/workflows/deploy.yml` baut die Seite bei jedem Push auf `main` und
 veröffentlicht sie über GitHub Pages (Repository → Settings → Pages → Source:
-GitHub Actions). Die Domain steht in `public/CNAME`.
+**GitHub Actions**, nicht „Deploy from a branch“).
+
+Ohne eigene Domain liegt die Seite unter
+`https://esunternehmensberatung.github.io/schmal-unternehmensberatung-website/`,
+der Workflow setzt die Pfade automatisch passend. Für die eigene Domain unter
+Settings → Pages → Custom domain `schmal-unternehmensberatung.de` eintragen und
+den DNS-Eintrag umstellen; beim nächsten Deploy stimmen die Pfade automatisch.
 
 ## Ablauf
 

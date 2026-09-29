@@ -1,4 +1,5 @@
 ---
+import { url } from '../../utils/url';
 import { getCollection } from 'astro:content';
 import Text from '../../layouts/Text.astro';
 import { site } from '../../config/site';
@@ -35,7 +36,7 @@ const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' });
               {a.data.produkt}, {datum.format(a.data.datum)}
             </p>
             <h2>
-              <a href={`/blog/${a.id}/`}>{a.data.title}</a>
+              <a href={url(`/blog/${a.id}/`)}>{a.data.title}</a>
             </h2>
             <p>{a.data.description}</p>
           </li>
