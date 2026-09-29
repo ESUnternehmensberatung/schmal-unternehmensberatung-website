@@ -14,14 +14,4 @@ Einzige feste Vorgabe: die Markenfarben.
 | 5. Design-Richtung (Taste) | `DESIGN.md` | Richtung fertig |
 | 6. Umsetzung mit Skill `homepage-design` | Code (neues Repo) | bereit |
 
-## In ein anderes Repo übernehmen
-
-Dieser Branch hat eine eigene Historie (orphan) und enthält nur Homepage-Dateien:
-
-```bash
-git remote add briefing https://github.com/ESUnternehmensberatung/Skills
-git fetch briefing homepage-briefing
-git merge --allow-unrelated-histories briefing/homepage-briefing
-```
-
-Oder einfach den Inhalt des Branches in das Ziel-Repo kopieren.
+Herkunft: Briefing aus `ESUnternehmensberatung/Skills`, Branch `homepage-briefing` (Historie übernommen).
