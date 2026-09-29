@@ -87,38 +87,59 @@ Whitepaper …)
 Gerettete Unternehmen, gesicherte Arbeitsplätze, Liquidität, eingesparte Stunden
 durch Automatisierung – gern anonymisiert.
 
-> 
+> Nebenberuflich, daher wenige, aber belastbare Zahlen:
+> - 1,5 Vollzeitstellen in wenigen Wochen eingespart
+> - Automatische Preisschilder: mind. 3 Arbeitstage pro Monat gespart
+> - Automatische Palettenbeschriftung: mind. 4 Wochen Arbeitszeit pro Jahr gespart
+> - weitere siehe `profil.md` (Beschwerden 2–3 h → 10–15 min, Angebote in 1–24 h, > 25 % Zeitersparnis)
 
 ### 8. Fallbeispiele (2–3)
 Ausgangslage → Vorgehen → Ergebnis. Welche dürfen namentlich genannt werden?
 
-> 
+> Vorgehen je Fall: manuelle Arbeit → Prozess verstehen → Prozess bereinigen →
+> digital gestalten und automatisieren → testen → produktiv setzen.
+> **Keine Namensnennung** – alle Fälle anonymisiert (Branche + Größe).
 
 ### 9. Kundenstimmen
 Zitate, Logos, Empfehlungen von Banken oder Verwaltern?
 
-> 
+> Keine Zitate/Logos. **Google-Bewertungen vorhanden** → werden verwendet
+> (Text + Vorname/Initial + Sterne, mit Link aufs Google-Profil).
 
 ### 10. Qualifikation
 Zertifizierungen, Mitgliedschaften, IDW S6, Veröffentlichungen, Vorträge.
 
-> 
+> - Manager für angewandte KI-Transformation (IHK), mit Auszeichnung
+> - MBA Digital Innovation (Zeugnis folgt)
+> - Turnaround Manager
+> - Change Management (Nachweis folgt)
 
 ### 11. Person oder Marke
 Stehst du als Person im Vordergrund oder die Firma? Gibt es professionelle Fotos?
 
-> 
+> Solo-Preneur – **Person im Vordergrund**. Professionelle Fotos vorhanden,
+> Upload nach `assets/`.
 
 ### 12. Vorgehen
 Wie läuft eine Zusammenarbeit ab – in 3–5 Schritten?
 
-> 
+> 1. Besprechung der größten Schmerzpunkte
+> 2. Ist-Stand der betroffenen Prozesse
+> 3. Aufnahme der vorhandenen Bordmittel
+> 4. Umsetzungsplan inkl. technischer Komponenten
+> 5. Umsetzung
+> 6. Testlauf
+> 7. Fertigstellung
 
 ### 13. Häufige Einwände
 Was fragen Interessenten vor der Beauftragung? (Kosten, Dauer, Vertraulichkeit,
 „ist es schon zu spät?“)
 
-> 
+> - Was muss ich dafür anschaffen?
+> - Was kostet es extra?
+> - Ist es sicher?
+> - Denken meine Mitarbeitenden danach auch noch selbst?
+> Antworten: siehe `faq.md`
 
 ---
 
@@ -127,31 +148,44 @@ Was fragen Interessenten vor der Beauftragung? (Kosten, Dauer, Vertraulichkeit,
 ### 14. Farben (feste Vorgabe)
 Hex-Codes oder Logo-Datei. Welche Farbe ist Hauptfarbe, welche nur Akzent?
 
-> 
+> Blau – Weiß – Gold (letzter Entwurf). Logo wird neu gemacht.
+> - Primary `#1A3A5C` Navy – seriös, vertrauenswürdig
+> - Accent `#C9A87C` Gold – warm, premium
+> Erweiterte Palette: siehe `design-signale.md`
 
 ### 15. Drei Wörter: So soll die Seite wirken
 z. B. ruhig, präzise, souverän, mutig, warm
 
-> 
+> **Souverän** – sicher, bodenständig, professionell. Handwerklich Endlevel.
+> Zielgruppe: Geschäftsführer, oft in 3.–4. Generation.
 
 ### 16. So soll sie auf keinen Fall wirken
 z. B. Konzernberatung, laut, verspielt, billig
 
-> 
+> Laut, verspielt, billig, AI-Slop, „mal eben schnell zusammengeworfen“.
 
 ### 17. Vorbilder
 2–3 Websites (gern branchenfremd) – jeweils: Was genau gefällt dir?
 
-> 
+> - https://www.erkert.de/
+> - https://www.marktplatz.io/
+> - https://www.markel.ch/
+> - https://www.urbanpower.net/
+> Gemeinsamer Nenner: siehe `design-signale.md`
 
 ### 18. Umfang
 Nur Startseite oder auch Leistungsseiten, Über mich, Insights/Blog, Kontakt?
 Nur Deutsch oder auch Englisch?
 
-> 
+> **OnePager** für alles + **Blog** für die Business-Concierge-Produkte.
+> Sprache: Deutsch.
 
 ### 19. Technik und Betrieb
 Wer pflegt die Seite später? Hosting/Domain? Buchungstool (z. B. Calendly),
 CRM, Newsletter?
 
-> 
+> - Pflege: selbst
+> - Eigene Domain + GitHub
+> - Terminbuchung über Google Kalender
+> - Kein CRM
+> - Newsletter-Anmeldung über den Freebie-Download (Whitepaper)

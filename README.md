@@ -7,9 +7,9 @@ Einzige feste Vorgabe: die Markenfarben.
 
 | Schritt | Ergebnis | Status |
 |---|---|---|
-| 1. Fragebogen Runde 1 – Positionierung | `briefing/fragebogen.md` | erledigt |
-| 2. Positionierung → Seitenstruktur, Hero, Leistungen | `briefing/seitenstruktur.md`, `hero.md`, `leistungen.md`, `profil.md` | Entwurf v2 |
-| 3. Fragebogen Runde 2 – Beweise, Runde 3 – Design-Signale | `briefing/fragebogen.md` | offen |
+| 1. Fragebogen Runden 1–3 | `briefing/fragebogen.md` | erledigt |
+| 2. Positionierung → Seitenstruktur, Hero, Leistungen | `briefing/seitenstruktur.md`, `hero.md`, `leistungen.md`, `profil.md` | Entwurf v3 |
+| 3. Design-Signale, FAQ, Technik | `briefing/design-signale.md`, `faq.md`, `technik.md` | Entwurf |
 | 4. Produktgrundlage für Impeccable | `PRODUCT.md` | offen |
 | 5. Design-Richtung (Taste) | `DESIGN.md` | offen |
 | 6. Umsetzung mit Skill `homepage-design` | Code | offen |

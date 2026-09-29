@@ -14,7 +14,7 @@ Folie: KI, die Ihre Mitarbeitenden entlastet, statt ein Dreijahresprojekt zu wer
 > # KI im Mittelstand. Ergebnisse in Wochen, nicht in Jahren.
 > DSGVO-konforme KI-Plattform, eingeführt in Ihre bestehende Infrastruktur –
 > mit Coaching für die Geschäftsführung und Schulung für Ihr Team.
-> **[Kostenfreies Mini-Consulting buchen]** · [Whitepaper: Die 5 größten Fehler]
+> **[Kostenfreies Quick-Win-Analyse buchen]** · [Whitepaper: Die 5 größten Fehler]
 
 **B – Schmerz zuerst**
 > # Sie wissen, dass Sie KI brauchen. Ihnen fehlt nur die Zeit dafür.
@@ -36,32 +36,45 @@ Ergebnisversprechen aus A als Unterzeile und dem Praxis-Beweis aus C direkt daru
 | 1 | Hero | In 3 Sekunden: was, für wen, warum ich | siehe `hero.md` |
 | 2 | Die Lage | „Der versteht mich“ | 88 % nutzen KI, 5 % schaffen Wert – plus die 6 Schmerzpunkte (siehe `markt-insights.md`) |
 | 3 | Leistungen | Drei Blöcke | Consulting · Coaching · Training – siehe `leistungen.md` |
-| 4 | Ablauf | Aufwand greifbar machen | Quick Wins zuerst → Luft schaffen → Strategie → System, das von allein weiterlebt |
+| 4 | Ablauf | Aufwand greifbar machen | 5 nummerierte Schritte (s. u.), Leitsatz: Quick Wins zuerst → Luft schaffen → System, das von allein weiterlebt |
 | 5 | Warum ich | Praxis + KI | 20 Jahre Führung mit Technikfokus + KI · Systeme statt Einzellösungen · Doing statt Folien |
-| 6 | Ergebnisse | Beweis | Top-3-Fallstudien als Vorher/Nachher, Rest als Liste – siehe `profil.md` |
+| 6 | Ergebnisse | Beweis | Top-3-Fallstudien als Vorher/Nachher (anonymisiert) + Google-Bewertungen |
 | 7 | Business-Concierge | Empfehlungen gegen Provision | u. a. Langdock – siehe `leistungen.md` |
-| 8 | Einwände / FAQ | Hürden abbauen | Kosten, Dauer, Datenschutz, „zu klein für KI?“ |
+| 8 | FAQ | Hürden abbauen | 4 echte Einwände – siehe `faq.md` |
 | 9 | Whitepaper | Lead für „noch nicht bereit“ | Download gegen E-Mail |
-| 10 | Abschluss-CTA | Handlung | Mini-Consulting buchen |
+| 10 | Abschluss-CTA | Handlung | Quick-Win-Analyse anfragen · Angebot anfordern |
 
 Entschieden: Sanierung/Restrukturierung entfällt auf dieser Seite. Langdock wird
 nicht im Hero/Angebot, sondern im Business-Concierge genannt.
 
+## Ablauf auf der Seite (7 Schritte → 5)
+
+1. **Quick-Win-Analyse** – größte Schmerzpunkte besprechen
+2. **Ist-Aufnahme** – betroffene Prozesse und vorhandene Bordmittel
+3. **Umsetzungsplan** – inkl. technischer Komponenten und Kosten
+4. **Umsetzung & Testlauf**
+5. **Übergabe** – produktiv, Team geschult
+
 ## Conversion-Logik
 
-- **Primär – Mini-Consulting:** für Besucher mit akutem Bedarf. Buchungstool
-  direkt eingebettet, kein Umweg über ein Kontaktformular.
-- **Sekundär – Whitepaper:** für Besucher, die noch sondieren. Liefert
-  E-Mail-Adressen für späteres Nachfassen.
+- **Primär – Quick-Win-Analyse (45 Min., kostenfrei):** Google-Kalender-
+  Buchung mit 3 Vorab-Fragen. Microcopy: „Sie gehen mit zwei konkreten Hebeln
+  raus, die Ihr Team sofort entlasten.“
+- **Sekundär – Angebot anfordern:** für Besucher, die schon wissen, was sie wollen.
+- **Tertiär – Whitepaper** „Die 5 größten Fehler …“: Download gegen E-Mail =
+  Newsletter-Anmeldung (Double-Opt-in).
 
-## Offene Punkte für dich
+## Weitere Seiten
+- **Blog:** Business-Concierge-Produkte (je Produkt ein Artikel, mit Provisions-Hinweis)
+- Impressum, Datenschutz
 
-1. **Primärer Button:** „Kostenloses Mini-Consulting“ (Fragebogen) oder
-   „KI-Readiness kostenlos testen“ (Screenshot)? Gibt es den KI-Check schon?
-2. **Kennzahlen:** „100+ Projekte“ und „€3.500 BAFA-Förderung“ aus dem
-   Screenshot – belegbar und weiter gewünscht? Ist BAFA-Förderung Teil des Angebots?
-3. **20 Jahre:** Berufsweg seit 2007 (≈ 19 Jahre), CV sagt „über 15 Jahre
-   Führung“. Vorschlag: „20 Jahre Praxis“ – passt das für dich?
-4. **Fallbeispiele:** Dürfen Kunden/Arbeitgeber namentlich genannt werden?
-5. **Paketname / Dauer / Festpreis** für das Standardangebot.
-6. **Business-Concierge:** Beispiele für Produkte und Services.
+## Offene Punkte
+
+1. **Foto** nach `assets/portrait.jpg` hochladen (Branch `homepage-briefing`).
+2. **Google-Bewertungen:** Link zum Google-Unternehmensprofil oder Texte einfügen.
+3. **Nachweise:** MBA-Zeugnis, Change-Management-Zertifikat.
+4. **Paketname / Festpreis** fürs Standardangebot – oder bewusst „auf Anfrage“?
+5. **Plattform-Hosting** für FAQ „Ist es sicher?“ (z. B. „Server in der EU“).
+6. **Newsletter-Tool** wählen (Vorschlag: Brevo, DSGVO, kostenloser Einstieg).
+7. **Business-Concierge:** erste Produkte für den Blog.
+8. **Whitepaper** erstellen (eigener Schritt).

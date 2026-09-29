@@ -1,7 +1,7 @@
-# Hero – v2 (Basis: aktueller Screenshot)
+# Hero – v3
 
-Layout und Optik bleiben: Portrait rechts, Serif-Headline mit goldenem Akzentwort,
-Kennzahlenleiste unten. Foto kommt nach `assets/` (z. B. `assets/portrait.jpg`).
+Layout und Optik wie im Screenshot: Portrait rechts, Serif-Headline mit goldenem
+Akzentwort, Kennzahlenleiste unten. Foto: `assets/portrait.jpg` (Upload folgt).
 
 Ziel: In 3 Sekunden klar – **was** (KI-Einführung, Coaching, Training),
 **für wen** (Mittelstand), **warum er** (Praxis + KI).
@@ -11,28 +11,31 @@ Ziel: In 3 Sekunden klar – **was** (KI-Einführung, Coaching, Training),
 **Eyebrow**
 KI-EINFÜHRUNG · COACHING · TRAINING — FÜR DEN MITTELSTAND
 
-**Headline** (bleibt)
+**Headline**
 Digitale Transformation im *Mittelstand.*
 
-**Unterzeile** (1 Satz statt 3)
+**Unterzeile**
 Ich verbinde 20 Jahre Führungs- und Prozesspraxis mit KI –
 für spürbare Entlastung in Wochen, nicht in Jahren.
 
 **Buttons**
-- Primär: **Kostenloses Mini-Consulting buchen**
-- Sekundär: Leistungen ansehen
+- Primär: **Quick-Win-Analyse anfragen**
+- Sekundär: **Angebot anfordern**
 
-**Kennzahlen** (alle aus dem CV belegbar)
+**Microcopy unter den Buttons**
+45 Minuten, kostenfrei. Sie gehen mit zwei konkreten Hebeln raus,
+die Ihr Team sofort entlasten.
+
+**Kennzahlen** (alle belegt)
 | Zahl | Label |
 |---|---|
-| 20 Jahre | Praxis in Führung & Prozessen |
-| 1,5 Stellen | eingespart in 2 Monaten durch Automatisierung |
-| > 25 % | Zeitersparnis durch digitalisierte Kernprozesse |
+| 1,5 Stellen | in wenigen Wochen durch Automatisierung eingespart |
+| 3 Tage | Arbeit pro Monat gespart – automatische Preisschilder |
+| 4 Wochen | Arbeitszeit pro Jahr gespart – automatische Palettenbeschriftung |
 
-## Gegenüber dem Screenshot geändert
-- Eyebrow nennt die drei Leistungen statt Titel → Angebot sofort sichtbar.
-  IHK-KI-Manager wandert in „Warum ich“.
-- Unterzeile: „BAFA-Förderung“ und „Prozessoptimierung“ raus aus Zeile 1 –
-  Fokus auf den Kern: Praxis + KI = Entlastung.
-- Kennzahlen: „100+ Projekte“ und „€3.500 BAFA“ ersetzt durch belegte
-  Ergebnisse (siehe offene Punkte).
+*Alternative für Kachel 3:* „10–15 Min. statt 2–3 Std. pro Beschwerde“.
+
+## Entschieden
+- „BAFA-Förderung“ und „100+ Projekte“ entfallen (nicht belegbar).
+- Kein „Mini-Consulting“ – Einstieg heißt **Quick-Win-Analyse**.
+- Titel (IHK, MBA) wandern in „Warum ich“.

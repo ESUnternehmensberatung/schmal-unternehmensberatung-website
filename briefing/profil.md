@@ -22,6 +22,18 @@ Operative Führungserfahrung + KI-Qualifikation.
 Technikkomponente. Dieses Know-how verbinde ich jetzt mit KI, um schnell
 Ergebnisse zu liefern.
 
+## Belegte Kennzahlen (freigegeben)
+- 1,5 Vollzeitstellen in wenigen Wochen eingespart
+- Automatische Preisschilder: mind. 3 Arbeitstage pro Monat gespart
+- Automatische Palettenbeschriftung: mind. 4 Wochen Arbeitszeit pro Jahr gespart
+- Beschwerden: 2–3 h → 10–15 min · Angebote in 1–24 h beim Kunden
+
+**Keine Namensnennung** – Fälle nur anonymisiert (Branche + Größe).
+
+## Methode (jede Fallstudie)
+Manuelle Arbeit → Prozess verstehen → bereinigen → digital gestalten und
+automatisieren → testen → produktiv setzen.
+
 ## Fallstudien (vom Inhaber benannt)
 | # | Schmerz | Lösung | Ergebnis |
 |---|---|---|---|
@@ -33,6 +45,8 @@ Ergebnisse zu liefern.
 | 6 | Berichterstellung (Dienstleister) | Automatisierte, individuelle Berichte in hoher Qualität | *Kennzahl?* |
 | 7 | Transparenz Innendienst | Interaktives Kanban-Board für den gesamten Innendienst entwickelt und ausgerollt | *Kennzahl?* |
 | 8 | Support / Marketing | Service-Agents: von IT-Helpdesk bis Marketing-Unterstützung, rund um die Uhr | *Kennzahl?* |
+| 10 | Preisauszeichnung | Automatische Erstellung von Preisschildern | mind. 3 Arbeitstage/Monat gespart |
+| 11 | Logistik | Automatische Palettenbeschriftung | mind. 4 Wochen Arbeitszeit/Jahr gespart |
 | 9 | Online-Auftritt | Homepages und Landingpages für verschiedene Projekte | – |
 
 Zusätzlich aus dem CV: 1,5 Vollzeitstellen in 2 Monaten eingespart ·
