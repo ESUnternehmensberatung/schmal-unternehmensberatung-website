@@ -110,9 +110,9 @@ Zitate, Logos, Empfehlungen von Banken oder Verwaltern?
 Zertifizierungen, Mitgliedschaften, IDW S6, Veröffentlichungen, Vorträge.
 
 > - Manager für angewandte KI-Transformation (IHK), mit Auszeichnung
-> - MBA Digital Innovation (Zeugnis folgt)
-> - Turnaround Manager
-> - Change Management (Nachweis folgt)
+> - MBA, Middlesex University London (Modul Digital Innovation, Note 1)
+> - Certified International Turnaround Manager – Level A (TMS)
+> - Change Management (Nachweis fehlt noch)
 
 ### 11. Person oder Marke
 Stehst du als Person im Vordergrund oder die Firma? Gibt es professionelle Fotos?

@@ -6,9 +6,9 @@ vorhandenen Systemen wie Microsoft 365 oder Ihrem ERP. Wird doch etwas Neues
 gebraucht, etwa eine KI-Plattform, erfahren Sie es vorher – mit Kosten.
 
 **Was kostet es extra?**
-Sie erhalten vor dem Start einen Umsetzungsplan mit allen Kosten: meine
-Leistung und gegebenenfalls Lizenzen. Keine versteckten Positionen.
-*(Offen: Festpreis/Paketpreis nennen?)*
+Nach der Quick-Win-Analyse erhalten Sie ein individuelles Angebot mit allen
+Kosten – meine Leistung und gegebenenfalls Lizenzen. Keine versteckten
+Positionen, keine Überraschungen. *(Bewusst keine Paketpreise auf der Seite.)*
 
 **Ist es sicher?**
 Ich setze auf DSGVO-konforme Lösungen und berücksichtige Ihre bestehende

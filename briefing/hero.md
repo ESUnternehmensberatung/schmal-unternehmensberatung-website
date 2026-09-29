@@ -1,7 +1,7 @@
 # Hero – v3
 
 Layout und Optik wie im Screenshot: Portrait rechts, Serif-Headline mit goldenem
-Akzentwort, Kennzahlenleiste unten. Foto: `assets/portrait.jpg` (Upload folgt).
+Akzentwort, Kennzahlenleiste unten. Foto: `assets/hero.png` (Hero), `assets/about.png` („Warum ich“).
 
 Ziel: In 3 Sekunden klar – **was** (KI-Einführung, Coaching, Training),
 **für wen** (Mittelstand), **warum er** (Praxis + KI).

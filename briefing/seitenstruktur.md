@@ -68,13 +68,11 @@ nicht im Hero/Angebot, sondern im Business-Concierge genannt.
 - **Blog:** Business-Concierge-Produkte (je Produkt ein Artikel, mit Provisions-Hinweis)
 - Impressum, Datenschutz
 
-## Offene Punkte
+## Offene Punkte (blockieren den Bau nicht)
 
-1. **Foto** nach `assets/portrait.jpg` hochladen (Branch `homepage-briefing`).
-2. **Google-Bewertungen:** Link zum Google-Unternehmensprofil oder Texte einfügen.
-3. **Nachweise:** MBA-Zeugnis, Change-Management-Zertifikat.
-4. **Paketname / Festpreis** fürs Standardangebot – oder bewusst „auf Anfrage“?
-5. **Plattform-Hosting** für FAQ „Ist es sicher?“ (z. B. „Server in der EU“).
-6. **Newsletter-Tool** wählen (Vorschlag: Brevo, DSGVO, kostenloser Einstieg).
-7. **Business-Concierge:** erste Produkte für den Blog.
-8. **Whitepaper** erstellen (eigener Schritt).
+1. **Google-Bewertungen:** Link ließ sich nicht automatisch auslesen → Texte
+   einfügen; bis dahin Platzhalter-Sektion, die ohne Bewertungen ausgeblendet ist.
+2. **Change-Management-Nachweis** – bis dahin nicht genannt.
+3. **Business-Concierge:** erste Produkte für den Blog.
+4. **Whitepaper** erstellen (eigener Schritt).
+5. **Logo** – neues Logo folgt; bis dahin Wortmarke „ES | Schmal Unternehmensberatung“ in Schrift.

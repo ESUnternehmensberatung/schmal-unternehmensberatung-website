@@ -55,9 +55,12 @@ Zusätzlich aus dem CV: 1,5 Vollzeitstellen in 2 Monaten eingespart ·
 **Top 3 für die Startseite (Vorschlag):** #5 Beschwerden (stärkster Vorher/Nachher-
 Kontrast), #1 Angebote (größter Schmerz laut Umfrage), #4 Rechnungen (Bordmittel-Beweis).
 
-## Qualifikationen (für „Warum ich“)
-- Manager für angewandte KI-Transformation (IHK) – mit Auszeichnung
-- MBA (Middlesex University London), Note 1,4
-- Betriebswirt (VWA) & Turnaround Manager
-- Fachwirt für Versicherungen und Finanzen (IHK)
-- Ausbildereignung (IHK) · Innovation Management (IBM) · MHFA-Ersthelfer
+## Qualifikationen (geprüft anhand der Nachweise)
+| Nachweis | Details | Website-Formulierung |
+|---|---|---|
+| IHK-Zertifikat | Manager für angewandte KI-Transformation (IHK), 03/2025–02/2026, **mit Auszeichnung**, 50 UE; Schwerpunkte u. a. strategische KI-Implementierung, organisatorische/kulturelle Integration, KI-VO-Konformität, Cybersicherheit | „Manager für angewandte KI-Transformation (IHK) – mit Auszeichnung“ |
+| MBA | Master of Business Administration, Middlesex University London, 02/2024; Modul *Digital Innovation* Note 1; Abschlussarbeit Note 1 | „MBA (Middlesex University London)“ – **nicht** „MBA Digital Innovation“, der Abschluss ist ein allgemeiner MBA |
+| Turnaround Manager | CITM Certified International Turnaround Manager – Level A, Turnaround Management Society, 02/2014 | „Certified International Turnaround Manager (TMS)“ |
+| Innovation Management | Basics of Innovation Management, IBM, 05/2020 | optional |
+| Betriebswirt (VWA), Fachwirt (IHK), Ausbildereignung (IHK) | laut CV | „Warum ich“, Kurzliste |
+| Change Management | **Nachweis fehlt noch** | erst nach Nachweis nennen |
