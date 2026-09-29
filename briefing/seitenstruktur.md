@@ -72,7 +72,7 @@ nicht im Hero/Angebot, sondern im Business-Concierge genannt.
 
 1. **Google-Bewertungen:** Link ließ sich nicht automatisch auslesen → Texte
    einfügen; bis dahin Platzhalter-Sektion, die ohne Bewertungen ausgeblendet ist.
-2. **Change-Management-Nachweis** – bis dahin nicht genannt.
+2. ~~Change Management~~ – als Praxiserfahrung belegt (Arbeitszeugnis).
 3. **Business-Concierge:** erste Produkte für den Blog.
 4. **Whitepaper** erstellen (eigener Schritt).
 5. **Logo** – neues Logo folgt; bis dahin Wortmarke „ES | Schmal Unternehmensberatung“ in Schrift.

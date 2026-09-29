@@ -112,7 +112,7 @@ Zertifizierungen, Mitgliedschaften, IDW S6, Veröffentlichungen, Vorträge.
 > - Manager für angewandte KI-Transformation (IHK), mit Auszeichnung
 > - MBA, Middlesex University London (Modul Digital Innovation, Note 1)
 > - Certified International Turnaround Manager – Level A (TMS)
-> - Change Management (Nachweis fehlt noch)
+> - Change Management: Praxis (Aufbau Service Center, belegt durch Arbeitszeugnis)
 
 ### 11. Person oder Marke
 Stehst du als Person im Vordergrund oder die Firma? Gibt es professionelle Fotos?

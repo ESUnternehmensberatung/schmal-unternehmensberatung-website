@@ -66,8 +66,12 @@ Vordergrund. Pflegt die Seite selbst. Deutschsprachig.
 - Angebote in 1–24 h beim Kunden
 - > 25 % Zeitersparnis durch digitalisierte Kernprozesse; Erreichbarkeit +75 %
 - Qualifikationen: Manager für angewandte KI-Transformation (IHK, mit
-  Auszeichnung) · MBA (Middlesex University London) · Certified International
-  Turnaround Manager (TMS) · Betriebswirt (VWA) · Ausbildereignung (IHK)
+  Auszeichnung) · MBA (Middlesex University London) mit Fokus auf
+  Projektmanagement, Arbeits- und Organisationspsychologie und digitale
+  Innovation · Certified International Turnaround Manager (TMS) · Betriebswirt
+  (VWA) · Ausbildereignung (IHK)
+- Change Management aus der Praxis: zentrales Service Center mit rund 45 MA
+  in einem bundesweiten Versicherer aufgebaut (belegt durch Arbeitszeugnis)
 - Google-Bewertungen vorhanden (Texte folgen)
 - Details: `briefing/profil.md`, `briefing/markt-insights.md`
 

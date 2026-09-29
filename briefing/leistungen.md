@@ -35,9 +35,10 @@ Führungskräfte dabei, sie zu steuern, statt von ihr getrieben zu werden.
 - Team mitnehmen: Ängste ernst nehmen, Veränderung kommunizieren
 - Neue Rollen und Verantwortlichkeiten im Umgang mit KI definieren
 
-*Beleg:* Teams aufgebaut, umgebaut und neu strukturiert – als Interim-Manager
-(70+ MA, 5 → 2 Gesellschaften) und Leiter Service Center (fast 50 MA).
-MHFA-Ersthelfer für psychische Gesundheit.
+*Beleg:* Change Management aus der Praxis – zentrales Service Center mit rund
+45 MA aufgebaut (Versicherer, bundesweit), Veränderung unter Beteiligung der
+Mitarbeitenden gesteuert; Interim-Manager (70+ MA, 5 → 2 Gesellschaften).
+MBA mit Arbeits- und Organisationspsychologie · MHFA-Ersthelfer.
 
 ---
 

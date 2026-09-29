@@ -63,4 +63,24 @@ Kontrast), #1 Angebote (größter Schmerz laut Umfrage), #4 Rechnungen (Bordmitt
 | Turnaround Manager | CITM Certified International Turnaround Manager – Level A, Turnaround Management Society, 02/2014 | „Certified International Turnaround Manager (TMS)“ |
 | Innovation Management | Basics of Innovation Management, IBM, 05/2020 | optional |
 | Betriebswirt (VWA), Fachwirt (IHK), Ausbildereignung (IHK) | laut CV | „Warum ich“, Kurzliste |
-| Change Management | **Nachweis fehlt noch** | erst nach Nachweis nennen |
+| MBA-Schwerpunkte | Module Digital Innovation (1), Arbeits- und Organisationspsychologie (2), Projektmanagement (2) | „MBA mit Fokus auf Projektarbeit, Organisationspsychologie und digitale Innovation“ |
+| Change Management | **Praxis, belegt durch Arbeitszeugnis** (kein Zertifikat) | als Praxiserfahrung formulieren, nicht als Zertifikat |
+
+## Change Management aus der Praxis (belegt durch Arbeitszeugnis 03/2024)
+Bundesweiter Versicherer, 450+ Mitarbeitende im Innendienst (anonymisiert):
+- Projektleitung „Kundenservice“: deutschlandweite Analyse aller Standorte,
+  Vernetzung der Telefonie, Projektteam ~7 MA → Entscheidung zur Gründung eines
+  zentralen Service Centers
+- Aufbau und Leitung des Service Centers: rund 45 Mitarbeitende, zwei
+  Abteilungsleitungen, Berichtslinie direkt an den Vorstand
+- Steuerung von Veränderungsprozessen unter Beteiligung der Mitarbeitenden,
+  Einführung einer Wertekultur, Neuordnung und Eingliederung von Teams,
+  neue Rollen (Fachkoordination, Qualitätssicherung)
+- Change Management im Vertrieb (19 MA, kommissarische Leitung)
+- Softphone-Testlauf, Anbindung externer Dienstleister → Erreichbarkeit +75 %
+
+Website-Formulierung (Vorschlag):
+> Change Management kenne ich nicht aus dem Lehrbuch: Ich habe in einem
+> bundesweiten Versicherer ein zentrales Service Center mit rund 45
+> Mitarbeitenden aufgebaut – vom Projekt bis zur neuen Organisationseinheit,
+> mit den Menschen statt über sie hinweg.
