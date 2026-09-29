@@ -1,0 +1,206 @@
+---
+import Icon from '../Icon.astro';
+
+const leistungen = [
+  {
+    nr: '1',
+    name: 'Consulting',
+    titel: 'KI-Einführung, die im Alltag funktioniert',
+    kurz: 'Ich führe KI dort ein, wo sie Ihrem Team sofort Arbeit abnimmt, aufbauend auf dem, was Sie schon haben.',
+    punkte: [
+      ['KI-Einführung', 'DSGVO-konforme KI-Plattform, passend zu Ihrer bestehenden Infrastruktur. Eingerichtet, angebunden, im Einsatz.'],
+      ['Bordmittelprüfung', 'Was steckt schon in Microsoft 365, ERP oder Telefonanlage und wird nicht genutzt? Oft liegt der schnellste Hebel bereits im Haus.'],
+      ['Echte Business-Probleme lösen', 'Wiederkehrende Aufgaben automatisieren, Rechnungs- und Angebotsprozesse verschlanken, Wissen zugänglich machen.'],
+      ['Systemprobleme beheben', 'Schnittstellen, Medienbrüche, doppelte Datenhaltung: Prozesse und Strukturen so ordnen, dass Technik wirken kann.'],
+    ],
+    beleg: '1,5 Vollzeitstellen in 2 Monaten eingespart. Neuer Rechnungsworkflow mit deutlich geringeren Buchhaltungskosten.',
+  },
+  {
+    nr: '2',
+    name: 'Coaching',
+    titel: 'Führung durch die Transformation',
+    kurz: 'Transformation ist Führungsaufgabe. Ich begleite Geschäftsführung und Führungskräfte dabei, sie zu steuern, statt von ihr getrieben zu werden.',
+    punkte: [
+      ['Klarheit', 'Wo lohnt sich KI für uns, und wo nicht?'],
+      ['Entscheiden', 'Prioritäten setzen und Entscheidungen treffen, ohne Dreijahresplan.'],
+      ['Team mitnehmen', 'Ängste ernst nehmen, Veränderung verständlich kommunizieren.'],
+      ['Neue Rollen', 'Verantwortlichkeiten im Umgang mit KI klar definieren.'],
+    ],
+    beleg: 'Zentrales Service Center mit rund 45 Mitarbeitenden aufgebaut, Veränderung unter Beteiligung der Mitarbeitenden gesteuert. Als Interim-Manager die Konsolidierung von 5 auf 2 Gesellschaften begleitet (Unternehmen mit 70+ Mitarbeitenden). MBA mit Arbeits- und Organisationspsychologie.',
+  },
+  {
+    nr: '3',
+    name: 'Training',
+    titel: 'KI sicher im Arbeitsalltag nutzen',
+    kurz: 'Ihre Mitarbeitenden lernen, mit KI und den neuen Prozessen souverän zu arbeiten. Praxisnah, an ihren eigenen Aufgaben.',
+    punkte: [
+      ['Grundlagen', 'Was KI kann, was nicht, und wie man gute Ergebnisse bekommt.'],
+      ['Anwendung', 'Üben an echten Aufgaben aus dem eigenen Arbeitsalltag.'],
+      ['Neue Prozesse', 'Einführung in die neuen, digitalisierten Abläufe.'],
+      ['Datenschutz', 'Sichere Nutzung von KI im Unternehmen.'],
+    ],
+    beleg: 'Ausbildereignung (IHK). Manager für angewandte KI-Transformation (IHK), mit Auszeichnung. Schulungsplattform eingeführt.',
+  },
+];
+---
+<section class="section leistungen" id="leistungen" aria-labelledby="leistungen-title">
+  <div class="wrap">
+    <header class="intro">
+      <h2 id="leistungen-title" data-reveal>Mein Fachwissen aus 20 Jahren Praxis, verbunden mit KI.</h2>
+      <p class="lead muted" data-reveal style="--i: 1">
+        Studien nennen drei Voraussetzungen, damit KI Wert schafft: Strategie, Training und Systeme. Genau dafür stehen
+        meine drei Leistungen.
+      </p>
+    </header>
+
+    <ol class="list">
+      {
+        leistungen.map((l) => (
+          <li class="item" data-reveal>
+            <div class="head">
+              <span class="nr" aria-hidden="true">{l.nr}</span>
+              <p class="name">{l.name}</p>
+              <h3>{l.titel}</h3>
+              <p class="kurz">{l.kurz}</p>
+            </div>
+            <div class="body">
+              <dl>
+                {l.punkte.map(([t, d]) => (
+                  <div>
+                    <dt>{t}</dt>
+                    <dd>{d}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p class="beleg">
+                <Icon name="check" />
+                <span>
+                  <strong>Beleg:</strong> {l.beleg}
+                </span>
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+
+<style>
+  .leistungen {
+    background: var(--white);
+  }
+
+  .intro {
+    display: grid;
+    gap: 1.25rem;
+    max-width: 50rem;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
+  }
+
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .item {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--line);
+  }
+
+  .head {
+    position: relative;
+    padding-left: 4.25rem;
+  }
+
+  .nr {
+    position: absolute;
+    left: 0;
+    top: -0.35rem;
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    line-height: 1;
+    font-weight: 400;
+    color: var(--gold-deep);
+    font-variant-numeric: lining-nums;
+  }
+
+  .name {
+    font-weight: 600;
+    color: var(--stone);
+    margin-bottom: 0.4rem;
+  }
+
+  h3 {
+    font-size: clamp(1.625rem, 1.3rem + 1vw, 2.125rem);
+  }
+
+  .kurz {
+    margin-top: 1rem;
+    color: var(--ink);
+  }
+
+  dl {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 2.5rem;
+  }
+
+  dt {
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.3rem;
+  }
+
+  dd {
+    margin: 0;
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    color: var(--stone);
+  }
+
+  .beleg {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 2rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--ivory);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .beleg :global(svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+    flex: none;
+    margin-top: 0.1rem;
+    color: var(--gold-deep);
+  }
+
+  .beleg strong {
+    color: var(--navy);
+  }
+
+  @media (max-width: 960px) {
+    .item {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    dl {
+      grid-template-columns: 1fr;
+    }
+    .head {
+      padding-left: 0;
+      padding-top: 4rem;
+    }
+  }
+</style>

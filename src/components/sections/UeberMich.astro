@@ -1,0 +1,201 @@
+---
+import { Picture } from 'astro:assets';
+import aboutImg from '../../../assets/about.png';
+
+const prinzipien = [
+  {
+    titel: 'Praxis mit Technikfokus',
+    text: '20 Jahre als Manager, Interim-Geschäftsführer und Berater, in allen Projekten mit starker Technikkomponente. Dieses Know-how verbinde ich jetzt mit KI.',
+  },
+  {
+    titel: 'Systeme statt Einzellösungen',
+    text: 'Ich baue Abläufe, die im Betrieb funktionieren müssen, und bis heute funktionieren. Keine Insellösungen, die nach dem Projekt verstauben.',
+  },
+  {
+    titel: 'Machen statt Folien',
+    text: 'Keine riesigen Foliendecks, keine endlosen Vorab-Meetings. Schnell ins Tun, schnell Ergebnisse, die Ihr Team entlasten.',
+  },
+];
+
+const qualifikationen = [
+  'Manager für angewandte KI-Transformation (IHK), mit Auszeichnung',
+  'MBA (Middlesex University London) mit Fokus auf Projektarbeit, Organisationspsychologie und digitale Innovation',
+  'Certified International Turnaround Manager (TMS)',
+  'Betriebswirt (VWA)',
+  'Ausbildereignung (IHK)',
+];
+---
+<section class="section ueber" id="ueber-mich" aria-labelledby="ueber-title">
+  <div class="wrap grid">
+    <figure class="portrait" data-reveal>
+      <Picture
+        src={aboutImg}
+        formats={['avif', 'webp']}
+      fallbackFormat="jpg"
+      quality={78}
+        widths={[480, 720, 1000]}
+        sizes="(max-width: 900px) 100vw, 40vw"
+        alt="Eduard Schmal sitzend an seinem Schreibtisch"
+      />
+      <figcaption>
+        <strong>Eduard Schmal</strong>
+        <span>Berater für digitale Transformation und KI im Mittelstand</span>
+      </figcaption>
+    </figure>
+
+    <div class="text">
+      <h2 id="ueber-title" data-reveal>Aus der Praxis, nicht aus der Folie.</h2>
+      <p class="lead" data-reveal style="--i: 1">
+        Ich komme aus dem operativen Geschäft. Ich habe Teams aufgebaut, umgebaut und neu strukturiert, und Prozesse
+        gebaut, die produktiv funktionieren mussten.
+      </p>
+
+      <ul class="prinzipien">
+        {
+          prinzipien.map((p, i) => (
+            <li data-reveal style={`--i: ${i}`}>
+              <h3>{p.titel}</h3>
+              <p>{p.text}</p>
+            </li>
+          ))
+        }
+      </ul>
+
+      <blockquote data-reveal>
+        <p>
+          Change Management kenne ich nicht aus dem Lehrbuch: Ich habe in einem bundesweiten Versicherer ein zentrales
+          Service Center mit rund 45 Mitarbeitenden aufgebaut. Vom Projekt bis zur neuen Organisationseinheit, mit den
+          Menschen statt über sie hinweg.
+        </p>
+      </blockquote>
+
+      <div class="quali" data-reveal>
+        <h3>Qualifikationen</h3>
+        <ul>
+          {qualifikationen.map((q) => <li>{q}</li>)}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .portrait {
+    margin: 0;
+    position: sticky;
+    top: 6.5rem;
+  }
+
+  .portrait :global(img) {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 58% 30%;
+    border-radius: var(--radius);
+  }
+
+  figcaption {
+    display: grid;
+    gap: 0.15rem;
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 1px solid var(--gold-deep);
+    font-size: 1rem;
+    color: var(--stone);
+  }
+
+  figcaption strong {
+    color: var(--navy);
+    font-weight: 600;
+  }
+
+  .lead {
+    margin-top: 1.5rem;
+  }
+
+  .prinzipien {
+    list-style: none;
+    margin: 3rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 2rem;
+  }
+
+  .prinzipien h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .prinzipien p {
+    color: var(--stone);
+    max-width: 36em;
+  }
+
+  blockquote {
+    margin: 3.5rem 0 0;
+    padding: 2rem 0;
+    border-block: 1px solid var(--line);
+  }
+
+  blockquote p {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+    line-height: 1.5;
+    color: var(--navy);
+  }
+
+  .quali {
+    margin-top: 3rem;
+  }
+
+  .quali h3 {
+    font-size: 1.375rem;
+    margin-bottom: 1rem;
+  }
+
+  .quali ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem 2rem;
+  }
+
+  .quali li {
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--line);
+    font-size: 1.0625rem;
+    line-height: 1.5;
+  }
+
+  .quali li:first-child {
+    grid-column: 1 / -1;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .portrait {
+      position: static;
+      max-width: 30rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .quali ul {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

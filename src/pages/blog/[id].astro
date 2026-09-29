@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import Text from '../../layouts/Text.astro';
+
+export async function getStaticPaths() {
+  const artikel = await getCollection('blog', ({ data }) => !data.entwurf);
+  return artikel.map((a) => ({ params: { id: a.id }, props: { a } }));
+}
+
+const { a } = Astro.props;
+const { Content } = await render(a);
+const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' }).format(a.data.datum);
+---
+<Text
+  title={`${a.data.title} | ES | Schmal Unternehmensberatung`}
+  description={a.data.description}
+  heading={a.data.title}
+  meta={`${a.data.produkt}, ${datum}`}
+>
+  <p slot="vorspann" class="hinweis">
+    <strong>Transparenz:</strong> Ich erhalte bei Vermittlung von {a.data.produkt} eine Provision. Ihr Preis ändert sich
+    dadurch nicht.
+  </p>
+  <Content />
+</Text>
+
+<style>
+  .hinweis {
+    margin-top: 1.25rem;
+    padding: 1rem 1.25rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    color: var(--stone);
+  }
+  .hinweis strong {
+    color: var(--navy);
+  }
+</style>

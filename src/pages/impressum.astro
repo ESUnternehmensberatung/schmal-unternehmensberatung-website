@@ -1,0 +1,11 @@
+---
+import { getEntry, render } from 'astro:content';
+import Text from '../layouts/Text.astro';
+
+const eintrag = await getEntry('rechtliches', 'impressum');
+if (!eintrag) throw new Error('Impressum fehlt');
+const { Content } = await render(eintrag);
+---
+<Text title="Impressum | ES | Schmal Unternehmensberatung" description={eintrag.data.description} heading={eintrag.data.title}>
+  <Content />
+</Text>

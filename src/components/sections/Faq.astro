@@ -1,0 +1,119 @@
+---
+import { getCollection, render } from 'astro:content';
+import Icon from '../Icon.astro';
+
+const eintraege = (await getCollection('faq')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+const fragen = await Promise.all(eintraege.map(async (e) => ({ frage: e.data.frage, ...(await render(e)) })));
+---
+<section class="section faq" id="faq" aria-labelledby="faq-title">
+  <div class="wrap grid">
+    <h2 id="faq-title" data-reveal>Was Geschäftsführer mich vorher fragen</h2>
+
+    <div class="liste">
+      {
+        fragen.map(({ frage, Content }) => (
+          <details>
+            <summary>
+              <span>{frage}</span>
+              <Icon name="plus" />
+            </summary>
+            <div class="antwort">
+              <Content />
+            </div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(2rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  h2 {
+    position: sticky;
+    top: 6.5rem;
+  }
+
+  .liste {
+    border-top: 1px solid var(--line);
+  }
+
+  details {
+    border-bottom: 1px solid var(--line);
+  }
+
+  summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    line-height: 1.35;
+    color: var(--navy);
+  }
+
+  summary::-webkit-details-marker {
+    display: none;
+  }
+
+  summary :global(svg) {
+    width: 1.35rem;
+    height: 1.35rem;
+    flex: none;
+    color: var(--gold-deep);
+    transition: transform 250ms var(--ease-out);
+  }
+
+  details[open] summary :global(svg) {
+    transform: rotate(45deg);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    summary:hover span {
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.2em;
+    }
+  }
+
+  .antwort {
+    padding: 0 3rem 1.75rem 0;
+    color: var(--ink);
+    max-width: 40em;
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    details[open] .antwort {
+      animation: fade 300ms var(--ease-out);
+    }
+  }
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+      transform: translateY(-4px);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    h2 {
+      position: static;
+    }
+    .antwort {
+      padding-right: 0;
+    }
+  }
+</style>

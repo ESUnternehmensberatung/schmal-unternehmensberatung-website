@@ -1,0 +1,236 @@
+---
+import Icon from './Icon.astro';
+import { site } from '../config/site';
+
+const nav = [
+  { href: '/#leistungen', label: 'Leistungen' },
+  { href: '/#ablauf', label: 'Ablauf' },
+  { href: '/#ueber-mich', label: 'Über mich' },
+  { href: '/#ergebnisse', label: 'Ergebnisse' },
+  { href: '/#faq', label: 'FAQ' },
+];
+---
+<header class="header dark">
+  <div class="wrap bar">
+    <a class="brand" href="/" aria-label="ES | Schmal Unternehmensberatung, zur Startseite">
+      <span class="brand-mark">ES</span>
+      <span class="brand-rule" aria-hidden="true"></span>
+      <span class="brand-name">Schmal Unternehmensberatung</span>
+    </a>
+
+    <nav class="nav" aria-label="Hauptnavigation">
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+
+    <a class="btn btn-primary header-cta" href={site.links.quickWin}>Quick-Win-Analyse anfragen</a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
+      <span class="visually-hidden">Menü</span>
+      <Icon name="list" class="i-open" />
+      <Icon name="x" class="i-close" />
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <nav class="wrap" aria-label="Mobile Navigation">
+      <ul>
+        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+      <a class="btn btn-primary" href={site.links.quickWin}>Quick-Win-Analyse anfragen</a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  if (toggle && menu) {
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) {
+        menu.hidden = false;
+        requestAnimationFrame(() => menu.classList.add('is-open'));
+      } else {
+        menu.classList.remove('is-open');
+        menu.hidden = true;
+      }
+    };
+    toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+    menu.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+    matchMedia('(min-width: 1120px)').addEventListener('change', (e) => e.matches && setOpen(false));
+  }
+</script>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    border-bottom: 1px solid var(--line-dark);
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    min-height: 4.5rem;
+  }
+
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: var(--white);
+    margin-right: auto;
+  }
+
+  .brand-mark {
+    font-family: var(--serif);
+    font-size: 1.625rem;
+    font-weight: 600;
+    color: var(--gold);
+    letter-spacing: 0.02em;
+  }
+
+  .brand-rule {
+    width: 1px;
+    height: 1.5rem;
+    background: var(--line-dark);
+  }
+
+  .brand-name {
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+  }
+
+  .nav ul {
+    display: flex;
+    gap: 1.75rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  .nav a {
+    font-size: 1rem;
+    text-decoration: none;
+    color: var(--on-dark-muted);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .nav a:hover {
+      color: var(--white);
+    }
+  }
+
+  .header-cta {
+    min-height: 2.75rem;
+    padding: 0.6rem 1.1rem;
+    font-size: 0.975rem;
+  }
+
+  .menu-toggle {
+    display: none;
+    place-items: center;
+    width: 2.75rem;
+    height: 2.75rem;
+    padding: 0;
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    background: transparent;
+    color: var(--white);
+    cursor: pointer;
+    transition: transform 160ms var(--ease-out);
+  }
+
+  .menu-toggle:active {
+    transform: scale(0.95);
+  }
+
+  .menu-toggle :global(svg) {
+    width: 1.35rem;
+    height: 1.35rem;
+  }
+
+  .menu-toggle :global(.i-close),
+  .menu-toggle[aria-expanded='true'] :global(.i-open) {
+    display: none;
+  }
+
+  .menu-toggle[aria-expanded='true'] :global(.i-close) {
+    display: block;
+  }
+
+  .mobile-menu {
+    border-top: 1px solid var(--line-dark);
+    padding-block: 1rem 1.75rem;
+    opacity: 0;
+    transform: translateY(-6px);
+    transition:
+      opacity 200ms var(--ease-out),
+      transform 200ms var(--ease-out);
+  }
+
+  .mobile-menu.is-open {
+    opacity: 1;
+    transform: none;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    margin: 0 0 1.25rem;
+    padding: 0;
+  }
+
+  .mobile-menu li a {
+    display: block;
+    padding: 0.8rem 0;
+    font-family: var(--serif);
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--white);
+    border-bottom: 1px solid var(--line-dark);
+  }
+
+  @media (max-width: 1119px) {
+    .nav {
+      display: none;
+    }
+    .menu-toggle {
+      display: grid;
+    }
+    .bar {
+      gap: 1rem;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .header-cta {
+      display: none;
+    }
+    .brand {
+      gap: 0.6rem;
+    }
+    .brand-name {
+      font-size: 0.95rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .mobile-menu {
+      transform: none;
+    }
+  }
+</style>

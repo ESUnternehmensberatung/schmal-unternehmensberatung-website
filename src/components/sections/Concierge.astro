@@ -1,0 +1,134 @@
+---
+import Icon from '../Icon.astro';
+
+// Empfehlungen: neue Einträge einfach ergänzen.
+const empfehlungen = [
+  {
+    name: 'Langdock',
+    nutzen: 'DSGVO-konforme KI-Plattform für Unternehmen: ein Arbeitsplatz für KI-Assistenten, Wissen und Automatisierungen.',
+    einsatz: 'Kern meiner KI-Einführungen. Ich richte die Plattform ein, binde sie an vorhandene Systeme an und bringe sie mit Ihrem Team in den Alltag.',
+    url: 'https://www.langdock.com',
+  },
+];
+---
+<section class="section concierge" id="concierge" aria-labelledby="concierge-title">
+  <div class="wrap grid">
+    <div class="intro">
+      <h2 id="concierge-title" data-reveal>Business-Concierge</h2>
+      <p class="lead" data-reveal style="--i: 1">Werkzeuge, die ich selbst einsetze. Geprüft im Mittelstand.</p>
+      <p class="hinweis" data-reveal style="--i: 2">
+        <strong>Transparenz:</strong> Ich erhalte bei Vermittlung eine Provision. Ihr Preis ändert sich dadurch nicht.
+      </p>
+      <p class="blog" data-reveal style="--i: 3">
+        Ausführliche Erfahrungsberichte zu jedem Werkzeug erscheinen im <a href="/blog/">Blog</a>.
+      </p>
+    </div>
+
+    <ul class="liste">
+      {
+        empfehlungen.map((e) => (
+          <li data-reveal>
+            <h3>{e.name}</h3>
+            <p class="nutzen">{e.nutzen}</p>
+            <p class="einsatz">
+              <span>Wofür ich es einsetze</span>
+              {e.einsatz}
+            </p>
+            <a href={e.url} rel="noopener sponsored" target="_blank">
+              {e.name} ansehen <Icon name="arrow-up-right" />
+              <span class="visually-hidden">(öffnet in neuem Tab)</span>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>
+
+<style>
+  .grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(2.5rem, 6vw, 6rem);
+    align-items: start;
+  }
+
+  .lead {
+    margin-top: 1rem;
+  }
+
+  .hinweis {
+    margin-top: 2rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+    font-size: 1rem;
+    color: var(--stone);
+  }
+
+  .hinweis strong {
+    color: var(--navy);
+  }
+
+  .blog {
+    margin-top: 0.75rem;
+    font-size: 1rem;
+    color: var(--stone);
+  }
+
+  .liste {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .liste li {
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+  }
+
+  .liste h3 {
+    font-size: 2rem;
+  }
+
+  .nutzen {
+    margin-top: 0.75rem;
+    font-size: var(--step-1);
+    line-height: 1.5;
+  }
+
+  .einsatz {
+    margin-top: 1.5rem;
+    color: var(--stone);
+  }
+
+  .einsatz span {
+    display: block;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+  }
+
+  .liste a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.75rem;
+    font-weight: 600;
+    color: var(--gold-deep);
+  }
+
+  .liste a :global(svg) {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

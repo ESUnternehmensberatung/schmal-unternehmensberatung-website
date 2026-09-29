@@ -1,0 +1,323 @@
+---
+import Icon from '../Icon.astro';
+import { bewertungen } from '../../data/bewertungen';
+import { site } from '../../config/site';
+
+const faelle = [
+  {
+    thema: 'Beschwerdebearbeitung',
+    vorher: '2 bis 3 Stunden je Beschwerde',
+    loesung: 'Prozess umgebaut: Routine automatisiert, Rücksprache und Freigabe bleiben beim Menschen.',
+    nachher: '10 bis 15 Min.',
+    einheit: 'je Beschwerde, inklusive Rücksprache und Freigabe',
+  },
+  {
+    thema: 'Angebotserstellung',
+    vorher: 'Angebote dauerten zu lange, Anfragen blieben liegen',
+    loesung: 'Angebotsmanagement neu aufgesetzt und beschleunigt.',
+    nachher: '1 bis 24 Std.',
+    einheit: 'bis das Angebot beim Kunden ist, je nach Komplexität',
+  },
+  {
+    thema: 'Rechnungswesen',
+    vorher: 'Manueller Rechnungsprozess mit hohem Buchhaltungsaufwand',
+    loesung: 'Rechnungsworkflow komplett digitalisiert, mit vorhandenen Bordmitteln.',
+    nachher: 'Deutlich weniger',
+    einheit: 'Buchhaltungskosten, umgesetzt mit vorhandenen Bordmitteln',
+  },
+];
+
+const weitere = [
+  { zahl: 'über 25 %', text: 'Zeitersparnis durch digitalisierte Kernprozesse', kontext: 'Handel und Handwerk, 70+ Mitarbeitende, mehrere Standorte' },
+  { zahl: '+75 %', text: 'Erreichbarkeit im Kundenservice', kontext: 'Service Center eines Versicherers, fast 50 Mitarbeitende' },
+];
+
+const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und automatisieren', 'Testen', 'Produktiv setzen'];
+---
+<section class="section ergebnisse" id="ergebnisse" aria-labelledby="ergebnisse-title">
+  <div class="wrap">
+    <h2 id="ergebnisse-title" data-reveal>Vorher, nachher. Aus echten Projekten.</h2>
+    <p class="lead muted" data-reveal style="--i: 1">
+      Kundennamen nenne ich nicht. Die Ergebnisse sind trotzdem belegbar, und jedes folgte demselben Weg:
+    </p>
+
+    <ol class="methode" data-reveal style="--i: 2" aria-label="Vorgehen in jedem Projekt">
+      {methode.map((m) => <li>{m}</li>)}
+    </ol>
+
+    <div class="faelle">
+      {
+        faelle.map((f, i) => (
+          <article class="fall" data-reveal style={`--i: ${i}`}>
+            <h3>{f.thema}</h3>
+            <div class="vorher">
+              <span class="label">Vorher</span>
+              <p>{f.vorher}</p>
+            </div>
+            <p class="loesung">{f.loesung}</p>
+            <div class="nachher">
+              <span class="label">Nachher</span>
+              <p class="wert">{f.nachher}</p>
+              <p class="einheit">{f.einheit}</p>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <ul class="weitere">
+      {
+        weitere.map((w) => (
+          <li data-reveal>
+            <strong>{w.zahl}</strong>
+            <span>
+              {w.text}
+              <em>{w.kontext}</em>
+            </span>
+          </li>
+        ))
+      }
+    </ul>
+
+    {
+      bewertungen.length > 0 && (
+        <div class="stimmen">
+          <h3>Das sagen Kunden auf Google</h3>
+          <ul>
+            {bewertungen.map((b) => (
+              <li>
+                <p class="sterne" aria-label={`${b.sterne} von 5 Sternen`}>
+                  {Array.from({ length: b.sterne }, () => <Icon name="star-fill" />)}
+                </p>
+                <blockquote>
+                  <p>{b.text}</p>
+                </blockquote>
+                <p class="name">{b.name}</p>
+              </li>
+            ))}
+          </ul>
+          {site.links.googleProfil && (
+            <a class="alle" href={site.links.googleProfil} rel="noopener">
+              Alle Bewertungen auf Google <Icon name="arrow-up-right" />
+            </a>
+          )}
+        </div>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .ergebnisse {
+    background: var(--white);
+  }
+
+  .lead {
+    margin-top: 1.25rem;
+  }
+
+  .methode {
+    list-style: none;
+    margin: 1.75rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    counter-reset: m;
+  }
+
+  .methode li {
+    counter-increment: m;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    color: var(--navy);
+  }
+
+  .methode li::before {
+    content: counter(m);
+    font-family: var(--serif);
+    color: var(--gold-deep);
+  }
+
+  .faelle {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border-top: 2px solid var(--navy);
+  }
+
+  .fall {
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    gap: 1.25rem;
+    padding: 2rem clamp(1.25rem, 2.5vw, 2.5rem) 2.25rem;
+    border-left: 1px solid var(--line);
+  }
+
+  .fall:first-child {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  .fall:last-child {
+    padding-right: 0;
+  }
+
+  .fall h3 {
+    font-size: 1.5rem;
+  }
+
+  .label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--stone);
+    margin-bottom: 0.25rem;
+  }
+
+  .vorher p {
+    color: var(--stone);
+    font-size: 1.0625rem;
+  }
+
+  .loesung {
+    font-size: 1.0625rem;
+    color: var(--ink);
+  }
+
+  .nachher {
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .nachher .label {
+    color: var(--gold-deep);
+  }
+
+  .wert {
+    font-family: var(--serif);
+    font-size: clamp(2.25rem, 1.8rem + 1.4vw, 3.25rem);
+    font-weight: 500;
+    line-height: 1.05;
+    color: var(--navy);
+    font-variant-numeric: lining-nums;
+  }
+
+  .einheit {
+    margin-top: 0.4rem;
+    font-size: 1rem;
+    color: var(--stone);
+  }
+
+  .weitere {
+    list-style: none;
+    margin: clamp(3rem, 5vw, 4rem) 0 0;
+    padding: 2rem 0 0;
+    border-top: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .weitere li {
+    display: flex;
+    gap: 1.25rem;
+    align-items: baseline;
+  }
+
+  .weitere strong {
+    font-family: var(--serif);
+    font-size: 2rem;
+    font-weight: 500;
+    color: var(--navy);
+    white-space: nowrap;
+  }
+
+  .weitere span {
+    display: grid;
+    font-size: 1.0625rem;
+  }
+
+  .weitere em {
+    font-style: normal;
+    font-size: 0.9375rem;
+    color: var(--stone);
+  }
+
+  .stimmen {
+    margin-top: 4rem;
+  }
+
+  .stimmen ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
+    gap: 2rem;
+  }
+
+  .sterne {
+    display: flex;
+    gap: 0.2rem;
+    color: var(--gold-deep);
+  }
+
+  .sterne :global(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+  }
+
+  .stimmen blockquote {
+    margin: 0.5rem 0;
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: var(--navy);
+  }
+
+  .name {
+    font-size: 1rem;
+    color: var(--stone);
+  }
+
+  .alle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.5rem;
+    font-weight: 600;
+  }
+
+  .alle :global(svg) {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  @media (max-width: 960px) {
+    .faelle {
+      grid-template-columns: 1fr;
+    }
+    .fall,
+    .fall:first-child,
+    .fall:last-child {
+      padding: 2rem 0;
+      border-left: 0;
+      border-top: 1px solid var(--line);
+    }
+    .fall:first-child {
+      border-top: 0;
+    }
+    .weitere {
+      grid-template-columns: 1fr;
+    }
+    .weitere li {
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+  }
+</style>
