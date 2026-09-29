@@ -29,20 +29,23 @@ Folie: KI, die Ihre Mitarbeitenden entlastet, statt ein Dreijahresprojekt zu wer
 *Empfehlung:* **B** als Headline (trifft die Lage aus Frage 3 exakt), mit dem
 Ergebnisversprechen aus A als Unterzeile und dem Praxis-Beweis aus C direkt darunter.
 
-## Seitenaufbau (Startseite, Reihenfolge = Leseweg)
+## Seitenaufbau (Startseite, Reihenfolge = Leseweg) – v2
 
 | # | Sektion | Aufgabe | Inhalt |
 |---|---|---|---|
-| 1 | Hero | Lage erkennen, Handlung anbieten | Headline, Unterzeile, CTA Mini-Consulting, sekundär Whitepaper |
-| 2 | Die Lage | „Der versteht mich“ | 3 typische Situationen: kein Startpunkt · keine Zeit · Angst vorm Großprojekt |
-| 3 | Das Angebot | Kernprodukt klar machen | Standard-Paket: Plattform (Langdock, DSGVO) + Coaching GF + Schulung Team |
-| 4 | Ablauf | Aufwand greifbar machen | 3–5 Schritte vom Mini-Consulting bis zur laufenden Nutzung *(Runde 2, Frage 12)* |
-| 5 | Warum ich | Abgrenzung | Praxis statt Theorie · 20 Jahre operativ · Doing statt Folien |
-| 6 | Ergebnisse | Beweis | Zahlen, Fallbeispiele, Stimmen *(Runde 2, Fragen 7–9)* |
-| 7 | Consulting | Zusatzkompetenz | Prozessoptimierung und Strukturverbesserung |
-| 8 | Einwände / FAQ | Hürden abbauen | Kosten, Dauer, Datenschutz, „zu klein für KI?“ *(Frage 13)* |
+| 1 | Hero | In 3 Sekunden: was, für wen, warum ich | siehe `hero.md` |
+| 2 | Die Lage | „Der versteht mich“ | kein Startpunkt · keine Zeit · Angst vorm Großprojekt |
+| 3 | Leistungen | Drei Blöcke | Consulting · Coaching · Training – siehe `leistungen.md` |
+| 4 | Ablauf | Aufwand greifbar machen | 3–5 Schritte vom Mini-Consulting bis zur Nutzung |
+| 5 | Warum ich | Praxis + KI | 20 Jahre operativ · IHK KI-Transformation · Doing statt Folien |
+| 6 | Ergebnisse | Beweis | Fallbeispiele und Kennzahlen – siehe `profil.md` |
+| 7 | Business-Concierge | Empfehlungen gegen Provision | u. a. Langdock – siehe `leistungen.md` |
+| 8 | Einwände / FAQ | Hürden abbauen | Kosten, Dauer, Datenschutz, „zu klein für KI?“ |
 | 9 | Whitepaper | Lead für „noch nicht bereit“ | Download gegen E-Mail |
 | 10 | Abschluss-CTA | Handlung | Mini-Consulting buchen |
+
+Entschieden: Sanierung/Restrukturierung entfällt auf dieser Seite. Langdock wird
+nicht im Hero/Angebot, sondern im Business-Concierge genannt.
 
 ## Conversion-Logik
 
@@ -53,12 +56,12 @@ Ergebnisversprechen aus A als Unterzeile und dem Praxis-Beweis aus C direkt daru
 
 ## Offene Punkte für dich
 
-1. **Paketname:** Soll das Standard-Offer einen eigenen Namen bekommen
-   (z. B. „KI-Startpaket Mittelstand“)? Gibt es Dauer oder Festpreis, den wir
-   nennen dürfen? Beides stärkt „überschaubarer Aufwand“ enorm.
-2. **Langdock:** Soll der Plattformname sichtbar genannt werden oder neutral
-   „DSGVO-konforme KI-Plattform“? Gibt es eine Partnerschaft/Zertifizierung?
-3. **Sanierung/Restrukturierung:** gar nicht mehr zeigen, oder als
-   Kompetenz im „Warum ich“-Block?
-4. **CV:** bitte bereitstellen – Grundlage für „Warum ich“ und Kennzahlen.
-5. **Whitepaper:** bauen wir als eigenen Schritt, nachdem die Seite steht.
+1. **Primärer Button:** „Kostenloses Mini-Consulting“ (Fragebogen) oder
+   „KI-Readiness kostenlos testen“ (Screenshot)? Gibt es den KI-Check schon?
+2. **Kennzahlen:** „100+ Projekte“ und „€3.500 BAFA-Förderung“ aus dem
+   Screenshot – belegbar und weiter gewünscht? Ist BAFA-Förderung Teil des Angebots?
+3. **20 Jahre:** Berufsweg seit 2007 (≈ 19 Jahre), CV sagt „über 15 Jahre
+   Führung“. Vorschlag: „20 Jahre Praxis“ – passt das für dich?
+4. **Fallbeispiele:** Dürfen Kunden/Arbeitgeber namentlich genannt werden?
+5. **Paketname / Dauer / Festpreis** für das Standardangebot.
+6. **Business-Concierge:** Beispiele für Produkte und Services.
