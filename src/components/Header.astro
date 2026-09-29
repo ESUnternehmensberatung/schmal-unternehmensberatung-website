@@ -1,18 +1,19 @@
 ---
+import { url } from '../utils/url';
 import Icon from './Icon.astro';
 import { site } from '../config/site';
 
 const nav = [
-  { href: '/#leistungen', label: 'Leistungen' },
-  { href: '/#ablauf', label: 'Ablauf' },
-  { href: '/#ueber-mich', label: 'Über mich' },
-  { href: '/#ergebnisse', label: 'Ergebnisse' },
-  { href: '/#faq', label: 'FAQ' },
+  { href: url('/#leistungen'), label: 'Leistungen' },
+  { href: url('/#ablauf'), label: 'Ablauf' },
+  { href: url('/#ueber-mich'), label: 'Über mich' },
+  { href: url('/#ergebnisse'), label: 'Ergebnisse' },
+  { href: url('/#faq'), label: 'FAQ' },
 ];
 ---
 <header class="header dark">
   <div class="wrap bar">
-    <a class="brand" href="/" aria-label="ES | Schmal Unternehmensberatung, zur Startseite">
+    <a class="brand" href={url()} aria-label="ES | Schmal Unternehmensberatung, zur Startseite">
       <span class="brand-mark">ES</span>
       <span class="brand-rule" aria-hidden="true"></span>
       <span class="brand-name">Schmal Unternehmensberatung</span>

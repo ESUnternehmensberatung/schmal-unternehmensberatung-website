@@ -1,6 +1,7 @@
 ---
+import { url } from '../utils/url';
 import Text from '../layouts/Text.astro';
 ---
 <Text title="Seite nicht gefunden | ES | Schmal Unternehmensberatung" description="Diese Seite gibt es nicht." heading="Diese Seite gibt es nicht.">
-  <p>Vielleicht hat sich die Adresse geändert. <a href="/">Zur Startseite</a></p>
+  <p>Vielleicht hat sich die Adresse geändert. <a href={url()}>Zur Startseite</a></p>
 </Text>
