@@ -7,22 +7,22 @@ import { site } from '../../config/site';
 // Marktzahlen zum Mittelstand, jeweils mit Quelle (Stand: September 2026).
 const kennzahlen = [
   {
-    zahl: '20 %',
-    label: 'der Mittelständler setzen bisher KI ein',
-    quelle: 'KfW Research, Februar 2026',
-    href: 'https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-533-Februar-2026-KI-Mittelstand.pdf',
-  },
-  {
-    zahl: '30 %',
-    label: 'haben 2022 bis 2024 überhaupt ein Digitalisierungsprojekt abgeschlossen, Tendenz sinkend',
-    quelle: 'KfW-Digitalisierungsbericht Mittelstand 2025',
-    href: 'https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Digitalisierungsbericht-Mittelstand/KfW-Digitalisierungsbericht-2025.pdf',
-  },
-  {
-    zahl: '32 Std.',
+    zahl: '32\u00a0Std.',
     label: 'im Monat verbringt ein Mittelständler im Schnitt allein mit Bürokratie',
     quelle: 'KfW Research, April 2025',
     href: 'https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2025/Fokus-Nr.-495-April-2025-Buerokratie.pdf',
+  },
+  {
+    zahl: 'über 40\u00a0%',
+    label: 'der kleinen und mittleren Unternehmen können offene Stellen nicht besetzen',
+    quelle: 'DIHK-Fachkräftereport 2025/2026',
+    href: 'https://www.dihk.de/de/newsroom/dihk-legt-fachkraeftereport-2025-2026-vor-159712',
+  },
+  {
+    zahl: '58\u00a0%',
+    label: 'der Unternehmen erledigen mindestens die Hälfte ihrer Büroprozesse noch auf Papier',
+    quelle: 'Bitkom, September 2024',
+    href: 'https://www.bitkom.org/Presse/Presseinformation/4-von-10-Unternehmen-arbeiten-papierlos',
   },
 ];
 ---
@@ -70,7 +70,7 @@ const kennzahlen = [
             <span>{k.label}</span>
             <a class="quelle" href={k.href} rel="noopener" target="_blank">
               Quelle: {k.quelle}
-              <span class="visually-hidden">(PDF, öffnet in neuem Tab)</span>
+              <span class="visually-hidden">(öffnet in neuem Tab)</span>
             </a>
           </li>
         ))

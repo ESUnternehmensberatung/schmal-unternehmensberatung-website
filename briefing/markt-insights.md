@@ -44,15 +44,17 @@ Coaching (Führung), Training (Mitarbeitende).
 
 ## Mittelstandszahlen für den Hero (Recherche 09/2026)
 Nur Primärquellen, Deutschland. Auf der Website mit Quelle verlinkt.
+Reihenfolge im Hero (Entscheidung 30.09.2026): 32 Std., über 40 %, 58 %.
+Post-Ideen zu allen Zahlen: `linkedin/LinkedIn-Themenspeicher.md`.
 
 | Zahl | Aussage | Quelle | Im Hero |
 |---|---|---|---|
-| **20 %** | der Mittelständler setzen KI ein (5-fach ggü. vor 6 Jahren) | KfW Research, Fokus Nr. 533, 11.02.2026 (KfW-Mittelstandspanel 2025) | ja |
-| **30 %** | der Mittelständler haben 2022–2024 ein Digitalisierungsvorhaben abgeschlossen (−5 Pp.) | KfW-Digitalisierungsbericht Mittelstand 2025, April 2026 | ja |
-| **32 Std./Monat** | Bürokratieaufwand je Unternehmen, rund 7 % der Arbeitszeit | KfW Research, Fokus Nr. 495, 25.04.2025 | ja |
+| **20 %** | der Mittelständler setzen KI ein (5-fach ggü. vor 6 Jahren) | KfW Research, Fokus Nr. 533, 11.02.2026 (KfW-Mittelstandspanel 2025) | Reserve |
+| **30 %** | der Mittelständler haben 2022–2024 ein Digitalisierungsvorhaben abgeschlossen (−5 Pp.) | KfW-Digitalisierungsbericht Mittelstand 2025, April 2026 | Reserve |
+| **32 Std./Monat** | Bürokratieaufwand je Unternehmen, rund 7 % der Arbeitszeit | KfW Research, Fokus Nr. 495, 25.04.2025 | ja (1) |
 | 26 % / 23 % / 36 % | Unternehmen mit KI-Nutzung gesamt / 10–49 MA / 50–249 MA (2025) | Destatis, IKT-Erhebung, Nov. 2025 | Reserve |
-| 58 % | erledigen mindestens die Hälfte ihrer Büroprozesse auf Papier (38 + 14 + 6 %, ab 20 MA) | Bitkom, 24.09.2024 | Reserve |
-| über 40 % | der KMU können offene Stellen nicht besetzen (alle: 36 %) | DIHK-Fachkräftereport 2025/2026, 19.12.2025 | Reserve |
+| 58 % | erledigen mindestens die Hälfte ihrer Büroprozesse auf Papier (38 + 14 + 6 %, ab 20 MA) | Bitkom, 24.09.2024 | ja (3) |
+| über 40 % | der KMU können offene Stellen nicht besetzen (alle: 36 %) | DIHK-Fachkräftereport 2025/2026, 19.12.2025 | ja (2) |
 
 Nicht belegbar gefunden: „75 % der Arbeiten werden manuell erledigt“ – keine
 seriöse Quelle, daher nicht verwendet.
