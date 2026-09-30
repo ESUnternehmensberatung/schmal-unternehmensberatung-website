@@ -66,10 +66,8 @@ const schmerzen = [
         {
           schmerzen.map((s, i) => (
             <li class="karte" tabindex="0" data-reveal style={`--i: ${i % 3}`}>
-              <span class="label">Problem</span>
               <p class="problem">{s.problem}</p>
               <div class="loesung">
-                <span class="label">Lösung</span>
                 <div class="inhalt">
                   <p class="titel">{s.loesung}</p>
                   <p class="detail">{s.detail}</p>
@@ -161,10 +159,12 @@ const schmerzen = [
     gap: 1.25rem;
   }
 
+  /* Subgrid: Trennlinie sitzt in jeder Kartenreihe auf gleicher Höhe. */
   .karte {
     display: grid;
-    grid-template-rows: auto 1fr auto;
-    gap: 0.5rem;
+    grid-row: span 2;
+    grid-template-rows: subgrid;
+    row-gap: 1.25rem;
     padding: 1.75rem 1.75rem 2rem;
     background: var(--white);
     border: 1px solid var(--line);
@@ -175,13 +175,6 @@ const schmerzen = [
       border-color 250ms ease;
   }
 
-  .label {
-    font-size: 0.8125rem;
-    font-weight: 600;
-    letter-spacing: 0.06em;
-    color: var(--stone);
-    transition: color 250ms ease;
-  }
 
   .problem {
     font-family: var(--serif);
@@ -191,8 +184,13 @@ const schmerzen = [
     transition: color 250ms ease;
   }
 
+  .problem {
+    align-self: start;
+  }
+
   .loesung {
     display: grid;
+    align-content: start;
     gap: 0.4rem;
     padding-top: 1.25rem;
     border-top: 1px solid var(--line);
@@ -254,10 +252,6 @@ const schmerzen = [
       color: var(--white);
     }
 
-    .karte:hover .label,
-    .karte:focus-visible .label {
-      color: var(--on-dark-muted);
-    }
 
     .karte:hover .titel,
     .karte:focus-visible .titel,
