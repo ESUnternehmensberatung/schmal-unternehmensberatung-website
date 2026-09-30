@@ -4,10 +4,26 @@ import heroImg from '../../../assets/hero.png';
 import Icon from '../Icon.astro';
 import { site } from '../../config/site';
 
+// Marktzahlen zum Mittelstand, jeweils mit Quelle (Stand: September 2026).
 const kennzahlen = [
-  { zahl: '1,5 Stellen', label: 'in wenigen Wochen durch Automatisierung eingespart' },
-  { zahl: '3 Tage', label: 'Arbeit pro Monat gespart durch automatische Preisschilder' },
-  { zahl: '4 Wochen', label: 'Arbeitszeit pro Jahr gespart durch automatische Palettenbeschriftung' },
+  {
+    zahl: '20 %',
+    label: 'der Mittelständler setzen bisher KI ein',
+    quelle: 'KfW Research, Februar 2026',
+    href: 'https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-533-Februar-2026-KI-Mittelstand.pdf',
+  },
+  {
+    zahl: '30 %',
+    label: 'haben 2022 bis 2024 überhaupt ein Digitalisierungsprojekt abgeschlossen, Tendenz sinkend',
+    quelle: 'KfW-Digitalisierungsbericht Mittelstand 2025',
+    href: 'https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Digitalisierungsbericht-Mittelstand/KfW-Digitalisierungsbericht-2025.pdf',
+  },
+  {
+    zahl: '32 Std.',
+    label: 'im Monat verbringt ein Mittelständler im Schnitt allein mit Bürokratie',
+    quelle: 'KfW Research, April 2025',
+    href: 'https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2025/Fokus-Nr.-495-April-2025-Buerokratie.pdf',
+  },
 ];
 ---
 <section class="hero dark" aria-labelledby="hero-title">
@@ -30,7 +46,7 @@ const kennzahlen = [
       <p class="eyebrow">KI-Einführung, Coaching und Training für den Mittelstand</p>
       <h1 id="hero-title">Digitale Transformation im <em class="accent">Mittelstand.</em></h1>
       <p class="sub">
-        Ich verbinde 20 Jahre Führungs- und Prozesspraxis mit KI. Für spürbare Entlastung in Wochen, nicht in Jahren.
+        Ich verbinde 20 Jahre Führungs- und Prozesserfahrung mit KI. Für spürbare Ergebnisse in Wochen, nicht in Monaten.
       </p>
       <div class="actions">
         <a class="btn btn-primary" href={site.links.quickWin}>
@@ -39,18 +55,23 @@ const kennzahlen = [
         <a class="btn btn-ghost" href={site.links.angebot}>Angebot anfordern</a>
       </div>
       <p class="micro">
-        45 Minuten, kostenfrei. Sie gehen mit zwei konkreten Hebeln raus, die Ihr Team sofort entlasten.
+        Die Quick-Win-Analyse dauert 45 Minuten und ist kostenfrei. Sie gehen mit zwei konkreten Hebeln raus, die Sie
+        sofort umsetzen können.
       </p>
     </div>
   </div>
 
   <div class="figures">
-    <ul class="wrap" aria-label="Ergebnisse aus Projekten">
+    <ul class="wrap" aria-label="Zahlen zum Mittelstand">
       {
         kennzahlen.map((k) => (
           <li>
             <strong>{k.zahl}</strong>
             <span>{k.label}</span>
+            <a class="quelle" href={k.href} rel="noopener" target="_blank">
+              Quelle: {k.quelle}
+              <span class="visually-hidden">(PDF, öffnet in neuem Tab)</span>
+            </a>
           </li>
         ))
       }
@@ -181,10 +202,23 @@ const kennzahlen = [
     font-variant-numeric: lining-nums;
   }
 
-  .figures span {
+  .figures .quelle {
+    margin-top: 0.35rem;
+    font-size: 0.8125rem;
+    color: var(--on-dark-muted);
+    text-decoration-color: rgb(180 192 207 / 0.4);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .figures .quelle:hover {
+      color: var(--gold);
+    }
+  }
+
+  .figures li > span {
     font-size: 1rem;
     line-height: 1.45;
-    color: var(--on-dark-muted);
+    color: var(--on-dark);
     max-width: 22em;
   }
 

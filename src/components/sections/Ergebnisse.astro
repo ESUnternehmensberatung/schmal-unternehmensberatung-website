@@ -28,6 +28,9 @@ const faelle = [
 ];
 
 const weitere = [
+  { zahl: '1,5 Stellen', text: 'in wenigen Wochen durch Automatisierung eingespart', kontext: 'Lebensmittel-Mittelstand' },
+  { zahl: '3 Tage', text: 'Arbeit pro Monat gespart', kontext: 'Automatische Preisschilder' },
+  { zahl: '4 Wochen', text: 'Arbeitszeit pro Jahr gespart', kontext: 'Automatische Palettenbeschriftung' },
   { zahl: 'über 25 %', text: 'Zeitersparnis durch digitalisierte Kernprozesse', kontext: 'Handel und Handwerk, 70+ Mitarbeitende, mehrere Standorte' },
   { zahl: '+75 %', text: 'Erreichbarkeit im Kundenservice', kontext: 'Service Center eines Versicherers, fast 50 Mitarbeitende' },
 ];
@@ -220,14 +223,14 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
     padding: 2rem 0 0;
     border-top: 1px solid var(--line);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    gap: 2rem 2.5rem;
   }
 
   .weitere li {
-    display: flex;
-    gap: 1.25rem;
-    align-items: baseline;
+    display: grid;
+    gap: 0.35rem;
+    align-content: start;
   }
 
   .weitere strong {
@@ -314,10 +317,6 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
     }
     .weitere {
       grid-template-columns: 1fr;
-    }
-    .weitere li {
-      flex-direction: column;
-      gap: 0.25rem;
     }
   }
 </style>
