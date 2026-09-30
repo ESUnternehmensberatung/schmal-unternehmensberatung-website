@@ -53,7 +53,7 @@ Stand: 30.09.2026 · Status: `offen` · `in Arbeit` · `geplant` · `veröffentl
 
 ### B1 · 88 % nutzen KI, nur 5 % schaffen echten Wert
 - **Zahl:** 88 % der Unternehmen nutzen KI in mindestens einem Bereich (McKinsey). Nur 5 % erzielen substanziellen Wert im großen Maßstab, 60 % trotz Investitionen keinen nennenswerten Wert (BCG).
-- **Quellen:** McKinsey, *The State of AI* 2025 · BCG, *The Widening AI Value Gap*, September 2025 (Links vor Veröffentlichung ergänzen)
+- **Quellen:** [McKinsey, The State of AI 2025](https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai) · [BCG, The Widening AI Value Gap, 30.09.2025](https://www.bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings)
 - **Winkel:** Der Unterschied: durchgängig neu gestaltete Abläufe statt isolierter Pilotprojekte. Systeme statt Einzellösungen.
 - **Status:** offen · **auf der Website:** Die Lage
 
@@ -70,11 +70,26 @@ Stand: 30.09.2026 · Status: `offen` · `in Arbeit` · `geplant` · `veröffentl
 | C7 | Über 25 % Zeitersparnis durch digitalisierte Kernprozesse | Handel und Handwerk, 70+ MA | Kernprozesse zuerst | offen |
 | C8 | Erreichbarkeit +75 % | Service Center, Versicherer, fast 50 MA | Change Management mit den Menschen | offen |
 
-## D. Schmerzpunkte (Teilnehmerumfrage unter Unternehmern, 09/2026)
+## D. Schmerzpunkte und Lösungen (wie auf der Website, Sektion „Die Lage“)
 
 Je Schmerz ein Post nach dem Muster Problem, Ursache, System, Ergebnis:
-Angebote dauern zu lange · Terminvereinbarung aufwendig · Recherche aufwendig ·
-Berichterstellung aufwendig · Buchhaltung aufwendig · Akquise und Nachfassen.
+
+| # | Problem | Lösung | Status |
+|---|---|---|---|
+| D1 | Angebotserstellung dauert zu lange | Automatisierte Angebotserstellung mit Mustervorlagen | offen |
+| D2 | Terminvereinbarung ist aufwendig | Terminbuchungstools auf der Homepage oder Terminagenten | offen |
+| D3 | Zu wenig Personal für Kundenservice | Schnellbausteine oder Serviceagenten verkürzen die Bearbeitungszeit | offen |
+| D4 | Recherche und Berichterstellung sind zeitaufwendig | KI-unterstützte Recherche und automatische Berichterstellung | offen |
+| D5 | Buchhaltung bindet viele Kapazitäten | Digitalisierung des gesamten Workflows | offen |
+| D6 | Akquise geht im Tagesgeschäft unter | Automatisierte Kundenansprache mit Follow-up-System | offen |
+
+## E. Haltung
+
+### E1 · Tools zuerst oder Probleme zuerst?
+- **Kern:** Wer von den Tools her denkt, nutzt KI wie die Mehrheit, erzielt aber selten Wert. Die 5 % gehen lösungsorientiert vor: erst Problemfelder, dann Strategie, dann das passende Tool als Werkzeug, nicht als Ausgangspunkt.
+- **Beleg:** B1 (McKinsey 88 %, BCG 5 %)
+- **Hook-Idee:** „Die Frage ist nicht, welches KI-Tool Sie brauchen. Die Frage ist, welches Problem Sie lösen.“
+- **Status:** offen · **auf der Website:** Die Lage
 
 ## Regeln für Posts
 - Jede Zahl mit Quelle, keine Zahl ohne Beleg.
