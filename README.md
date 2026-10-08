@@ -1,4 +1,4 @@
-# Homepage ES | Schmal Unternehmensberatung
+# Homepage Schmal Unternehmensberatung
 
 OnePager + Blog, gebaut mit [Astro](https://astro.build) auf Basis des Briefings
 in `briefing/`, `PRODUCT.md` und `DESIGN.md`.

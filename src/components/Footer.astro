@@ -6,11 +6,11 @@ const year = new Date().getFullYear();
 <footer class="footer dark">
   <div class="wrap grid">
     <div class="brand">
-      <p class="brand-line"><span class="mark">ES</span> Schmal Unternehmensberatung</p>
-      <p class="muted-dark">Digitale Transformation und KI für den Mittelstand.</p>
+      <p class="brand-line"><strong>Schmal</strong> Unternehmensberatung</p>
+      <p>{site.claim}.</p>
     </div>
     <address>
-      {site.owner}<br />
+      Inhaber {site.owner}<br />
       {site.address[0]}<br />
       {site.address[1]}
     </address>
@@ -51,11 +51,8 @@ const year = new Date().getFullYear();
     margin-bottom: 0.5rem;
   }
 
-  .mark {
-    font-family: var(--serif);
-    font-weight: 600;
-    color: var(--gold);
-    margin-right: 0.35rem;
+  .brand-line strong {
+    font-weight: 700;
   }
 
   address {

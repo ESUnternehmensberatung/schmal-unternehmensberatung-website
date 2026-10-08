@@ -75,4 +75,4 @@ nicht im Hero/Angebot, sondern im Business-Concierge genannt.
 2. ~~Change Management~~ – als Praxiserfahrung belegt (Arbeitszeugnis).
 3. **Business-Concierge:** erste Produkte für den Blog.
 4. **Whitepaper** erstellen (eigener Schritt).
-5. **Logo** – neues Logo folgt; bis dahin Wortmarke „ES | Schmal Unternehmensberatung“ in Schrift.
+5. **Logo** – neues Logo folgt; bis dahin Wortmarke „Schmal Unternehmensberatung“ in Schrift (Umbenennung 10/2026).

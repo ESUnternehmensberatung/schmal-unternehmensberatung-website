@@ -1,12 +1,13 @@
 ---
 title: Impressum
-description: Impressum von ES | Schmal Unternehmensberatung.
+description: Impressum von Schmal Unternehmensberatung.
 quelle: "Übernommen von schmal-unternehmensberatung.de/impressum/"
 ---
 
 ## Angaben gemäß § 5 TMG
 
-Eduard Schmal  
+Schmal Unternehmensberatung  
+Inhaber Eduard Schmal  
 Im Kamp 7  
 21376 Eyendorf
 
@@ -15,7 +16,7 @@ Eduard Schmal
 
 **Kontakt:**  
 Telefon: [+49 4172 / 431 90 17](tel:+4941724319017)  
-E-Mail: [info@schmal-unternehmensberatung.de](mailto:info@schmal-unternehmensberatung.de)
+E-Mail: [es@schmal-unternehmensberatung.de](mailto:es@schmal-unternehmensberatung.de)
 
 ## Registereinträge
 

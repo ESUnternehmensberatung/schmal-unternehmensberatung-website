@@ -7,9 +7,14 @@ function mailto(subject: string, body: string) {
   return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 }
 
+// Firmendaten: einzige Quelle für Website, Impressum, strukturierte Daten und
+// Verzeichniseinträge (siehe briefing/eintraege-checkliste.md). Überall exakt so verwenden.
 export const site = {
-  name: 'ES | Schmal Unternehmensberatung',
+  name: 'Schmal Unternehmensberatung',
   owner: 'Eduard Schmal',
+  legal: 'Schmal Unternehmensberatung, Inhaber Eduard Schmal',
+  category: 'Unternehmensberatung',
+  claim: 'Digitale Transformation und KI für den Mittelstand',
   url: 'https://schmal-unternehmensberatung.de',
   email,
   phone: '+49 4172 / 431 90 17',
