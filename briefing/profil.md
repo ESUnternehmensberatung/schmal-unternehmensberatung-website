@@ -67,11 +67,12 @@ Kontrast), #1 Angebote (größter Schmerz laut Umfrage), #4 Rechnungen (Bordmitt
 | Change Management | **Praxis, belegt durch Arbeitszeugnis** (kein Zertifikat) | als Praxiserfahrung formulieren, nicht als Zertifikat |
 
 ## Change Management aus der Praxis (belegt durch Arbeitszeugnis 03/2024)
+Sprachregelung ab 10/2026: überall „fast 50 Mitarbeitende“.
 Bundesweiter Versicherer, 450+ Mitarbeitende im Innendienst (anonymisiert):
 - Projektleitung „Kundenservice“: deutschlandweite Analyse aller Standorte,
   Vernetzung der Telefonie, Projektteam ~7 MA → Entscheidung zur Gründung eines
   zentralen Service Centers
-- Aufbau und Leitung des Service Centers: rund 45 Mitarbeitende, zwei
+- Aufbau und Leitung des Service Centers: fast 50 Mitarbeitende, zwei
   Abteilungsleitungen, Berichtslinie direkt an den Vorstand
 - Steuerung von Veränderungsprozessen unter Beteiligung der Mitarbeitenden,
   Einführung einer Wertekultur, Neuordnung und Eingliederung von Teams,
@@ -81,6 +82,6 @@ Bundesweiter Versicherer, 450+ Mitarbeitende im Innendienst (anonymisiert):
 
 Website-Formulierung (Vorschlag):
 > Change Management kenne ich nicht aus dem Lehrbuch: Ich habe in einem
-> bundesweiten Versicherer ein zentrales Service Center mit rund 45
+> bundesweiten Versicherer ein zentrales Service Center mit fast 50
 > Mitarbeitenden aufgebaut – vom Projekt bis zur neuen Organisationseinheit,
 > mit den Menschen statt über sie hinweg.

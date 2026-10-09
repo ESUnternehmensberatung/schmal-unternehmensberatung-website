@@ -35,8 +35,7 @@ Führungskräfte dabei, sie zu steuern, statt von ihr getrieben zu werden.
 - Team mitnehmen: Ängste ernst nehmen, Veränderung kommunizieren
 - Neue Rollen und Verantwortlichkeiten im Umgang mit KI definieren
 
-*Beleg:* Change Management aus der Praxis – zentrales Service Center mit rund
-45 MA aufgebaut (Versicherer, bundesweit), Veränderung unter Beteiligung der
+*Beleg:* Change Management aus der Praxis – zentrales Service Center mit fast 50 MA aufgebaut (Versicherer, bundesweit), Veränderung unter Beteiligung der
 Mitarbeitenden gesteuert; Interim-Manager (70+ MA, 5 → 2 Gesellschaften).
 MBA mit Arbeits- und Organisationspsychologie · MHFA-Ersthelfer.
 

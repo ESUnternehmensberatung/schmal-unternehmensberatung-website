@@ -71,7 +71,7 @@ Vordergrund. Pflegt die Seite selbst. Deutschsprachig.
   Projektmanagement, Arbeits- und Organisationspsychologie und digitale
   Innovation · Certified International Turnaround Manager (TMS) · Betriebswirt
   (VWA) · Ausbildereignung (IHK)
-- Change Management aus der Praxis: zentrales Service Center mit rund 45 MA
+- Change Management aus der Praxis: zentrales Service Center mit fast 50 MA
   in einem bundesweiten Versicherer aufgebaut (belegt durch Arbeitszeugnis)
 - Google-Bewertungen vorhanden (Texte folgen)
 - Details: `briefing/profil.md`, `briefing/markt-insights.md`
