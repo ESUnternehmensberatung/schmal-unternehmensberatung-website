@@ -57,7 +57,7 @@ Vordergrund. Pflegt die Seite selbst. Deutschsprachig.
 - Wirkung: souverän – sicher, bodenständig, professionell; handwerklich Endlevel.
 - Fotos: `assets/hero.png` (stehend, Büro, Anzug), `assets/about.png` (sitzend, Büro).
 - Name: **Schmal Unternehmensberatung** (seit 10/2026, vorher „ES | Unternehmensberatung“). Firmendaten zentral in `src/config/site.ts`.
-- Logo: Entwürfe 10/2026 (goldene Bildmarke aus Bogensegmenten + Wortmarke). Bis die SVG-Dateien vorliegen: Wortmarke in Schrift.
+- Logo: **Bogen-Marke** gewählt (10/2026), goldene Bildmarke aus Bogensegmenten + Wortmarke „Schmal / Unternehmensberatung“. Dateien folgen in `assets/logo/` (Liste dort). Bis dahin Wortmarke in Schrift.
 
 ## Evidence on Hand
 - 1,5 Vollzeitstellen in wenigen Wochen eingespart
