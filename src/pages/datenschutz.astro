@@ -1,4 +1,5 @@
 ---
+import { site } from '../config/site';
 import { getEntry, render } from 'astro:content';
 import Text from '../layouts/Text.astro';
 
@@ -6,6 +7,6 @@ const eintrag = await getEntry('rechtliches', 'datenschutz');
 if (!eintrag) throw new Error('Datenschutzerklärung fehlt');
 const { Content } = await render(eintrag);
 ---
-<Text title="Datenschutz | ES | Schmal Unternehmensberatung" description={eintrag.data.description} heading={eintrag.data.title}>
+<Text title={`Datenschutz | ${site.name}`} description={eintrag.data.description} heading={eintrag.data.title}>
   <Content />
 </Text>

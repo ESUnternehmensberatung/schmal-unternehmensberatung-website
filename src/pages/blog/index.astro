@@ -10,7 +10,7 @@ const artikel = (await getCollection('blog', ({ data }) => !data.entwurf)).sort(
 const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' });
 ---
 <Text
-  title="Blog | ES | Schmal Unternehmensberatung"
+  title={`Blog | ${site.name}`}
   description="Erfahrungsberichte zu Werkzeugen, die ich im Mittelstand einsetze."
   heading="Blog"
 >

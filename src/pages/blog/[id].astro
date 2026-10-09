@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from 'astro:content';
 import Text from '../../layouts/Text.astro';
+import { site } from '../../config/site';
 
 export async function getStaticPaths() {
   const artikel = await getCollection('blog', ({ data }) => !data.entwurf);
@@ -12,7 +13,7 @@ const { Content } = await render(a);
 const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' }).format(a.data.datum);
 ---
 <Text
-  title={`${a.data.title} | ES | Schmal Unternehmensberatung`}
+  title={`${a.data.title} | ${site.name}`}
   description={a.data.description}
   heading={a.data.title}
   meta={`${a.data.produkt}, ${datum}`}

@@ -13,10 +13,9 @@ const nav = [
 ---
 <header class="header dark">
   <div class="wrap bar">
-    <a class="brand" href={url()} aria-label="ES | Schmal Unternehmensberatung, zur Startseite">
-      <span class="brand-mark">ES</span>
-      <span class="brand-rule" aria-hidden="true"></span>
-      <span class="brand-name">Schmal Unternehmensberatung</span>
+    <a class="brand" href={url()} aria-label={`${site.name}, zur Startseite`}>
+      <span class="brand-name">Schmal</span>
+      <span class="brand-sub">Unternehmensberatung</span>
     </a>
 
     <nav class="nav" aria-label="Hauptnavigation">
@@ -87,33 +86,29 @@ const nav = [
     min-height: 4.5rem;
   }
 
+  /* Wortmarke nach Logo-Entwurf (horizontal). Bildmarke folgt als SVG. */
   .brand {
     display: flex;
-    align-items: center;
-    gap: 0.75rem;
+    flex-direction: column;
+    gap: 0.05rem;
+    line-height: 1.1;
     text-decoration: none;
     color: var(--white);
     margin-right: auto;
   }
 
-  .brand-mark {
-    font-family: var(--serif);
-    font-size: 1.625rem;
-    font-weight: 600;
-    color: var(--gold);
-    letter-spacing: 0.02em;
-  }
-
-  .brand-rule {
-    width: 1px;
-    height: 1.5rem;
-    background: var(--line-dark);
-  }
-
   .brand-name {
-    font-size: 1rem;
-    font-weight: 500;
+    font-size: 1.375rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    color: var(--white);
+  }
+
+  .brand-sub {
+    font-size: 0.875rem;
+    font-weight: 400;
     letter-spacing: 0.01em;
+    color: var(--on-dark-muted);
   }
 
   .nav ul {
@@ -221,11 +216,8 @@ const nav = [
     .header-cta {
       display: none;
     }
-    .brand {
-      gap: 0.6rem;
-    }
     .brand-name {
-      font-size: 0.95rem;
+      font-size: 1.25rem;
     }
   }
 

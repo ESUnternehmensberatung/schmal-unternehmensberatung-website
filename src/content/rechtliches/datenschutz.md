@@ -1,6 +1,6 @@
 ---
 title: Datenschutzerklärung
-description: Datenschutzerklärung von ES | Schmal Unternehmensberatung.
+description: Datenschutzerklärung von Schmal Unternehmensberatung.
 quelle: "Übernommen von schmal-unternehmensberatung.de/privacy-policy/ (Stand der Quelle: 22. Mai 2024)"
 ---
 

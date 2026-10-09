@@ -1,6 +1,6 @@
 # Product
 
-Website von **ES | Schmal Unternehmensberatung** – Eduard Schmal, Solo-Berater
+Website von **Schmal Unternehmensberatung** – Eduard Schmal, Solo-Berater
 für digitale Transformation und KI im Mittelstand. Quelle aller Fakten:
 `briefing/`.
 
@@ -56,7 +56,8 @@ Vordergrund. Pflegt die Seite selbst. Deutschsprachig.
 - Farben: Navy `#1A3A5C` (primär), Gold `#C9A87C` (Akzent), Weiß.
 - Wirkung: souverän – sicher, bodenständig, professionell; handwerklich Endlevel.
 - Fotos: `assets/hero.png` (stehend, Büro, Anzug), `assets/about.png` (sitzend, Büro).
-- Logo: wird neu gestaltet; bis dahin Wortmarke.
+- Name: **Schmal Unternehmensberatung** (seit 10/2026, vorher „ES | Unternehmensberatung“). Firmendaten zentral in `src/config/site.ts`.
+- Logo: **Bogen-Marke** gewählt (10/2026), goldene Bildmarke aus Bogensegmenten + Wortmarke „Schmal / Unternehmensberatung“. Dateien folgen in `assets/logo/` (Liste dort). Bis dahin Wortmarke in Schrift.
 
 ## Evidence on Hand
 - 1,5 Vollzeitstellen in wenigen Wochen eingespart
@@ -70,7 +71,7 @@ Vordergrund. Pflegt die Seite selbst. Deutschsprachig.
   Projektmanagement, Arbeits- und Organisationspsychologie und digitale
   Innovation · Certified International Turnaround Manager (TMS) · Betriebswirt
   (VWA) · Ausbildereignung (IHK)
-- Change Management aus der Praxis: zentrales Service Center mit rund 45 MA
+- Change Management aus der Praxis: zentrales Service Center mit fast 50 MA
   in einem bundesweiten Versicherer aufgebaut (belegt durch Arbeitszeugnis)
 - Google-Bewertungen vorhanden (Texte folgen)
 - Details: `briefing/profil.md`, `briefing/markt-insights.md`
