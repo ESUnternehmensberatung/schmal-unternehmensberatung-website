@@ -2,3 +2,5 @@ node_modules/
 dist/
 .astro/
 .impeccable/review/
+whitepaper/.cover.pdf
+whitepaper/.rest.pdf
