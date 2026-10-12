@@ -62,11 +62,11 @@ Stand: 30.09.2026 · Status: `offen` · `in Arbeit` · `geplant` · `veröffentl
 | # | Ergebnis | Kontext | Post-Winkel | Status |
 |---|---|---|---|---|
 | C1 | Beschwerde: 2 bis 3 Std. → 10 bis 15 Min., inkl. Rücksprache und Freigabe | Prozessumbau | „Mensch entscheidet, System bereitet vor“ | offen |
-| C2 | Angebot in 1 bis 24 Std. beim Kunden | Angebotsmanagement | Geschwindigkeit gewinnt Aufträge | offen |
-| C3 | Rechnungsworkflow digitalisiert, deutlich geringere Buchhaltungskosten | mit vorhandenen Bordmitteln | „Der schnellste Hebel liegt oft schon im Haus“ | offen |
-| C4 | 1,5 Vollzeitstellen in wenigen Wochen eingespart | Lebensmittel-Mittelstand | Entlastung statt Entlassung: wohin die Zeit gegangen ist | offen |
-| C5 | Automatische Preisschilder: mind. 3 Arbeitstage pro Monat gespart | Preisauszeichnung | Kleiner Prozess, großer Effekt | offen |
-| C6 | Automatische Palettenbeschriftung: mind. 4 Wochen Arbeitszeit pro Jahr | Logistik | Unsichtbare Routine sichtbar machen | offen |
+| C2 | Angebot in 1 bis 24 Std. statt 3 bis 5 Tagen beim Kunden | Angebotsmanagement | Geschwindigkeit gewinnt Aufträge | offen |
+| C3 | Rechnungsworkflow digitalisiert: 35 % Zeitersparnis in der Buchhaltung | mit vorhandenen Bordmitteln | „Der schnellste Hebel liegt oft schon im Haus“ | offen |
+| C4 | 1,5 Vollzeitstellen in 2 Monaten eingespart | Lebensmittel-Mittelstand | Entlastung statt Entlassung: wohin die Zeit gegangen ist | offen |
+| C5 | Automatische Preisschilder statt Handschrift: 5 Arbeitstage pro Monat gespart | Preisauszeichnung | Kleiner Prozess, großer Effekt | offen |
+| C6 | Automatische Palettenetiketten: 4 Wochen Arbeitszeit pro Jahr gespart | Logistik | Unsichtbare Routine sichtbar machen | offen |
 | C7 | Über 25 % Zeitersparnis durch digitalisierte Kernprozesse | Handel und Handwerk, 70+ MA | Kernprozesse zuerst | offen |
 | C8 | Erreichbarkeit +75 % | Service Center, Versicherer, fast 50 MA | Change Management mit den Menschen | offen |
 
