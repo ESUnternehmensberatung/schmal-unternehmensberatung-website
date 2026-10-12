@@ -51,7 +51,7 @@ dunkle Sektionen sind feste Navy-Deep-Flächen, kein Theme-Wechsel.
   5. Über mich – Porträt sticky links, Prinzipien, Change-Zitat, Qualifikationen
   6. Ergebnisse – Methodenleiste, Vorher/Nachher-Karten als Karussell (`src/components/Karussell.astro`) (weiße Karten, Navy-Kante),
      Google-Bewertungen (erscheinen automatisch, sobald eingetragen)
-  7. Business-Concierge – Text + Empfehlungskarte mit Provisionshinweis
+  7. Business-Concierge – Register nach Themen (Zeilen zum Aufklappen, Kennzeichen Tool/Partner), Daten in `src/data/concierge.ts`
   8. FAQ – sticky Überschrift + Accordion (`details`)
   9. Whitepaper – schmales Band
   10. Abschluss-CTA – dunkel, beide Handlungen + Direktkontakt

@@ -9,6 +9,20 @@ function mailto(subject: string, body: string) {
 
 // Firmendaten: einzige Quelle für Website, Impressum, strukturierte Daten und
 // Verzeichniseinträge (siehe briefing/eintraege-checkliste.md). Überall exakt so verwenden.
+// Concierge: Empfehlungen ohne eigenen Partnerlink laufen über ein Formular,
+// damit die Anfrage nachweislich über mich kommt. Sobald das Jotform-Formular
+// steht, hier die URL eintragen; der Name der Empfehlung wird per URL-Parameter
+// „empfehlung“ vorausgefüllt (Feldname in Jotform entsprechend anlegen).
+const jotformEmpfehlung = '';
+
+export function empfehlungAnfrage(name: string) {
+  if (jotformEmpfehlung) return `${jotformEmpfehlung}?empfehlung=${encodeURIComponent(name)}`;
+  return mailto(
+    `Empfehlung: ${name}`,
+    `Guten Tag Herr Schmal,\n\nich interessiere mich für ${name} und bitte um Kontakt.\n\nName:\nFirma:\nTelefon:\nAnliegen:\n\nViele Grüße\n`,
+  );
+}
+
 export const site = {
   name: 'Schmal Unternehmensberatung',
   owner: 'Eduard Schmal',

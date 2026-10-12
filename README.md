@@ -18,6 +18,7 @@ npm run build    # statische Seite nach dist/
 | Links für Terminbuchung, Angebot, Whitepaper, Google-Profil, Kontakt | `src/config/site.ts` |
 | Texte der Startseite (je Sektion) | `src/components/sections/*.astro` |
 | FAQ | `src/content/faq/*.md` (eine Datei pro Frage) |
+| Business-Concierge (Empfehlungen, Partnerlinks) | `src/data/concierge.ts`, Formular-URL in `src/config/site.ts` |
 | Google-Bewertungen | `src/data/bewertungen.ts` (leer = Sektion ausgeblendet) |
 | Blogartikel (Business-Concierge) | `src/content/blog/*.md` – Vorlage in `README.txt` |
 | Impressum, Datenschutz | `src/content/rechtliches/*.md` |
