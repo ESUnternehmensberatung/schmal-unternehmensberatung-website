@@ -25,7 +25,7 @@ npm run build    # statische Seite nach dist/
 | Fotos | `assets/hero.png`, `assets/about.png` (werden beim Build als AVIF/WebP optimiert) |
 
 Die Buttons öffnen vorerst eine vorbereitete E-Mail an
-es@schmal-unternehmensberatung.de. Sobald Jotform und die Google-Terminbuchung
+info@schmal-unternehmensberatung.de. Sobald Jotform und die Google-Terminbuchung
 stehen, nur die URLs in `src/config/site.ts` ersetzen.
 
 ## Veröffentlichen

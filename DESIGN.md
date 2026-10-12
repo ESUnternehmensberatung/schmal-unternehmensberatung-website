@@ -52,15 +52,15 @@ dunkle Sektionen sind feste Navy-Deep-Flächen, kein Theme-Wechsel.
   6. Ergebnisse – Methodenleiste, Vorher/Nachher-Karten als Karussell (`src/components/Karussell.astro`) (weiße Karten, Navy-Kante),
      Google-Bewertungen (erscheinen automatisch, sobald eingetragen)
   7. Business-Concierge – Register nach Themen (Zeilen zum Aufklappen, Kennzeichen Tool/Partner), Daten in `src/data/concierge.ts`
-  8. FAQ – sticky Überschrift + Accordion (`details`)
-  9. Whitepaper – schmales Band
+  8. FAQ – mittleres Navy (`--navy`), sticky Überschrift + Accordion (`details`)
+  9. Whitepaper – PDF-Cover-Vorschau (CSS, Navy mit Gold) + Text, Button zum Jotform-Formular
   10. Abschluss-CTA – dunkel, beide Handlungen + Direktkontakt
 - Mobil: alle Raster einspaltig ab 900–960 px, Hero-Foto oben (4 : 3).
 
 ## Komponenten
 - Buttons: `.btn-primary` (Gold), `.btn-ghost` (auf dunkel), `.btn-outline`
   (auf hell), `.btn-navy`. Ein Label pro Absicht: „Quick-Win-Analyse anfragen“,
-  „Angebot anfordern“, „Whitepaper vormerken“.
+  „Angebot anfordern“, „Whitepaper anfordern“.
 - Icons: Phosphor (regular, `src/icons`), eine Familie.
 - Fokus: 2 px Gold-Deep-Outline (auf dunkel Gold).
 

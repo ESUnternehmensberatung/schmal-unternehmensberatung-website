@@ -15,8 +15,8 @@ Im Kamp 7
 Eduard Schmal
 
 **Kontakt:**  
-Telefon: [+49 4172 / 431 90 17](tel:+4941724319017)  
-E-Mail: [es@schmal-unternehmensberatung.de](mailto:es@schmal-unternehmensberatung.de)
+Telefon: [+49 1522 685 95 24](tel:+4915226859524)  
+E-Mail: [info@schmal-unternehmensberatung.de](mailto:info@schmal-unternehmensberatung.de)
 
 ## Registereinträge
 

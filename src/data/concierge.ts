@@ -22,8 +22,8 @@ export const gruppen: { titel: string; eintraege: Empfehlung[] }[] = [
       {
         name: 'DevCTRL',
         art: 'Tool',
-        text: 'KI-Assistent für Teams mit eingebauter Kontrolle: Freigaben für kritische Aktionen, Schutz sensibler Daten, lückenlose Protokolle.',
-        einsatz: 'Wenn KI echte Aufgaben übernehmen soll und Datenschutz und Compliance mitreden müssen.',
+        text: 'Governance- und Compliance-Plattform für KI-Agenten: eine Kontrollebene zwischen KI und Ihren internen Systemen.',
+        einsatz: 'Wenn KI-Agenten echte Aufgaben übernehmen sollen. Regeln in Klartext („Zahlungen über 1.000 € brauchen eine Freigabe“), Zugriff nur für die jeweilige Aufgabe, Maskierung sensibler Daten und lückenloser Audit-Trail nach EU-KI-Verordnung. Devctrl GmbH, Hamburg.',
       },
       {
         name: 'Jotform',
@@ -33,6 +33,7 @@ export const gruppen: { titel: string; eintraege: Empfehlung[] }[] = [
       },
       {
         name: 'Perspective',
+        // Partnerlink vorhanden: hier als partnerlink eintragen.
         art: 'Tool',
         text: 'Funnel-Builder für mobile Landingpages mit eingebauter Kontaktverwaltung.',
         einsatz: 'Für Kampagnen, die aus Anzeigen oder Social Media direkt qualifizierte Anfragen machen sollen.',
@@ -60,10 +61,10 @@ export const gruppen: { titel: string; eintraege: Empfehlung[] }[] = [
     titel: 'Datenschutz und Sicherheit',
     eintraege: [
       {
-        name: 'Insecco',
+        name: 'INSECCO',
         art: 'Partner',
-        text: 'Datenschutz und Informationssicherheit für den Mittelstand.',
-        einsatz: 'Damit KI-Projekte und neue Prozesse von Anfang an rechtssicher aufgestellt sind.',
+        text: 'Datenschutz und Informationssicherheit: externer Datenschutzbeauftragter, Cyber-Risikocheck für KMU, Hinweisgebersystem.',
+        einsatz: 'Damit KI-Projekte und neue Prozesse von Anfang an rechtssicher aufgestellt sind. Eine Marke der Alsterbyte IT Solutions GmbH, Lüneburg.',
       },
     ],
   },
@@ -71,10 +72,10 @@ export const gruppen: { titel: string; eintraege: Empfehlung[] }[] = [
     titel: 'Förderung und Weiterbildung',
     eintraege: [
       {
-        name: 'Propero',
+        name: 'PROSPERO Unternehmensberatung',
         art: 'Partner',
-        text: 'Kooperationspartner für BAFA-geförderte Unternehmensberatungen.',
-        einsatz: 'Ein Teil der Beratungskosten kann über das BAFA bezuschusst werden. Den Antrag stellen wir vor Beratungsbeginn.',
+        text: 'Kooperationspartner bei BAFA-geförderten Beratungen. Berater für den Mittelstand seit 1997, Hamburg.',
+        einsatz: 'Für BAFA-geförderte Beratungen sowie Themen wie Unternehmensnachfolge, Finanzierung und Wirtschaftsmediation.',
       },
       {
         name: 'Fördermittel-Finder',

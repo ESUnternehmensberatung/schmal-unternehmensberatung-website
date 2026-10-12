@@ -11,12 +11,12 @@ Zeichen für Zeichen. Quelle der Wahrheit ist `src/config/site.ts`.
 | Inhaber | Eduard Schmal |
 | Straße | Im Kamp 7 |
 | PLZ, Ort | 21376 Eyendorf |
-| Telefon | +49 4172 4319017 |
-| E-Mail | es@schmal-unternehmensberatung.de |
+| Telefon | +49 1522 6859524 |
+| E-Mail | info@schmal-unternehmensberatung.de |
 | Website | https://schmal-unternehmensberatung.de |
 | Hauptkategorie | Unternehmensberatung |
 | Weitere Kategorien | IT-Beratung, Schulungen/Weiterbildung (falls angeboten) |
-| Nicht mehr verwenden | „ES \| Unternehmensberatung“, „Schmal ES / Unternehmens- und Finanzberatung“, „Eduard Schmal -Unternehmensberatung-“, info@…, Mobilnummer als Hauptnummer |
+| Nicht mehr verwenden | „ES \| Unternehmensberatung“, „Schmal ES / Unternehmens- und Finanzberatung“, „Eduard Schmal -Unternehmensberatung-“, es@… und Festnetz (+49 4172 4319017) als Hauptkontakt |
 
 **Kurzbeschreibung (bis 160 Zeichen)**
 > KI-Einführung, Coaching und Training für den Mittelstand. Quick Wins zuerst, dann Systeme, die Ihr Team dauerhaft entlasten.
@@ -27,7 +27,7 @@ Zeichen für Zeichen. Quelle der Wahrheit ist `src/config/site.ts`.
 ## Vor dem Start klären
 - [ ] **Maklertätigkeit (§ 34c, 34d, 34i GewO):** Wird sie noch ausgeübt? Falls nein, bei der IHK Lüneburg-Wolfsburg abmelden, Impressum anpassen und überall die Kategorie „Versicherungsmakler“ entfernen.
 - [ ] **Gewerbeamt:** kurz nachfragen, ob für die neue Geschäftsbezeichnung eine Gewerbeummeldung nötig ist.
-- [ ] **Telefon und E-Mail:** Bitte bestätigen. Ich habe Festnetz und es@ als Standard gesetzt.
+- [x] **Telefon und E-Mail:** info@ und Mobilnummer (Stand 10/2026).
 
 ## Plattformen (in dieser Reihenfolge, die ersten drei haben den größten Hebel)
 

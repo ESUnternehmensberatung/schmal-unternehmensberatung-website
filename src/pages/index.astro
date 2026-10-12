@@ -18,7 +18,7 @@ const jsonLd = {
   founder: { '@type': 'Person', name: site.owner },
   url: site.url,
   email: site.email,
-  telephone: '+4941724319017',
+  telephone: site.phoneHref.replace('tel:', ''),
   address: {
     '@type': 'PostalAddress',
     streetAddress: 'Im Kamp 7',

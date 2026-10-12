@@ -1,7 +1,7 @@
 // Zentrale Einstellungen. Sobald Google-Terminbuchung und Jotform-Formulare
 // stehen, hier die URLs eintragen – alle Buttons der Seite ziehen automatisch mit.
 
-const email = 'es@schmal-unternehmensberatung.de';
+const email = 'info@schmal-unternehmensberatung.de';
 
 function mailto(subject: string, body: string) {
   return `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -13,7 +13,7 @@ function mailto(subject: string, body: string) {
 // damit die Anfrage nachweislich über mich kommt. Sobald das Jotform-Formular
 // steht, hier die URL eintragen; der Name der Empfehlung wird per URL-Parameter
 // „empfehlung“ vorausgefüllt (Feldname in Jotform entsprechend anlegen).
-const jotformEmpfehlung = '';
+const jotformEmpfehlung = 'https://form.jotform.com/262843738420056';
 
 export function empfehlungAnfrage(name: string) {
   if (jotformEmpfehlung) return `${jotformEmpfehlung}?empfehlung=${encodeURIComponent(name)}`;
@@ -31,8 +31,8 @@ export const site = {
   claim: 'Digitale Transformation und KI für den Mittelstand',
   url: 'https://schmal-unternehmensberatung.de',
   email,
-  phone: '+49 4172 / 431 90 17',
-  phoneHref: 'tel:+4941724319017',
+  phone: '+49 1522 685 95 24',
+  phoneHref: 'tel:+4915226859524',
   address: ['Im Kamp 7', '21376 Eyendorf'],
 
   links: {
@@ -51,12 +51,8 @@ export const site = {
       'Guten Tag Herr Schmal,\n\nbitte senden Sie mir ein Angebot.\n\n' +
         'Name:\nFirma:\nMitarbeiterzahl:\nAnliegen:\n\nViele Grüße\n',
     ),
-    // Später: Jotform Whitepaper-Download mit Double-Opt-in.
-    whitepaper: mailto(
-      'Whitepaper vormerken',
-      'Guten Tag Herr Schmal,\n\nbitte senden Sie mir das Whitepaper „Die 5 größten Fehler bei der digitalen Transformation im Mittelstand“, sobald es erscheint.\n\n' +
-        'Name:\nFirma:\n\nMir ist bekannt, dass ich diese Einwilligung jederzeit widerrufen kann.\n\nViele Grüße\n',
-    ),
+    // Jotform: Whitepaper anfordern (Feld „quelle“ per URL vorbelegt).
+    whitepaper: 'https://form.jotform.com/262843975491067?quelle=website',
     // Link zum Google-Unternehmensprofil (für die Bewertungen). Leer = Sektion ausgeblendet.
     googleProfil: '',
   },
