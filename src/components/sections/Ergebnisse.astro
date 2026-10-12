@@ -1,9 +1,10 @@
 ---
 import Icon from '../Icon.astro';
+import Karussell from '../Karussell.astro';
 import { bewertungen } from '../../data/bewertungen';
 import { site } from '../../config/site';
 
-// Neue Fälle einfach als weiteres Objekt ergänzen; das Raster bricht automatisch um.
+// Neue Fälle einfach als weiteres Objekt ergänzen; Karussell und Zähler passen sich an.
 const faelle = [
   {
     thema: 'Rechnungswesen',
@@ -57,36 +58,38 @@ const weitere = [
 const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und automatisieren', 'Testen', 'Produktiv setzen'];
 ---
 <section class="section ergebnisse" id="ergebnisse" aria-labelledby="ergebnisse-title">
-  <div class="wrap">
-    <h2 id="ergebnisse-title" data-reveal>Vorher, nachher. Aus echten Projekten.</h2>
-    <p class="lead muted" data-reveal style="--i: 1">
-      Kundennamen nenne ich nicht. Die Ergebnisse sind trotzdem belegbar, und jedes folgte demselben Weg:
-    </p>
+  <Karussell id="ergebnisse" anzahl={faelle.length} label="Ergebnisse" breite="25rem">
+    <div class="intro" slot="kopf">
+      <h2 id="ergebnisse-title" data-reveal>Vorher, nachher. Aus echten Projekten.</h2>
+      <p class="lead muted" data-reveal style="--i: 1">
+        Kundennamen nenne ich nicht. Die Ergebnisse sind trotzdem belegbar, und jedes folgte demselben Weg:
+      </p>
 
-    <ol class="methode" data-reveal style="--i: 2" aria-label="Vorgehen in jedem Projekt">
-      {methode.map((m) => <li>{m}</li>)}
-    </ol>
-
-    <div class="faelle">
-      {
-        faelle.map((f, i) => (
-          <article class="fall" data-reveal style={`--i: ${i}`}>
-            <h3>{f.thema}</h3>
-            <div class="vorher">
-              <span class="label">Vorher</span>
-              <p>{f.vorher}</p>
-            </div>
-            <p class="loesung">{f.loesung}</p>
-            <div class="nachher">
-              <span class="label">Nachher</span>
-              <p class="wert">{f.nachher}</p>
-              <p class="einheit">{f.einheit}</p>
-            </div>
-          </article>
-        ))
-      }
+      <ol class="methode" data-reveal style="--i: 2" aria-label="Vorgehen in jedem Projekt">
+        {methode.map((m) => <li>{m}</li>)}
+      </ol>
     </div>
 
+    {
+      faelle.map((f, i) => (
+        <li class="fall" aria-label={`${i + 1} von ${faelle.length}: ${f.thema}`}>
+          <h3>{f.thema}</h3>
+          <div class="vorher">
+            <span class="label">Vorher</span>
+            <p>{f.vorher}</p>
+          </div>
+          <p class="loesung">{f.loesung}</p>
+          <div class="nachher">
+            <span class="label">Nachher</span>
+            <p class="wert">{f.nachher}</p>
+            <p class="einheit">{f.einheit}</p>
+          </div>
+        </li>
+      ))
+    }
+  </Karussell>
+
+  <div class="wrap">
     <ul class="weitere">
       {
         weitere.map((w) => (
@@ -166,34 +169,15 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
     color: var(--gold-deep);
   }
 
-  .faelle {
-    margin-top: clamp(3rem, 6vw, 4.5rem);
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    border-top: 2px solid var(--navy);
-  }
-
-  /* Subgrid: „Nachher“ steht in jeder Reihe auf derselben Höhe. */
   .fall {
-    display: grid;
-    grid-row: span 4;
-    grid-template-rows: subgrid;
-    row-gap: 1.25rem;
-    padding: 2rem clamp(1.25rem, 2.5vw, 2.5rem) 2.25rem;
-    border-left: 1px solid var(--line);
-  }
-
-  .fall:nth-child(3n + 1) {
-    border-left: 0;
-    padding-left: 0;
-  }
-
-  .fall:nth-child(3n) {
-    padding-right: 0;
-  }
-
-  .fall:nth-child(n + 4) {
-    border-top: 1px solid var(--line);
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: clamp(1.75rem, 3vw, 2.25rem);
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-top: 3px solid var(--navy);
+    border-radius: var(--radius);
   }
 
   .fall h3 {
@@ -219,6 +203,7 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
   }
 
   .nachher {
+    margin-top: auto;
     padding-top: 1.25rem;
     border-top: 1px solid var(--line);
   }
@@ -236,7 +221,10 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
     font-variant-numeric: lining-nums;
   }
 
+  /* Zwei Zeilen reserviert, damit „Nachher“ in allen Karten auf einer Höhe steht. */
   .einheit {
+    min-height: 3em;
+    line-height: 1.5;
     margin-top: 0.4rem;
     font-size: 1rem;
     color: var(--stone);
@@ -327,19 +315,6 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
   }
 
   @media (max-width: 960px) {
-    .faelle {
-      grid-template-columns: 1fr;
-    }
-    .fall,
-    .fall:nth-child(3n + 1),
-    .fall:nth-child(3n) {
-      padding: 2rem 0;
-      border-left: 0;
-      border-top: 1px solid var(--line);
-    }
-    .fall:first-child {
-      border-top: 0;
-    }
     .weitere {
       grid-template-columns: 1fr;
     }

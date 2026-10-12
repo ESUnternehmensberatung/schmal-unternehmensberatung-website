@@ -1,0 +1,236 @@
+---
+// Wiederverwendbares Karussell: Kopf (Slot „kopf“) mit Pfeilen und Zähler,
+// darunter eine seitlich blätternde Leiste aus <li>-Karten (Standard-Slot).
+// Ohne JavaScript bleibt die Leiste einfach seitlich scrollbar.
+import Icon from './Icon.astro';
+
+interface Props {
+  id: string;
+  anzahl: number;
+  label: string; // Plural, z. B. „Leistungen“ – für Screenreader
+  breite?: string; // Kartenbreite am Desktop
+}
+const { id, anzahl, label, breite = '36rem' } = Astro.props;
+const trackId = `${id}-track`;
+---
+<div class="karussell" data-karussell style={`--karte-breite: ${breite}`}>
+  <div class="wrap kopf">
+    <div class="kopf-text"><slot name="kopf" /></div>
+
+    <div class="steuerung" data-reveal style="--i: 2">
+      <p class="zaehler" aria-hidden="true">
+        <span data-aktuell>01</span> / {String(anzahl).padStart(2, '0')}
+      </p>
+      <button type="button" class="pfeil" data-zurueck aria-controls={trackId} aria-label={`${label}: zurückblättern`}>
+        <Icon name="arrow-left" />
+      </button>
+      <button type="button" class="pfeil" data-weiter aria-controls={trackId} aria-label={`${label}: weiterblättern`}>
+        <Icon name="arrow-right" />
+      </button>
+    </div>
+  </div>
+
+  <ol class="track" id={trackId} tabindex="0" aria-label={`${label}, seitlich blättern`} data-reveal style="--i: 2">
+    <slot />
+  </ol>
+
+  <div class="wrap">
+    <div class="fortschritt" aria-hidden="true"><span></span></div>
+  </div>
+</div>
+
+<script>
+  const ruhig = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-karussell]')) {
+    const track = root.querySelector<HTMLElement>('.track')!;
+    const karten = [...track.children] as HTMLElement[];
+    const zurueck = root.querySelector<HTMLButtonElement>('[data-zurueck]')!;
+    const weiter = root.querySelector<HTMLButtonElement>('[data-weiter]')!;
+    const aktuell = root.querySelector<HTMLElement>('[data-aktuell]')!;
+    const balken = root.querySelector<HTMLElement>('.fortschritt span')!;
+    if (!karten.length) continue;
+
+    const schritt = () => karten[0].offsetWidth + parseFloat(getComputedStyle(track).columnGap || '0');
+
+    const update = () => {
+      const max = track.scrollWidth - track.clientWidth;
+      const pos = track.scrollLeft;
+      const index = max <= 1 ? 0 : pos >= max - 2 ? karten.length - 1 : Math.round(pos / schritt());
+      aktuell.textContent = String(index + 1).padStart(2, '0');
+      zurueck.disabled = pos <= 2;
+      weiter.disabled = pos >= max - 2;
+      const sichtbar = max <= 0 ? 1 : track.clientWidth / track.scrollWidth;
+      balken.style.width = `${sichtbar * 100}%`;
+      balken.style.transform = `translateX(${max <= 0 ? 0 : (pos / max) * ((1 - sichtbar) / sichtbar) * 100}%)`;
+    };
+
+    const blaettern = (richtung: number) =>
+      track.scrollBy({ left: richtung * schritt(), behavior: ruhig.matches ? 'auto' : 'smooth' });
+
+    zurueck.addEventListener('click', () => blaettern(-1));
+    weiter.addEventListener('click', () => blaettern(1));
+    track.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight') {
+        e.preventDefault();
+        blaettern(1);
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        blaettern(-1);
+      }
+    });
+    track.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+  }
+</script>
+
+<style>
+  .karussell {
+    overflow: hidden;
+  }
+
+  .kopf {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem 3rem;
+    margin-bottom: clamp(2.5rem, 5vw, 4rem);
+  }
+
+  .kopf-text {
+    max-width: 50rem;
+  }
+
+  /* Steuerung nur mit JavaScript. */
+  .steuerung {
+    display: none;
+    align-items: center;
+    gap: 0.75rem;
+    flex: none;
+  }
+
+  :global(.js) .steuerung {
+    display: flex;
+  }
+
+  .zaehler {
+    margin-right: 0.75rem;
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    color: var(--stone);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+
+  .zaehler span {
+    color: var(--navy);
+  }
+
+  .pfeil {
+    display: grid;
+    place-items: center;
+    width: 3.25rem;
+    height: 3.25rem;
+    border: 1px solid var(--navy);
+    border-radius: 50%;
+    background: transparent;
+    color: var(--navy);
+    cursor: pointer;
+    transition:
+      background-color 200ms var(--ease-out),
+      color 200ms var(--ease-out),
+      opacity 200ms var(--ease-out),
+      transform 160ms var(--ease-out);
+  }
+
+  .pfeil :global(svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+
+  .pfeil:active:not(:disabled) {
+    transform: scale(0.94);
+  }
+
+  .pfeil:disabled {
+    opacity: 0.3;
+    cursor: default;
+  }
+
+  .pfeil:focus-visible {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: 3px;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .pfeil:hover:not(:disabled) {
+      background: var(--navy);
+      color: var(--white);
+    }
+  }
+
+  /* Leiste läuft rechts bis an den Bildschirmrand, links bündig mit dem Raster. */
+  .track {
+    --rand: max(var(--gutter), calc((100% - var(--max)) / 2 + var(--gutter)));
+    list-style: none;
+    margin: 0;
+    padding: 0.25rem var(--rand) 0.5rem;
+    scroll-padding-inline: var(--rand);
+    display: flex;
+    gap: clamp(1rem, 2vw, 1.75rem);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    overscroll-behavior-x: contain;
+  }
+
+  .track > :global(*) {
+    flex: 0 0 min(var(--karte-breite), 86%);
+    scroll-snap-align: start;
+  }
+
+  .track:focus-visible {
+    outline: 2px solid var(--gold-deep);
+    outline-offset: -2px;
+  }
+
+  :global(.js) .track {
+    scrollbar-width: none;
+  }
+
+  :global(.js) .track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .fortschritt {
+    display: none;
+    height: 2px;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    background: var(--line);
+    overflow: hidden;
+  }
+
+  :global(.js) .fortschritt {
+    display: block;
+  }
+
+  .fortschritt span {
+    display: block;
+    height: 100%;
+    width: 50%;
+    background: var(--navy);
+  }
+
+  @media (max-width: 720px) {
+    .kopf {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .track {
+      scroll-behavior: smooth;
+    }
+  }
+</style>
