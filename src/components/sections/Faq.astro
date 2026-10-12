@@ -5,9 +5,9 @@ import Icon from '../Icon.astro';
 const eintraege = (await getCollection('faq')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
 const fragen = await Promise.all(eintraege.map(async (e) => ({ frage: e.data.frage, ...(await render(e)) })));
 ---
-<section class="section faq" id="faq" aria-labelledby="faq-title">
+<section class="section faq dark" id="faq" aria-labelledby="faq-title">
   <div class="wrap grid">
-    <h2 id="faq-title" data-reveal>Was Geschäftsführer mich vorher fragen</h2>
+    <h2 id="faq-title" data-reveal>Was ich dazu immer gefragt werde</h2>
 
     <div class="liste">
       {
@@ -28,6 +28,11 @@ const fragen = await Promise.all(eintraege.map(async (e) => ({ frage: e.data.fra
 </section>
 
 <style>
+  /* Mittleres Navy: hebt sich vom hellen Concierge und vom dunklen Abschluss ab. */
+  .faq {
+    background: var(--navy);
+  }
+
   .grid {
     display: grid;
     grid-template-columns: 5fr 7fr;
@@ -41,11 +46,11 @@ const fragen = await Promise.all(eintraege.map(async (e) => ({ frage: e.data.fra
   }
 
   .liste {
-    border-top: 1px solid var(--line);
+    border-top: 1px solid var(--line-dark);
   }
 
   details {
-    border-bottom: 1px solid var(--line);
+    border-bottom: 1px solid var(--line-dark);
   }
 
   summary {
@@ -59,7 +64,7 @@ const fragen = await Promise.all(eintraege.map(async (e) => ({ frage: e.data.fra
     font-family: var(--serif);
     font-size: var(--step-1);
     line-height: 1.35;
-    color: var(--navy);
+    color: var(--white);
   }
 
   summary::-webkit-details-marker {
@@ -70,7 +75,7 @@ const fragen = await Promise.all(eintraege.map(async (e) => ({ frage: e.data.fra
     width: 1.35rem;
     height: 1.35rem;
     flex: none;
-    color: var(--gold-deep);
+    color: var(--gold);
     transition: transform 250ms var(--ease-out);
   }
 
@@ -88,7 +93,7 @@ const fragen = await Promise.all(eintraege.map(async (e) => ({ frage: e.data.fra
 
   .antwort {
     padding: 0 3rem 1.75rem 0;
-    color: var(--ink);
+    color: var(--on-dark-muted);
     max-width: 40em;
   }
 

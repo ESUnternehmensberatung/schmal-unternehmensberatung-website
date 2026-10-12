@@ -1,6 +1,7 @@
 ---
 // Wiederverwendbares Karussell: Kopf (Slot „kopf“) mit Pfeilen und Zähler,
 // darunter eine seitlich blätternde Leiste aus <li>-Karten (Standard-Slot).
+// Endlos: hinter der letzten Karte folgt wieder die erste (und umgekehrt).
 // Ohne JavaScript bleibt die Leiste einfach seitlich scrollbar.
 import Icon from './Icon.astro';
 
@@ -58,15 +59,18 @@ const trackId = `${id}-track`;
       const pos = track.scrollLeft;
       const index = max <= 1 ? 0 : pos >= max - 2 ? karten.length - 1 : Math.round(pos / schritt());
       aktuell.textContent = String(index + 1).padStart(2, '0');
-      zurueck.disabled = pos <= 2;
-      weiter.disabled = pos >= max - 2;
       const sichtbar = max <= 0 ? 1 : track.clientWidth / track.scrollWidth;
       balken.style.width = `${sichtbar * 100}%`;
       balken.style.transform = `translateX(${max <= 0 ? 0 : (pos / max) * ((1 - sichtbar) / sichtbar) * 100}%)`;
     };
 
-    const blaettern = (richtung: number) =>
-      track.scrollBy({ left: richtung * schritt(), behavior: ruhig.matches ? 'auto' : 'smooth' });
+    const blaettern = (richtung: number) => {
+      const behavior = ruhig.matches ? 'auto' : 'smooth';
+      const max = track.scrollWidth - track.clientWidth;
+      if (richtung > 0 && track.scrollLeft >= max - 2) return track.scrollTo({ left: 0, behavior });
+      if (richtung < 0 && track.scrollLeft <= 2) return track.scrollTo({ left: max, behavior });
+      track.scrollBy({ left: richtung * schritt(), behavior });
+    };
 
     zurueck.addEventListener('click', () => blaettern(-1));
     weiter.addEventListener('click', () => blaettern(1));
@@ -141,7 +145,6 @@ const trackId = `${id}-track`;
     transition:
       background-color 200ms var(--ease-out),
       color 200ms var(--ease-out),
-      opacity 200ms var(--ease-out),
       transform 160ms var(--ease-out);
   }
 
@@ -150,13 +153,8 @@ const trackId = `${id}-track`;
     height: 1.25rem;
   }
 
-  .pfeil:active:not(:disabled) {
+  .pfeil:active {
     transform: scale(0.94);
-  }
-
-  .pfeil:disabled {
-    opacity: 0.3;
-    cursor: default;
   }
 
   .pfeil:focus-visible {
@@ -165,7 +163,7 @@ const trackId = `${id}-track`;
   }
 
   @media (hover: hover) and (pointer: fine) {
-    .pfeil:hover:not(:disabled) {
+    .pfeil:hover {
       background: var(--navy);
       color: var(--white);
     }

@@ -2,14 +2,41 @@
 import Icon from '../Icon.astro';
 import { site } from '../../config/site';
 ---
-<section class="whitepaper" aria-labelledby="whitepaper-title">
-  <div class="wrap row" data-reveal>
-    <div>
-      <p class="kontext">Noch nicht bereit für ein Gespräch?</p>
-      <h2 id="whitepaper-title">Whitepaper: Die 5 größten Fehler bei der digitalen Transformation im Mittelstand</h2>
-      <p class="muted">Erscheint in Kürze. Merken Sie sich vor, dann erhalten Sie es per E-Mail, sobald es fertig ist.</p>
+<section class="whitepaper" id="whitepaper" aria-labelledby="whitepaper-title">
+  <div class="wrap wp-grid">
+    <div class="cover-buehne" data-reveal aria-hidden="true">
+      <div class="seite seite-2"></div>
+      <div class="seite seite-1"></div>
+      <div class="cover">
+        <p class="cover-label">Whitepaper</p>
+        <p class="cover-titel">
+          <span class="cover-zahl">5</span>
+          Gründe, warum die meisten KI-Projekte bei Mittelständlern und Freiberuflern <em>scheitern</em>
+        </p>
+        <div class="cover-fuss">
+          <span><strong>Schmal</strong> Unternehmensberatung</span>
+          <span>{new Date().getFullYear()}</span>
+        </div>
+      </div>
     </div>
-    <a class="btn btn-outline" href={site.links.whitepaper}>Whitepaper vormerken</a>
+
+    <div class="wp-text">
+      <p class="kontext" data-reveal>Noch nicht bereit für ein Gespräch?</p>
+      <h2 id="whitepaper-title" data-reveal style="--i: 1">
+        5 Gründe, warum die meisten KI-Projekte bei Mittelständlern und Freiberuflern scheitern
+      </h2>
+      <p class="beschreibung" data-reveal style="--i: 2">
+        Die häufigsten Stolpersteine aus meiner Praxis und wie Sie sie vermeiden. Kompakt als PDF, kostenfrei per
+        E-Mail.
+      </p>
+      <div class="wp-aktion" data-reveal style="--i: 3">
+        <a class="btn btn-primary" href={site.links.whitepaper} target="_blank" rel="noopener">
+          Whitepaper anfordern <Icon name="arrow-right" />
+          <span class="visually-hidden">(öffnet in neuem Tab)</span>
+        </a>
+        <p class="klein">Kostenfrei. Abmeldung jederzeit möglich.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -42,31 +69,146 @@ import { site } from '../../config/site';
 <style>
   .whitepaper {
     background: var(--ivory);
-    padding-block: clamp(3.5rem, 6vw, 5rem);
+    padding-block: var(--section);
     border-top: 1px solid var(--line);
+    overflow: hidden;
   }
 
-  .row {
-    display: flex;
+  .wp-grid {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(3rem, 7vw, 7rem);
     align-items: center;
+  }
+
+  /* PDF-Vorschau: Cover mit zwei angedeuteten Seiten dahinter */
+  .cover-buehne {
+    position: relative;
+    width: min(100%, 22rem);
+    justify-self: center;
+    aspect-ratio: 1 / 1.414;
+  }
+
+  .seite,
+  .cover {
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius);
+  }
+
+  .seite {
+    background: var(--white);
+    border: 1px solid var(--line);
+  }
+
+  .seite-2 {
+    transform: translate(1.4rem, 0.9rem) rotate(4deg);
+  }
+
+  .seite-1 {
+    transform: translate(0.7rem, 0.45rem) rotate(2deg);
+  }
+
+  .cover {
+    display: flex;
+    flex-direction: column;
+    padding: 12% 11% 9%;
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: var(--shadow), 0 30px 60px -30px rgb(15 36 56 / 0.45);
+    transition: transform 400ms var(--ease-out);
+  }
+
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 6%;
+    background: var(--navy-deep);
+    border-radius: var(--radius) 0 0 var(--radius);
+  }
+
+  .cover-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    padding-bottom: 0.9rem;
+    border-bottom: 1px solid var(--line-dark);
+  }
+
+  .cover-titel {
+    margin-top: 1.5rem;
+    font-family: var(--serif);
+    font-size: clamp(1.25rem, 1rem + 0.8vw, 1.6rem);
+    line-height: 1.22;
+    color: var(--white);
+  }
+
+  .cover-zahl {
+    display: block;
+    font-size: 4.5em;
+    line-height: 0.9;
+    color: var(--gold);
+    font-variant-numeric: lining-nums;
+  }
+
+  .cover-titel em {
+    font-style: italic;
+    color: var(--gold);
+  }
+
+  .cover-fuss {
+    margin-top: auto;
+    display: flex;
     justify-content: space-between;
-    gap: 2.5rem;
+    gap: 1rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--line-dark);
+    font-size: 0.75rem;
+    color: var(--on-dark-muted);
+  }
+
+  .cover-fuss strong {
+    color: var(--white);
+    font-weight: 700;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .cover-buehne:hover .cover {
+      transform: translateY(-6px) rotate(-1deg);
+    }
   }
 
   .kontext {
     font-weight: 600;
     color: var(--gold-deep);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.75rem;
   }
 
   .whitepaper h2 {
-    font-size: var(--step-2);
-    max-width: 30em;
+    font-size: var(--step-3);
+    max-width: 18em;
   }
 
-  .whitepaper .muted {
-    margin-top: 0.75rem;
-    font-size: 1.0625rem;
+  .beschreibung {
+    margin-top: 1.25rem;
+    max-width: 34em;
+    color: var(--stone);
+  }
+
+  .wp-aktion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .klein {
+    font-size: 0.9375rem;
+    color: var(--stone);
   }
 
   .abschluss h2 {
@@ -119,10 +261,13 @@ import { site } from '../../config/site';
     }
   }
 
-  @media (max-width: 760px) {
-    .row {
-      flex-direction: column;
-      align-items: flex-start;
+  @media (max-width: 860px) {
+    .wp-grid {
+      grid-template-columns: 1fr;
+    }
+    .cover-buehne {
+      width: min(80%, 18rem);
+      justify-self: start;
     }
   }
 

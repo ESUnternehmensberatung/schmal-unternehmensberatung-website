@@ -49,7 +49,7 @@ Eduard Schmal
 Im Kamp 7  
 21376 Eyendorf
 
-E-Mail-Adresse: es@schmal-unternehmensberatung.de
+E-Mail-Adresse: info@schmal-unternehmensberatung.de
 
 ## Übersicht der Verarbeitungen
 
