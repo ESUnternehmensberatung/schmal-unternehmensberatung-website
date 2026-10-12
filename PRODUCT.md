@@ -61,10 +61,11 @@ Vordergrund. Pflegt die Seite selbst. Deutschsprachig.
 
 ## Evidence on Hand
 - 1,5 Vollzeitstellen in wenigen Wochen eingespart
-- Automatische Preisschilder: mind. 3 Arbeitstage/Monat gespart
-- Automatische Palettenbeschriftung: mind. 4 Wochen Arbeitszeit/Jahr gespart
+- Automatische Preisschilder (vorher handgeschrieben): 5 Arbeitstage/Monat gespart
+- Automatische Palettenetiketten: 4 Wochen Arbeitszeit/Jahr gespart
 - Beschwerden: 2–3 h → 10–15 min inkl. Rücksprache und Freigabe
-- Angebote in 1–24 h beim Kunden
+- Angebote in 1–24 h statt 3–5 Tagen beim Kunden
+- Rechnungsworkflow: 35 % Zeitersparnis in der Buchhaltung
 - > 25 % Zeitersparnis durch digitalisierte Kernprozesse; Erreichbarkeit +75 %
 - Qualifikationen: Manager für angewandte KI-Transformation (IHK, mit
   Auszeichnung) · MBA (Middlesex University London) mit Fokus auf
@@ -86,3 +87,9 @@ Vordergrund. Pflegt die Seite selbst. Deutschsprachig.
 WCAG 2.2 AA. Kontraste geprüft (siehe `DESIGN.md`). Gold nie als Text auf hellem
 Grund. `prefers-reduced-motion` respektieren. Lesbare Schriftgrößen für eine
 Zielgruppe 45+.
+
+## Vorgemerkt (nach dem Livegang)
+- Zielgruppen-Seiten für Steuerkanzleien, danach Arztpraxen und Anwaltskanzleien;
+  Slogan „Digitale Transformation im Mittelstand“ bleibt das Dach.
+- Anzeigen in ChatGPT mit Steuerkanzleien als Zielgruppe, sobald Website und alle
+  Einträge auf „Schmal Unternehmensberatung“ umgestellt sind.

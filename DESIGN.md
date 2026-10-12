@@ -49,7 +49,7 @@ dunkle Sektionen sind feste Navy-Deep-Flächen, kein Theme-Wechsel.
   3. Leistungen – nummerierte Zeilen (5/7-Raster) mit Beleg-Box
   4. Ablauf – dunkel, 5-Schritte-Zeitleiste (mobil vertikal)
   5. Über mich – Porträt sticky links, Prinzipien, Change-Zitat, Qualifikationen
-  6. Ergebnisse – Methodenleiste, 3 Vorher/Nachher-Spalten, 2 Zusatzzahlen,
+  6. Ergebnisse – Methodenleiste, Vorher/Nachher-Karten als Karussell (`src/components/Karussell.astro`) (weiße Karten, Navy-Kante),
      Google-Bewertungen (erscheinen automatisch, sobald eingetragen)
   7. Business-Concierge – Text + Empfehlungskarte mit Provisionshinweis
   8. FAQ – sticky Überschrift + Accordion (`details`)
