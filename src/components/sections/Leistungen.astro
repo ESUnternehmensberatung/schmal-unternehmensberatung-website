@@ -1,11 +1,9 @@
 ---
 import Icon from '../Icon.astro';
-import Karussell from '../Karussell.astro';
 
-// Neue Themen einfach als weiteres Objekt ergänzen. Nummer, Zähler und
-// Karussell passen sich automatisch an.
 const leistungen = [
   {
+    nr: '1',
     name: 'Consulting',
     titel: 'KI-Einführung, die im Alltag funktioniert',
     kurz: 'Ich führe KI dort ein, wo sie Ihrem Team sofort Arbeit abnimmt, aufbauend auf dem, was Sie schon haben.',
@@ -18,6 +16,7 @@ const leistungen = [
     beleg: '1,5 Vollzeitstellen in 2 Monaten eingespart.',
   },
   {
+    nr: '2',
     name: 'Coaching',
     titel: 'Führung durch die Transformation',
     kurz: 'Transformation ist Führungsaufgabe. Ich begleite Geschäftsführung und Führungskräfte dabei, sie zu steuern, statt von ihr getrieben zu werden.',
@@ -30,6 +29,7 @@ const leistungen = [
     beleg: 'Zentralen Servicebereich mit fast 50 Mitarbeitenden aufgebaut: Veränderung unter Beteiligung der Mitarbeitenden mit umfassender technischer Transformation umgesetzt.',
   },
   {
+    nr: '3',
     name: 'Training',
     titel: 'KI sicher im Arbeitsalltag nutzen',
     kurz: 'Ihre Mitarbeitenden lernen, mit KI und den neuen Prozessen souverän zu arbeiten. Praxisnah, an ihren eigenen Aufgaben.',
@@ -44,8 +44,8 @@ const leistungen = [
 ];
 ---
 <section class="section leistungen" id="leistungen" aria-labelledby="leistungen-title">
-  <Karussell id="leistungen" anzahl={leistungen.length} label="Leistungen">
-    <header class="intro" slot="kopf">
+  <div class="wrap">
+    <header class="intro">
       <h2 id="leistungen-title" data-reveal>Mein Fachwissen aus 20 Jahren Praxis, verbunden mit KI.</h2>
       <p class="lead muted" data-reveal style="--i: 1">
         Studien nennen drei Voraussetzungen, damit KI Wert schafft: Strategie, Training und Systeme. Genau dafür stehen
@@ -53,33 +53,37 @@ const leistungen = [
       </p>
     </header>
 
-    {
-      leistungen.map((l, i) => (
-        <li class="karte" aria-label={`${i + 1} von ${leistungen.length}: ${l.name}`}>
-          <p class="kennung">
-            <span class="nr">{String(i + 1).padStart(2, '0')}</span>
-            <span class="name">{l.name}</span>
-          </p>
-          <h3>{l.titel}</h3>
-          <p class="kurz">{l.kurz}</p>
-          <dl>
-            {l.punkte.map(([t, d]) => (
-              <div>
-                <dt>{t}</dt>
-                <dd>{d}</dd>
-              </div>
-            ))}
-          </dl>
-          <p class="beleg">
-            <Icon name="check" />
-            <span>
-              <strong>Beleg:</strong> {l.beleg}
-            </span>
-          </p>
-        </li>
-      ))
-    }
-  </Karussell>
+    <ol class="list">
+      {
+        leistungen.map((l) => (
+          <li class="item" data-reveal>
+            <div class="head">
+              <span class="nr" aria-hidden="true">{l.nr}</span>
+              <p class="name">{l.name}</p>
+              <h3>{l.titel}</h3>
+              <p class="kurz">{l.kurz}</p>
+            </div>
+            <div class="body">
+              <dl>
+                {l.punkte.map(([t, d]) => (
+                  <div>
+                    <dt>{t}</dt>
+                    <dd>{d}</dd>
+                  </div>
+                ))}
+              </dl>
+              <p class="beleg">
+                <Icon name="check" />
+                <span>
+                  <strong>Beleg:</strong> {l.beleg}
+                </span>
+              </p>
+            </div>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
 </section>
 
 <style>
@@ -90,43 +94,49 @@ const leistungen = [
   .intro {
     display: grid;
     gap: 1.25rem;
+    max-width: 50rem;
+    margin-bottom: clamp(3rem, 6vw, 5rem);
   }
 
-  .karte {
-    container-type: inline-size;
-    display: flex;
-    flex-direction: column;
-    padding: clamp(1.75rem, 3.5vw, 3rem);
-    background: var(--ivory);
-    border-top: 3px solid var(--gold);
-    border-radius: var(--radius);
+  .list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
   }
 
-  .kennung {
-    display: flex;
-    align-items: baseline;
-    gap: 1rem;
-    margin-bottom: 1.5rem;
+  .item {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    gap: clamp(2rem, 5vw, 5rem);
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--line);
+  }
+
+  .head {
+    position: relative;
+    padding-left: 4.25rem;
   }
 
   .nr {
+    position: absolute;
+    left: 0;
+    top: -0.35rem;
     font-family: var(--serif);
-    font-size: 3rem;
+    font-size: 3.5rem;
     line-height: 1;
+    font-weight: 400;
     color: var(--gold-deep);
     font-variant-numeric: lining-nums;
   }
 
   .name {
     font-weight: 600;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    font-size: 0.875rem;
     color: var(--stone);
+    margin-bottom: 0.4rem;
   }
 
   h3 {
-    font-size: clamp(1.5rem, 1.25rem + 0.9vw, 2rem);
+    font-size: clamp(1.625rem, 1.3rem + 1vw, 2.125rem);
   }
 
   .kurz {
@@ -135,28 +145,21 @@ const leistungen = [
   }
 
   dl {
-    margin: 2rem 0 0;
-    padding-top: 1.75rem;
-    border-top: 1px solid var(--line);
+    margin: 0;
     display: grid;
-    gap: 1.25rem 2rem;
-  }
-
-  @container (min-width: 28rem) {
-    dl {
-      grid-template-columns: 1fr 1fr;
-    }
+    grid-template-columns: 1fr 1fr;
+    gap: 1.75rem 2.5rem;
   }
 
   dt {
     font-weight: 600;
     color: var(--navy);
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.3rem;
   }
 
   dd {
     margin: 0;
-    font-size: 1rem;
+    font-size: 1.0625rem;
     line-height: 1.55;
     color: var(--stone);
   }
@@ -164,8 +167,10 @@ const leistungen = [
   .beleg {
     display: flex;
     gap: 0.75rem;
-    margin-top: auto;
-    padding-top: 2rem;
+    margin-top: 2rem;
+    padding: 1.1rem 1.25rem;
+    background: var(--ivory);
+    border-radius: var(--radius);
     font-size: 1rem;
     line-height: 1.5;
   }
@@ -180,5 +185,22 @@ const leistungen = [
 
   .beleg strong {
     color: var(--navy);
+  }
+
+  @media (max-width: 960px) {
+    .item {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+  }
+
+  @media (max-width: 600px) {
+    dl {
+      grid-template-columns: 1fr;
+    }
+    .head {
+      padding-left: 0;
+      padding-top: 4rem;
+    }
   }
 </style>

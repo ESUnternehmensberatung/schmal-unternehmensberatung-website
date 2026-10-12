@@ -46,10 +46,10 @@ dunkle Sektionen sind feste Navy-Deep-Flächen, kein Theme-Wechsel.
 - Sektionen (Leseweg aus `briefing/seitenstruktur.md`), jede mit eigener Form:
   1. Hero – Vollbild-Foto, Overlay links, Kennzahlenleiste unten
   2. Die Lage – großes Zitat-Statement mit Quellenfußnote, 2-spaltige Schmerz→System-Liste
-  3. Leistungen – Karussell (`src/components/Karussell.astro`: Scroll-Snap, Pfeile, Zähler, Fortschrittslinie), Karten in Elfenbein mit Goldkante; neue Themen als Objekt ergänzen
+  3. Leistungen – nummerierte Zeilen (5/7-Raster) mit Beleg-Box
   4. Ablauf – dunkel, 5-Schritte-Zeitleiste (mobil vertikal)
   5. Über mich – Porträt sticky links, Prinzipien, Change-Zitat, Qualifikationen
-  6. Ergebnisse – Methodenleiste, Vorher/Nachher-Karten im selben Karussell (weiße Karten, Navy-Kante), 2 Zusatzzahlen,
+  6. Ergebnisse – Methodenleiste, Vorher/Nachher-Karten als Karussell (`src/components/Karussell.astro`) (weiße Karten, Navy-Kante),
      Google-Bewertungen (erscheinen automatisch, sobald eingetragen)
   7. Business-Concierge – Text + Empfehlungskarte mit Provisionshinweis
   8. FAQ – sticky Überschrift + Accordion (`details`)

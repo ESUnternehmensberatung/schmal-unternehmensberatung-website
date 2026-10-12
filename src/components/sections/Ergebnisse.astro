@@ -50,11 +50,6 @@ const faelle = [
   },
 ];
 
-const weitere = [
-  { zahl: 'über 25\u00a0%', text: 'Zeitersparnis durch digitalisierte Kernprozesse', kontext: 'Handel und Handwerk, 70+ Mitarbeitende, mehrere Standorte' },
-  { zahl: '+75\u00a0%', text: 'Erreichbarkeit im Kundenservice', kontext: 'Service Center eines Versicherers, fast 50 Mitarbeitende' },
-];
-
 const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und automatisieren', 'Testen', 'Produktiv setzen'];
 ---
 <section class="section ergebnisse" id="ergebnisse" aria-labelledby="ergebnisse-title">
@@ -90,20 +85,6 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
   </Karussell>
 
   <div class="wrap">
-    <ul class="weitere">
-      {
-        weitere.map((w) => (
-          <li data-reveal>
-            <strong>{w.zahl}</strong>
-            <span>
-              {w.text}
-              <em>{w.kontext}</em>
-            </span>
-          </li>
-        ))
-      }
-    </ul>
-
     {
       bewertungen.length > 0 && (
         <div class="stimmen">
@@ -230,41 +211,6 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
     color: var(--stone);
   }
 
-  .weitere {
-    list-style: none;
-    margin: clamp(3rem, 5vw, 4rem) 0 0;
-    padding: 2rem 0 0;
-    border-top: 1px solid var(--line);
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
-    gap: 2rem 2.5rem;
-  }
-
-  .weitere li {
-    display: grid;
-    gap: 0.35rem;
-    align-content: start;
-  }
-
-  .weitere strong {
-    font-family: var(--serif);
-    font-size: 2rem;
-    font-weight: 500;
-    color: var(--navy);
-    white-space: nowrap;
-  }
-
-  .weitere span {
-    display: grid;
-    font-size: 1.0625rem;
-  }
-
-  .weitere em {
-    font-style: normal;
-    font-size: 0.9375rem;
-    color: var(--stone);
-  }
-
   .stimmen {
     margin-top: 4rem;
   }
@@ -314,9 +260,4 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
     height: 1rem;
   }
 
-  @media (max-width: 960px) {
-    .weitere {
-      grid-template-columns: 1fr;
-    }
-  }
 </style>
