@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo/logo-quer-transparent.png';
 import { url } from '../utils/url';
 import Icon from './Icon.astro';
 import { site } from '../config/site';
@@ -14,8 +16,7 @@ const nav = [
 <header class="header dark">
   <div class="wrap bar">
     <a class="brand" href={url()} aria-label={`${site.name}, zur Startseite`}>
-      <span class="brand-name">Schmal</span>
-      <span class="brand-sub">Unternehmensberatung</span>
+      <Image src={logo} alt="" widths={[200, 400]} sizes="200px" loading="eager" />
     </a>
 
     <nav class="nav" aria-label="Hauptnavigation">
@@ -86,29 +87,16 @@ const nav = [
     min-height: 4.5rem;
   }
 
-  /* Wortmarke nach Logo-Entwurf (horizontal). Bildmarke folgt als SVG. */
+  /* Logo: freigestellt aus assets/logo (scripts/logos.cjs) */
   .brand {
-    display: flex;
-    flex-direction: column;
-    gap: 0.05rem;
-    line-height: 1.1;
-    text-decoration: none;
-    color: var(--white);
+    display: block;
     margin-right: auto;
+    line-height: 0;
   }
 
-  .brand-name {
-    font-size: 1.375rem;
-    font-weight: 700;
-    letter-spacing: -0.01em;
-    color: var(--white);
-  }
-
-  .brand-sub {
-    font-size: 0.875rem;
-    font-weight: 400;
-    letter-spacing: 0.01em;
-    color: var(--on-dark-muted);
+  .brand :global(img) {
+    width: auto;
+    height: 2.75rem;
   }
 
   .nav ul {
@@ -216,8 +204,8 @@ const nav = [
     .header-cta {
       display: none;
     }
-    .brand-name {
-      font-size: 1.25rem;
+    .brand :global(img) {
+      height: 2.35rem;
     }
   }
 

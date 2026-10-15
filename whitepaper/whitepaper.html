@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>5 Gründe, warum die meisten KI-Projekte bei Mittelständlern und Freiberuflern scheitern</title>
+<meta name="author" content="Eduard Schmal, Schmal Unternehmensberatung" />
+<style>
+  @font-face {
+    font-family: 'Serif';
+    src: url('../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-opsz-normal.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Serif';
+    src: url('../node_modules/@fontsource-variable/source-serif-4/files/source-serif-4-latin-opsz-italic.woff2') format('woff2');
+    font-weight: 200 900;
+    font-style: italic;
+  }
+  @font-face {
+    font-family: 'Sans';
+    src: url('../node_modules/@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-normal.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: 'Sans';
+    src: url('../node_modules/@fontsource-variable/hanken-grotesk/files/hanken-grotesk-latin-wght-italic.woff2') format('woff2');
+    font-weight: 100 900;
+    font-style: italic;
+  }
+
+  :root {
+    --navy: #1a3a5c;
+    --navy-deep: #0f2438;
+    --gold: #c9a87c;
+    --gold-deep: #7a5c33;
+    --ivory: #f7f4ee;
+    --ink: #1a2330;
+    --stone: #5a6572;
+    --line: #e3ddd2;
+    --on-dark: #eef1f5;
+    --on-dark-muted: #b4c0cf;
+  }
+
+  @page {
+    size: A4;
+    margin: 22mm 21mm 24mm;
+  }
+  @page :first {
+    margin: 0;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body {
+    margin: 0;
+    font-family: 'Sans', sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.6;
+    color: var(--ink);
+    hyphens: auto;
+  }
+
+  h1, h2, h3 { font-family: 'Serif', serif; font-weight: 500; color: var(--navy); line-height: 1.2; margin: 0; }
+  p { margin: 0 0 0.75em; }
+  a { color: var(--navy); text-decoration: none; border-bottom: 0.5pt solid var(--gold); }
+  strong { font-weight: 650; color: var(--navy); }
+  sup { font-size: 0.7em; color: var(--gold-deep); font-weight: 600; line-height: 0; }
+
+  /* ---------- Cover ---------- */
+  .cover {
+    position: relative;
+    width: 210mm;
+    height: 297mm;
+    background: var(--navy);
+    color: #fff;
+    padding: 30mm 24mm 22mm 34mm;
+    display: flex;
+    flex-direction: column;
+    page-break-after: always;
+    overflow: hidden;
+  }
+  .cover::before {
+    content: '';
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 12mm;
+    background: var(--navy-deep);
+  }
+  .cover .label {
+    font-size: 9pt; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase;
+    color: var(--gold); padding-bottom: 6mm; border-bottom: 0.6pt solid rgba(201,168,124,0.4);
+  }
+  .cover .zahl {
+    font-family: 'Serif', serif; font-size: 150pt; line-height: 0.85; color: var(--gold);
+    margin-top: 16mm;
+  }
+  .cover h1 {
+    font-size: 34pt; line-height: 1.12; color: #fff; margin-top: 4mm; max-width: 150mm;
+  }
+  .cover h1 em { color: var(--gold); }
+  .cover .unter {
+    margin-top: 10mm; font-size: 12pt; line-height: 1.55; color: var(--on-dark-muted); max-width: 135mm;
+  }
+  .cover .fuss {
+    margin-top: auto; padding-top: 6mm; border-top: 0.6pt solid rgba(201,168,124,0.4);
+    display: flex; justify-content: space-between; font-size: 9.5pt; color: var(--on-dark-muted);
+  }
+  .cover .fuss strong { color: #fff; }
+
+  /* ---------- Allgemein ---------- */
+  .kapitel { page-break-before: always; }
+  .kicker {
+    font-size: 8.5pt; font-weight: 650; letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold-deep); margin-bottom: 3mm;
+  }
+  h2 { font-size: 24pt; margin-bottom: 6mm; }
+  h3 { font-size: 13.5pt; margin: 7mm 0 2.5mm; }
+  .lead { font-size: 12.5pt; line-height: 1.55; color: var(--ink); margin-bottom: 6mm; }
+  ul, ol { margin: 0 0 0.9em; padding-left: 5mm; }
+  li { margin-bottom: 1.5mm; }
+  li::marker { color: var(--gold-deep); }
+
+  .grund-kopf {
+    display: flex; align-items: flex-end; gap: 6mm;
+    padding-bottom: 5mm; margin-bottom: 7mm; border-bottom: 1.2pt solid var(--navy);
+  }
+  .grund-kopf .nr { font-family: 'Serif', serif; font-size: 64pt; line-height: 0.8; color: var(--gold); }
+  .grund-kopf h2 { margin: 0; font-size: 22pt; }
+
+  .zahlen { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4mm; margin: 5mm 0 7mm; }
+  .zahl-box { background: var(--ivory); padding: 4.5mm 5mm; border-top: 1.5pt solid var(--gold); break-inside: avoid; }
+  .zahl-box b { display: block; font-family: 'Serif', serif; font-weight: 500; font-size: 24pt; color: var(--navy); line-height: 1.05; }
+  .zahl-box span { font-size: 9pt; color: var(--stone); line-height: 1.45; display: block; margin-top: 1.5mm; }
+
+  .praxis {
+    background: var(--navy); color: var(--on-dark); padding: 6mm 7mm; margin: 6mm 0; break-inside: avoid;
+  }
+  .praxis .kicker { color: var(--gold); }
+  .praxis p { color: var(--on-dark); margin-bottom: 0.5em; }
+  .praxis strong { color: #fff; }
+  .praxis .vn { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-top: 4mm; }
+  .praxis .vn div { border-top: 0.6pt solid rgba(201,168,124,0.45); padding-top: 2.5mm; }
+  .praxis .vn small { display: block; font-size: 8pt; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); font-weight: 650; }
+  .praxis .vn b { font-family: 'Serif', serif; font-weight: 500; font-size: 17pt; color: #fff; }
+
+  .check {
+    border: 0.8pt solid var(--line); padding: 5mm 6mm; margin-top: 6mm; break-inside: avoid; background: #fff;
+  }
+  .check .kicker { margin-bottom: 2mm; }
+  .check ul { list-style: none; padding: 0; margin: 0; }
+  .check li { padding-left: 7mm; position: relative; }
+  .check li::before {
+    content: ''; position: absolute; left: 0; top: 1.6mm; width: 3.2mm; height: 3.2mm; border: 0.8pt solid var(--navy);
+  }
+
+  .schritte { counter-reset: s; list-style: none; padding: 0; }
+  .schritte li { counter-increment: s; position: relative; padding-left: 10mm; margin-bottom: 3mm; }
+  .schritte li::before {
+    content: counter(s); position: absolute; left: 0; top: -0.5mm;
+    font-family: 'Serif', serif; font-size: 15pt; color: var(--gold-deep);
+  }
+
+  .zitat {
+    font-family: 'Serif', serif; font-style: italic; font-size: 14pt; line-height: 1.45; color: var(--navy);
+    border-left: 1.5pt solid var(--gold); padding: 1mm 0 1mm 6mm; margin: 6mm 0;
+  }
+
+  table { width: 100%; border-collapse: collapse; font-size: 9.5pt; margin: 4mm 0 6mm; break-inside: avoid; }
+  th { text-align: left; font-weight: 650; color: var(--navy); border-bottom: 1pt solid var(--navy); padding: 2mm 2mm 2mm 0; }
+  td { border-bottom: 0.5pt solid var(--line); padding: 2.2mm 2mm 2.2mm 0; vertical-align: top; }
+
+  .toc { list-style: none; padding: 0; margin-top: 6mm; display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; }
+  .toc li { display: flex; gap: 4mm; padding: 2.2mm 0; margin: 0; border-bottom: 0.5pt solid var(--line); font-size: 10pt; }
+  .toc li span:first-child { font-family: 'Serif', serif; color: var(--gold-deep); width: 8mm; }
+
+  .quellen { font-size: 8.6pt; line-height: 1.5; padding-left: 6mm; }
+  .quellen li { margin-bottom: 2mm; }
+  .quellen a { border: 0; color: var(--navy); word-break: break-all; }
+
+  .autor { display: grid; grid-template-columns: 1fr; gap: 4mm; }
+  .cta {
+    background: var(--ivory); border-top: 2pt solid var(--navy); padding: 7mm; margin-top: 8mm; break-inside: avoid;
+  }
+  .cta h3 { margin-top: 0; font-size: 16pt; }
+  .klein { font-size: 8.8pt; color: var(--stone); }
+</style>
+</head>
+<body>
+
+<!-- ====================== COVER ====================== -->
+<section class="cover">
+  <div class="label">Whitepaper · Praxisleitfaden</div>
+  <div class="zahl">5</div>
+  <h1>Gründe, warum die meisten KI-Projekte bei Mittelständlern und Freiberuflern <em>scheitern</em></h1>
+  <p class="unter">Und was die wenigen Unternehmen, Kanzleien und Praxen anders machen, bei denen KI messbar Zeit und Geld spart.</p>
+  <div class="fuss">
+    <span><strong>Schmal</strong> Unternehmensberatung · Eduard Schmal</span>
+    <span>Ausgabe Oktober 2026</span>
+  </div>
+</section>
+
+<!-- ====================== INHALT / VORWORT ====================== -->
+<section>
+  <div class="kicker">Vorwort</div>
+  <h2>Fast alle probieren KI aus. Wenige profitieren davon.</h2>
+  <p class="lead">Künstliche Intelligenz ist im Arbeitsalltag angekommen. Die Ergebnisse sind es oft nicht. Zwischen „Wir haben KI ausprobiert“ und „KI spart uns jede Woche spürbar Arbeit“ liegt eine Lücke, und genau in dieser Lücke scheitern die meisten Vorhaben.</p>
+
+  <div class="zahlen">
+    <div class="zahl-box"><b>88&nbsp;%</b><span>der Unternehmen weltweit nutzen KI in mindestens einem Geschäftsbereich.<sup>1</sup></span></div>
+    <div class="zahl-box"><b>5&nbsp;%</b><span>erzielen damit substanziellen Wert im großen Maßstab. 60&nbsp;% erreichen trotz Investitionen keinen nennenswerten Wert.<sup>2</sup></span></div>
+    <div class="zahl-box"><b>95&nbsp;%</b><span>der untersuchten Pilotprojekte mit generativer KI zeigten laut einer MIT-Studie keine messbare Wirkung auf das Ergebnis.<sup>3</sup></span></div>
+    <div class="zahl-box"><b>über 80&nbsp;%</b><span>der KI-Projekte scheitern nach Schätzungen, die RAND zitiert. Das ist doppelt so oft wie bei IT-Projekten ohne KI.<sup>4</sup></span></div>
+  </div>
+
+  <p>Diese Zahlen stammen überwiegend aus Konzernen. Für Mittelständler, Kanzleien und Praxen ist die Lage nicht besser, sondern schärfer: Es gibt keine eigene KI-Abteilung, keine Projektbudgets in Millionenhöhe und kaum Zeit neben dem Tagesgeschäft. Ein gescheitertes Projekt kostet hier nicht nur Geld, sondern vor allem Vertrauen. Wer einmal erlebt hat, dass „die KI“ nichts gebracht hat, fängt so schnell nicht wieder an.</p>
+
+  <p>Die gute Nachricht: Die Gründe für das Scheitern sind bekannt, und sie liegen selten in der Technik. Dieses Whitepaper bündelt aktuelle Studien und Erfahrungen aus über 20 Jahren Führungs-, Prozess- und Transformationspraxis zu fünf Mustern, die immer wieder auftauchen. Zu jedem Muster finden Sie, woran Sie es erkennen, warum es entsteht, was erfolgreiche Unternehmen anders machen und einen kurzen Selbstcheck.</p>
+
+  <ol class="toc">
+    <li><span>1</span><span>Das Tool kommt vor dem Problem</span></li>
+    <li><span>2</span><span>KI trifft auf einen ungeordneten Prozess</span></li>
+    <li><span>3</span><span>Das Team wird nicht mitgenommen</span></li>
+    <li><span>4</span><span>Datenschutz, Sicherheit und Kontrolle bleiben offen</span></li>
+    <li><span>5</span><span>Es fehlt der Maßstab und damit der lange Atem</span></li>
+    <li><span>→</span><span>Der Weg der erfolgreichen 5&nbsp;% · Selbstcheck · Quellen</span></li>
+  </ol>
+</section>
+
+<!-- ====================== AUSGANGSLAGE ====================== -->
+<section class="kapitel">
+  <div class="kicker">Ausgangslage</div>
+  <h2>Der Druck ist da. Die Zeit dafür nicht.</h2>
+  <p class="lead">Kaum ein Mittelständler fragt sich noch, <em>ob</em> er sich mit KI beschäftigen sollte. Die Frage lautet, wie man das neben einem vollen Tagesgeschäft schafft.</p>
+
+  <div class="zahlen">
+    <div class="zahl-box"><b>32&nbsp;Std.</b><span>pro Monat verbringt ein Mittelständler im Schnitt mit Bürokratie, rund 7&nbsp;% der Arbeitszeit.<sup>5</sup></span></div>
+    <div class="zahl-box"><b>über 40&nbsp;%</b><span>der kleinen und mittleren Unternehmen können offene Stellen nicht besetzen.<sup>6</sup></span></div>
+    <div class="zahl-box"><b>58&nbsp;%</b><span>der Unternehmen erledigen mindestens die Hälfte ihrer Büroprozesse noch auf Papier.<sup>7</sup></span></div>
+    <div class="zahl-box"><b>20&nbsp;%</b><span>der Mittelständler setzen KI ein. Mit Digitalisierungsstrategie sind es 35&nbsp;%.<sup>8</sup></span></div>
+  </div>
+
+  <p>Die Zahlen zeigen ein Paradox. Gerade die Unternehmen, die am meisten von Entlastung profitieren würden, haben am wenigsten Kapazität, sie aufzubauen. Bei Unternehmen mit 10 bis 49 Beschäftigten nutzen 23&nbsp;% KI, ab 250 Beschäftigten sind es 57&nbsp;%.<sup>9</sup> Gleichzeitig hat nur noch knapp ein Drittel der Mittelständler in den letzten drei Jahren überhaupt ein Digitalisierungsvorhaben abgeschlossen, Tendenz sinkend.<sup>10</sup></p>
+
+  <p>Die KfW nennt als wichtigste Hemmnisse fehlende Fachkräfte und Kompetenzen, begrenzte Zeit, unzureichende Datengrundlagen sowie Bedenken zu Sicherheit und Zuverlässigkeit von KI.<sup>8</sup> Außerdem stellt sie fest, dass die Masse der Mittelständler die Digitalisierung eher ad hoc als systematisch angeht.<sup>10</sup></p>
+
+  <h3>Für Kanzleien und Praxen gilt das doppelt</h3>
+  <p>Steuerberatungen, Anwaltskanzleien und Arztpraxen arbeiten mit besonders schützenswerten Daten und unter Berufsgeheimnis. Gleichzeitig sind Fristen, Dokumentation und Abstimmung mit Mandanten oder Patienten genau die Aufgaben, bei denen KI am schnellsten entlasten kann. Wer hier ohne klare Regeln startet, riskiert mehr als ein gescheitertes Projekt. Wer gar nicht startet, verliert Zeit, die das Team nicht hat.</p>
+
+  <div class="zitat">„Die Frage ist nicht, ob KI in Ihrem Betrieb ankommt. Sie ist längst da, oft über private Zugänge Ihrer Mitarbeitenden. Die Frage ist, ob sie gesteuert ankommt.“</div>
+</section>
+
+<!-- ====================== GRUND 1 ====================== -->
+<section class="kapitel">
+  <div class="grund-kopf"><span class="nr">1</span><h2>Das Tool kommt vor dem Problem</h2></div>
+  <p class="lead">Am Anfang steht eine Software-Demo, ein Artikel oder die Frage aus der Geschäftsführung: „Wir müssen auch etwas mit KI machen.“ Am Ende steht eine Lizenz, die kaum jemand nutzt.</p>
+
+  <h3>Woran Sie es erkennen</h3>
+  <ul>
+    <li>Das Projekt hat einen Namen wie „KI-Einführung“ oder „ChatGPT für alle“, aber kein konkretes Ziel in Stunden, Euro oder Tagen.</li>
+    <li>Niemand kann sagen, welcher Ablauf hinterher schneller, günstiger oder fehlerfreier sein soll.</li>
+    <li>Einzelne Mitarbeitende nutzen das Tool begeistert, die meisten gar nicht.</li>
+    <li>Nach drei Monaten fragt jemand, ob man die Lizenzen nicht kündigen sollte.</li>
+  </ul>
+
+  <h3>Warum es passiert</h3>
+  <p>Die RAND Corporation hat 65 erfahrene Datenwissenschaftler und Ingenieure befragt, woran KI-Projekte scheitern. Die häufigste Ursache: Die Führung versteht oder kommuniziert nicht richtig, welches Problem mit KI gelöst werden soll. Eine weitere: Der Fokus liegt auf der neuesten Technologie statt auf dem eigentlichen Problem.<sup>4</sup></p>
+  <p>Die MIT-Studie kommt zu einem ähnlichen Befund. Allgemeine Werkzeuge wie ChatGPT helfen Einzelnen, scheitern aber im Unternehmen, weil sie nicht in die Abläufe eingebunden sind und nicht aus ihnen lernen. Bemerkenswert: Mehr als die Hälfte der Budgets floss in Vertriebs- und Marketing-Anwendungen, den größten Ertrag brachte aber die Automatisierung im Backoffice.<sup>3</sup></p>
+
+  <h3>Was die erfolgreichen 5&nbsp;% anders machen</h3>
+  <ol class="schritte">
+    <li><strong>Sie beginnen mit den Zeitfressern, nicht mit dem Tool.</strong> Welche drei Aufgaben kosten Ihr Team jede Woche die meisten Stunden? Wo entstehen Rückfragen, Wartezeiten, Doppelerfassung?</li>
+    <li><strong>Sie bewerten nach Aufwand und Wirkung.</strong> Ein Quick Win ist eine Aufgabe, die häufig vorkommt, klar geregelt ist und sich in Wochen statt Monaten verbessern lässt.</li>
+    <li><strong>Sie prüfen zuerst die Bordmittel.</strong> In Microsoft 365, Google Workspace, der Buchhaltungssoftware oder der Telefonanlage stecken oft Funktionen, die bezahlt, aber ungenutzt sind. Der schnellste Hebel liegt häufig schon im Haus.</li>
+    <li><strong>Erst dann wählen sie das Werkzeug</strong>, und zwar passend zum Problem und zur vorhandenen Infrastruktur.</li>
+  </ol>
+
+  <div class="praxis">
+    <div class="kicker">Aus der Beratungspraxis</div>
+    <p>In einem Unternehmen dauerte die Bearbeitung einer Kundenbeschwerde zwei bis drei Stunden: recherchieren, Rücksprache halten, formulieren, freigeben. Statt „KI für alle“ einzuführen, wurde genau dieser eine Ablauf umgebaut. Routine übernimmt die KI, Rücksprache und Freigabe bleiben beim Menschen.</p>
+    <div class="vn">
+      <div><small>Vorher</small><b>2 bis 3 Std.</b></div>
+      <div><small>Nachher</small><b>10 bis 15 Min.</b></div>
+    </div>
+  </div>
+
+  <div class="check">
+    <div class="kicker">Ihr Selbstcheck</div>
+    <ul>
+      <li>Ich kann die drei größten Zeitfresser in meinem Betrieb benennen, mit grober Stundenzahl.</li>
+      <li>Für unser KI-Vorhaben gibt es ein Ziel in Stunden, Euro oder Tagen.</li>
+      <li>Wir haben geprüft, was unsere vorhandene Software bereits kann.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== GRUND 2 ====================== -->
+<section class="kapitel">
+  <div class="grund-kopf"><span class="nr">2</span><h2>KI trifft auf einen ungeordneten Prozess</h2></div>
+  <p class="lead">Wer einen schlechten Ablauf automatisiert, bekommt einen schnellen schlechten Ablauf. KI verstärkt, was sie vorfindet, auch das Durcheinander.</p>
+
+  <h3>Woran Sie es erkennen</h3>
+  <ul>
+    <li>Informationen liegen in E-Mails, Excel-Listen, Papierordnern und Köpfen, aber nicht an einem Ort.</li>
+    <li>Dieselben Daten werden mehrfach abgetippt, etwa vom Notizblock in die Tabelle und von dort ins Angebot.</li>
+    <li>Jede Person erledigt dieselbe Aufgabe ein wenig anders.</li>
+    <li>Die KI liefert Ergebnisse, die „irgendwie nicht passen“, weil ihr die richtigen Informationen fehlen.</li>
+  </ul>
+
+  <h3>Warum es passiert</h3>
+  <p>58&nbsp;% der Unternehmen erledigen mindestens die Hälfte ihrer Büro- und Verwaltungsprozesse noch auf Papier, nur 15&nbsp;% arbeiten komplett papierlos.<sup>7</sup> Die KfW zählt unzureichende Datengrundlagen zu den wichtigsten Hemmnissen beim KI-Einsatz im Mittelstand.<sup>8</sup> Gartner nennt schlechte Datenqualität als einen der Hauptgründe, warum mindestens 30&nbsp;% der Projekte mit generativer KI nach der Testphase aufgegeben werden.<sup>11</sup></p>
+  <p>Die Boston Consulting Group beschreibt das Verhältnis mit einer einfachen Regel: Etwa 10&nbsp;% des Aufwands entfallen auf die Algorithmen, 20&nbsp;% auf Technik und Daten und 70&nbsp;% auf Menschen und Prozesse.<sup>12</sup> Wer nur die ersten 30&nbsp;% bearbeitet, baut auf Sand.</p>
+
+  <h3>Was die erfolgreichen 5&nbsp;% anders machen</h3>
+  <p>Sie folgen einer festen Reihenfolge, bevor die erste Automatisierung live geht:</p>
+  <ol class="schritte">
+    <li><strong>Prozess verstehen:</strong> Den Ablauf mit den Menschen aufnehmen, die ihn täglich erledigen, nicht nach Organigramm.</li>
+    <li><strong>Bereinigen:</strong> Unnötige Schritte, Doppelerfassung und Medienbrüche entfernen. Oft bringt das allein schon 20&nbsp;% Zeitgewinn.</li>
+    <li><strong>Digital gestalten und automatisieren:</strong> Daten einmal erfassen, dort, wo sie entstehen, und dann automatisch weitergeben.</li>
+    <li><strong>Testen:</strong> Im echten Betrieb mit echten Fällen, bevor es für alle gilt.</li>
+    <li><strong>Produktiv setzen:</strong> Mit klaren Zuständigkeiten, damit das System auch nach dem Projekt weiterlebt.</li>
+  </ol>
+
+  <div class="praxis">
+    <div class="kicker">Aus der Beratungspraxis</div>
+    <p>Bei Projektbesichtigungen wurde alles von Hand notiert. Irgendwann landete der Zettel im Büro, wurde abgetippt und erst dann kalkuliert. Heute erfasst ein digitales Formular vor Ort alle Daten und Fotos, und das Büro kann sofort weiterarbeiten. Ergebnis: <strong>eine Stunde Ersparnis je Projektanfrage</strong> und deutlich bessere Datenqualität. In einem anderen Fall sank die Zeit bis zum fertigen Angebot von drei bis fünf Tagen auf ein bis 24 Stunden.</p>
+    <div class="vn">
+      <div><small>Angebot vorher</small><b>3 bis 5 Tage</b></div>
+      <div><small>Angebot nachher</small><b>1 bis 24 Std.</b></div>
+    </div>
+  </div>
+
+  <div class="check">
+    <div class="kicker">Ihr Selbstcheck</div>
+    <ul>
+      <li>Unsere wichtigsten Abläufe sind beschrieben, mindestens als einfache Schrittfolge.</li>
+      <li>Daten werden bei uns nur einmal erfasst, nicht mehrfach abgetippt.</li>
+      <li>Wir wissen, welche Papierprozesse am meisten Zeit kosten.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== GRUND 3 ====================== -->
+<section class="kapitel">
+  <div class="grund-kopf"><span class="nr">3</span><h2>Das Team wird nicht mitgenommen</h2></div>
+  <p class="lead">KI verändert, wie Menschen arbeiten. Wer das als reines Technikprojekt behandelt, erntet Skepsis, Umgehungslösungen und im schlimmsten Fall stillen Widerstand.</p>
+
+  <h3>Woran Sie es erkennen</h3>
+  <ul>
+    <li>Die Einführung wurde per Rundmail angekündigt, eine Schulung gab es nicht oder nur einmal.</li>
+    <li>Im Team kursiert die Sorge „Werde ich ersetzt?“, ausgesprochen oder nicht.</li>
+    <li>Mitarbeitende nutzen private KI-Zugänge, weil die offiziellen Werkzeuge fehlen oder zu umständlich sind.</li>
+    <li>Niemand weiß genau, wer für KI-Ergebnisse verantwortlich ist.</li>
+  </ul>
+
+  <h3>Warum es passiert</h3>
+  <p>Nach der bereits zitierten BCG-Regel liegen rund 70&nbsp;% des Aufwands bei Menschen und Prozessen.<sup>12</sup> Die KfW nennt fehlende Kompetenzen als zentrales Hemmnis, sowohl bei IT-Fachkräften als auch bei den Digitalkenntnissen in der Breite der Belegschaft.<sup>8,10</sup></p>
+  <p>Gleichzeitig wächst die sogenannte Schatten-KI. Laut Bitkom ist die Nutzung privater KI-Tools in 8&nbsp;% der Unternehmen weit verbreitet, in weiteren 17&nbsp;% gibt es Einzelfälle, und 17&nbsp;% vermuten es. Nur ein Viertel der Unternehmen stellt den Beschäftigten selbst Zugang zu generativer KI bereit, und nur 23&nbsp;% haben Regeln dafür aufgestellt.<sup>13</sup></p>
+  <p>Hinzu kommt der rechtliche Rahmen: Seit Februar 2025 verlangt die EU-KI-Verordnung, dass Unternehmen, die KI einsetzen, Maßnahmen für ausreichende KI-Kompetenz ihrer Beschäftigten ergreifen (Art. 4).<sup>14</sup></p>
+
+  <h3>Was die erfolgreichen 5&nbsp;% anders machen</h3>
+  <ul>
+    <li><strong>Sie beteiligen früh.</strong> Die Menschen, die den Ablauf täglich erledigen, gestalten die neue Lösung mit. Das erhöht die Qualität und die Akzeptanz zugleich.</li>
+    <li><strong>Sie sagen klar, wofür KI da ist:</strong> Entlastung von Routine, nicht Ersatz. Bei über 40&nbsp;% unbesetzten Stellen im Mittelstand ist das keine Floskel, sondern Realität.<sup>6</sup></li>
+    <li><strong>Sie trainieren an echten Aufgaben</strong> aus dem eigenen Alltag statt an Standardbeispielen. Dazu gehört, KI-Ergebnisse zu prüfen, statt ihnen blind zu folgen.</li>
+    <li><strong>Sie definieren Rollen:</strong> Wer gibt frei? Wer pflegt Vorlagen und Wissen? Wer ist Ansprechpartner bei Fragen?</li>
+    <li><strong>Sie behalten den Menschen in der Entscheidung.</strong> Kritische Schritte bleiben mit Rücksprache und Freigabe, der sogenannte „Human in the Loop“.</li>
+  </ul>
+
+  <div class="praxis">
+    <div class="kicker">Aus der Beratungspraxis</div>
+    <p>Große Veränderungen gelingen nicht durch bessere Technik, sondern durch Beteiligung. Beim Aufbau eines zentralen Servicebereichs mit fast 50 Mitarbeitenden wurde die umfassende technische Umstellung gemeinsam mit den Betroffenen gestaltet. Ähnlich bei der Einführung einer Schulungsplattform für 450 Mitarbeitende: Akzeptanz entstand dort, wo Menschen früh eingebunden waren. Die Erreichbarkeit im Kundenservice stieg in einem Projekt um 75&nbsp;%.</p>
+  </div>
+
+  <div class="check">
+    <div class="kicker">Ihr Selbstcheck</div>
+    <ul>
+      <li>Unser Team weiß, wofür wir KI einsetzen und wofür ausdrücklich nicht.</li>
+      <li>Es gibt eine Schulung an echten Aufgaben aus unserem Alltag, und sie ist dokumentiert.</li>
+      <li>Wir stellen eigene, freigegebene KI-Werkzeuge bereit, damit niemand auf private Zugänge ausweicht.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== GRUND 4 ====================== -->
+<section class="kapitel">
+  <div class="grund-kopf"><span class="nr">4</span><h2>Datenschutz, Sicherheit und Kontrolle bleiben offen</h2></div>
+  <p class="lead">Entweder wird KI aus Sorge um den Datenschutz gar nicht eingeführt, oder sie wird eingeführt, ohne dass jemand weiß, welche Daten wohin fließen. Beides ist teuer.</p>
+
+  <h3>Woran Sie es erkennen</h3>
+  <ul>
+    <li>Kundendaten, Verträge oder Patientenunterlagen werden in frei zugängliche KI-Tools kopiert.</li>
+    <li>Niemand kann nachvollziehen, welche Entscheidung eine KI wann auf welcher Grundlage vorbereitet hat.</li>
+    <li>Das Projekt liegt seit Monaten beim Datenschutz „zur Prüfung“.</li>
+    <li>Es gibt keine Regel, welche Aktionen eine KI selbstständig ausführen darf, etwa E-Mails versenden oder Zahlungen vorbereiten.</li>
+  </ul>
+
+  <h3>Warum es passiert</h3>
+  <p>Datenschutz und Datensicherheit gehören laut KfW zu den Digitalisierungshemmnissen im Mittelstand. Knapp ein Drittel der Mittelständler wurde in den letzten Jahren Opfer von Cyberkriminalität, und die Bedrohungslage wird oft unterschätzt.<sup>10</sup> Gartner nennt unzureichende Risikokontrollen als einen der Hauptgründe für abgebrochene KI-Projekte.<sup>11</sup></p>
+  <p>Für Freiberufler kommt das Berufsgeheimnis hinzu. Wer als Steuerberater, Rechtsanwalt oder Arzt externe Dienstleister einbindet, muss die Vorgaben zur Verschwiegenheit einhalten (§&nbsp;203 StGB, für Anwälte §&nbsp;43e BRAO, für Steuerberater §&nbsp;62a StBerG). Gesundheitsdaten gelten nach Art.&nbsp;9 DSGVO als besonders schützenswert.<sup>15</sup></p>
+
+  <h3>Was die erfolgreichen 5&nbsp;% anders machen</h3>
+  <ul>
+    <li><strong>Sie setzen auf DSGVO-konforme Plattformen</strong> mit Serverstandort in der EU, Auftragsverarbeitungsvertrag und der Zusicherung, dass Eingaben nicht zum Training fremder Modelle genutzt werden.</li>
+    <li><strong>Sie regeln in Klartext, was erlaubt ist:</strong> Welche Daten dürfen in welches Werkzeug? Welche Aktionen brauchen eine Freigabe? Moderne Governance-Lösungen setzen solche Regeln technisch durch, etwa „Zahlungen über einem Schwellenwert brauchen eine Freigabe“.</li>
+    <li><strong>Sie minimieren Daten:</strong> Sensible Angaben wie Bankverbindungen oder Gesundheitsdaten werden maskiert, bevor ein KI-Modell sie sieht.</li>
+    <li><strong>Sie protokollieren:</strong> Jede KI-gestützte Aktion ist nachvollziehbar. Das schafft Vertrauen und erfüllt die Dokumentationspflichten der KI-Verordnung.</li>
+    <li><strong>Sie holen Fachleute früh dazu,</strong> etwa einen externen Datenschutzbeauftragten oder einen Cyber-Risikocheck nach DIN SPEC 27076, der speziell für kleine und mittlere Unternehmen entwickelt wurde.</li>
+  </ul>
+
+  <div class="zitat">„Sicherheit ist kein Grund, auf KI zu verzichten. Sie ist die Voraussetzung dafür, KI dort einzusetzen, wo sie wirklich Wirkung hat.“</div>
+
+  <div class="check">
+    <div class="kicker">Ihr Selbstcheck</div>
+    <ul>
+      <li>Wir haben schriftlich geregelt, welche Daten in welche KI-Werkzeuge dürfen.</li>
+      <li>Unsere KI-Lösung läuft DSGVO-konform, mit Auftragsverarbeitungsvertrag.</li>
+      <li>Kritische Aktionen einer KI brauchen bei uns eine menschliche Freigabe und werden protokolliert.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== GRUND 5 ====================== -->
+<section class="kapitel">
+  <div class="grund-kopf"><span class="nr">5</span><h2>Es fehlt der Maßstab und damit der lange Atem</h2></div>
+  <p class="lead">Viele Projekte scheitern nicht laut, sondern leise. Es gibt keinen Vorher-Wert, also auch keinen Erfolg, den man zeigen könnte. Irgendwann fehlt das Budget, die Geduld oder beides.</p>
+
+  <h3>Woran Sie es erkennen</h3>
+  <ul>
+    <li>Niemand hat gemessen, wie lange der Ablauf vorher gedauert hat.</li>
+    <li>Das Projekt ist groß angelegt: erst eine Strategie, dann ein Konzept, dann die Ausschreibung. Sichtbare Ergebnisse gibt es nach Monaten noch nicht.</li>
+    <li>Die Kosten steigen, der Nutzen bleibt vage, und die Geschäftsführung verliert das Interesse.</li>
+    <li>Fördermittel wurden nicht geprüft, weil niemand Zeit dafür hatte.</li>
+  </ul>
+
+  <h3>Warum es passiert</h3>
+  <p>Gartner nennt steigende Kosten und unklaren Geschäftsnutzen ausdrücklich als Gründe für abgebrochene Projekte, verbunden mit der Ungeduld der Führung, endlich Ergebnisse zu sehen.<sup>11</sup> Die KfW beobachtet, dass Digitalisierung im Mittelstand nur beim kleineren Teil der Unternehmen gezielt auf strategische Ziele ausgerichtet ist. Finanzierung bleibt eine wichtige Hürde.<sup>10</sup> Die Folge: Die Zahl der abgeschlossenen Digitalisierungsvorhaben sinkt.</p>
+
+  <h3>Was die erfolgreichen 5&nbsp;% anders machen</h3>
+  <ul>
+    <li><strong>Sie messen vorher.</strong> Stunden pro Vorgang, Durchlaufzeit, Fehlerquote. Ohne Vorher-Wert gibt es keinen Nachher-Erfolg.</li>
+    <li><strong>Sie beginnen mit Quick Wins.</strong> Erste spürbare Ergebnisse in Wochen statt Monaten schaffen Vertrauen im Team und Luft im Budget für das größere System.</li>
+    <li><strong>Sie denken in Systemen, nicht in Insellösungen.</strong> Jeder Quick Win ist ein Baustein, der später mit den anderen zusammenspielt.</li>
+    <li><strong>Sie nutzen Fördermittel.</strong> Für Beratung, Digitalisierung und Weiterbildung gibt es Zuschüsse. Über das BAFA-Programm zur Förderung von Unternehmensberatungen für KMU lässt sich etwa die Hälfte eines Beratungsbudgets bezuschussen, wenn der Antrag vor Beratungsbeginn gestellt wird.<sup>16</sup> Viele Programme bleiben ungenutzt, weil niemand sie prüft.</li>
+    <li><strong>Sie planen in 90 Tagen,</strong> nicht in drei Jahren. Was in 90 Tagen nicht sichtbar wirkt, wird überprüft.</li>
+  </ul>
+
+  <div class="praxis">
+    <div class="kicker">Aus der Beratungspraxis</div>
+    <p>Was mit gemessenen Quick Wins möglich ist, zeigen Ergebnisse aus Projekten im Mittelstand:</p>
+    <table style="color:var(--on-dark); margin-bottom:0">
+      <tr><td style="border-color:rgba(201,168,124,0.35)">Rechnungswesen digitalisiert, mit vorhandenen Bordmitteln</td><td style="border-color:rgba(201,168,124,0.35); color:#fff; font-weight:650">35&nbsp;% Zeitersparnis in der Buchhaltung</td></tr>
+      <tr><td style="border-color:rgba(201,168,124,0.35)">Kernprozesse digitalisiert und automatisiert</td><td style="border-color:rgba(201,168,124,0.35); color:#fff; font-weight:650">1,5 Vollzeitstellen in 2 Monaten</td></tr>
+      <tr><td style="border-color:rgba(201,168,124,0.35)">Preisschilder automatisch statt von Hand</td><td style="border-color:rgba(201,168,124,0.35); color:#fff; font-weight:650">5 Arbeitstage pro Monat</td></tr>
+      <tr><td style="border:0">Palettenetiketten automatisch erstellt</td><td style="border:0; color:#fff; font-weight:650">4 Wochen Arbeitszeit pro Jahr</td></tr>
+    </table>
+  </div>
+
+  <div class="check">
+    <div class="kicker">Ihr Selbstcheck</div>
+    <ul>
+      <li>Für jeden Ablauf, den wir verbessern wollen, kennen wir den heutigen Zeitaufwand.</li>
+      <li>Wir haben einen ersten Quick Win, der in wenigen Wochen sichtbar wirkt.</li>
+      <li>Wir haben geprüft, welche Fördermittel für unser Vorhaben infrage kommen.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================== DER WEG ====================== -->
+<section class="kapitel">
+  <div class="kicker">Zusammenfassung</div>
+  <h2>Der Weg der erfolgreichen 5&nbsp;%</h2>
+  <p class="lead">Die fünf Gründe haben einen gemeinsamen Kern: KI scheitert selten an der Technik, sondern an der Herangehensweise. Wer von den Tools her denkt, landet bei Einzellösungen. Wer vom Problem her denkt, baut Systeme, die ineinandergreifen.</p>
+
+  <table>
+    <tr><th style="width:38%">Typischer Fehler</th><th>Was stattdessen wirkt</th></tr>
+    <tr><td>Tool zuerst</td><td>Zeitfresser finden, Bordmittel prüfen, dann das passende Werkzeug wählen</td></tr>
+    <tr><td>KI auf ungeordnete Prozesse</td><td>Verstehen, bereinigen, digital gestalten, testen, produktiv setzen</td></tr>
+    <tr><td>Team außen vor</td><td>Früh beteiligen, an echten Aufgaben trainieren, Human in the Loop</td></tr>
+    <tr><td>Datenschutz und Kontrolle offen</td><td>DSGVO-konforme Plattform, Regeln in Klartext, Freigaben, Protokolle</td></tr>
+    <tr><td>Kein Maßstab, kein Atem</td><td>Vorher messen, Quick Wins zuerst, Fördermittel nutzen, 90-Tage-Rhythmus</td></tr>
+  </table>
+
+  <h3>Ein realistischer 90-Tage-Plan</h3>
+  <table>
+    <tr><th style="width:22%">Zeitraum</th><th>Was passiert</th></tr>
+    <tr><td>Woche 1 bis 2</td><td>Die drei größten Zeitfresser benennen und den heutigen Aufwand messen. Vorhandene Software auf ungenutzte Funktionen prüfen. Fördermittel prüfen.</td></tr>
+    <tr><td>Woche 3 bis 6</td><td>Den ersten Quick Win umsetzen und im echten Betrieb testen. Spielregeln für KI im Unternehmen festlegen.</td></tr>
+    <tr><td>Woche 7 bis 10</td><td>Team an echten Aufgaben schulen und das Training dokumentieren. Den zweiten Ablauf angehen.</td></tr>
+    <tr><td>Woche 11 bis 13</td><td>Ergebnisse gegen die Vorher-Werte messen. Entscheiden, welche Bausteine zum System ausgebaut werden.</td></tr>
+  </table>
+
+  <h3>Woran Sie gute externe Begleitung erkennen</h3>
+  <p>Nicht jedes Unternehmen braucht Unterstützung von außen. Wenn doch, lohnt ein Blick auf diese Punkte:</p>
+  <ul>
+    <li>Erfahrung aus dem operativen Geschäft und mit Veränderung im Team, nicht nur mit Technik.</li>
+    <li>Ein Einstieg, der mit konkreten Ergebnissen beginnt statt mit einem Foliendeck.</li>
+    <li>Die Prüfung vorhandener Systeme, bevor neue Lizenzen empfohlen werden.</li>
+    <li>Transparente Kosten inklusive Lizenzen und eine Prüfung von Fördermitteln.</li>
+    <li>Ein klares Verständnis von Datenschutz und, bei Kanzleien und Praxen, von Berufsgeheimnis.</li>
+  </ul>
+</section>
+
+<!-- ====================== SELBSTCHECK ====================== -->
+<section class="kapitel">
+  <div class="kicker">Selbstcheck</div>
+  <h2>Wo steht Ihr Betrieb?</h2>
+  <p class="lead">Zählen Sie, wie viele der 15 Aussagen aus den fünf Kapiteln für Ihr Unternehmen, Ihre Kanzlei oder Ihre Praxis heute zutreffen.</p>
+
+  <table>
+    <tr><th style="width:22%">Treffer</th><th>Einordnung</th></tr>
+    <tr><td><strong>12 bis 15</strong></td><td>Sie gehören zu den Unternehmen, die KI bereits gesteuert einsetzen. Der nächste Schritt ist, Einzellösungen zu einem System zu verbinden und weitere Abläufe zu erschließen.</td></tr>
+    <tr><td><strong>7 bis 11</strong></td><td>Die Grundlagen sind gelegt, aber einzelne Lücken bremsen die Wirkung. Konzentrieren Sie sich auf das Kapitel mit den wenigsten Treffern.</td></tr>
+    <tr><td><strong>0 bis 6</strong></td><td>Sie stehen am Anfang, wie die Mehrheit des Mittelstands. Das ist kein Nachteil: Sie können die typischen Fehler von Anfang an vermeiden. Starten Sie mit einem einzigen, gut messbaren Quick Win.</td></tr>
+  </table>
+
+  <h3>Die drei Fragen für Ihre nächste Besprechung</h3>
+  <ol class="schritte">
+    <li>Welche wiederkehrende Aufgabe kostet unser Team jede Woche die meisten Stunden?</li>
+    <li>Was davon könnte unsere vorhandene Software heute schon übernehmen?</li>
+    <li>Woran würden wir in 90 Tagen merken, dass es funktioniert?</li>
+  </ol>
+
+  <div class="cta">
+    <div class="kicker">Der nächste Schritt</div>
+    <h3>Zwei konkrete Hebel in 45 Minuten</h3>
+    <p>Wenn Sie diese Fragen nicht allein beantworten möchten: In einer kostenfreien Quick-Win-Analyse schauen wir gemeinsam auf Ihre Abläufe. Sie gehen mit zwei konkreten Hebeln raus, die Sie sofort umsetzen können, mit oder ohne weitere Begleitung.</p>
+    <p style="margin:0"><strong>Eduard Schmal</strong> · <a href="https://schmal-unternehmensberatung.de">schmal-unternehmensberatung.de</a> · <a href="mailto:info@schmal-unternehmensberatung.de">info@schmal-unternehmensberatung.de</a> · +49 1522 685 95 24</p>
+  </div>
+</section>
+
+<!-- ====================== AUTOR ====================== -->
+<section class="kapitel">
+  <div class="kicker">Über den Autor</div>
+  <h2>Eduard Schmal</h2>
+  <p class="lead">Berater für digitale Transformation und KI im Mittelstand. Schmal Unternehmensberatung, Eyendorf bei Lüneburg.</p>
+  <p>Eduard Schmal verbindet 20 Jahre Erfahrung als Führungskraft, Manager, Interim-Geschäftsführer und Berater mit angewandter künstlicher Intelligenz. In allen Stationen standen Projekte mit starker Technikkomponente im Mittelpunkt: die Einführung neuer Produkte, Online-Antragsstrecken, eine Schulungsplattform für 450 Mitarbeitende, die Umstellung auf Softphone-Anlagen und der Aufbau eines zentralen Servicebereichs mit fast 50 Mitarbeitenden.</p>
+  <p>Sein Ansatz: zuerst die Zeitfresser lösen, die ein Team heute am meisten bremsen, und daraus Schritt für Schritt ein System bauen, das auch nach dem Projekt weiterlebt. Ohne Foliendecks, mit messbaren Ergebnissen und gemeinsam mit den Menschen, die damit arbeiten.</p>
+  <h3>Qualifikationen</h3>
+  <ul>
+    <li>Manager für angewandte KI-Transformation (IHK), mit Auszeichnung</li>
+    <li>MBA (Middlesex University London) mit Fokus auf Projektarbeit, Organisationspsychologie und digitale Innovation</li>
+    <li>Certified International Turnaround Manager (TMS)</li>
+    <li>Betriebswirt (VWA)</li>
+    <li>Dozent (IHK)</li>
+  </ul>
+  <p class="klein" style="margin-top:8mm">Hinweis: Die Praxisbeispiele stammen aus Projekten im Mittelstand und sind anonymisiert. Die genannten Studien geben den Stand zum Zeitpunkt ihrer Veröffentlichung wieder. Rechtliche Hinweise ersetzen keine Rechtsberatung, bitte prüfen Sie den jeweils aktuellen Stand.</p>
+</section>
+
+<!-- ====================== QUELLEN ====================== -->
+<section class="kapitel">
+  <div class="kicker">Quellen</div>
+  <h2>Quellenverzeichnis</h2>
+  <ol class="quellen">
+    <li>McKinsey &amp; Company: The State of AI 2025. <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai">mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai</a></li>
+    <li>Boston Consulting Group: The Widening AI Value Gap, Pressemitteilung vom 30.09.2025. <a href="https://www.bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings">bcg.com/press/30september2025-ai-leaders-outpace-laggards-revenue-growth-cost-savings</a></li>
+    <li>MIT NANDA: The GenAI Divide. State of AI in Business 2025 (Juli 2025), zitiert nach Fortune, 18.08.2025. Vorläufige Studie auf Basis von Interviews, Befragungen und der Analyse öffentlicher KI-Projekte. <a href="https://fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo/">fortune.com/2025/08/18/mit-report-95-percent-generative-ai-pilots-at-companies-failing-cfo</a></li>
+    <li>RAND Corporation: J. Ryseff, B. F. De Bruhl, S. J. Newberry, The Root Causes of Failure for Artificial Intelligence Projects and How They Can Succeed, RR-A2680-1, 13.08.2024. <a href="https://www.rand.org/pubs/research_reports/RRA2680-1.html">rand.org/pubs/research_reports/RRA2680-1.html</a></li>
+    <li>KfW Research: Fokus Volkswirtschaft Nr. 495, Bürokratie im Mittelstand, 25.04.2025. <a href="https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2025/Fokus-Nr.-495-April-2025-Buerokratie.pdf">kfw.de, Fokus Nr. 495</a></li>
+    <li>DIHK: Fachkräftereport 2025/2026, 19.12.2025. <a href="https://www.dihk.de/de/newsroom/dihk-legt-fachkraeftereport-2025-2026-vor-159712">dihk.de/de/newsroom/dihk-legt-fachkraeftereport-2025-2026-vor-159712</a></li>
+    <li>Bitkom: 4 von 10 Unternehmen arbeiten papierlos, Presseinformation vom 24.09.2024. <a href="https://www.bitkom.org/Presse/Presseinformation/4-von-10-Unternehmen-arbeiten-papierlos">bitkom.org/Presse/Presseinformation/4-von-10-Unternehmen-arbeiten-papierlos</a></li>
+    <li>KfW Research: Fokus Volkswirtschaft Nr. 533, KI im Mittelstand, 11.02.2026. <a href="https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Fokus-Volkswirtschaft/Fokus-2026/Fokus-Nr.-533-Februar-2026-KI-Mittelstand.pdf">kfw.de, Fokus Nr. 533</a></li>
+    <li>Statistisches Bundesamt: IKT-Erhebung 2025, Nutzung künstlicher Intelligenz nach Beschäftigtengrößenklassen. <a href="https://www.destatis.de/DE/Themen/Branchen-Unternehmen/Unternehmen/IKT-in-Unternehmen-IKT-Branche/Tabellen/ikti-unternehmen-kuenstliche-intelligenz.html">destatis.de, IKT in Unternehmen</a></li>
+    <li>KfW Research: KfW-Digitalisierungsbericht Mittelstand 2025, April 2026. <a href="https://www.kfw.de/PDF/Download-Center/Konzernthemen/Research/PDF-Dokumente-Digitalisierungsbericht-Mittelstand/KfW-Digitalisierungsbericht-2025.pdf">kfw.de, Digitalisierungsbericht 2025</a></li>
+    <li>Gartner: Gartner Predicts 30% of Generative AI Projects Will Be Abandoned After Proof of Concept By End of 2025, Pressemitteilung vom 29.07.2024. <a href="https://www.gartner.com/en/newsroom/press-releases/2024-07-29-gartner-predicts-30-percent-of-generative-ai-projects-will-be-abandoned-after-proof-of-concept-by-end-of-2025">gartner.com/en/newsroom</a></li>
+    <li>Boston Consulting Group: Five Rules for Fixing AI in Business (2022), Regel 10-20-70. <a href="https://www.bcg.com/publications/2022/5-rules-for-fixing-ai-and-machine-learning-for-your-business">bcg.com/publications/2022/5-rules-for-fixing-ai-and-machine-learning-for-your-business</a></li>
+    <li>Bitkom: Beschäftigte nutzen vermehrt Schatten-KI, Presseinformation vom 21.10.2025. <a href="https://www.bitkom.org/Presse/Presseinformation/Beschaeftigte-nutzen-vermehrt-Schatten-KI">bitkom.org/Presse/Presseinformation/Beschaeftigte-nutzen-vermehrt-Schatten-KI</a></li>
+    <li>Verordnung (EU) 2024/1689 (KI-Verordnung), Art. 4 KI-Kompetenz, anwendbar seit 02.02.2025. Bitte den jeweils aktuellen, konsolidierten Stand prüfen. <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">eur-lex.europa.eu/eli/reg/2024/1689/oj</a></li>
+    <li>§&nbsp;203 StGB, §&nbsp;43e BRAO, §&nbsp;62a StBerG, Art.&nbsp;9 DSGVO. <a href="https://www.gesetze-im-internet.de/stgb/__203.html">gesetze-im-internet.de/stgb/__203.html</a> · <a href="https://www.gesetze-im-internet.de/brao/__43e.html">gesetze-im-internet.de/brao/__43e.html</a> · <a href="https://www.gesetze-im-internet.de/stberg/__62a.html">gesetze-im-internet.de/stberg/__62a.html</a> · <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">eur-lex.europa.eu/eli/reg/2016/679/oj</a></li>
+    <li>IHK Bochum: Förderung von Unternehmensberatungen für KMU (BAFA). Beratungsbudget 3.500&nbsp;Euro, Zuschuss 50&nbsp;%. Stand und Bedingungen bitte beim BAFA prüfen. <a href="https://www.ihk.de/bochum/hauptnavigation/beratung-service/unternehmensunterstuetzung/unternehmensfoerderung/foerderung-von-unternehmensberatungen-fuer-kmu-bafa--5690532">ihk.de/bochum, Förderung von Unternehmensberatungen</a></li>
+  </ol>
+  <p class="klein" style="margin-top:6mm">© 2026 Eduard Schmal, Schmal Unternehmensberatung, Im Kamp 7, 21376 Eyendorf. Weitergabe in unveränderter Form ausdrücklich erwünscht.</p>
+</section>
+
+</body>
+</html>
