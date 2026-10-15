@@ -34,14 +34,18 @@ async function freistellen(datei) {
   await sharp(quer).toFile(ziel('assets/logo/logo-quer-transparent.png'));
   await sharp(zeichen).toFile(ziel('assets/logo/logo-zeichen-transparent.png'));
 
-  // Favicons: Bildzeichen auf Navy mit Rand
+  // Favicons: Bildzeichen auf Navy mit Rand. Erst groß (1024 px) exakt mittig
+  // zusammensetzen, dann verkleinern, damit kleine Größen nicht durch Rundung verrutschen.
   const icon = async (groesse, datei, rand = 0.14) => {
-    const innen = Math.round(groesse * (1 - 2 * rand));
+    const G = 1024;
+    const innen = Math.round(G * (1 - 2 * rand));
     const z = await sharp(zeichen).resize(innen, innen, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } }).toBuffer();
-    await sharp({ create: { width: groesse, height: groesse, channels: 4, background: { r: BG[0], g: BG[1], b: BG[2], alpha: 1 } } })
-      .composite([{ input: z, gravity: 'center' }])
+    const m = await sharp(z).metadata();
+    const gross = await sharp({ create: { width: G, height: G, channels: 4, background: { r: BG[0], g: BG[1], b: BG[2], alpha: 1 } } })
+      .composite([{ input: z, left: Math.round((G - m.width) / 2), top: Math.round((G - m.height) / 2) }])
       .png()
-      .toFile(ziel(datei));
+      .toBuffer();
+    await sharp(gross).resize(groesse, groesse, { kernel: 'lanczos3' }).png().toFile(ziel(datei));
   };
   await icon(32, 'public/favicon-32.png', 0.08);
   await icon(48, 'public/favicon-48.png', 0.1);
