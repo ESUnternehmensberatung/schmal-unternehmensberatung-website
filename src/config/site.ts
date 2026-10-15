@@ -12,11 +12,11 @@ function mailto(subject: string, body: string) {
 // Concierge: Empfehlungen ohne eigenen Partnerlink laufen über ein Formular,
 // damit die Anfrage nachweislich über mich kommt. Sobald das Jotform-Formular
 // steht, hier die URL eintragen; der Name der Empfehlung wird per URL-Parameter
-// „empfehlung“ vorausgefüllt (Feldname in Jotform entsprechend anlegen).
+// „wofurInteressieren“ (Mehrfachauswahl in Jotform) vorausgewählt.
 const jotformEmpfehlung = 'https://form.jotform.com/262843738420056';
 
 export function empfehlungAnfrage(name: string) {
-  if (jotformEmpfehlung) return `${jotformEmpfehlung}?empfehlung=${encodeURIComponent(name)}`;
+  if (jotformEmpfehlung) return `${jotformEmpfehlung}?wofurInteressieren=${encodeURIComponent(name)}`;
   return mailto(
     `Empfehlung: ${name}`,
     `Guten Tag Herr Schmal,\n\nich interessiere mich für ${name} und bitte um Kontakt.\n\nName:\nFirma:\nTelefon:\nAnliegen:\n\nViele Grüße\n`,
