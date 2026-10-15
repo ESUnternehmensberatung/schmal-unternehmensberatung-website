@@ -1,12 +1,14 @@
 ---
 import { url } from '../utils/url';
 import { site } from '../config/site';
+import { Image } from 'astro:assets';
+import logo from '../../assets/logo/logo-quer-transparent.png';
 const year = new Date().getFullYear();
 ---
 <footer class="footer dark">
   <div class="wrap grid">
     <div class="brand">
-      <p class="brand-line"><strong>Schmal</strong> Unternehmensberatung</p>
+      <Image class="brand-logo" src={logo} alt={site.name} widths={[240, 480]} sizes="240px" />
       <p>{site.claim}.</p>
     </div>
     <address>
@@ -45,14 +47,11 @@ const year = new Date().getFullYear();
     gap: 2.5rem;
   }
 
-  .brand-line {
-    font-size: 1.125rem;
-    color: var(--white);
-    margin-bottom: 0.5rem;
-  }
-
-  .brand-line strong {
-    font-weight: 700;
+  .footer :global(.brand-logo) {
+    display: block;
+    width: auto;
+    height: 3.25rem;
+    margin-bottom: 1rem;
   }
 
   address {
