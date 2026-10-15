@@ -116,7 +116,7 @@
     color: var(--gold-deep); margin-bottom: 3mm;
   }
   h2 { font-size: 24pt; margin-bottom: 6mm; }
-  h3 { font-size: 13.5pt; margin: 7mm 0 2.5mm; }
+  h3 { font-size: 13.5pt; margin: 7mm 0 2.5mm; break-after: avoid; }
   .lead { font-size: 12.5pt; line-height: 1.55; color: var(--ink); margin-bottom: 6mm; }
   ul, ol { margin: 0 0 0.9em; padding-left: 5mm; }
   li { margin-bottom: 1.5mm; }
@@ -129,7 +129,7 @@
   .grund-kopf .nr { font-family: 'Serif', serif; font-size: 64pt; line-height: 0.8; color: var(--gold); }
   .grund-kopf h2 { margin: 0; font-size: 22pt; }
 
-  .zahlen { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4mm; margin: 5mm 0 7mm; }
+  .zahlen { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3.5mm; margin: 4mm 0 6mm; }
   .zahl-box { background: var(--ivory); padding: 4.5mm 5mm; border-top: 1.5pt solid var(--gold); break-inside: avoid; }
   .zahl-box b { display: block; font-family: 'Serif', serif; font-weight: 500; font-size: 24pt; color: var(--navy); line-height: 1.05; }
   .zahl-box span { font-size: 9pt; color: var(--stone); line-height: 1.45; display: block; margin-top: 1.5mm; }
@@ -171,8 +171,8 @@
   th { text-align: left; font-weight: 650; color: var(--navy); border-bottom: 1pt solid var(--navy); padding: 2mm 2mm 2mm 0; }
   td { border-bottom: 0.5pt solid var(--line); padding: 2.2mm 2mm 2.2mm 0; vertical-align: top; }
 
-  .toc { list-style: none; padding: 0; margin-top: 6mm; display: grid; grid-template-columns: 1fr 1fr; column-gap: 8mm; }
-  .toc li { display: flex; gap: 4mm; padding: 2.2mm 0; margin: 0; border-bottom: 0.5pt solid var(--line); font-size: 10pt; }
+  .toc { list-style: none; padding: 0; margin-top: 6mm; display: grid; grid-template-columns: 1fr 1fr 1fr; column-gap: 6mm; }
+  .toc li { display: flex; gap: 4mm; padding: 1.6mm 0; margin: 0; border-bottom: 0.5pt solid var(--line); font-size: 9pt; line-height: 1.35; }
   .toc li span:first-child { font-family: 'Serif', serif; color: var(--gold-deep); width: 8mm; }
 
   .quellen { font-size: 8.6pt; line-height: 1.5; padding-left: 6mm; }
@@ -185,6 +185,13 @@
   }
   .cta h3 { margin-top: 0; font-size: 16pt; }
   .klein { font-size: 8.8pt; color: var(--stone); }
+  .interview .frage { font-weight: 650; color: var(--gold-deep); margin: 6mm 0 2mm; font-size: 10.5pt; }
+  .interview .antwort { font-family: 'Serif', serif; font-size: 11.5pt; line-height: 1.55; color: var(--ink); }
+  .faktoren { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4mm; margin: 5mm 0 2mm; }
+  .faktoren div { background: var(--navy); color: var(--on-dark); padding: 5mm; break-inside: avoid; }
+  .faktoren b { display: block; font-family: 'Serif', serif; font-weight: 500; font-size: 26pt; color: var(--gold); line-height: 1; margin-bottom: 2mm; }
+  .faktoren strong { color: #fff; display: block; margin-bottom: 1mm; }
+  .faktoren span { font-size: 9pt; line-height: 1.45; }
 </style>
 </head>
 <body>
@@ -216,7 +223,7 @@
 
   <p>Diese Zahlen stammen überwiegend aus Konzernen. Für Mittelständler, Kanzleien und Praxen ist die Lage nicht besser, sondern schärfer: Es gibt keine eigene KI-Abteilung, keine Projektbudgets in Millionenhöhe und kaum Zeit neben dem Tagesgeschäft. Ein gescheitertes Projekt kostet hier nicht nur Geld, sondern vor allem Vertrauen. Wer einmal erlebt hat, dass „die KI“ nichts gebracht hat, fängt so schnell nicht wieder an.</p>
 
-  <p>Die gute Nachricht: Die Gründe für das Scheitern sind bekannt, und sie liegen selten in der Technik. Dieses Whitepaper bündelt aktuelle Studien und Erfahrungen aus über 20 Jahren Führungs-, Prozess- und Transformationspraxis zu fünf Mustern, die immer wieder auftauchen. Zu jedem Muster finden Sie, woran Sie es erkennen, warum es entsteht, was erfolgreiche Unternehmen anders machen und einen kurzen Selbstcheck.</p>
+  <p>Die gute Nachricht: Die Gründe für das Scheitern sind bekannt, und sie liegen selten in der Technik. Dieses Whitepaper bündelt aktuelle Studien und Erfahrungen aus über 20 Jahren Führungs-, Prozess- und Transformationspraxis zu fünf Mustern, die immer wieder auftauchen. Zu jedem Muster finden Sie, woran Sie es erkennen, warum es entsteht, was erfolgreiche Unternehmen anders machen und einen kurzen Selbstcheck. Ergänzt wird das durch Auszüge aus einem ausführlichen Interview über das, was in zwei Jahrzehnten Transformationsprojekten immer wieder den Unterschied gemacht hat.</p>
 
   <ol class="toc">
     <li><span>1</span><span>Das Tool kommt vor dem Problem</span></li>
@@ -224,7 +231,7 @@
     <li><span>3</span><span>Das Team wird nicht mitgenommen</span></li>
     <li><span>4</span><span>Datenschutz, Sicherheit und Kontrolle bleiben offen</span></li>
     <li><span>5</span><span>Es fehlt der Maßstab und damit der lange Atem</span></li>
-    <li><span>→</span><span>Der Weg der erfolgreichen 5&nbsp;% · Selbstcheck · Quellen</span></li>
+    <li><span>→</span><span>Im Gespräch · Der Weg der erfolgreichen 5&nbsp;% · Selbstcheck</span></li>
   </ol>
 </section>
 
@@ -272,9 +279,11 @@
   <ol class="schritte">
     <li><strong>Sie beginnen mit den Zeitfressern, nicht mit dem Tool.</strong> Welche drei Aufgaben kosten Ihr Team jede Woche die meisten Stunden? Wo entstehen Rückfragen, Wartezeiten, Doppelerfassung?</li>
     <li><strong>Sie bewerten nach Aufwand und Wirkung.</strong> Ein Quick Win ist eine Aufgabe, die häufig vorkommt, klar geregelt ist und sich in Wochen statt Monaten verbessern lässt.</li>
-    <li><strong>Sie prüfen zuerst die Bordmittel.</strong> In Microsoft 365, Google Workspace, der Buchhaltungssoftware oder der Telefonanlage stecken oft Funktionen, die bezahlt, aber ungenutzt sind. Der schnellste Hebel liegt häufig schon im Haus.</li>
+    <li><strong>Sie prüfen zuerst die Bordmittel.</strong> In Microsoft 365, Google Workspace, der Buchhaltungssoftware oder der Telefonanlage stecken oft Funktionen, die bezahlt, aber ungenutzt sind. Die Erfahrung aus vielen Betrieben: Vorhandene Software wird oft nur zu 5 bis 10&nbsp;% genutzt. Sobald etwas hakt, heißt es wieder „ausdrucken, stempeln, einscannen“. Der schnellste Hebel liegt deshalb häufig schon im Haus.</li>
     <li><strong>Erst dann wählen sie das Werkzeug</strong>, und zwar passend zum Problem und zur vorhandenen Infrastruktur.</li>
   </ol>
+
+  <div class="zitat">„Ich führe nicht ein Tool ein und suche mir dann die Probleme dazu. Ich habe ein echtes Problem, das ich klar verbessern will, und dieses Ziel immer vor Augen.“</div>
 
   <div class="praxis">
     <div class="kicker">Aus der Beratungspraxis</div>
@@ -312,6 +321,8 @@
   <p>58&nbsp;% der Unternehmen erledigen mindestens die Hälfte ihrer Büro- und Verwaltungsprozesse noch auf Papier, nur 15&nbsp;% arbeiten komplett papierlos.<sup>7</sup> Die KfW zählt unzureichende Datengrundlagen zu den wichtigsten Hemmnissen beim KI-Einsatz im Mittelstand.<sup>8</sup> Gartner nennt schlechte Datenqualität als einen der Hauptgründe, warum mindestens 30&nbsp;% der Projekte mit generativer KI nach der Testphase aufgegeben werden.<sup>11</sup></p>
   <p>Die Boston Consulting Group beschreibt das Verhältnis mit einer einfachen Regel: Etwa 10&nbsp;% des Aufwands entfallen auf die Algorithmen, 20&nbsp;% auf Technik und Daten und 70&nbsp;% auf Menschen und Prozesse.<sup>12</sup> Wer nur die ersten 30&nbsp;% bearbeitet, baut auf Sand.</p>
 
+  <div class="zitat">„Digitale Transformation heißt nicht, Papier einzuscannen und als PDF weiterzuschieben. Der ganze Ablauf muss so übersetzt werden, dass er mit den vorhandenen Systemen spricht. KI ist dann der Turbo, nicht die Grundvoraussetzung.“</div>
+
   <h3>Was die erfolgreichen 5&nbsp;% anders machen</h3>
   <p>Sie folgen einer festen Reihenfolge, bevor die erste Automatisierung live geht:</p>
   <ol class="schritte">
@@ -323,15 +334,20 @@
   </ol>
 
   <div class="praxis">
-    <div class="kicker">Aus der Beratungspraxis</div>
-    <p>Bei Projektbesichtigungen wurde alles von Hand notiert. Irgendwann landete der Zettel im Büro, wurde abgetippt und erst dann kalkuliert. Heute erfasst ein digitales Formular vor Ort alle Daten und Fotos, und das Büro kann sofort weiterarbeiten. Ergebnis: <strong>eine Stunde Ersparnis je Projektanfrage</strong> und deutlich bessere Datenqualität. In einem anderen Fall sank die Zeit bis zum fertigen Angebot von drei bis fünf Tagen auf ein bis 24 Stunden.</p>
+    <div class="kicker">Aus der Beratungspraxis · Musterschreiben</div>
+    <p>Lange vor KI: Antworten an Kunden wurden aus Textbausteinen in fünf verschiedenen Word-Dateien zusammenkopiert. Nach dem Umbau kamen die Daten direkt aus dem CRM, Vorlage und Textbausteine wurden mit wenigen Klicks gewählt. Ein Vorgang, an dem vorher bis zu 30 Personen beteiligt waren, wurde von drei Personen erledigt, in höherer Qualität und Frequenz.</p>
     <div class="vn">
-      <div><small>Angebot vorher</small><b>3 bis 5 Tage</b></div>
-      <div><small>Angebot nachher</small><b>1 bis 24 Std.</b></div>
+      <div><small>Korrekturfälle vorher</small><b>50 bis 100 pro Jahr</b></div>
+      <div><small>Korrekturfälle nachher</small><b>0, mehrere Jahre in Folge</b></div>
     </div>
   </div>
 
-  <div class="check">
+  <div class="praxis">
+    <div class="kicker">Aus der Beratungspraxis · Das „goldene Formular“</div>
+    <p>Auf fast jeder Baustelle wird mehr Material verbraucht als geplant: etwas Silikon, Ausgleichsmasse, Kleber. In einem Handwerksbetrieb wurde dieser Mehrverbrauch auf einem einfachen digitalen Formular direkt vor Ort erfasst. Die Daten fließen automatisch ins CRM, die Rechnung geht per Knopfdruck raus. Ergebnis: <strong>rund 200&nbsp;Euro mehr je Baustelle</strong>, die vorher einfach nicht berechnet wurden. Ebenso die Projektaufnahme: Statt Notizen von Hand, die später abgetippt wurden, sind Daten und Fotos sofort im Büro. Das spart <strong>eine Stunde je Projektanfrage</strong>, und die Zeit bis zum Angebot sank von drei bis fünf Tagen auf ein bis 24 Stunden.</p>
+  </div>
+
+<div class="check">
     <div class="kicker">Ihr Selbstcheck</div>
     <ul>
       <li>Unsere wichtigsten Abläufe sind beschrieben, mindestens als einfache Schrittfolge.</li>
@@ -359,9 +375,24 @@
   <p>Gleichzeitig wächst die sogenannte Schatten-KI. Laut Bitkom ist die Nutzung privater KI-Tools in 8&nbsp;% der Unternehmen weit verbreitet, in weiteren 17&nbsp;% gibt es Einzelfälle, und 17&nbsp;% vermuten es. Nur ein Viertel der Unternehmen stellt den Beschäftigten selbst Zugang zu generativer KI bereit, und nur 23&nbsp;% haben Regeln dafür aufgestellt.<sup>13</sup></p>
   <p>Hinzu kommt der rechtliche Rahmen: Seit Februar 2025 verlangt die EU-KI-Verordnung, dass Unternehmen, die KI einsetzen, Maßnahmen für ausreichende KI-Kompetenz ihrer Beschäftigten ergreifen (Art. 4).<sup>14</sup></p>
 
+  <p>In der Praxis zeigt sich ein wiederkehrendes Bild: Einige wenige Mitarbeitende probieren ein neues Werkzeug begeistert aus. Die große Mehrheit hat keine Zeit dafür, wurde nie geschult, versteht es nicht oder hat schlicht Sorge davor.</p>
+
+  <div class="zitat">„Du kannst die tollsten Prozesse bauen und die schönsten Tools einführen. Wenn am Ende jemand davorsitzt, der das nicht bedienen kann oder will, gewinnt immer die Excel-Datei, die ein Kollege 2013 gebaut hat.“</div>
+
+  <h3>Die Rolle der Geschäftsführung</h3>
+  <p>Geschäftsführer im Mittelstand neigen zu einem von zwei Extremen: Entweder sie wollen sofort alles mit Vollgas und hängen dabei alle ab, sich selbst eingeschlossen. Oder sie sind so vorsichtig, dass sie nicht merken, wie ihre Mitarbeitenden längst ChatGPT auf dem privaten Handy für betriebliche Themen nutzen. Die richtige Geschwindigkeit liegt dazwischen, und sie braucht Führung:</p>
+  <ul>
+    <li><strong>Struktur statt Zuruf.</strong> „Ich habe übrigens ein Tool eingeführt, das nutzen wir jetzt“, im Vorbeigehen an der Bürotür, funktioniert nicht. Es braucht feste Austauschrunden: Was haben wir eingeführt? Welche Erfahrungen gab es? Wo hakt es? Was ändern wir?</li>
+    <li><strong>Vorbild sein.</strong> Wer Regeln für KI aufstellt, sich aber selbst nicht daran hält, verliert das Team sofort.</li>
+    <li><strong>Eine Sprache auf allen Ebenen.</strong> Wenn die Geschäftsführung überzeugt ist, die zweite Führungsebene aber „mal mitmacht, eigentlich aber dagegen ist“, scheitert das Vorhaben nach unten.</li>
+    <li><strong>Coaching statt Schulung.</strong> Die Geschäftsführung braucht kein Tool-Training, sondern Klarheit über Ziele, Tempo, Rollen und den Umgang mit Widerstand.</li>
+  </ul>
+
   <h3>Was die erfolgreichen 5&nbsp;% anders machen</h3>
   <ul>
-    <li><strong>Sie beteiligen früh.</strong> Die Menschen, die den Ablauf täglich erledigen, gestalten die neue Lösung mit. Das erhöht die Qualität und die Akzeptanz zugleich.</li>
+    <li><strong>Sie machen die Fachleute zu Mitgestaltern.</strong> Die Rollen sind klar verteilt: Die Projektleitung baut den Rahmen, die Mitarbeitenden sind die Spezialisten für ihren Fachbereich und sagen, was sie brauchen. Die Sachbearbeiterin mit 20 Jahren Erfahrung kennt jeden Sonderfall. Gegen sie verliert jedes Projekt, mit ihr wird es besser.</li>
+    <li><strong>Sie arbeiten nicht hinter dem Vorhang.</strong> Wer monatelang im stillen Kämmerlein baut und am Ende „Tada!“ ruft, hört: „Das haben wir nicht bestellt.“ Ändert sich das Ergebnis unterwegs, und das tut es fast immer, wird das offen erklärt.</li>
+    <li><strong>Sie erklären mit Geduld.</strong> Eine bewährte Faustregel: Bevor etwas nicht siebenmal erklärt wurde, ist es nicht angekommen.</li>
     <li><strong>Sie sagen klar, wofür KI da ist:</strong> Entlastung von Routine, nicht Ersatz. Bei über 40&nbsp;% unbesetzten Stellen im Mittelstand ist das keine Floskel, sondern Realität.<sup>6</sup></li>
     <li><strong>Sie trainieren an echten Aufgaben</strong> aus dem eigenen Alltag statt an Standardbeispielen. Dazu gehört, KI-Ergebnisse zu prüfen, statt ihnen blind zu folgen.</li>
     <li><strong>Sie definieren Rollen:</strong> Wer gibt frei? Wer pflegt Vorlagen und Wissen? Wer ist Ansprechpartner bei Fragen?</li>
@@ -370,7 +401,7 @@
 
   <div class="praxis">
     <div class="kicker">Aus der Beratungspraxis</div>
-    <p>Große Veränderungen gelingen nicht durch bessere Technik, sondern durch Beteiligung. Beim Aufbau eines zentralen Servicebereichs mit fast 50 Mitarbeitenden wurde die umfassende technische Umstellung gemeinsam mit den Betroffenen gestaltet. Ähnlich bei der Einführung einer Schulungsplattform für 450 Mitarbeitende: Akzeptanz entstand dort, wo Menschen früh eingebunden waren. Die Erreichbarkeit im Kundenservice stieg in einem Projekt um 75&nbsp;%.</p>
+    <p>Große Veränderungen gelingen nicht durch bessere Technik, sondern durch Beteiligung. Beim Aufbau eines zentralen Servicebereichs mit fast 50 Mitarbeitenden wurde die umfassende technische Umstellung gemeinsam mit den Betroffenen gestaltet. Ähnlich bei der Einführung einer Schulungsplattform für Mitarbeitende an 14 Standorten: Die Inhalte wurden gemeinsam mit den Fachleuten erstellt, und Akzeptanz entstand dort, wo Menschen früh eingebunden waren. Die Erreichbarkeit im Kundenservice stieg in einem Projekt um 75&nbsp;%.</p>
   </div>
 
   <div class="check">
@@ -406,6 +437,7 @@
     <li><strong>Sie regeln in Klartext, was erlaubt ist:</strong> Welche Daten dürfen in welches Werkzeug? Welche Aktionen brauchen eine Freigabe? Moderne Governance-Lösungen setzen solche Regeln technisch durch, etwa „Zahlungen über einem Schwellenwert brauchen eine Freigabe“.</li>
     <li><strong>Sie minimieren Daten:</strong> Sensible Angaben wie Bankverbindungen oder Gesundheitsdaten werden maskiert, bevor ein KI-Modell sie sieht.</li>
     <li><strong>Sie protokollieren:</strong> Jede KI-gestützte Aktion ist nachvollziehbar. Das schafft Vertrauen und erfüllt die Dokumentationspflichten der KI-Verordnung.</li>
+    <li><strong>Sie planen die Mitbestimmung ein.</strong> Gibt es einen Betriebsrat, hat er bei technischen Einrichtungen, die Verhalten oder Leistung überwachen können, ein Mitbestimmungsrecht (§&nbsp;87 Abs.&nbsp;1 Nr.&nbsp;6 BetrVG).<sup>15</sup> Das gilt für viele KI- und Software-Lösungen. Die Erfahrung: Erst kommt die Abstimmung, dann die Technik. Wer das früh einplant, verliert keine Monate.</li>
     <li><strong>Sie holen Fachleute früh dazu,</strong> etwa einen externen Datenschutzbeauftragten oder einen Cyber-Risikocheck nach DIN SPEC 27076, der speziell für kleine und mittlere Unternehmen entwickelt wurde.</li>
   </ul>
 
@@ -444,7 +476,10 @@
     <li><strong>Sie denken in Systemen, nicht in Insellösungen.</strong> Jeder Quick Win ist ein Baustein, der später mit den anderen zusammenspielt.</li>
     <li><strong>Sie nutzen Fördermittel.</strong> Für Beratung, Digitalisierung und Weiterbildung gibt es Zuschüsse. Über das BAFA-Programm zur Förderung von Unternehmensberatungen für KMU lässt sich etwa die Hälfte eines Beratungsbudgets bezuschussen, wenn der Antrag vor Beratungsbeginn gestellt wird.<sup>16</sup> Viele Programme bleiben ungenutzt, weil niemand sie prüft.</li>
     <li><strong>Sie planen in 90 Tagen,</strong> nicht in drei Jahren. Was in 90 Tagen nicht sichtbar wirkt, wird überprüft.</li>
+    <li><strong>Sie planen Vorarbeiten ehrlich ein.</strong> Manches Vorhaben braucht ein Fundament, bevor es sichtbar wirkt. Beim Aufbau eines bundesweiten Servicebereichs mussten zuerst die Telefonanlagen von 14 Standorten zu einer Anlage mit neuem Nummernkonzept zusammengeführt werden, ein Jahr Vorprojekt. Wer das offen kommuniziert, behält den langen Atem.</li>
   </ul>
+
+  <div class="zitat">„Das System hält bis heute.“ Eine Schulungsplattform, eingeführt ohne eigenes Budget, weil eine gesetzliche Pflicht zu 15 Weiterbildungsstunden pro Jahr erfüllt werden musste. Inhalte und automatische Abschlusstests entstanden gemeinsam mit den Fachleuten. Jahre später kommen nur noch neue Inhalte hinzu.</div>
 
   <div class="praxis">
     <div class="kicker">Aus der Beratungspraxis</div>
@@ -467,6 +502,31 @@
   </div>
 </section>
 
+<!-- ====================== INTERVIEW ====================== -->
+<section class="kapitel interview">
+  <div class="kicker">Im Gespräch</div>
+  <h2>„Der zentrale Punkt ist der Mensch, der damit arbeiten muss.“</h2>
+  <p class="lead">Eduard Schmal über das, was in zwei Jahrzehnten Transformationsprojekten immer wieder den Unterschied gemacht hat. Auszüge aus einem Interview vom Oktober 2026, gekürzt und sprachlich geglättet.</p>
+
+  <p class="frage">Was verstehen Sie unter digitaler Transformation?</p>
+  <p class="antwort">Sie nur mit KI gleichzusetzen, ist zu kurz gesprungen. Für mich heißt digitale Transformation: Ich schaue, welche Prozesse und Strukturen heute analog laufen, und übersetze sie so, dass sie mit den Systemen kommunizieren, die schon da sind. Am Ende sagen alle: Wir brauchen kein Papier mehr. Erst dann setze ich KI obendrauf und frage, wie ich das Ganze beschleunige. KI ist der Turbo, nicht die Grundvoraussetzung. Die Grundvoraussetzung ist, dass die Mitarbeitenden digitale Prozesse verstehen.</p>
+
+  <p class="frage">Was ist der Erfolgsfaktor, ohne den es nicht geht?</p>
+  <p class="antwort">Training. Ohne Training der Mitarbeitenden kann man alle Systeme vergessen. In jedem Unternehmen gibt es ein paar wenige, die sich mit jedem neuen Werkzeug sofort beschäftigen. Die große Mehrheit sagt: Dafür habe ich keine Zeit, ich habe nie eine Schulung bekommen, ich verstehe das nicht, ich habe Angst davor.</p>
+
+  <p class="frage">Welche Rolle spielt die Geschäftsführung?</p>
+  <p class="antwort">Eine große. Erfahrungsgemäß wollen Geschäftsführer entweder sofort zu viel oder sind nicht mutig genug. Die Geschäftsführung braucht deshalb Coaching, kein Training. Sie hat methodische Pflichten: Gibt es Regelmeetings für diese Themen? Gibt es einen Raum, in dem Mitarbeitende Erfahrungen teilen können? Und hält sie sich selbst an die Regeln, die sie aufstellt? Wenn nicht, ist das Thema sofort verpufft.</p>
+
+  <p class="frage">Wie gewinnt man erfahrene Mitarbeitende für Veränderung?</p>
+  <p class="antwort">Indem man sie ernst nimmt. Ich habe immer gesagt: Ich bin der Spezialist für den Rahmen, ihr seid die Spezialisten in eurem Fachbereich. Sagt mir, was ihr braucht. Wer sich dagegen mit der Abteilungsleitung einschließt, etwas Großartiges ausdenkt und es dann präsentiert, bekommt im ersten Meeting zwanzig Gründe, warum es nicht funktioniert, und die stimmen oft sogar. Wenn die Lösung am Ende besser ist und die Leute mitgebaut haben, ist die Akzeptanz hoch.</p>
+
+  <p class="frage">Ist Veränderung von innen oder von außen leichter?</p>
+  <p class="antwort">Von außen geht es oft schneller. Wer extern kommt, bekommt einen Vertrauensvorschuss, ohne dass jemand seine Arbeit je gesehen hat. Intern heißt es dagegen schnell: Woher will der das denn können? Diese Zeit, die Leute erst einmal einzufangen, spart man sich von außen.</p>
+
+  <p class="frage">Wenn Sie sich auf drei Faktoren beschränken müssten?</p>
+  <p class="antwort">Erstens: Man löst ein echtes Problem. Zweitens: sauberes Projektmanagement, nicht aus dem Lehrbuch, sondern mit Methodik und Menschenführung zusammen. Drittens: Training, Training, Training. Und die Grundvoraussetzung ist eine technische Lösung, die nicht nur man selbst gut findet, sondern die objektiv besser ist. Wenn am Ende die alte Excel-Datei besser funktioniert als die neue KI-Lösung, hat man es falsch gemacht.</p>
+</section>
+
 <!-- ====================== DER WEG ====================== -->
 <section class="kapitel">
   <div class="kicker">Zusammenfassung</div>
@@ -482,6 +542,14 @@
     <tr><td>Kein Maßstab, kein Atem</td><td>Vorher messen, Quick Wins zuerst, Fördermittel nutzen, 90-Tage-Rhythmus</td></tr>
   </table>
 
+  <h3>Drei Erfolgsfaktoren aus 20 Jahren Praxis</h3>
+  <div class="faktoren">
+    <div><b>1</b><strong>Ein echtes Problem lösen</strong><span>Mit klarem Ziel und einer Lösung, die objektiv besser ist als das Bisherige.</span></div>
+    <div><b>2</b><strong>Sauberes Projektmanagement</strong><span>Methodik und Menschenführung verbunden, transparent auch bei Kurswechseln.</span></div>
+    <div><b>3</b><strong>Training, Training, Training</strong><span>An echten Aufgaben, wiederholt, dokumentiert. Sonst gewinnt die alte Excel-Datei.</span></div>
+  </div>
+
+  <div style="break-inside: avoid">
   <h3>Ein realistischer 90-Tage-Plan</h3>
   <table>
     <tr><th style="width:22%">Zeitraum</th><th>Was passiert</th></tr>
@@ -490,11 +558,13 @@
     <tr><td>Woche 7 bis 10</td><td>Team an echten Aufgaben schulen und das Training dokumentieren. Den zweiten Ablauf angehen.</td></tr>
     <tr><td>Woche 11 bis 13</td><td>Ergebnisse gegen die Vorher-Werte messen. Entscheiden, welche Bausteine zum System ausgebaut werden.</td></tr>
   </table>
+  </div>
 
   <h3>Woran Sie gute externe Begleitung erkennen</h3>
   <p>Nicht jedes Unternehmen braucht Unterstützung von außen. Wenn doch, lohnt ein Blick auf diese Punkte:</p>
   <ul>
     <li>Erfahrung aus dem operativen Geschäft und mit Veränderung im Team, nicht nur mit Technik.</li>
+    <li>Ein Blick von außen, der den Vertrauensvorschuss nutzt, den interne Projektleitungen sich oft erst mühsam erarbeiten müssen.</li>
     <li>Ein Einstieg, der mit konkreten Ergebnissen beginnt statt mit einem Foliendeck.</li>
     <li>Die Prüfung vorhandener Systeme, bevor neue Lizenzen empfohlen werden.</li>
     <li>Transparente Kosten inklusive Lizenzen und eine Prüfung von Fördermitteln.</li>
@@ -536,6 +606,7 @@
   <h2>Eduard Schmal</h2>
   <p class="lead">Berater für digitale Transformation und KI im Mittelstand. Schmal Unternehmensberatung, Eyendorf bei Lüneburg.</p>
   <p>Eduard Schmal verbindet 20 Jahre Erfahrung als Führungskraft, Manager, Interim-Geschäftsführer und Berater mit angewandter künstlicher Intelligenz. In allen Stationen standen Projekte mit starker Technikkomponente im Mittelpunkt: die Einführung neuer Produkte, Online-Antragsstrecken, eine Schulungsplattform für 450 Mitarbeitende, die Umstellung auf Softphone-Anlagen und der Aufbau eines zentralen Servicebereichs mit fast 50 Mitarbeitenden.</p>
+  <p>Mit Anfang 20 übernahm er die ersten Teams und führte schon lange vor dem KI-Zeitalter Prozessoptimierungen mit großer Technikkomponente durch. Sein Weg führte vom Auszubildenden bis ins Top-Management, inklusive der Führung von Mitarbeitenden über 14 Standorte hinweg.</p>
   <p>Sein Ansatz: zuerst die Zeitfresser lösen, die ein Team heute am meisten bremsen, und daraus Schritt für Schritt ein System bauen, das auch nach dem Projekt weiterlebt. Ohne Foliendecks, mit messbaren Ergebnissen und gemeinsam mit den Menschen, die damit arbeiten.</p>
   <h3>Qualifikationen</h3>
   <ul>
@@ -567,7 +638,7 @@
     <li>Boston Consulting Group: Five Rules for Fixing AI in Business (2022), Regel 10-20-70. <a href="https://www.bcg.com/publications/2022/5-rules-for-fixing-ai-and-machine-learning-for-your-business">bcg.com/publications/2022/5-rules-for-fixing-ai-and-machine-learning-for-your-business</a></li>
     <li>Bitkom: Beschäftigte nutzen vermehrt Schatten-KI, Presseinformation vom 21.10.2025. <a href="https://www.bitkom.org/Presse/Presseinformation/Beschaeftigte-nutzen-vermehrt-Schatten-KI">bitkom.org/Presse/Presseinformation/Beschaeftigte-nutzen-vermehrt-Schatten-KI</a></li>
     <li>Verordnung (EU) 2024/1689 (KI-Verordnung), Art. 4 KI-Kompetenz, anwendbar seit 02.02.2025. Bitte den jeweils aktuellen, konsolidierten Stand prüfen. <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj">eur-lex.europa.eu/eli/reg/2024/1689/oj</a></li>
-    <li>§&nbsp;203 StGB, §&nbsp;43e BRAO, §&nbsp;62a StBerG, Art.&nbsp;9 DSGVO. <a href="https://www.gesetze-im-internet.de/stgb/__203.html">gesetze-im-internet.de/stgb/__203.html</a> · <a href="https://www.gesetze-im-internet.de/brao/__43e.html">gesetze-im-internet.de/brao/__43e.html</a> · <a href="https://www.gesetze-im-internet.de/stberg/__62a.html">gesetze-im-internet.de/stberg/__62a.html</a> · <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">eur-lex.europa.eu/eli/reg/2016/679/oj</a></li>
+    <li>§&nbsp;203 StGB, §&nbsp;43e BRAO, §&nbsp;62a StBerG, §&nbsp;87 BetrVG, Art.&nbsp;9 DSGVO. <a href="https://www.gesetze-im-internet.de/betrvg/__87.html">gesetze-im-internet.de/betrvg/__87.html</a> · <a href="https://www.gesetze-im-internet.de/stgb/__203.html">gesetze-im-internet.de/stgb/__203.html</a> · <a href="https://www.gesetze-im-internet.de/brao/__43e.html">gesetze-im-internet.de/brao/__43e.html</a> · <a href="https://www.gesetze-im-internet.de/stberg/__62a.html">gesetze-im-internet.de/stberg/__62a.html</a> · <a href="https://eur-lex.europa.eu/eli/reg/2016/679/oj">eur-lex.europa.eu/eli/reg/2016/679/oj</a></li>
     <li>IHK Bochum: Förderung von Unternehmensberatungen für KMU (BAFA). Beratungsbudget 3.500&nbsp;Euro, Zuschuss 50&nbsp;%. Stand und Bedingungen bitte beim BAFA prüfen. <a href="https://www.ihk.de/bochum/hauptnavigation/beratung-service/unternehmensunterstuetzung/unternehmensfoerderung/foerderung-von-unternehmensberatungen-fuer-kmu-bafa--5690532">ihk.de/bochum, Förderung von Unternehmensberatungen</a></li>
   </ol>
   <p class="klein" style="margin-top:6mm">© 2026 Eduard Schmal, Schmal Unternehmensberatung, Im Kamp 7, 21376 Eyendorf. Weitergabe in unveränderter Form ausdrücklich erwünscht.</p>
