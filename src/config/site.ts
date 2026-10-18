@@ -1,6 +1,8 @@
 // Zentrale Einstellungen. Sobald Google-Terminbuchung und Jotform-Formulare
 // stehen, hier die URLs eintragen – alle Buttons der Seite ziehen automatisch mit.
 
+import { url } from '../utils/url';
+
 const email = 'info@schmal-unternehmensberatung.de';
 
 function mailto(subject: string, body: string) {
@@ -9,18 +11,11 @@ function mailto(subject: string, body: string) {
 
 // Firmendaten: einzige Quelle für Website, Impressum, strukturierte Daten und
 // Verzeichniseinträge (siehe briefing/eintraege-checkliste.md). Überall exakt so verwenden.
-// Concierge: Empfehlungen ohne eigenen Partnerlink laufen über ein Formular,
-// damit die Anfrage nachweislich über mich kommt. Sobald das Jotform-Formular
-// steht, hier die URL eintragen; der Name der Empfehlung wird per URL-Parameter
-// „wofurInteressieren“ (Mehrfachauswahl in Jotform) vorausgewählt.
-const jotformEmpfehlung = 'https://form.jotform.com/262843738420056';
-
+// Concierge: Empfehlungen ohne eigenen Partnerlink laufen über das eingebettete
+// Jotform-Formular auf /empfehlung/, damit die Anfrage nachweislich über mich kommt.
+// Der Name wird im Feld „wofurInteressieren“ vorausgewählt.
 export function empfehlungAnfrage(name: string) {
-  if (jotformEmpfehlung) return `${jotformEmpfehlung}?wofurInteressieren=${encodeURIComponent(name)}`;
-  return mailto(
-    `Empfehlung: ${name}`,
-    `Guten Tag Herr Schmal,\n\nich interessiere mich für ${name} und bitte um Kontakt.\n\nName:\nFirma:\nTelefon:\nAnliegen:\n\nViele Grüße\n`,
-  );
+  return `${url('/empfehlung/')}?wofurInteressieren=${encodeURIComponent(name)}`;
 }
 
 export const site = {
@@ -36,14 +31,12 @@ export const site = {
   address: ['Im Kamp 7', '21376 Eyendorf'],
 
   links: {
-    // Jotform „Quick-Win-Analyse anfragen“ (Feld „quelle“ zeigt, woher die Anfrage kommt).
-    quickWin: 'https://form.jotform.com/262902467726060?quelle=website',
+    // Formularseiten mit eingebettetem Jotform (src/layouts/Formular.astro, src/pages/*).
+    quickWin: url('/quick-win/'),
     // Google-Terminbuchung: verlinkt auf der Danke-Seite und in der Antwort-Mail des Quick-Win-Formulars.
     termin: 'https://calendar.app.google/Eg49DKaRsUyQXEFH6',
-    // Jotform „Angebot anfordern“ (mit Antwort-Mail und Terminlink).
-    angebot: 'https://form.jotform.com/262903046551050?quelle=website',
-    // Jotform: Whitepaper anfordern (Feld „quelle“ per URL vorbelegt).
-    whitepaper: 'https://form.jotform.com/262843975491067?quelle=website',
+    angebot: url('/angebot/'),
+    whitepaper: url('/whitepaper/'),
     // Link zum Google-Unternehmensprofil (für die Bewertungen). Leer = Sektion ausgeblendet.
     googleProfil: '',
   },
