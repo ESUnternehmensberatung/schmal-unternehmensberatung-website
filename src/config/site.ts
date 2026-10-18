@@ -36,15 +36,9 @@ export const site = {
   address: ['Im Kamp 7', '21376 Eyendorf'],
 
   links: {
-    // Später: Jotform-Vorabfragen, die auf die Google-Terminbuchung weiterleiten.
-    quickWin: mailto(
-      'Quick-Win-Analyse anfragen',
-      'Guten Tag Herr Schmal,\n\nich interessiere mich für die kostenfreie Quick-Win-Analyse (45 Minuten).\n\n' +
-        'Unternehmensgröße (Mitarbeitende):\n' +
-        'Größter Zeitfresser im Moment:\n' +
-        'Meine Rolle im Unternehmen:\n\n' +
-        'Mögliche Termine:\n\nViele Grüße\n',
-    ),
+    // Jotform „Quick-Win-Analyse anfragen“ (Feld „quelle“ zeigt, woher die Anfrage kommt).
+    // Später: nach dem Absenden auf die Google-Terminbuchung weiterleiten.
+    quickWin: 'https://form.jotform.com/262902467726060?quelle=website',
     // Später: Jotform „Angebot anfordern“ (Name, Firma, Mitarbeiterzahl, Anliegen).
     angebot: mailto(
       'Angebot anfordern',
