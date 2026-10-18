@@ -24,8 +24,10 @@ npm run build    # statische Seite nach dist/
 | Impressum, Datenschutz | `src/content/rechtliches/*.md` |
 | Fotos | `assets/hero.png`, `assets/about.png` (werden beim Build als AVIF/WebP optimiert) |
 
-Alle Buttons führen zu Jotform-Formularen (Quick-Win-Analyse, Angebot, Whitepaper,
-Empfehlungen) und öffnen in einem neuen Tab. Alle Links stehen in `src/config/site.ts`.
+Die Anfrage-Buttons führen auf eigene Seiten mit eingebettetem Jotform-Formular
+(`/quick-win/`, `/angebot/`, `/whitepaper/`, `/empfehlung/`, Vorlage
+`src/layouts/Formular.astro`). URL-Parameter wie `?quelle=linkedin` werden an das
+Formular durchgereicht. Alle Links stehen in `src/config/site.ts`.
 
 ## Veröffentlichen
 

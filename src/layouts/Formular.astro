@@ -1,0 +1,101 @@
+---
+// Seite mit eingebettetem Jotform-Formular unter eigener Domain.
+// URL-Parameter der Seite (z. B. ?quelle=linkedin oder ?wofurInteressieren=Langdock)
+// werden an das Formular weitergereicht; fehlt „quelle“, gilt der Standardwert.
+import Base from './Base.astro';
+import { site } from '../config/site';
+
+interface Props {
+  formId: string;
+  title: string; // Seitentitel im Browser-Tab
+  description: string;
+  kicker: string;
+  heading: string;
+  intro: string;
+  quelle?: string;
+}
+const { formId, title, description, kicker, heading, intro, quelle = 'website' } = Astro.props;
+const src = `https://form.jotform.com/${formId}`;
+---
+<Base title={`${title} | ${site.name}`} description={description}>
+  <section class="formular dark" aria-labelledby="formular-title">
+    <div class="wrap kopf">
+      <p class="kicker">{kicker}</p>
+      <h1 id="formular-title">{heading}</h1>
+      <p class="intro">{intro}</p>
+    </div>
+    <div class="wrap rahmen">
+      <iframe
+        id={`JotFormIFrame-${formId}`}
+        title={heading}
+        src={`${src}?quelle=${quelle}`}
+        data-src={src}
+        data-quelle={quelle}
+        allow="fullscreen"
+        loading="eager"
+        scrolling="no"
+      ></iframe>
+      <noscript>
+        <p>Das Formular benötigt JavaScript. Alternativ: <a href={`${src}?quelle=${quelle}`}>Formular direkt öffnen</a>.</p>
+      </noscript>
+    </div>
+  </section>
+</Base>
+
+<script is:inline src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script is:inline>
+  (function () {
+    var f = document.querySelector('iframe[id^="JotFormIFrame-"]');
+    if (!f) return;
+    var p = new URLSearchParams(window.location.search);
+    if (!p.has('quelle')) p.set('quelle', f.dataset.quelle);
+    f.src = f.dataset.src + '?' + p.toString();
+    if (window.jotformEmbedHandler) window.jotformEmbedHandler('iframe[id="' + f.id + '"]', 'https://form.jotform.com/');
+  })();
+</script>
+
+<style>
+  .formular {
+    padding-block: clamp(3rem, 6vw, 5rem) clamp(4rem, 8vw, 7rem);
+    min-height: 70vh;
+  }
+
+  .kopf {
+    max-width: 46rem;
+    text-align: center;
+  }
+
+  .kicker {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+
+  h1 {
+    font-size: var(--step-3);
+    color: var(--white);
+  }
+
+  .intro {
+    margin-top: 1rem;
+    color: var(--on-dark-muted);
+  }
+
+  .rahmen {
+    max-width: 52rem;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+    border-top: 1px solid var(--line-dark);
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    min-height: 900px;
+    border: 0;
+    background: var(--navy-deep);
+  }
+</style>
