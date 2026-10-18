@@ -37,8 +37,9 @@ export const site = {
 
   links: {
     // Jotform „Quick-Win-Analyse anfragen“ (Feld „quelle“ zeigt, woher die Anfrage kommt).
-    // Später: nach dem Absenden auf die Google-Terminbuchung weiterleiten.
     quickWin: 'https://form.jotform.com/262902467726060?quelle=website',
+    // Google-Terminbuchung: verlinkt auf der Danke-Seite und in der Antwort-Mail des Quick-Win-Formulars.
+    termin: 'https://calendar.app.google/Eg49DKaRsUyQXEFH6',
     // Später: Jotform „Angebot anfordern“ (Name, Firma, Mitarbeiterzahl, Anliegen).
     angebot: mailto(
       'Angebot anfordern',
