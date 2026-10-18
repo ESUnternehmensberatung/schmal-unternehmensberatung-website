@@ -40,12 +40,8 @@ export const site = {
     quickWin: 'https://form.jotform.com/262902467726060?quelle=website',
     // Google-Terminbuchung: verlinkt auf der Danke-Seite und in der Antwort-Mail des Quick-Win-Formulars.
     termin: 'https://calendar.app.google/Eg49DKaRsUyQXEFH6',
-    // Später: Jotform „Angebot anfordern“ (Name, Firma, Mitarbeiterzahl, Anliegen).
-    angebot: mailto(
-      'Angebot anfordern',
-      'Guten Tag Herr Schmal,\n\nbitte senden Sie mir ein Angebot.\n\n' +
-        'Name:\nFirma:\nMitarbeiterzahl:\nAnliegen:\n\nViele Grüße\n',
-    ),
+    // Jotform „Angebot anfordern“ (mit Antwort-Mail und Terminlink).
+    angebot: 'https://form.jotform.com/262903046551050?quelle=website',
     // Jotform: Whitepaper anfordern (Feld „quelle“ per URL vorbelegt).
     whitepaper: 'https://form.jotform.com/262843975491067?quelle=website',
     // Link zum Google-Unternehmensprofil (für die Bewertungen). Leer = Sektion ausgeblendet.
