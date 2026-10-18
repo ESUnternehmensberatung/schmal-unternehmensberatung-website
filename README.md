@@ -24,9 +24,8 @@ npm run build    # statische Seite nach dist/
 | Impressum, Datenschutz | `src/content/rechtliches/*.md` |
 | Fotos | `assets/hero.png`, `assets/about.png` (werden beim Build als AVIF/WebP optimiert) |
 
-„Quick-Win-Analyse anfragen“ führt zum Jotform-Formular, „Angebot anfordern“ öffnet
-vorerst eine vorbereitete E-Mail an info@schmal-unternehmensberatung.de. Alle Links
-stehen in `src/config/site.ts`.
+Alle Buttons führen zu Jotform-Formularen (Quick-Win-Analyse, Angebot, Whitepaper,
+Empfehlungen) und öffnen in einem neuen Tab. Alle Links stehen in `src/config/site.ts`.
 
 ## Veröffentlichen
 
