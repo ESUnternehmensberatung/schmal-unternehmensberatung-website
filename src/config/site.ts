@@ -39,5 +39,6 @@ export const site = {
     whitepaper: url('/whitepaper/'),
     // Link zum Google-Unternehmensprofil (für die Bewertungen). Leer = Sektion ausgeblendet.
     googleProfil: '',
+    linkedin: 'https://www.linkedin.com/in/eduard-schmal-998611253',
   },
 };

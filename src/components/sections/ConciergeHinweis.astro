@@ -1,0 +1,43 @@
+---
+import { url } from '../../utils/url';
+import Icon from '../Icon.astro';
+---
+<section class="hinweis-concierge" aria-labelledby="concierge-hinweis-title">
+  <div class="wrap zeile" data-reveal>
+    <div>
+      <h2 id="concierge-hinweis-title">Business-Concierge</h2>
+      <p>Tools und Partner, die ich selbst einsetze: von der KI-Plattform bis zur Fördermittelberatung.</p>
+    </div>
+    <a class="btn btn-outline" href={url("/concierge/")}>Zu den Empfehlungen <Icon name="arrow-right" /></a>
+  </div>
+</section>
+
+<style>
+  .hinweis-concierge {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .zeile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+  }
+
+  .zeile > div {
+    min-width: 0;
+    flex: 1 1 24rem;
+  }
+
+  h2 {
+    font-size: var(--step-2);
+  }
+
+  p {
+    margin-top: 0.5rem;
+    color: var(--stone);
+  }
+</style>

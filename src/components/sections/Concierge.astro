@@ -4,12 +4,17 @@ import { empfehlungAnfrage } from '../../config/site';
 import { gruppen } from '../../data/concierge';
 import Icon from '../Icon.astro';
 
+interface Props {
+  seite?: boolean; // eigene Unterseite: Überschrift als h1
+}
+const { seite = false } = Astro.props;
+const Titel = seite ? 'h1' : 'h2';
 const zeigeBlog = false; // auf true setzen, sobald der erste Erfahrungsbericht im Blog steht
 ---
 <section class="section concierge" id="concierge" aria-labelledby="concierge-title">
   <div class="wrap">
     <header class="intro">
-      <h2 id="concierge-title" data-reveal>Business-Concierge</h2>
+      <Titel id="concierge-title" class="titel" data-reveal>Business-Concierge</Titel>
       <p class="lead" data-reveal style="--i: 1">
         Als Unternehmensberater werde ich häufig nach Tools oder Lösungen zu verschiedenen Themen gefragt. Hier finden
         Sie meine Empfehlungen: Tools, die ich selbst verwende, und Partner, mit denen ich zusammenarbeite.
@@ -70,6 +75,10 @@ const zeigeBlog = false; // auf true setzen, sobald der erste Erfahrungsbericht 
 </section>
 
 <style>
+  .titel {
+    font-size: var(--step-3);
+  }
+
   .intro {
     display: grid;
     gap: 1.25rem;
