@@ -102,7 +102,7 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
                 {Array.from({ length: 5 }, () => <Icon name="star-fill" />)}
               </span>
               <strong>{gesamt.wert} von 5</strong>
-              <span>({gesamt.anzahl} Bewertungen auf {gesamt.quelle})</span>
+              <span>({gesamt.anzahl} Bewertungen auf {gesamt.quelle}), dazu Rezensionen auf Google</span>
             </p>
           </div>
           <ul>
@@ -111,7 +111,7 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
                 <blockquote>
                   <p>„{b.text}“</p>
                 </blockquote>
-                <p class="name">{b.quelle}</p>
+                <p class="name">{b.quelle === 'Google' ? 'Google-Rezension' : 'ProvenExpert-Bewertung'}</p>
               </li>
             ))}
           </ul>
