@@ -87,7 +87,7 @@ const jsonLd = {
       founder: { '@id': `${site.url}/#inhaber` },
       knowsAbout: themen,
       audience: zielgruppen.map((z) => ({ '@type': 'BusinessAudience', audienceType: z })),
-      sameAs: [site.links.linkedin],
+      sameAs: [site.links.linkedin, site.links.provenExpert, site.links.googleProfil],
       hasOfferCatalog: {
         '@type': 'OfferCatalog',
         name: 'Leistungen',

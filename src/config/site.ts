@@ -37,8 +37,9 @@ export const site = {
     termin: 'https://calendar.app.google/Eg49DKaRsUyQXEFH6',
     angebot: url('/angebot/'),
     whitepaper: url('/whitepaper/'),
-    // Link zum Google-Unternehmensprofil (für die Bewertungen). Leer = Sektion ausgeblendet.
-    googleProfil: '',
+    // Bewertungsprofile (verlinkt unter den Kundenstimmen bei den Ergebnissen).
+    provenExpert: 'https://www.provenexpert.com/de-de/es-unternehmensberatung/',
+    googleProfil: 'https://maps.google.com/?cid=3350734573139222131',
     linkedin: 'https://www.linkedin.com/in/eduard-schmal-998611253',
   },
 };

@@ -1,7 +1,7 @@
 ---
 import Icon from '../Icon.astro';
 import Karussell from '../Karussell.astro';
-import { bewertungen } from '../../data/bewertungen';
+import { bewertungen, gesamt } from '../../data/bewertungen';
 import { site } from '../../config/site';
 
 // Neue Fälle einfach als weiteres Objekt ergänzen; Karussell und Zähler passen sich an.
@@ -95,25 +95,36 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
     {
       bewertungen.length > 0 && (
         <div class="stimmen">
-          <h3>Das sagen Kunden auf Google</h3>
+          <div class="stimmen-kopf">
+            <h3>Das sagen Kunden</h3>
+            <p class="gesamt">
+              <span class="sterne" aria-hidden="true">
+                {Array.from({ length: 5 }, () => <Icon name="star-fill" />)}
+              </span>
+              <strong>{gesamt.wert} von 5</strong>
+              <span>({gesamt.anzahl} Bewertungen auf {gesamt.quelle})</span>
+            </p>
+          </div>
           <ul>
             {bewertungen.map((b) => (
               <li>
-                <p class="sterne" aria-label={`${b.sterne} von 5 Sternen`}>
-                  {Array.from({ length: b.sterne }, () => <Icon name="star-fill" />)}
-                </p>
                 <blockquote>
-                  <p>{b.text}</p>
+                  <p>„{b.text}“</p>
                 </blockquote>
-                <p class="name">{b.name}</p>
+                <p class="name">{b.quelle}</p>
               </li>
             ))}
           </ul>
-          {site.links.googleProfil && (
-            <a class="alle" href={site.links.googleProfil} rel="noopener" target="_blank">
-              Alle Bewertungen auf Google <Icon name="arrow-up-right" /><span class="visually-hidden">(öffnet in neuem Tab)</span>
+          <p class="links">
+            <a class="alle" href={site.links.provenExpert} rel="noopener" target="_blank">
+              Alle Bewertungen auf ProvenExpert <Icon name="arrow-up-right" /><span class="visually-hidden">(öffnet in neuem Tab)</span>
             </a>
-          )}
+            {site.links.googleProfil && (
+              <a class="alle" href={site.links.googleProfil} rel="noopener" target="_blank">
+                Bewertungen auf Google <Icon name="arrow-up-right" /><span class="visually-hidden">(öffnet in neuem Tab)</span>
+              </a>
+            )}
+          </p>
         </div>
       )
     }
@@ -222,13 +233,42 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
     margin-top: 4rem;
   }
 
+  .stimmen-kopf {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.75rem 2rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .gesamt {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: var(--stone);
+  }
+
+  .gesamt strong {
+    color: var(--navy);
+  }
+
   .stimmen ul {
     list-style: none;
     padding: 0;
-    margin: 1.5rem 0 0;
+    margin: 2rem 0 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 26rem), 1fr));
+    gap: 2.5rem 3rem;
+  }
+
+  .links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 2rem;
   }
 
   .sterne {
@@ -243,9 +283,10 @@ const methode = ['Prozess verstehen', 'Bereinigen', 'Digital gestalten und autom
   }
 
   .stimmen blockquote {
-    margin: 0.5rem 0;
+    margin: 0 0 0.5rem;
     font-family: var(--serif);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
+    line-height: 1.45;
     color: var(--navy);
   }
 
