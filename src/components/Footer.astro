@@ -2,8 +2,11 @@
 import { url } from '../utils/url';
 import { site } from '../config/site';
 import { Image } from 'astro:assets';
+import { getCollection } from 'astro:content';
 import logo from '../../assets/logo/logo-quer-transparent.png';
 const year = new Date().getFullYear();
+// Blog-Link erst zeigen, wenn der erste Beitrag veröffentlicht ist.
+const hatBlog = (await getCollection('blog', ({ data }) => !data.entwurf)).length > 0;
 ---
 <footer class="footer dark">
   <div class="wrap grid">
@@ -20,9 +23,9 @@ const year = new Date().getFullYear();
       <a href={`mailto:${site.email}`}>{site.email}</a><br />
       <a href={site.phoneHref}>{site.phone}</a>
     </p>
-    <nav aria-label="Rechtliches und Blog">
+    <nav aria-label={hatBlog ? 'Rechtliches und Blog' : 'Rechtliches'}>
       <ul>
-        <li><a href={url('/blog/')}>Blog</a></li>
+        {hatBlog && <li><a href={url('/blog/')}>Blog</a></li>}
         <li><a href={url('/impressum/')}>Impressum</a></li>
         <li><a href={url('/datenschutz/')}>Datenschutz</a></li>
       </ul>
