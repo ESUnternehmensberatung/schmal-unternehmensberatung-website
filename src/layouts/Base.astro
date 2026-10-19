@@ -9,8 +9,9 @@ interface Props {
   title: string;
   description: string;
   image?: string;
+  keywords?: string[];
 }
-const { title, description, image } = Astro.props;
+const { title, description, image, keywords } = Astro.props;
 const origin = Astro.site ?? site.url;
 const canonical = new URL(Astro.url.pathname, origin).href;
 const ogImage = new URL(image ?? url('/og-image.png'), origin).href;
@@ -22,6 +23,7 @@ const ogImage = new URL(image ?? url('/og-image.png'), origin).href;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
     <meta name="description" content={description} />
+    {keywords && <meta name="keywords" content={keywords.join(', ')} />}
     <link rel="canonical" href={canonical} />
     <meta name="theme-color" content="#0f2438" />
     <link rel="icon" href={url('/favicon-48.png')} sizes="48x48" type="image/png" />

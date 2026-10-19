@@ -1,4 +1,5 @@
 ---
+import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Hero from '../components/sections/Hero.astro';
 import Lage from '../components/sections/Lage.astro';
@@ -6,32 +7,125 @@ import Leistungen from '../components/sections/Leistungen.astro';
 import Ablauf from '../components/sections/Ablauf.astro';
 import UeberMich from '../components/sections/UeberMich.astro';
 import Ergebnisse from '../components/sections/Ergebnisse.astro';
-import Concierge from '../components/sections/Concierge.astro';
+import ConciergeHinweis from '../components/sections/ConciergeHinweis.astro';
 import Faq from '../components/sections/Faq.astro';
 import Abschluss from '../components/sections/Abschluss.astro';
 import { site } from '../config/site';
 
+// Zielgruppen und Themen für Suchmaschinen und KI-Suche (SEO, GEO, AEO).
+const zielgruppen = [
+  'Mittelstand',
+  'familiengeführte KMU',
+  'Familienunternehmen',
+  'Freiberufler',
+  'Kanzleien',
+  'Steuerberater',
+  'Steuerkanzleien',
+  'Rechtsanwaltskanzleien',
+  'Arztpraxen',
+  'Ärzte',
+  'Zahnarztpraxen',
+];
+const themen = [
+  'Digitale Transformation',
+  'KI-Einführung',
+  'Künstliche Intelligenz im Mittelstand',
+  'KI-Beratung',
+  'KI-Training',
+  'KI-Schulung für Mitarbeitende',
+  'KI-Kompetenz nach EU AI Act',
+  'Prozessoptimierung',
+  'Prozessautomatisierung',
+  'Workflow-Automatisierung',
+  'KI-Agenten',
+  'Bordmittelprüfung',
+  'Microsoft 365',
+  'ERP-Optimierung',
+  'Digitaler Rechnungsworkflow',
+  'Rechnungswesen digitalisieren',
+  'Angebotsprozess beschleunigen',
+  'Beschwerdemanagement',
+  'Change Management',
+  'Führungskräfte-Coaching',
+  'Interim Management',
+  'DSGVO-konforme KI',
+  'Human in the Loop',
+  'Fördermittel für Digitalisierung',
+  'Quick-Win-Analyse',
+];
+
+const faq = (await getCollection('faq')).sort((a, b) => a.data.reihenfolge - b.data.reihenfolge);
+
 const jsonLd = {
   '@context': 'https://schema.org',
-  '@type': 'ProfessionalService',
-  name: site.name,
-  founder: { '@type': 'Person', name: site.owner },
-  url: site.url,
-  email: site.email,
-  telephone: site.phoneHref.replace('tel:', ''),
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Im Kamp 7',
-    postalCode: '21376',
-    addressLocality: 'Eyendorf',
-    addressCountry: 'DE',
-  },
-  areaServed: 'DE',
+  '@graph': [
+    {
+      '@type': 'ProfessionalService',
+      '@id': `${site.url}/#unternehmen`,
+      name: site.name,
+      slogan: 'Digitale Transformation für Mittelstand und Freiberuf',
+      description:
+        'Unternehmensberatung für digitale Transformation und KI-Einführung im Mittelstand, in Kanzleien, Steuerberatungen und Arztpraxen. Consulting, Coaching und Training mit Fokus auf vorhandenen Systemen (Bordmitteln) und schnellen, messbaren Ergebnissen.',
+      url: site.url,
+      logo: `${site.url}/og-image.png`,
+      image: `${site.url}/og-image.png`,
+      email: site.email,
+      telephone: site.phoneHref.replace('tel:', ''),
+      address: {
+        '@type': 'PostalAddress',
+        streetAddress: 'Im Kamp 7',
+        postalCode: '21376',
+        addressLocality: 'Eyendorf',
+        addressRegion: 'Niedersachsen',
+        addressCountry: 'DE',
+      },
+      areaServed: [
+        { '@type': 'Country', name: 'Deutschland' },
+        { '@type': 'State', name: 'Niedersachsen' },
+        { '@type': 'State', name: 'Hamburg' },
+      ],
+      founder: { '@id': `${site.url}/#inhaber` },
+      knowsAbout: themen,
+      audience: zielgruppen.map((z) => ({ '@type': 'BusinessAudience', audienceType: z })),
+      sameAs: [site.links.linkedin, site.links.provenExpert, site.links.googleProfil],
+      hasOfferCatalog: {
+        '@type': 'OfferCatalog',
+        name: 'Leistungen',
+        itemListElement: [
+          ['Quick-Win-Analyse', 'Kostenfreies 45-minütiges Gespräch zu den größten Schmerzpunkten.'],
+          ['KI-Einführung und Consulting', 'DSGVO-konforme KI-Einführung, Bordmittelprüfung, Prozessautomatisierung.'],
+          ['Coaching für Führungskräfte', 'Begleitung von Geschäftsführung und Führungskräften durch die Transformation.'],
+          ['KI-Training für Mitarbeitende', 'Praxisnahe Schulung zur sicheren KI-Nutzung, auch zur KI-Kompetenz nach EU AI Act.'],
+        ].map(([name, description]) => ({
+          '@type': 'Offer',
+          itemOffered: { '@type': 'Service', name, description },
+        })),
+      },
+    },
+    {
+      '@type': 'Person',
+      '@id': `${site.url}/#inhaber`,
+      name: site.owner,
+      jobTitle: 'Unternehmensberater für digitale Transformation und KI',
+      worksFor: { '@id': `${site.url}/#unternehmen` },
+      sameAs: [site.links.linkedin],
+      knowsAbout: themen,
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: faq.map((f) => ({
+        '@type': 'Question',
+        name: f.data.frage,
+        acceptedAnswer: { '@type': 'Answer', text: f.body?.trim() ?? '' },
+      })),
+    },
+  ],
 };
 ---
 <Base
   title={`Digitale Transformation und KI im Mittelstand | ${site.name}`}
-  description="KI-Einführung, Coaching und Training für familiengeführte KMU. 20 Jahre Führungs- und Prozesspraxis, verbunden mit KI. Kostenfreie Quick-Win-Analyse in 45 Minuten."
+  description="KI-Einführung, Coaching und Training für Mittelstand, Kanzleien, Steuerberater und Arztpraxen. 20 Jahre Praxis. Kostenfreie Quick-Win-Analyse."
+  keywords={[...themen, ...zielgruppen, 'Unternehmensberatung', 'Eyendorf', 'Lüneburg', 'Hamburg', 'Niedersachsen']}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <Hero />
@@ -40,7 +134,7 @@ const jsonLd = {
   <Ablauf />
   <UeberMich />
   <Ergebnisse />
-  <Concierge />
+  <ConciergeHinweis />
   <Faq />
   <Abschluss />
 </Base>
