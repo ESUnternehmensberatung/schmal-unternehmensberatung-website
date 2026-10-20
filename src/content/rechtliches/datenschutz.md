@@ -36,6 +36,8 @@ Beim Aufruf der Website verarbeitet GitHub technisch notwendige Daten, insbesond
 
 Unsere Website setzt keine Cookies und verwendet keine vergleichbaren Speichertechniken zur Wiedererkennung. Auf den Seiten mit eingebettetem Formular kann der Formularanbieter Jotform technisch notwendige Cookies setzen, etwa zur Sitzungsverwaltung und zum Schutz vor Spam (siehe „Kontaktformulare“).
 
+Sollten wir künftig Dienste einsetzen, für die eine Einwilligung erforderlich ist (etwa zur Statistik oder für Marketing), laden wir diese erst nach Ihrer Zustimmung über ein Einwilligungs-Banner (§ 25 Abs. 1 TDDDG, Art. 6 Abs. 1 lit. a DSGVO). Ihre Auswahl speichern wir in Ihrem Browser und Sie können sie jederzeit über „Cookie-Einstellungen“ im Footer ändern. Die betreffenden Dienste beschreiben wir dann in dieser Datenschutzerklärung.
+
 ## Kontaktformulare (Jotform)
 
 Für Anfragen (Quick-Win-Analyse, Angebot, Empfehlung) und für die Anforderung unseres Whitepapers nutzen wir Formulare des Dienstes **Jotform**. Anbieter ist die Jotform Inc., 4 Embarcadero Center, Suite 780, San Francisco, CA 94111, USA. Die Formulare sind auf unserer Website eingebettet. Beim Laden des Formulars werden Inhalte von Servern von Jotform abgerufen, wobei Ihre IP-Adresse an Jotform übertragen wird.
