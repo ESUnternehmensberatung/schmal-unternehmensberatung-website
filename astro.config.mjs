@@ -15,5 +15,11 @@ export default defineConfig({
   site: (process.env.SITE_URL || 'https://schmal-unternehmensberatung.de').replace(/^http:/, 'https:'),
   base: process.env.BASE_PATH || '/',
   trailingSlash: 'always',
+  // Alte WordPress-Adressen, die Google noch kennt, auf die neuen Seiten umleiten.
+  redirects: {
+    '/sample-page/': '/#ueber-mich',
+    '/privacy-policy/': '/datenschutz/',
+    '/kontakt/': '/quick-win/',
+  },
   integrations: [sitemap({ filter: (page) => hatBlog || !page.includes('/blog/') })],
 });
