@@ -1,0 +1,244 @@
+---
+// Cookie-Banner: erscheint nur, wenn in src/config/consent.ts Dienste eingetragen sind.
+// Dienste werden erst nach Einwilligung geladen. „Nur notwendige“ ist gleichwertig zu
+// „Alle akzeptieren“ gestaltet, wie es die Aufsichtsbehörden verlangen.
+import { url } from '../utils/url';
+import { consentVersion, dienste, kategorien, type Kategorie } from '../config/consent';
+
+const genutzt = (Object.keys(kategorien) as Kategorie[]).filter((k) => dienste.some((d) => d.kategorie === k));
+const config = { version: consentVersion, dienste, kategorien: genutzt };
+---
+{
+  dienste.length > 0 && (
+    <div class="cookie" data-cookie hidden role="dialog" aria-labelledby="cookie-titel" aria-describedby="cookie-text">
+      <div class="inner">
+        <p class="titel" id="cookie-titel">Ihre Privatsphäre</p>
+        <p id="cookie-text">
+          Ich nutze notwendige Technik für den Betrieb der Website. Mit Ihrer Zustimmung setze ich zusätzlich Dienste
+          für {genutzt.map((k) => kategorien[k].titel).join(' und ')} ein. Ihre Auswahl können Sie jederzeit über
+          „Cookie-Einstellungen“ im Footer ändern. Mehr dazu in der <a href={url('/datenschutz/')}>Datenschutzerklärung</a>.
+        </p>
+
+        <div class="auswahl" data-auswahl hidden>
+          <label class="option">
+            <input type="checkbox" checked disabled />
+            <span>
+              <strong>Notwendig</strong>
+              <span>Für Darstellung und Sicherheit der Website erforderlich. Immer aktiv.</span>
+            </span>
+          </label>
+          {genutzt.map((k) => (
+            <label class="option">
+              <input type="checkbox" data-kategorie={k} />
+              <span>
+                <strong>{kategorien[k].titel}</strong>
+                <span>{kategorien[k].text}</span>
+                <span class="dienste">
+                  {dienste
+                    .filter((d) => d.kategorie === k)
+                    .map((d) => `${d.name} (${d.anbieter}): ${d.zweck}`)
+                    .join(' · ')}
+                </span>
+              </span>
+            </label>
+          ))}
+        </div>
+
+        <div class="aktionen">
+          <button type="button" class="btn btn-navy" data-aktion="alle">Alle akzeptieren</button>
+          <button type="button" class="btn btn-navy" data-aktion="notwendig">Nur notwendige</button>
+          <button type="button" class="btn btn-outline" data-aktion="einstellungen">Einstellungen</button>
+          <button type="button" class="btn btn-outline" data-aktion="speichern" hidden>Auswahl speichern</button>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+{dienste.length > 0 && <script is:inline type="application/json" id="cookie-config" set:html={JSON.stringify(config)} />}
+
+<script>
+  type Dienst = { id: string; kategorie: string; skript?: string; inline?: string };
+  type Config = { version: number; dienste: Dienst[]; kategorien: string[] };
+  type Wahl = { version: number; datum: string; kategorien: Record<string, boolean> };
+
+  const SCHLUESSEL = 'cookie-einwilligung';
+  const configEl = document.getElementById('cookie-config');
+  const banner = document.querySelector<HTMLElement>('[data-cookie]');
+
+  if (configEl && banner) {
+    const config = JSON.parse(configEl.textContent || '{}') as Config;
+    const auswahl = banner.querySelector<HTMLElement>('[data-auswahl]')!;
+    const boxen = [...banner.querySelectorAll<HTMLInputElement>('[data-kategorie]')];
+    const knopf = (aktion: string) => banner.querySelector<HTMLButtonElement>(`[data-aktion="${aktion}"]`)!;
+    const geladen = new Set<string>();
+
+    const lesen = (): Wahl | null => {
+      try {
+        const w = JSON.parse(localStorage.getItem(SCHLUESSEL) || 'null') as Wahl | null;
+        return w && w.version === config.version ? w : null;
+      } catch {
+        return null;
+      }
+    };
+
+    const laden = (wahl: Wahl) => {
+      for (const d of config.dienste) {
+        if (!wahl.kategorien[d.kategorie] || geladen.has(d.id)) continue;
+        geladen.add(d.id);
+        const s = document.createElement('script');
+        if (d.skript) {
+          s.src = d.skript;
+          s.async = true;
+        } else if (d.inline) {
+          s.textContent = d.inline;
+        }
+        document.head.appendChild(s);
+      }
+    };
+
+    const speichern = (kategorien: Record<string, boolean>) => {
+      const vorher = lesen();
+      const wahl: Wahl = { version: config.version, datum: new Date().toISOString(), kategorien };
+      try {
+        localStorage.setItem(SCHLUESSEL, JSON.stringify(wahl));
+      } catch {
+        // Speichern nicht möglich (z. B. privater Modus): Wahl gilt nur für diesen Seitenaufruf.
+      }
+      schliessen();
+      // Widerruf: bereits geladene Dienste lassen sich nur durch Neuladen entfernen.
+      const widerrufen = vorher && Object.keys(vorher.kategorien).some((k) => vorher.kategorien[k] && !kategorien[k]);
+      if (widerrufen) location.reload();
+      else laden(wahl);
+    };
+
+    const alle = (wert: boolean) => Object.fromEntries(config.kategorien.map((k) => [k, wert]));
+
+    const oeffnen = (mitAuswahl = false) => {
+      const wahl = lesen();
+      boxen.forEach((b) => (b.checked = !!wahl?.kategorien[b.dataset.kategorie!]));
+      auswahl.hidden = !mitAuswahl;
+      knopf('einstellungen').hidden = mitAuswahl;
+      knopf('speichern').hidden = !mitAuswahl;
+      banner.hidden = false;
+      knopf('alle').focus();
+    };
+
+    const schliessen = () => {
+      banner.hidden = true;
+    };
+
+    knopf('alle').addEventListener('click', () => speichern(alle(true)));
+    knopf('notwendig').addEventListener('click', () => speichern(alle(false)));
+    knopf('einstellungen').addEventListener('click', () => oeffnen(true));
+    knopf('speichern').addEventListener('click', () =>
+      speichern(Object.fromEntries(boxen.map((b) => [b.dataset.kategorie!, b.checked]))),
+    );
+    document.querySelectorAll('[data-cookie-einstellungen]').forEach((el) =>
+      el.addEventListener('click', (e) => {
+        e.preventDefault();
+        oeffnen(true);
+      }),
+    );
+
+    const wahl = lesen();
+    if (wahl) laden(wahl);
+    else oeffnen(false);
+  }
+</script>
+
+<style>
+  .cookie {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 100;
+    padding: 1rem var(--gutter) calc(1rem + env(safe-area-inset-bottom, 0px));
+    pointer-events: none;
+  }
+
+  .inner {
+    pointer-events: auto;
+    max-width: 52rem;
+    margin-left: auto;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    font-size: 1rem;
+    color: var(--ink);
+    max-height: calc(100vh - 2rem);
+    overflow-y: auto;
+  }
+
+  .titel {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    color: var(--navy);
+    margin-bottom: 0.5rem;
+  }
+
+  .auswahl {
+    display: grid;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .option {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    padding: 0.75rem 0;
+    border-top: 1px solid var(--line);
+    cursor: pointer;
+  }
+
+  .option input {
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.2rem;
+    accent-color: var(--navy);
+  }
+
+  .option > span {
+    display: grid;
+    gap: 0.2rem;
+  }
+
+  .option span span {
+    color: var(--stone);
+  }
+
+  .option .dienste {
+    font-size: 0.9375rem;
+  }
+
+  .aktionen {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+  }
+
+  .cookie [hidden] {
+    display: none !important;
+  }
+
+  .aktionen .btn-outline {
+    background: transparent;
+  }
+
+  .aktionen .btn {
+    min-height: 2.75rem;
+    padding: 0.6rem 1.1rem;
+    font-size: 1rem;
+  }
+
+  @media (max-width: 520px) {
+    .aktionen .btn {
+      flex: 1 1 100%;
+      justify-content: center;
+    }
+  }
+</style>
