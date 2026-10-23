@@ -23,7 +23,7 @@ export const site = {
   owner: 'Eduard Schmal',
   legal: 'Schmal Unternehmensberatung, Inhaber Eduard Schmal',
   category: 'Unternehmensberatung',
-  claim: 'Digitale Transformation und KI für den Mittelstand',
+  claim: 'Digitale Transformation für Mittelstand und freie Berufe',
   url: 'https://schmal-unternehmensberatung.de',
   email,
   phone: '+49 1522 685 95 24',
