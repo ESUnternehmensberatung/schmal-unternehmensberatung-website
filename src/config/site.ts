@@ -37,6 +37,7 @@ export const site = {
     termin: 'https://calendar.app.google/Eg49DKaRsUyQXEFH6',
     angebot: url('/angebot/'),
     whitepaper: url('/whitepaper/'),
+    kiStarttag: url('/ki-starttag/'),
     // Bewertungsprofile (verlinkt unter den Kundenstimmen bei den Ergebnissen).
     provenExpert: 'https://www.provenexpert.com/de-de/es-unternehmensberatung/',
     googleProfil: 'https://maps.google.com/?cid=3350734573139222131',

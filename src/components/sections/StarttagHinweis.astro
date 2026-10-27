@@ -1,0 +1,59 @@
+---
+import Icon from '../Icon.astro';
+import { site } from '../../config/site';
+---
+<section class="starttag" aria-labelledby="starttag-hinweis-title">
+  <div class="wrap zeile" data-reveal>
+    <div class="text">
+      <p class="label">Der Einstieg</p>
+      <h2 id="starttag-hinweis-title">KI-Starttag: Schulung mit Nachweis und Bordmittel-Check</h2>
+      <p>
+        4 Stunden vor Ort für Ihr Team. Erfüllt die Schulungspflicht nach Art. 4 EU AI Act und zeigt die größten Hebel in
+        Ihrem Unternehmen. Zum Festpreis, bei Umsetzung voll angerechnet.
+      </p>
+    </div>
+    <a class="btn btn-navy" href={site.links.kiStarttag}>Zum KI-Starttag <Icon name="arrow-right" /></a>
+  </div>
+</section>
+
+<style>
+  .starttag {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .zeile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+  }
+
+  .text {
+    min-width: 0;
+    flex: 1 1 30rem;
+    max-width: 52rem;
+  }
+
+  .label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+
+  h2 {
+    margin-top: 0.5rem;
+    font-size: var(--step-2);
+    text-wrap: balance;
+  }
+
+  .text > p:last-child {
+    margin-top: 0.75rem;
+    color: var(--stone);
+  }
+</style>
