@@ -6,6 +6,7 @@ ORG:Schmal Unternehmensberatung
 TEL;TYPE=CELL:+4915226859524
 EMAIL:es@schmal-unternehmensberatung.de
 URL:https://schmal-unternehmensberatung.de
-URL:https://www.linkedin.com/in/eduard-schmal-998611253
+item1.URL:https://www.linkedin.com/in/eduard-schmal-998611253
+item1.X-ABLabel:LinkedIn
 ADR;TYPE=WORK:;;Im Kamp 7;Eyendorf;;21376;DE
 END:VCARD
