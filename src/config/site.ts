@@ -10,7 +10,7 @@ function mailto(subject: string, body: string) {
 }
 
 // Firmendaten: einzige Quelle für Website, Impressum, strukturierte Daten und
-// Verzeichniseinträge (siehe briefing/eintraege-checkliste.md). Überall exakt so verwenden.
+// Verzeichniseinträge (Checkliste im privaten Repo consulting, homepage/briefing/). Überall exakt so verwenden.
 // Concierge: Empfehlungen ohne eigenen Partnerlink laufen über das eingebettete
 // Jotform-Formular auf /empfehlung/, damit die Anfrage nachweislich über mich kommt.
 // Der Name wird im Feld „wofurInteressieren“ vorausgewählt.
