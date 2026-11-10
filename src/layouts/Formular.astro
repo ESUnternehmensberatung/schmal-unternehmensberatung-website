@@ -13,11 +13,12 @@ interface Props {
   heading: string;
   intro: string;
   quelle?: string;
+  image?: string; // eigenes Vorschaubild (og:image), z. B. für „Im Fokus“ auf LinkedIn
 }
-const { formId, title, description, kicker, heading, intro, quelle = 'website' } = Astro.props;
+const { formId, title, description, kicker, heading, intro, quelle = 'website', image } = Astro.props;
 const src = `https://form.jotform.com/${formId}`;
 ---
-<Base title={`${title} | ${site.name}`} description={description}>
+<Base title={`${title} | ${site.name}`} description={description} image={image}>
   <section class="formular dark" aria-labelledby="formular-title">
     <div class="wrap kopf">
       <p class="kicker">{kicker}</p>
