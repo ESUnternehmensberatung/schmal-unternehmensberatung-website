@@ -1,7 +1,7 @@
 # Homepage Schmal Unternehmensberatung
 
 OnePager + Blog, gebaut mit [Astro](https://astro.build) auf Basis des Briefings
-in `briefing/`, `PRODUCT.md` und `DESIGN.md`.
+in `DESIGN.md`. Briefing, Produktgrundlage und alle übrigen Arbeitsunterlagen (Präsentationen, Whitepaper, Visitenkarte, LinkedIn) liegen seit 09.11.2026 in privaten Repos (`consulting`, `LinkedIn`). Dieses Repo ist öffentlich und enthält nur Website-Code.
 
 ## Lokal starten
 
@@ -45,10 +45,10 @@ den DNS-Eintrag umstellen; beim nächsten Deploy stimmen die Pfade automatisch.
 
 | Schritt | Ergebnis | Status |
 |---|---|---|
-| 1. Fragebogen Runden 1–3 | `briefing/fragebogen.md` | erledigt |
-| 2. Positionierung → Seitenstruktur, Hero, Leistungen | `briefing/*.md` | fertig |
-| 3. Design-Signale, FAQ, Technik | `briefing/*.md` | fertig |
-| 4. Produktgrundlage für Impeccable | `PRODUCT.md` | fertig |
+| 1. Fragebogen Runden 1–3 | privat (`consulting`) | erledigt |
+| 2. Positionierung → Seitenstruktur, Hero, Leistungen | privat (`consulting`) | fertig |
+| 3. Design-Signale, FAQ, Technik | privat (`consulting`) | fertig |
+| 4. Produktgrundlage für Impeccable | privat (`consulting`) | fertig |
 | 5. Design-Richtung (Taste) | `DESIGN.md` | fertig |
 | 6. Umsetzung mit Skill `homepage-design` | `src/` | gebaut |
 

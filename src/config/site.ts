@@ -10,7 +10,7 @@ function mailto(subject: string, body: string) {
 }
 
 // Firmendaten: einzige Quelle für Website, Impressum, strukturierte Daten und
-// Verzeichniseinträge (siehe briefing/eintraege-checkliste.md). Überall exakt so verwenden.
+// Verzeichniseinträge (Checkliste im privaten Repo consulting, homepage/briefing/). Überall exakt so verwenden.
 // Concierge: Empfehlungen ohne eigenen Partnerlink laufen über das eingebettete
 // Jotform-Formular auf /empfehlung/, damit die Anfrage nachweislich über mich kommt.
 // Der Name wird im Feld „wofurInteressieren“ vorausgewählt.
@@ -37,6 +37,7 @@ export const site = {
     termin: 'https://calendar.app.google/Eg49DKaRsUyQXEFH6',
     angebot: url('/angebot/'),
     whitepaper: url('/whitepaper/'),
+    kiSchulung: url('/ki-schulung/'),
     // Bewertungsprofile (verlinkt unter den Kundenstimmen bei den Ergebnissen).
     provenExpert: 'https://www.provenexpert.com/de-de/es-unternehmensberatung/',
     googleProfil: 'https://maps.google.com/?cid=3350734573139222131',

@@ -1,0 +1,59 @@
+---
+import Icon from '../Icon.astro';
+import { site } from '../../config/site';
+---
+<section class="starttag" aria-labelledby="starttag-hinweis-title">
+  <div class="wrap zeile" data-reveal>
+    <div class="text">
+      <p class="label">Der Einstieg</p>
+      <h2 id="starttag-hinweis-title">KI-Schulung für Ihr Team: KI-Starttag oder G.R.O.W.</h2>
+      <p>
+        Eine dokumentierte Maßnahme zur KI-Kompetenz nach Art. 4 EU AI Act, in zwei Formaten: der KI-Starttag mit 4 Stunden vor Ort und
+        Bordmittel-Check, oder die kompakte G.R.O.W.-Schulung mit 2 Stunden, remote oder vor Ort.
+      </p>
+    </div>
+    <a class="btn btn-navy" href={site.links.kiSchulung}>Zur KI-Schulung <Icon name="arrow-right" /></a>
+  </div>
+</section>
+
+<style>
+  .starttag {
+    padding-block: clamp(2.5rem, 5vw, 4rem);
+    background: var(--white);
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .zeile {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem 3rem;
+  }
+
+  .text {
+    min-width: 0;
+    flex: 1 1 30rem;
+    max-width: 52rem;
+  }
+
+  .label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+  }
+
+  h2 {
+    margin-top: 0.5rem;
+    font-size: var(--step-2);
+    text-wrap: balance;
+  }
+
+  .text > p:last-child {
+    margin-top: 0.75rem;
+    color: var(--stone);
+  }
+</style>

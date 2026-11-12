@@ -43,7 +43,7 @@ dunkle Sektionen sind feste Navy-Deep-Flächen, kein Theme-Wechsel.
 - Container max. 1320 px, Gutter `clamp(1.25rem, 4vw, 3rem)`, Sektionsabstand
   `clamp(5rem, 9vw, 9rem)`.
 - Ecken: einheitlich 2 px (`--radius`). Karten nur für Business-Concierge.
-- Sektionen (Leseweg aus `briefing/seitenstruktur.md`), jede mit eigener Form:
+- Sektionen (Leseweg aus der Seitenstruktur im privaten Briefing), jede mit eigener Form:
   1. Hero – Vollbild-Foto, Overlay links, Kennzahlenleiste unten
   2. Die Lage – großes Zitat-Statement mit Quellenfußnote, 2-spaltige Schmerz→System-Liste
   3. Leistungen – nummerierte Zeilen (5/7-Raster) mit Beleg-Box

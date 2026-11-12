@@ -1,0 +1,570 @@
+---
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { site } from '../../config/site';
+
+// Belegt im Angebotsformular die passende Option im Feld „Wofür wünschen Sie ein Angebot?“ vor
+const anfrage = `${site.links.angebot}?quelle=ki-starttag&q10_checkbox8=${encodeURIComponent('KI-Starttag für bis zu 12 Personen')}`;
+const anfrageGrow = `${site.links.angebot}?quelle=grow-schulung&q10_checkbox8=${encodeURIComponent('KI-Schulung G.R.O.W.')}`;
+
+const formate = [
+  ['Dauer', '4 Stunden vor Ort', '2 Stunden, remote oder vor Ort'],
+  ['Inhalte', 'Alle Themen in der Tiefe, mit Übungen an echten Aufgaben aus Ihrem Betrieb', 'Die Themen kompakt nach G.R.O.W.: Grundlagen, Risiken, Orientierung, Wirkung'],
+  ['Ihr Team geht raus mit', 'eigenen Anwendungsfällen, die ab Montag Zeit sparen', 'guten Beispielen, die sich direkt übertragen lassen'],
+  ['Bordmittel-Check und Kurzbericht', 'inklusive, mit der Geschäftsführung', 'nicht enthalten'],
+  ['Nachweis', 'Lernplattform, Abschlusstest und Nachweis KI-Kompetenz je Person', 'Teilnahmezertifikat je Person'],
+  ['Anrechnung', '25 % des Festpreises, wenn Sie innerhalb von 3 Monaten eine Umsetzung beauftragen', '10 % auf einen KI-Starttag oder weitere Projekte'],
+];
+
+const ablauf = [
+  {
+    titel: 'Vorbereitung',
+    text: 'Sie füllen einen kurzen Fragebogen zu Team, Systemen und Aufgaben aus. Daraus baue ich Beispiele aus Ihrem Arbeitsalltag.',
+  },
+  {
+    titel: '3 Stunden Schulung vor Ort',
+    text: 'Grundlagen, sichere Nutzung und Üben an echten Aufgaben aus Ihrem Betrieb. Praxisnah, ohne Folienschlacht.',
+  },
+  {
+    titel: '1 Stunde Bordmittel-Check',
+    text: 'Mit der Geschäftsführung: Was steckt schon in Microsoft 365, ERP oder Telefonanlage und wird noch nicht genutzt?',
+  },
+  {
+    titel: 'Test und Nachweis',
+    text: 'Auf meiner Lernplattform vertiefen Ihre Mitarbeitenden die Inhalte und legen einen kurzen Abschlusstest ab. Danach erhält jede Person einen Nachweis.',
+  },
+  {
+    titel: 'Kurzbericht',
+    text: 'Sie erhalten die 3 bis 5 größten Hebel für Ihr Unternehmen, priorisiert und mit einer Einschätzung zu Aufwand und Nutzen.',
+  },
+];
+
+const inhalte = [
+  ['Woher KI kommt', 'Über 70 Jahre Geschichte in Kürze, warum es gerade jetzt so schnell geht und wofür GPT steht.'],
+  ['Chancen und Risiken', 'Was KI in Medizin, Energie und Klima schon leistet, belegt mit Studien, und wo echte Gefahren wie Deepfake-Betrug lauern.'],
+  ['Wie KI arbeitet', 'Sprachmodell, Token und Kontextfenster verständlich erklärt, mit Stärken, Grenzen und erfundenen Antworten.'],
+  ['Gute Arbeitsaufträge', 'Eine einfache Formel für verlässliche Ergebnisse, geübt an echten Aufgaben aus Ihrem Betrieb.'],
+  ['Vom Chat zum Agenten', 'Masterprompt, eigene Agenten, Skills und geplante Aufgaben: wie KI sich Ihre Vorgaben merkt und Arbeit selbst erledigt.'],
+  ['Sicher arbeiten', 'Welche Daten in welches Werkzeug dürfen, kostenlos oder Business-Version, Prüfroutine und Regeln für Ihr Unternehmen.'],
+];
+
+const leistungen = [
+  '4 Stunden vor Ort für bis zu 12 Teilnehmende',
+  'Vorbereitung mit Beispielen aus Ihrem Betrieb',
+  'Schulungsunterlagen und Vorlagen für den Alltag',
+  'Zugang zur Lernplattform mit Abschlusstest',
+  'Nachweis KI-Kompetenz gemäß Art. 4 EU AI Act je Teilnehmer',
+  'Bordmittel-Check und Kurzbericht mit den größten Hebeln',
+];
+---
+<Base
+  title={`KI-Schulung: KI-Starttag und G.R.O.W.-Schulung | ${site.name}`}
+  description="KI-Schulung für Ihr Team mit Nachweis gemäß Art. 4 EU AI Act: der KI-Starttag mit Bordmittel-Check (4 Stunden vor Ort) oder die kompakte G.R.O.W.-Schulung (2 Stunden, remote oder vor Ort). Für Mittelstand, Kanzleien und Praxen."
+>
+  <section class="kopf dark" aria-labelledby="schulung-title">
+    <div class="wrap kopf-grid">
+      <div>
+        <p class="eyebrow">KI-Schulung</p>
+        <h1 id="schulung-title">Vom Pflichtthema zum <em class="accent">Plan.</em></h1>
+        <p class="lead">
+          Unternehmen, die KI einsetzen, müssen Maßnahmen ergreifen, um die KI-Kompetenz ihrer Mitarbeitenden zu fördern
+          (Art. 4 EU AI Act). Beide Schulungen sind eine solche Maßnahme, dokumentiert je Person. Sie wählen, wie tief es gehen soll.
+        </p>
+        <div class="aktion">
+          <a class="btn btn-ghost" href="#formate">Formate vergleichen</a>
+          <a class="btn btn-ghost" href={site.links.quickWin}>Erst kostenfrei sprechen</a>
+        </div>
+      </div>
+
+      <div class="angebote">
+        <article class="angebot haupt" aria-labelledby="karte-starttag">
+          <p class="angebot-label">Gründlich</p>
+          <h2 id="karte-starttag">KI-Starttag</h2>
+          <p class="angebot-dauer">4&nbsp;Stunden vor Ort</p>
+          <ul>
+            <li>Jede Person geht mit eigenen Anwendungsfällen raus</li>
+            <li>Bordmittel-Check und Kurzbericht für die Geschäftsführung</li>
+            <li>Abschlusstest und Nachweis KI-Kompetenz je Person</li>
+            <li><strong>25 % angerechnet</strong> bei Umsetzung innerhalb von 3 Monaten</li>
+          </ul>
+          <a class="btn btn-primary" href={anfrage}>Angebot anfordern <Icon name="arrow-right" /></a>
+        </article>
+        <article class="angebot" aria-labelledby="karte-grow">
+          <p class="angebot-label">Kompakt</p>
+          <h2 id="karte-grow">G.R.O.W.-Schulung</h2>
+          <p class="angebot-dauer">2&nbsp;Stunden, remote oder vor Ort</p>
+          <ul>
+            <li>Grundlagen, Risiken, Orientierung, Wirkung</li>
+            <li>Jede Person geht mit guten Beispielen raus</li>
+            <li>Teilnahmezertifikat je Person</li>
+            <li><strong>10 % angerechnet</strong> auf einen KI-Starttag oder weitere Projekte</li>
+          </ul>
+          <a class="btn btn-ghost" href={anfrageGrow}>Angebot anfordern <Icon name="arrow-right" /></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section weiss" id="formate" aria-labelledby="formate-title">
+    <div class="wrap">
+      <h2 id="formate-title">Zwei Formate, ein Ziel</h2>
+      <p class="formate-lead">Der KI-Starttag ist der gründliche Einstieg mit Analyse. Die G.R.O.W.-Schulung ist die kompakte Variante, wenn Ihr Team schnell einen sicheren Überblick braucht.</p>
+      <div class="vergleich" role="table" aria-label="Vergleich KI-Starttag und G.R.O.W.-Schulung">
+        <div class="v-kopf" role="row">
+          <span role="columnheader"></span>
+          <span role="columnheader" class="v-start">KI-Starttag</span>
+          <span role="columnheader" class="v-grow">G.R.O.W.-Schulung</span>
+        </div>
+        {
+          formate.map(([k, a, b]) => (
+            <div class="v-zeile" role="row">
+              <span role="rowheader" class="v-k">{k}</span>
+              <span role="cell" class="v-a"><span class="v-mobil">KI-Starttag: </span>{a}</span>
+              <span role="cell" class="v-b"><span class="v-mobil">G.R.O.W.: </span>{b}</span>
+            </div>
+          ))
+        }
+        <div class="v-zeile v-aktion" role="row">
+          <span role="rowheader"></span>
+          <span role="cell"><a class="btn btn-primary" href={anfrage}>Angebot KI-Starttag <Icon name="arrow-right" /></a></span>
+          <span role="cell"><a class="btn btn-navy" href={anfrageGrow}>Angebot G.R.O.W.-Schulung <Icon name="arrow-right" /></a></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="ablauf-title">
+    <div class="wrap">
+      <h2 id="ablauf-title">So läuft der KI-Starttag ab</h2>
+      <ol class="schritte">
+        {
+          ablauf.map((s, i) => (
+            <li>
+              <span class="nr" aria-hidden="true">{i + 1}</span>
+              <h3>{s.titel}</h3>
+              <p>{s.text}</p>
+            </li>
+          ))
+        }
+      </ol>
+    </div>
+  </section>
+
+  <section class="section weiss" aria-labelledby="inhalte-title">
+    <div class="wrap zwei">
+      <div>
+        <h2 id="inhalte-title">Was Ihr Team lernt</h2>
+        <dl class="inhalte">
+          {
+            inhalte.map(([t, d]) => (
+              <div>
+                <dt>{t}</dt>
+                <dd>{d}</dd>
+              </div>
+            ))
+          }
+        </dl>
+      </div>
+      <div>
+        <h2>Was Sie bekommen</h2>
+        <ul class="haken">
+          {
+            leistungen.map((l) => (
+              <li>
+                <Icon name="check" />
+                {l}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="fragen-title">
+    <div class="wrap fragen">
+      <h2 id="fragen-title">Gut zu wissen</h2>
+      <div class="fragen-grid">
+        <div>
+          <h3>Für wen ist der KI-Starttag?</h3>
+          <p>
+            Für mittelständische Unternehmen, Kanzleien, Steuerberatungen und Praxen mit etwa 5 bis 50 Mitarbeitenden, die KI
+            sicher einführen wollen, statt sie im Verborgenen nutzen zu lassen.
+          </p>
+        </div>
+        <div>
+          <h3>Was ist die G.R.O.W.-Schulung?</h3>
+          <p>
+            Die kompakte Variante in 2 Stunden, remote oder vor Ort: Grundlagen, Risiken, Orientierung und Wirkung von KI, mit guten
+            Beispielen aus dem Büroalltag. Ohne Bordmittel-Check und ohne Abschlusstest, dafür mit Teilnahmezertifikat je Person. 10 % des Preises
+            rechne ich auf einen KI-Starttag oder weitere Projekte an.
+          </p>
+        </div>
+        <div>
+          <h3>Ist der Nachweis ein offizielles Zertifikat?</h3>
+          <p>
+            Eine offizielle Zertifizierung für Art. 4 EU AI Act gibt es nicht. Verlangt wird, dass Sie Maßnahmen zur
+            KI-Kompetenz ergreifen. Der Nachweis dokumentiert Schulung und bestandenen Abschlusstest je Person, damit Sie das
+            bei Rückfragen belegen können.
+          </p>
+        </div>
+        <div>
+          <h3>Was passiert nach dem Starttag?</h3>
+          <p>
+            Sie entscheiden. Viele setzen die Hebel aus dem Kurzbericht mit mir um. Beauftragen Sie innerhalb von 3 Monaten,
+            rechne ich 25 % des Festpreises an.
+          </p>
+        </div>
+        <div>
+          <h3>Gibt es Fördermittel?</h3>
+          <p>
+            Je nach Bundesland und Programm lassen sich Schulungen und Beratung fördern. Das prüfe ich gern gemeinsam mit
+            meinem Partner für Fördermittelberatung.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="schluss dark" aria-labelledby="schluss-title">
+    <div class="wrap schluss-inner">
+      <h2 id="schluss-title">Termin für Ihre KI-Schulung anfragen</h2>
+      <p>Sie erhalten innerhalb von zwei Werktagen Ihr Festpreisangebot mit Terminvorschlägen.</p>
+      <div class="aktion">
+        <a class="btn btn-primary" href={anfrage}>Angebot KI-Starttag <Icon name="arrow-right" /></a>
+        <a class="btn btn-ghost" href={anfrageGrow}>Angebot G.R.O.W.-Schulung</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kopf {
+    padding-block: clamp(4rem, 9vw, 7rem);
+  }
+
+  .kopf-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: clamp(2rem, 4vw, 4rem);
+    align-items: center;
+  }
+
+  .eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    color: var(--white);
+    font-size: var(--step-4);
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+
+  .kopf .lead {
+    margin-top: 1.5rem;
+    color: var(--on-dark);
+  }
+
+  .aktion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.25rem;
+  }
+
+  .angebote {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .angebot {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .angebot .btn {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  .angebot {
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    background: rgb(255 255 255 / 0.04);
+  }
+
+  .angebot.haupt {
+    border-color: var(--gold);
+  }
+
+  .angebot-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+
+  .angebot h2 {
+    margin-top: 0.4rem;
+    color: var(--white);
+    font-size: clamp(1.45rem, 1.1rem + 0.9vw, 1.9rem);
+    line-height: 1.1;
+  }
+
+  .angebot-dauer {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    color: var(--on-dark);
+  }
+
+  .angebot ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.25rem;
+    display: grid;
+    gap: 0.45rem;
+    font-size: 0.95rem;
+    color: var(--on-dark-muted);
+  }
+
+  .angebot li {
+    padding-left: 1.1rem;
+    position: relative;
+  }
+
+  .angebot li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .angebot strong {
+    color: var(--white);
+  }
+
+  .schritte {
+    list-style: none;
+    padding: 0;
+    margin: clamp(2.5rem, 5vw, 4rem) 0 0;
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 2rem;
+  }
+
+  .schritte li {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .nr {
+    font-family: var(--serif);
+    font-size: var(--step-2);
+    color: var(--gold-deep);
+  }
+
+  .schritte h3 {
+    margin-top: 0.75rem;
+    font-size: var(--step-1);
+  }
+
+  .schritte p {
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: var(--stone);
+  }
+
+  .weiss {
+    background: var(--white);
+  }
+
+  .zwei {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(3rem, 6vw, 6rem);
+  }
+
+  .inhalte {
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .inhalte dt {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    color: var(--navy);
+  }
+
+  .inhalte dd {
+    margin: 0.35rem 0 0;
+    color: var(--stone);
+  }
+
+  .haken {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0 0;
+    display: grid;
+    gap: 1rem;
+  }
+
+  .haken li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+    align-items: start;
+  }
+
+  .haken :global(svg) {
+    width: 1.25rem;
+    height: 1.25rem;
+    margin-top: 0.2rem;
+    color: var(--gold-deep);
+  }
+
+  .fragen-grid {
+    margin-top: 2.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2.5rem 4rem;
+  }
+
+  .fragen h3 {
+    font-size: var(--step-1);
+  }
+
+  .fragen p {
+    margin-top: 0.5rem;
+    color: var(--stone);
+  }
+
+  .formate-lead {
+    margin-top: 1rem;
+    max-width: 46rem;
+    color: var(--stone);
+  }
+
+  .vergleich {
+    margin-top: clamp(2rem, 4vw, 3rem);
+    display: grid;
+  }
+
+  .v-kopf,
+  .v-zeile {
+    display: grid;
+    grid-template-columns: minmax(10rem, 0.8fr) minmax(0, 1.2fr) minmax(0, 1.2fr);
+    gap: 1.5rem;
+    padding-block: 1rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .v-kopf {
+    padding-top: 0;
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    color: var(--navy);
+    border-bottom: 2px solid var(--navy);
+  }
+
+  .v-k {
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .v-a,
+  .v-b {
+    color: var(--stone);
+  }
+
+  .v-mobil {
+    display: none;
+  }
+
+  .v-aktion {
+    border-bottom: 0;
+    padding-top: 1.75rem;
+  }
+
+  .schluss {
+    padding-block: clamp(4rem, 8vw, 6rem);
+  }
+
+  .schluss-inner {
+    display: grid;
+    justify-items: start;
+    gap: 1.25rem;
+  }
+
+  .schluss p {
+    color: var(--on-dark);
+  }
+
+  @media (max-width: 1100px) {
+    .schritte {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .v-kopf {
+      display: none;
+    }
+
+    .v-zeile {
+      grid-template-columns: 1fr;
+      gap: 0.4rem;
+    }
+
+    .v-mobil {
+      display: inline;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .v-aktion :global(.btn) {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .kopf-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .angebote {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .kopf-grid,
+    .zwei,
+    .fragen-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .schritte {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
