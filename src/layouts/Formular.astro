@@ -2,6 +2,8 @@
 // Seite mit eingebettetem Jotform-Formular unter eigener Domain.
 // URL-Parameter der Seite (z. B. ?quelle=linkedin oder ?wofurInteressieren=Langdock)
 // werden an das Formular weitergereicht; fehlt „quelle“, gilt der Standardwert.
+// Jotform befüllt Felder nur über ihren internen Namen (z. B. q15_textbox13), nicht über
+// die Beschriftung „quelle“. Deshalb wird der Wert zusätzlich unter quelleFeld übergeben.
 import Base from './Base.astro';
 import { site } from '../config/site';
 
@@ -13,9 +15,11 @@ interface Props {
   heading: string;
   intro: string;
   quelle?: string;
+  quelleFeld?: string; // interner Jotform-Name des Feldes „quelle“, z. B. q15_textbox13
   image?: string; // eigenes Vorschaubild (og:image), z. B. für „Im Fokus“ auf LinkedIn
 }
-const { formId, title, description, kicker, heading, intro, quelle = 'website', image } = Astro.props;
+const { formId, title, description, kicker, heading, intro, quelle = 'website', quelleFeld, image } = Astro.props;
+const startParams = new URLSearchParams({ quelle, ...(quelleFeld ? { [quelleFeld]: quelle } : {}) }).toString();
 const src = `https://form.jotform.com/${formId}`;
 ---
 <Base title={`${title} | ${site.name}`} description={description} image={image}>
@@ -29,15 +33,16 @@ const src = `https://form.jotform.com/${formId}`;
       <iframe
         id={`JotFormIFrame-${formId}`}
         title={heading}
-        src={`${src}?quelle=${quelle}`}
+        src={`${src}?${startParams}`}
         data-src={src}
         data-quelle={quelle}
+        data-quelle-feld={quelleFeld}
         allow="fullscreen"
         loading="eager"
         scrolling="no"
       ></iframe>
       <noscript>
-        <p>Das Formular benötigt JavaScript. Alternativ: <a href={`${src}?quelle=${quelle}`}>Formular direkt öffnen</a>.</p>
+        <p>Das Formular benötigt JavaScript. Alternativ: <a href={`${src}?${startParams}`}>Formular direkt öffnen</a>.</p>
       </noscript>
     </div>
   </section>
@@ -50,6 +55,7 @@ const src = `https://form.jotform.com/${formId}`;
     if (!f) return;
     var p = new URLSearchParams(window.location.search);
     if (!p.has('quelle')) p.set('quelle', f.dataset.quelle);
+    if (f.dataset.quelleFeld) p.set(f.dataset.quelleFeld, p.get('quelle'));
     f.src = f.dataset.src + '?' + p.toString();
     if (window.jotformEmbedHandler) window.jotformEmbedHandler('iframe[id="' + f.id + '"]', 'https://form.jotform.com/');
   })();
