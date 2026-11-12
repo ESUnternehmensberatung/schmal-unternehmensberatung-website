@@ -3,8 +3,8 @@ import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import { site } from '../../config/site';
 
-const anfrage = `${site.links.angebot}?quelle=ki-starttag`;
-// Belegt im Angebotsformular „KI-Schulung G.R.O.W.“ vor (Feld „Wofür wünschen Sie ein Angebot?“)
+// Belegt im Angebotsformular die passende Option im Feld „Wofür wünschen Sie ein Angebot?“ vor
+const anfrage = `${site.links.angebot}?quelle=ki-starttag&q10_checkbox8=${encodeURIComponent('KI-Starttag für bis zu 12 Personen')}`;
 const anfrageGrow = `${site.links.angebot}?quelle=grow-schulung&q10_checkbox8=${encodeURIComponent('KI-Schulung G.R.O.W.')}`;
 
 const formate = [
