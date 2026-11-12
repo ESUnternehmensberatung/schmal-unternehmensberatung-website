@@ -4,7 +4,8 @@ import Icon from '../../components/Icon.astro';
 import { site } from '../../config/site';
 
 const anfrage = `${site.links.angebot}?quelle=ki-starttag`;
-const anfrageGrow = `${site.links.angebot}?quelle=grow-schulung`;
+// Belegt im Angebotsformular „KI-Schulung G.R.O.W.“ vor (Feld „Wofür wünschen Sie ein Angebot?“)
+const anfrageGrow = `${site.links.angebot}?quelle=grow-schulung&q10_checkbox8=${encodeURIComponent('KI-Schulung G.R.O.W.')}`;
 
 const formate = [
   ['Dauer', '4 Stunden vor Ort', '2 Stunden, remote oder vor Ort'],
@@ -12,7 +13,7 @@ const formate = [
   ['Ihr Team geht raus mit', 'eigenen Anwendungsfällen, die ab Montag Zeit sparen', 'guten Beispielen, die sich direkt übertragen lassen'],
   ['Bordmittel-Check und Kurzbericht', 'inklusive, mit der Geschäftsführung', 'nicht enthalten'],
   ['Nachweis', 'Lernplattform, Abschlusstest und Nachweis KI-Kompetenz je Person', 'Teilnahmezertifikat je Person'],
-  ['Anrechnung', '25 % des Festpreises, wenn Sie innerhalb von 3 Monaten eine Umsetzung beauftragen', 'keine'],
+  ['Anrechnung', '25 % des Festpreises, wenn Sie innerhalb von 3 Monaten eine Umsetzung beauftragen', '10 % auf einen KI-Starttag oder weitere Projekte'],
 ];
 
 const ablauf = [
@@ -57,36 +58,50 @@ const leistungen = [
 ];
 ---
 <Base
-  title={`KI-Starttag: Schulung und Bordmittel-Check | ${site.name}`}
+  title={`KI-Schulung: KI-Starttag und G.R.O.W.-Schulung | ${site.name}`}
   description="KI-Schulung für Ihr Team mit Nachweis gemäß Art. 4 EU AI Act: der KI-Starttag mit Bordmittel-Check (4 Stunden vor Ort) oder die kompakte G.R.O.W.-Schulung (2 Stunden, remote oder vor Ort). Für Mittelstand, Kanzleien und Praxen."
 >
-  <section class="kopf dark" aria-labelledby="starttag-title">
+  <section class="kopf dark" aria-labelledby="schulung-title">
     <div class="wrap kopf-grid">
       <div>
-        <p class="eyebrow">KI-Starttag</p>
-        <h1 id="starttag-title">In vier Stunden vom Pflichtthema zum <em class="accent">Plan.</em></h1>
+        <p class="eyebrow">KI-Schulung</p>
+        <h1 id="schulung-title">Vom Pflichtthema zum <em class="accent">Plan.</em></h1>
         <p class="lead">
           Unternehmen, die KI einsetzen, müssen Maßnahmen ergreifen, um die KI-Kompetenz ihrer Mitarbeitenden zu fördern
-          (Art. 4 EU AI Act). Der KI-Starttag ist eine solche Maßnahme, dokumentiert mit Nachweis je Person, und zeigt Ihnen gleichzeitig, wo KI in Ihrem
-          Unternehmen am meisten bringt.
+          (Art. 4 EU AI Act). Beide Schulungen sind eine solche Maßnahme, dokumentiert je Person. Sie wählen, wie tief es gehen soll.
         </p>
         <div class="aktion">
-          <a class="btn btn-primary" href={anfrage}>KI-Starttag anfragen <Icon name="arrow-right" /></a>
+          <a class="btn btn-ghost" href="#formate">Formate vergleichen</a>
           <a class="btn btn-ghost" href={site.links.quickWin}>Erst kostenfrei sprechen</a>
         </div>
       </div>
 
-      <aside class="preis" aria-label="Auf einen Blick">
-        <p class="preis-label">Auf einen Blick</p>
-        <p class="preis-wert">4&nbsp;Stunden <span>vor Ort</span></p>
-        <p class="preis-text">Festpreis für bis zu 12 Teilnehmende</p>
-        <ul>
-          <li>Nachweis je Teilnehmer gemäß Art. 4 EU AI Act</li>
-          <li>Bordmittel-Check und Kurzbericht inklusive</li>
-          <li><strong>Zu 25 % angerechnet,</strong> wenn Sie innerhalb von 3 Monaten eine Umsetzung beauftragen</li>
-          <li>Kompakt: <a href="#formate">G.R.O.W.-Schulung in 2 Stunden</a></li>
-        </ul>
-      </aside>
+      <div class="angebote">
+        <article class="angebot haupt" aria-labelledby="karte-starttag">
+          <p class="angebot-label">Gründlich</p>
+          <h2 id="karte-starttag">KI-Starttag</h2>
+          <p class="angebot-dauer">4&nbsp;Stunden vor Ort</p>
+          <ul>
+            <li>Jede Person geht mit eigenen Anwendungsfällen raus</li>
+            <li>Bordmittel-Check und Kurzbericht für die Geschäftsführung</li>
+            <li>Abschlusstest und Nachweis KI-Kompetenz je Person</li>
+            <li><strong>25 % angerechnet</strong> bei Umsetzung innerhalb von 3 Monaten</li>
+          </ul>
+          <a class="btn btn-primary" href={anfrage}>Angebot anfordern <Icon name="arrow-right" /></a>
+        </article>
+        <article class="angebot" aria-labelledby="karte-grow">
+          <p class="angebot-label">Kompakt</p>
+          <h2 id="karte-grow">G.R.O.W.-Schulung</h2>
+          <p class="angebot-dauer">2&nbsp;Stunden, remote oder vor Ort</p>
+          <ul>
+            <li>Grundlagen, Risiken, Orientierung, Wirkung</li>
+            <li>Jede Person geht mit guten Beispielen raus</li>
+            <li>Teilnahmezertifikat je Person</li>
+            <li><strong>10 % angerechnet</strong> auf einen KI-Starttag oder weitere Projekte</li>
+          </ul>
+          <a class="btn btn-ghost" href={anfrageGrow}>Angebot anfordern <Icon name="arrow-right" /></a>
+        </article>
+      </div>
     </div>
   </section>
 
@@ -111,8 +126,8 @@ const leistungen = [
         }
         <div class="v-zeile v-aktion" role="row">
           <span role="rowheader"></span>
-          <span role="cell"><a class="btn btn-primary" href={anfrage}>KI-Starttag anfragen <Icon name="arrow-right" /></a></span>
-          <span role="cell"><a class="btn btn-navy" href={anfrageGrow}>G.R.O.W.-Schulung anfragen <Icon name="arrow-right" /></a></span>
+          <span role="cell"><a class="btn btn-primary" href={anfrage}>Angebot KI-Starttag <Icon name="arrow-right" /></a></span>
+          <span role="cell"><a class="btn btn-navy" href={anfrageGrow}>Angebot G.R.O.W.-Schulung <Icon name="arrow-right" /></a></span>
         </div>
       </div>
     </div>
@@ -181,7 +196,8 @@ const leistungen = [
           <h3>Was ist die G.R.O.W.-Schulung?</h3>
           <p>
             Die kompakte Variante in 2 Stunden, remote oder vor Ort: Grundlagen, Risiken, Orientierung und Wirkung von KI, mit guten
-            Beispielen aus dem Büroalltag. Ohne Bordmittel-Check und ohne Abschlusstest, dafür mit Teilnahmezertifikat je Person.
+            Beispielen aus dem Büroalltag. Ohne Bordmittel-Check und ohne Abschlusstest, dafür mit Teilnahmezertifikat je Person. 10 % des Preises
+            rechne ich auf einen KI-Starttag oder weitere Projekte an.
           </p>
         </div>
         <div>
@@ -212,11 +228,11 @@ const leistungen = [
 
   <section class="schluss dark" aria-labelledby="schluss-title">
     <div class="wrap schluss-inner">
-      <h2 id="schluss-title">Termin für Ihren KI-Starttag anfragen</h2>
+      <h2 id="schluss-title">Termin für Ihre KI-Schulung anfragen</h2>
       <p>Sie erhalten innerhalb von zwei Werktagen Ihr Festpreisangebot mit Terminvorschlägen.</p>
       <div class="aktion">
-        <a class="btn btn-primary" href={anfrage}>KI-Starttag anfragen <Icon name="arrow-right" /></a>
-        <a class="btn btn-ghost" href={anfrageGrow}>G.R.O.W.-Schulung anfragen</a>
+        <a class="btn btn-primary" href={anfrage}>Angebot KI-Starttag <Icon name="arrow-right" /></a>
+        <a class="btn btn-ghost" href={anfrageGrow}>Angebot G.R.O.W.-Schulung</a>
       </div>
     </div>
   </section>
@@ -229,8 +245,8 @@ const leistungen = [
 
   .kopf-grid {
     display: grid;
-    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
-    gap: clamp(2.5rem, 5vw, 5rem);
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+    gap: clamp(2rem, 4vw, 4rem);
     align-items: center;
   }
 
@@ -262,53 +278,82 @@ const leistungen = [
     margin-top: 2.25rem;
   }
 
-  .preis {
-    padding: clamp(1.75rem, 3vw, 2.5rem);
+  .angebote {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+  }
+
+  .angebot {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .angebot .btn {
+    margin-top: auto;
+    align-self: flex-start;
+  }
+
+  .angebot {
+    padding: clamp(1.5rem, 2.5vw, 2rem);
     border: 1px solid var(--line-dark);
     border-radius: var(--radius);
     background: rgb(255 255 255 / 0.04);
   }
 
-  .preis-label {
-    font-size: 0.875rem;
+  .angebot.haupt {
+    border-color: var(--gold);
+  }
+
+  .angebot-label {
+    font-size: 0.8rem;
     font-weight: 600;
     letter-spacing: 0.14em;
     text-transform: uppercase;
     color: var(--gold);
   }
 
-  .preis-wert {
-    margin-top: 0.75rem;
-    font-family: var(--serif);
-    font-size: var(--step-4);
-    line-height: 1;
+  .angebot h2 {
+    margin-top: 0.4rem;
     color: var(--white);
-    font-variant-numeric: lining-nums;
+    font-size: clamp(1.45rem, 1.1rem + 0.9vw, 1.9rem);
+    line-height: 1.1;
   }
 
-  .preis-wert span {
-    font-family: var(--sans);
-    font-size: 1rem;
-    color: var(--on-dark-muted);
-  }
-
-  .preis-text {
-    margin-top: 0.5rem;
+  .angebot-dauer {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
     color: var(--on-dark);
   }
 
-  .preis ul {
+  .angebot ul {
     list-style: none;
-    padding: 1.25rem 0 0;
-    margin: 1.25rem 0 0;
-    border-top: 1px solid var(--line-dark);
+    padding: 0;
+    margin: 1rem 0 1.25rem;
     display: grid;
-    gap: 0.6rem;
-    font-size: 1rem;
+    gap: 0.45rem;
+    font-size: 0.95rem;
     color: var(--on-dark-muted);
   }
 
-  .preis strong {
+  .angebot li {
+    padding-left: 1.1rem;
+    position: relative;
+  }
+
+  .angebot li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 50%;
+    background: var(--gold);
+  }
+
+  .angebot strong {
     color: var(--white);
   }
 
@@ -494,6 +539,18 @@ const leistungen = [
     .v-aktion :global(.btn) {
       width: 100%;
       justify-content: center;
+    }
+  }
+
+  @media (max-width: 1180px) {
+    .kopf-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .angebote {
+      grid-template-columns: 1fr;
     }
   }
 

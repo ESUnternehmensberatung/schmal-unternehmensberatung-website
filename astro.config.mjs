@@ -20,6 +20,7 @@ export default defineConfig({
     '/sample-page/': '/#ueber-mich',
     '/privacy-policy/': '/datenschutz/',
     '/kontakt/': '/quick-win/',
+    '/ki-starttag/': '/ki-schulung/',
   },
   integrations: [sitemap({ filter: (page) => hatBlog || !page.includes('/blog/') })],
 });
