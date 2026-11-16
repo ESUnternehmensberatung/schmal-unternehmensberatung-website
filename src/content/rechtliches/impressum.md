@@ -17,7 +17,7 @@ E-Mail: [info@schmal-unternehmensberatung.de](mailto:info@schmal-unternehmensber
 
 ## Gewerbeerlaubnisse und Registereinträge
 
-- Erlaubnis nach § 34c Abs. 1 Satz 1 GewO
+- Darlehensvermittler mit Erlaubnis nach § 34c Abs. 1 Satz 1 Nr. 1 GewO
 - Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 GewO, Registrierungsnummer D-WMF0-JRPOG-35
 - Immobiliardarlehensvermittler mit Erlaubnis nach § 34i Abs. 1 Satz 1 GewO, Registrierungsnummer D-W-151-WTQZ-46
 
