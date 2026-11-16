@@ -61,9 +61,7 @@ Im Rahmen der Auswahl von Versicherungsgesellschaften und Versicherungsprodukten
 
 ### II. Information zur Berücksichtigung nachteiliger Auswirkungen auf Nachhaltigkeitsfaktoren (Art. 4 TVO)
 
-Im Rahmen der Beratung werden die wichtigsten nachteiligen Auswirkungen von Investitionsentscheidungen auf Nachhaltigkeitsfaktoren der Finanzmarktteilnehmer (Versicherer) berücksichtigt. Die Berücksichtigung erfolgt auf Basis der von den Versicherungsunternehmen zur Verfügung gestellten Informationen. Für deren Richtigkeit ist der Vermittler (ACN GmbH) nicht verantwortlich. Zurzeit kann eine Berücksichtigung auf Grund sich aufbauender, aber aktuell noch ggf. rudimentärer Informationen durch die Versicherer zu ihren Unternehmen lediglich bedingt erfolgen. Etwaige Nachhaltigkeitspräferenzen des Kunden werden ermittelt.
-
-Erst-/Statusinformationen ACN GmbH, Stand 2023
+Im Rahmen der Beratung werden die wichtigsten nachteiligen Auswirkungen von Investitionsentscheidungen auf Nachhaltigkeitsfaktoren der Finanzmarktteilnehmer (Versicherer) berücksichtigt. Die Berücksichtigung erfolgt auf Basis der von den Versicherungsunternehmen zur Verfügung gestellten Informationen. Für deren Richtigkeit ist der Vermittler nicht verantwortlich. Zurzeit kann eine Berücksichtigung auf Grund sich aufbauender, aber aktuell noch ggf. rudimentärer Informationen durch die Versicherer zu ihren Unternehmen lediglich bedingt erfolgen. Etwaige Nachhaltigkeitspräferenzen des Kunden werden ermittelt.
 
 ### III. Information zur Vergütungspolitik bei der Berücksichtigung von Nachhaltigkeitsrisiken (Art. 5 TVO)
 
