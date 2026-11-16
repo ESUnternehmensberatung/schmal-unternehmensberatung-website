@@ -1,7 +1,7 @@
 ---
 title: Impressum
 description: Impressum von Schmal Unternehmensberatung.
-quelle: "Übernommen von schmal-unternehmensberatung.de/impressum/"
+quelle: "Stand: November 2026"
 ---
 
 ## Angaben gemäß § 5 DDG
@@ -11,51 +11,44 @@ Inhaber Eduard Schmal
 Im Kamp 7  
 21376 Eyendorf
 
-**Vertreten durch:**  
-Eduard Schmal
-
 **Kontakt:**  
 Telefon: [+49 1522 685 95 24](tel:+4915226859524)  
 E-Mail: [info@schmal-unternehmensberatung.de](mailto:info@schmal-unternehmensberatung.de)
 
-## Registereinträge
+## Gewerbeerlaubnisse und Registereinträge
 
-Registrierter Makler nach § 34c Abs. 1 Satz 1 GewO
-
-Registrierter Makler nach § 34d Abs. 1 GewO: D-WMF0-JRPOG-35
-
-Registrierter Makler nach § 34i Abs. 1 Satz 1 GewO: D-W-151-WTQZ-46
+- Erlaubnis nach § 34c Abs. 1 Satz 1 GewO
+- Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 GewO, Registrierungsnummer D-WMF0-JRPOG-35
+- Immobiliardarlehensvermittler mit Erlaubnis nach § 34i Abs. 1 Satz 1 GewO, Registrierungsnummer D-W-151-WTQZ-46
 
 ## Umsatzsteuer-ID
 
 Umsatzsteuer-Identifikationsnummer gemäß § 27a Umsatzsteuergesetz:  
 DE366239388
 
-## Aufsichtsbehörde
+## Erlaubnis- und Aufsichtsbehörde
 
-IHK Lüneburg-Wolfsburg, Am Sande 1 in 21335 Lüneburg
+Industrie- und Handelskammer Lüneburg-Wolfsburg, Am Sande 1, 21335 Lüneburg
 
-Die Eintragungen können wie folgt überprüft werden: Deutscher Industrie- und Handelskammertag (DIHK) e.V., Breite Straße 29, 10178 Berlin, Telefon 0180 60 05 850 (20 Cent/Anruf aus dem deutschen Festnetz, höchstens 60 Cent/Anruf aus Mobilfunknetzen), [www.vermittlerregister.info](https://www.vermittlerregister.info)
+Die Registrierungen können wie folgt überprüft werden: Deutscher Industrie- und Handelskammertag (DIHK) e.V., Breite Straße 29, 10178 Berlin, Telefon 0180 60 05 850 (20 Cent/Anruf aus dem deutschen Festnetz, höchstens 60 Cent/Anruf aus Mobilfunknetzen), [www.vermittlerregister.info](https://www.vermittlerregister.info)
 
 ## Schlichtungsstellen
 
-Gemäß § 36 VSBG und § 17 Abs. 4 VersVermV teilen wir mit, dass wir verpflichtet und bereit sind, an einem Streitbeilegungsverfahren teilzunehmen. Folgende Schlichtungsstellen können angerufen werden:
+Gemäß § 36 VSBG und § 15 Abs. 1 Nr. 12 VersVermV teilen wir mit, dass wir verpflichtet und bereit sind, an einem Streitbeilegungsverfahren teilzunehmen. Folgende Schlichtungsstellen können angerufen werden:
 
 - Versicherungsombudsmann e.V., Postfach 08 06 32, 10006 Berlin, [www.versicherungsombudsmann.de](https://www.versicherungsombudsmann.de)
 - Ombudsmann Private Kranken- und Pflegeversicherung, Postfach 06 02 22, 10052 Berlin, [www.pkv-ombudsmann.de](https://www.pkv-ombudsmann.de)
-- Europäische Kommission, Online-Streitbeilegungsplattform (OS-Plattform), [www.ec.europa.eu/consumers/odr](https://www.ec.europa.eu/consumers/odr)
-
 ## Berufsrechtliche Regelungen
 
-Berufsrechtliche Regelungen sind insbesondere: § 34d Gewerbeordnung, §§ 59 bis 68 VVG und die VersVermV. Die berufsrechtlichen Regelungen können über die vom Bundesministerium der Justiz und von der juris GmbH betriebenen Homepage [www.gesetze-im-internet.de](https://www.gesetze-im-internet.de) eingesehen und abgerufen werden. Unsere Tätigkeit beinhaltet auch Beratung.
+Berufsrechtliche Regelungen sind insbesondere: §§ 34c, 34d und 34i Gewerbeordnung (GewO), §§ 59 bis 68 Versicherungsvertragsgesetz (VVG), die Versicherungsvermittlungsverordnung (VersVermV), die Makler- und Bauträgerverordnung (MaBV) und die Immobiliardarlehensvermittlungsverordnung (ImmVermV). Die berufsrechtlichen Regelungen können über die vom Bundesministerium der Justiz und von der juris GmbH betriebenen Homepage [www.gesetze-im-internet.de](https://www.gesetze-im-internet.de) eingesehen und abgerufen werden. Unsere Tätigkeit beinhaltet auch Beratung.
 
 ## Informationen zur Nachhaltigkeit in der Versicherungsvermittlung
 
-Informationen gemäß Art. 3 Abs. 2, Art. 4 Abs. 5, Art. 5 Abs. 1 Verordnung (EU) 2019/2088 über nachhaltigkeitsbezogene Offenlegungspflichten im Finanzdienstleistungssektor (EU-Transparenzverordnung)
+Informationen gemäß Art. 3 Abs. 2, Art. 4 Abs. 5, Art. 5 Abs. 1 und Art. 6 Abs. 2 Verordnung (EU) 2019/2088 über nachhaltigkeitsbezogene Offenlegungspflichten im Finanzdienstleistungssektor (EU-Transparenzverordnung)
 
 ### I. Information zur Einbeziehung von Nachhaltigkeitsrisiken bei der Beratertätigkeit (Art. 3 TVO)
 
-Im Rahmen der Auswahl von Versicherungsgesellschaften und Versicherungsprodukten berücksichtigen wir die von den Versicherern zur Verfügung gestellten Informationen. Versicherer, die erkennbar keine Strategie zur Einbeziehung von Nachhaltigkeitsrisiken in ihre Investitionsentscheidungen einbeziehen, bieten wir ggf. nicht an. Im Rahmen der im Kundeninteresse erfolgenden individuellen Beratung stellen wir gesondert dar, wenn die Berücksichtigung der Nachhaltigkeitsrisiken bei der Investmententscheidung einen für uns erkennbaren Vor- bzw. Nachteil für den individuellen Kunden bedeutet.
+Im Rahmen der Auswahl von Versicherungsgesellschaften und Versicherungsprodukten berücksichtigen wir die von den Versicherern zur Verfügung gestellten Informationen. Versicherer, die erkennbar keine Strategie zur Einbeziehung von Nachhaltigkeitsrisiken in ihre Investitionsentscheidungen haben, bieten wir ggf. nicht an. Im Rahmen der im Kundeninteresse erfolgenden individuellen Beratung stellen wir gesondert dar, wenn die Berücksichtigung der Nachhaltigkeitsrisiken bei der Investmententscheidung einen für uns erkennbaren Vor- bzw. Nachteil für den individuellen Kunden bedeutet.
 
 Über die jeweilige Berücksichtigung von Nachhaltigkeitsrisiken bei Investitionsentscheidungen des jeweiligen Versicherers informiert dieser mit dessen vorvertraglichen Informationen. Bei Fragen dazu kann der Kunde uns gerne im Vorfeld eines möglichen Abschlusses ansprechen.
 
@@ -81,6 +74,10 @@ Die Vergütung unserer Tätigkeit erfolgt:
 
 Dies ist abhängig von den Wünschen und Bedürfnissen des Kunden und den Versicherungsprodukten, welche eventuell vermittelt werden.
 
+## Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV
+
+Eduard Schmal, Im Kamp 7, 21376 Eyendorf
+
 ## Haftungsausschluss
 
 ### Haftung für Inhalte
@@ -93,10 +90,6 @@ Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wi
 
 ### Datenschutz
 
-Die Nutzung unserer Webseite ist in der Regel ohne Angabe personenbezogener Daten möglich. Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name, Anschrift oder E-Mail-Adressen) erhoben werden, erfolgt dies, soweit möglich, stets auf freiwilliger Basis. Diese Daten werden ohne Ihre ausdrückliche Zustimmung nicht an Dritte weitergegeben.
-
-Wir weisen darauf hin, dass die Datenübertragung im Internet (z. B. bei der Kommunikation per E-Mail) Sicherheitslücken aufweisen kann. Ein lückenloser Schutz der Daten vor dem Zugriff durch Dritte ist nicht möglich.
+Wie wir personenbezogene Daten verarbeiten, welche Dienstleister wir dabei einsetzen und welche Rechte Sie haben, erläutert unsere [Datenschutzerklärung](../datenschutz/).
 
 Der Nutzung von im Rahmen der Impressumspflicht veröffentlichten Kontaktdaten durch Dritte zur Übersendung von nicht ausdrücklich angeforderter Werbung und Informationsmaterialien wird hiermit ausdrücklich widersprochen. Die Betreiber der Seiten behalten sich ausdrücklich rechtliche Schritte im Falle der unverlangten Zusendung von Werbeinformationen, etwa durch Spam-Mails, vor.
-
-Ausführliche Informationen finden Sie in der [Datenschutzerklärung](../datenschutz/).
