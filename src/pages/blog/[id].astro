@@ -11,18 +11,38 @@ export async function getStaticPaths() {
 const { a } = Astro.props;
 const { Content } = await render(a);
 const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' }).format(a.data.datum);
+const fachartikel = a.data.kategorie === 'fachartikel';
 ---
 <Text
   title={`${a.data.title} | ${site.name}`}
   description={a.data.description}
   heading={a.data.title}
-  meta={`${a.data.produkt}, ${datum}`}
+  meta={fachartikel ? `Fachartikel von Eduard Schmal, ${datum}` : `${a.data.produkt}, ${datum}`}
 >
-  <p slot="vorspann" class="hinweis">
-    <strong>Transparenz:</strong> Ich erhalte bei Vermittlung von {a.data.produkt} eine Provision. Ihr Preis ändert sich
-    dadurch nicht.
-  </p>
+  {
+    fachartikel ? (
+      <p slot="vorspann" class="hinweis">
+        Dieser Artikel ersetzt keine Rechts- oder Steuerberatung. Er gibt den Stand vom {datum} wieder.
+      </p>
+    ) : (
+      <p slot="vorspann" class="hinweis">
+        <strong>Transparenz:</strong> Ich erhalte bei Vermittlung von {a.data.produkt} eine Provision. Ihr Preis ändert
+        sich dadurch nicht.
+      </p>
+    )
+  }
   <Content />
+  {
+    fachartikel && (
+      <aside class="cta">
+        <p>
+          <strong>Sie möchten wissen, wo in Ihrem Betrieb der größte Hebel liegt?</strong> In der kostenfreien
+          Quick-Win-Analyse finden wir in 45 Minuten zwei konkrete Ansatzpunkte.
+        </p>
+        <a href={site.links.quickWin}>Quick-Win-Analyse anfragen</a>
+      </aside>
+    )
+  }
 </Text>
 
 <style>
@@ -36,6 +56,20 @@ const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' }).format(a.d
     color: var(--stone);
   }
   .hinweis strong {
+    color: var(--navy);
+  }
+  .cta {
+    margin-top: 2.5rem;
+    padding: 1.5rem;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    display: grid;
+    gap: 1rem;
+  }
+  .cta a {
+    justify-self: start;
+    font-weight: 600;
     color: var(--navy);
   }
 </style>

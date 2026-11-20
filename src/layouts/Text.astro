@@ -40,3 +40,31 @@ const { title, description, heading, meta } = Astro.props;
     color: var(--stone);
   }
 </style>
+
+<style is:global>
+  .prose table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 0.95rem;
+  }
+  .prose th,
+  .prose td {
+    padding: 0.55rem 0.75rem;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: top;
+  }
+  .prose th {
+    color: var(--navy);
+    font-weight: 600;
+  }
+  .prose blockquote {
+    margin: 1.5rem 0;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--gold, #c9a87c);
+    background: var(--white);
+  }
+</style>

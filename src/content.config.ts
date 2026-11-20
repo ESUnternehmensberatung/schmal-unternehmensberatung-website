@@ -19,16 +19,24 @@ const faq = defineCollection({
   }),
 });
 
-// Blog: je Business-Concierge-Produkt ein Artikel.
+// Blog: Fachartikel (eigene Themen, ohne Provision) und Erfahrungsberichte zu
+// Business-Concierge-Produkten (mit Provisionshinweis). `produkt` ist nur bei
+// Concierge-Artikeln Pflicht.
 const blog = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/blog' }),
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    produkt: z.string(),
-    datum: z.coerce.date(),
-    entwurf: z.boolean().default(false),
-  }),
+  schema: z
+    .object({
+      title: z.string(),
+      description: z.string(),
+      kategorie: z.enum(['concierge', 'fachartikel']).default('concierge'),
+      produkt: z.string().optional(),
+      datum: z.coerce.date(),
+      entwurf: z.boolean().default(false),
+    })
+    .refine((d) => d.kategorie !== 'concierge' || !!d.produkt, {
+      message: 'Concierge-Artikel brauchen das Feld "produkt".',
+      path: ['produkt'],
+    }),
 });
 
 export const collections = { rechtliches, faq, blog };

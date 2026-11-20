@@ -11,12 +11,13 @@ const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' });
 ---
 <Text
   title={`Blog | ${site.name}`}
-  description="Erfahrungsberichte zu Werkzeugen, die ich im Mittelstand einsetze."
+  description="Fachartikel zu KI, Digitalisierung, Krisenfrüherkennung und Prozessen im Mittelstand, dazu Erfahrungsberichte zu Werkzeugen, die ich einsetze."
   heading="Blog"
 >
   <p slot="vorspann" class="vorspann">
-    Erfahrungsberichte zu den Werkzeugen aus dem Business-Concierge: wofür ich sie einsetze, was sie kosten, wo ihre Grenzen
-    liegen. Ich erhalte bei Vermittlung eine Provision. Ihr Preis ändert sich dadurch nicht.
+    Fachartikel aus der Praxis: KI, Digitalisierung, Krisenfrüherkennung und Prozesse im Mittelstand. Dazu
+    Erfahrungsberichte zu Werkzeugen aus dem Business-Concierge. Bei diesen erhalte ich eine Provision, Ihr Preis ändert
+    sich dadurch nicht. Das steht über jedem dieser Artikel.
   </p>
 
   {
@@ -33,7 +34,7 @@ const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' });
         {artikel.map((a) => (
           <li>
             <p class="meta">
-              {a.data.produkt}, {datum.format(a.data.datum)}
+              {a.data.kategorie === 'fachartikel' ? 'Fachartikel' : a.data.produkt}, {datum.format(a.data.datum)}
             </p>
             <h2>
               <a href={url(`/blog/${a.id}/`)}>{a.data.title}</a>
