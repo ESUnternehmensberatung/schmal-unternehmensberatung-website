@@ -3,6 +3,7 @@ title: "Warum Digitalisierungsprojekte im Mittelstand scheitern: Lehren aus der 
 description: "Die meisten Digitalisierungsprojekte scheitern nicht an der Technik. Sechs Gründe aus Restrukturierung, Service-Center-Aufbau und Automatisierung, und wie Sie sie vermeiden."
 kategorie: fachartikel
 datum: 2026-11-20
+entwurf: true
 ---
 
 **Kurz beantwortet:** Digitalisierungsprojekte scheitern selten an der Software. Sie scheitern daran, dass ein unklarer Prozess digitalisiert wird, dass niemand verantwortlich ist, dass das Team nicht mitgenommen wird oder dass das Projekt zu groß startet. Die Lösung: klein anfangen, schnell einen sichtbaren Erfolg schaffen und dann ausbauen.

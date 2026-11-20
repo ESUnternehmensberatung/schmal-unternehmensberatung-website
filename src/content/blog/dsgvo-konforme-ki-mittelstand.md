@@ -3,6 +3,7 @@ title: "DSGVO-konforme KI im Mittelstand: So geht es ohne Datenschutz-Risiko"
 description: "Datenschutz ist die größte Hürde für KI im Mittelstand. Welche Fragen Sie klären müssen, welche Werkzeuge sich eignen und wie Sie in sechs Schritten sicher starten."
 kategorie: fachartikel
 datum: 2026-11-20
+entwurf: true
 ---
 
 **Kurz beantwortet:** KI und DSGVO schließen sich nicht aus. Sie brauchen ein **Werkzeug mit Geschäftskonditionen** und **Auftragsverarbeitungsvertrag**, eine klare Regel, **welche Daten hinein dürfen**, und ein **geschultes Team**. Wenn möglich, nutzen Sie Anbieter mit Datenverarbeitung in der EU.

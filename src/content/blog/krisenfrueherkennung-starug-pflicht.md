@@ -3,6 +3,7 @@ title: "Krisenfrüherkennung ist Pflicht: Was Geschäftsführer nach dem StaRUG 
 description: "Seit 2021 müssen Geschäftsführer haftungsbeschränkter Gesellschaften Krisen früh erkennen. Was das Gesetz verlangt, warum es gerade jetzt zählt und wie ein schlankes Frühwarnsystem aussieht."
 kategorie: fachartikel
 datum: 2026-11-20
+entwurf: true
 ---
 
 **Kurz beantwortet:** Nach **§ 1 StaRUG** müssen die Geschäftsleiter haftungsbeschränkter Gesellschaften, etwa einer GmbH oder GmbH & Co. KG, **fortlaufend Entwicklungen überwachen, die den Fortbestand gefährden können**. Erkennen sie solche Entwicklungen, müssen sie gegensteuern und die Überwachungsorgane informieren. Praktisch heißt das: Sie brauchen ein Frühwarnsystem, mindestens eine rollierende Liquiditätsplanung.

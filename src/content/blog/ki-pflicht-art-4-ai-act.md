@@ -3,6 +3,7 @@ title: "KI-Pflicht nach Art. 4 AI Act: Was KMU jetzt tun müssen und was nicht"
 description: "Seit Februar 2025 müssen Unternehmen, die KI einsetzen, die KI-Kompetenz ihrer Mitarbeitenden fördern. Was das konkret heißt, was es nicht heißt und wie Sie es sauber dokumentieren."
 kategorie: fachartikel
 datum: 2026-11-20
+entwurf: true
 ---
 
 **Kurz beantwortet:** Unternehmen, die KI einsetzen, müssen **Maßnahmen ergreifen, um die KI-Kompetenz ihrer Mitarbeitenden zu fördern** (Art. 4 EU AI Act). Die Pflicht gilt seit dem **2. Februar 2025**. Ein offizielles Zertifikat ist **nicht** vorgeschrieben. Sinnvoll ist eine Schulung, die zu Ihrem Betrieb passt, und eine Dokumentation je Person.

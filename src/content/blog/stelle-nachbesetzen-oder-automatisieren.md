@@ -3,6 +3,7 @@ title: "Stelle nachbesetzen oder automatisieren? Ein Rechenbeispiel aus der Prax
 description: "Wenn eine Bürokraft geht, lohnt sich ein Blick auf die Aufgaben, bevor die Anzeige rausgeht. So rechnen Sie aus, was eine Neubesetzung kostet und was Automatisierung bringt."
 kategorie: fachartikel
 datum: 2026-11-20
+entwurf: true
 ---
 
 **Kurz beantwortet:** Bevor Sie eine Stelle im Büro nachbesetzen, zerlegen Sie sie in Aufgaben. Wiederkehrende, regelbasierte Aufgaben lassen sich oft automatisieren. Das Ziel ist nicht, Menschen zu ersetzen, sondern **das Team von Routine zu entlasten**, damit es für die Arbeit Zeit hat, die nur Menschen machen können.
