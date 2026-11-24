@@ -17,6 +17,24 @@ const formate = [
   ['Anrechnung', '25 % des Festpreises, wenn Sie innerhalb von 3 Monaten eine Umsetzung beauftragen', '10 % auf einen KI-Starttag oder weitere Projekte'],
 ];
 
+// IDD-Add-on: Entwurf, erst nach Freigabe sichtbar schalten (true).
+const zeigeIdd = false;
+const anfrageIdd = `${site.links.angebot}?quelle=idd-add-on`;
+
+const iddInhalte = [
+  ['KI in Beratung und Dokumentation', 'Bedarfsermittlung und Beratungsdokumentation nach §§ 61, 62 VVG mit KI vorbereiten, und was der Mensch vor dem Versand prüfen muss.'],
+  ['Datenschutz in der Versicherungsvermittlung', 'Gesundheitsdaten bei der Antragsaufnahme, Art. 9 DSGVO, welche Kundendaten in welches Werkzeug dürfen.'],
+  ['Bedingungen und Angebote vergleichen', 'Versicherungsbedingungen mit KI zusammenfassen und gegenüberstellen, ohne erfundene Leistungsinhalte zu übernehmen.'],
+  ['Schadenfall und Vertragsverwaltung', 'Schadenmeldungen, Obliegenheiten und Kundenkorrespondenz mit KI vorbereiten, für Innendienst und Schadenbearbeitung.'],
+  ['EU AI Act in der Versicherungsbranche', 'Hochrisiko-Einstufung bei Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung, Pflichten im Vertrieb.'],
+  ['Kundenkommunikation und Werbung', 'KI-Texte im Vertrieb: Wettbewerbsrecht, unzulässige Werbung und Umgang mit Interessenkonflikten.'],
+];
+
+const iddFormate = [
+  ['KI-Starttag + IDD', 'bis zu 3 Zeitstunden', '2 Zeitstunden versicherungsbezogene Module vor Ort, dazu 1 Zeitstunde E-Learning mit Lernerfolgskontrolle'],
+  ['G.R.O.W. + IDD', 'bis zu 2 Zeitstunden', '1 Zeitstunde versicherungsbezogenes Modul remote (interaktives Webinar) oder vor Ort, dazu 1 Zeitstunde E-Learning mit Lernerfolgskontrolle'],
+];
+
 const ablauf = [
   {
     titel: 'Vorbereitung',
@@ -134,6 +152,65 @@ const leistungen = [
       </div>
     </div>
   </section>
+
+  {
+    zeigeIdd && (
+      <section class="section idd" id="idd" aria-labelledby="idd-title">
+        <div class="wrap">
+          <p class="eyebrow-hell">Für die Versicherungsbranche</p>
+          <h2 id="idd-title">IDD-Add-on: Weiterbildungsstunden inklusive</h2>
+          <p class="formate-lead">
+            Für Versicherungsvermittler, Versicherungsberater und Beschäftigte von Versicherungsunternehmen, die am Vertrieb
+            mitwirken: Beide Schulungen gibt es mit versicherungsspezifischen Inhalten. Die Zeitstunden mit Versicherungsbezug
+            weise ich im Weiterbildungsnachweis gesondert aus, für die Weiterbildungspflicht von 15 Stunden im Jahr nach
+            § 34d Abs. 9 GewO bzw. § 48 Abs. 2 VAG.
+          </p>
+
+          <div class="zwei idd-grid">
+            <div>
+              <h3>Versicherungsbezogene Module</h3>
+              <dl class="inhalte">
+                {iddInhalte.map(([t, d]) => (
+                  <div>
+                    <dt>{t}</dt>
+                    <dd>{d}</dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+            <div>
+              <h3>Anrechenbare Zeitstunden</h3>
+              <dl class="inhalte">
+                {iddFormate.map(([t, z, d]) => (
+                  <div>
+                    <dt>
+                      {t}: <strong>{z}</strong>
+                    </dt>
+                    <dd>{d}</dd>
+                  </div>
+                ))}
+              </dl>
+              <h3 class="idd-abstand">So erfüllen wir die Vorgaben (Anlage 3 VersVermV)</h3>
+              <ul class="haken">
+                <li><Icon name="check" />Beschreibung und Ablaufplan stehen vor dem Termin fest</li>
+                <li><Icon name="check" />Einladung in Textform mit erwerbbaren Kompetenzen und Zeitstunden</li>
+                <li><Icon name="check" />Anwesenheit wird dokumentiert und archiviert, auch im Webinar und E-Learning</li>
+                <li><Icon name="check" />Weiterbildungsnachweis je Person mit Datum, Umfang, Inhalt, Bezeichnung und Anbieter</li>
+                <li><Icon name="check" />Durchführung durch Eduard Schmal, Versicherungsmakler mit Erlaubnis nach § 34d GewO</li>
+              </ul>
+            </div>
+          </div>
+
+          <p class="idd-hinweis">
+            Wichtig: Allgemeine KI- und Softwareinhalte zählen nicht als IDD-Weiterbildung. Deshalb weise ich nur die Teile mit
+            Versicherungsbezug als Weiterbildungszeit aus. Eine staatliche Zertifizierung von Weiterbildungsanbietern gibt es
+            nicht. Ob eine Maßnahme anerkannt wird, prüft im Zweifel die zuständige IHK. Die Nachweise bewahren Sie fünf Jahre auf.
+          </p>
+          <a class="btn btn-navy" href={anfrageIdd}>Angebot mit IDD-Add-on anfordern <Icon name="arrow-right" /></a>
+        </div>
+      </section>
+    )
+  }
 
   <section class="section" aria-labelledby="ablauf-title">
     <div class="wrap">
@@ -453,6 +530,37 @@ const leistungen = [
   .fragen p {
     margin-top: 0.5rem;
     color: var(--stone);
+  }
+
+  .eyebrow-hell {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 0.75rem;
+  }
+
+  .idd-grid {
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .idd h3 {
+    font-size: var(--step-1);
+  }
+
+  .idd-abstand {
+    margin-top: 2.5rem;
+  }
+
+  .idd-hinweis {
+    margin: 2.5rem 0 1.75rem;
+    max-width: 52rem;
+    padding: 1.25rem 1.5rem;
+    border-left: 3px solid var(--gold);
+    background: var(--white);
+    color: var(--stone);
+    font-size: 0.95rem;
   }
 
   .formate-lead {
