@@ -20,6 +20,9 @@ const formate = [
 // IDD-Add-on: freigegeben am 24.11.2026 (false blendet den Abschnitt aus).
 const zeigeIdd = true;
 const anfrageIdd = `${site.links.angebot}?quelle=idd-add-on`;
+// Belegt im Angebotsformular die IDD-Varianten vor (Feld „Wofür wünschen Sie ein Angebot?“)
+const anfrageStarttagIdd = `${site.links.angebot}?quelle=idd-add-on&q10_checkbox8=${encodeURIComponent('KI-Starttag für bis zu 12 Personen mit IDD Stunden')}`;
+const anfrageGrowIdd = `${site.links.angebot}?quelle=idd-add-on&q10_checkbox8=${encodeURIComponent('KI-Schulung G.R.O.W. mit IDD-Stunden')}`;
 
 const iddInhalte = [
   ['KI in Beratung und Dokumentation', 'Bedarfsermittlung und Beratungsdokumentation nach §§ 61, 62 VVG mit KI vorbereiten, und was der Mensch vor dem Versand prüfen muss.'],
@@ -35,11 +38,13 @@ const iddFormate = [
   {
     zahl: '3',
     titel: 'KI-Starttag + IDD',
+    link: anfrageStarttagIdd,
     text: 'Die Schulung vor Ort, mit Übungen an Fällen aus Ihrem Vertrieb. Danach vertiefen Ihre Mitarbeitenden die Inhalte online und schließen mit einem kurzen Test ab.',
   },
   {
     zahl: '2',
     titel: 'G.R.O.W. + IDD',
+    link: anfrageGrowIdd,
     text: 'Kompakt im interaktiven Webinar oder bei Ihnen vor Ort. Die Vertiefung mit kurzem Test folgt online, wann es in den Arbeitstag passt.',
   },
 ];
@@ -59,6 +64,63 @@ const iddSchritte = [
   ['Vertiefung', 'online mit Abschlusstest als Lernerfolgskontrolle'],
   ['Nachweis', 'je Person mit allen Pflichtangaben, bereit für Ihre Unterlagen'],
 ];
+
+// Fragen und Antworten: auf der Seite sichtbar und als FAQPage für Google und KI-Suche.
+const fragen = [
+  ['Für wen ist der KI-Starttag?', 'Für mittelständische Unternehmen, Kanzleien, Steuerberatungen, Praxen und Versicherungsbetriebe mit etwa 5 bis 50 Mitarbeitenden, die KI sicher einführen wollen, statt sie im Verborgenen nutzen zu lassen.'],
+  ['Was ist die G.R.O.W.-Schulung?', 'Die kompakte Variante in 2 Stunden, remote oder vor Ort: Grundlagen, Risiken, Orientierung und Wirkung von KI, mit guten Beispielen aus dem Büroalltag. Ohne Bordmittel-Check und ohne Abschlusstest, dafür mit Teilnahmezertifikat je Person. 10 % des Preises rechne ich auf einen KI-Starttag oder weitere Projekte an.'],
+  ['Ist der Nachweis ein offizielles Zertifikat?', 'Eine offizielle Zertifizierung für Art. 4 EU AI Act gibt es nicht. Verlangt wird, dass Sie Maßnahmen zur KI-Kompetenz ergreifen. Der Nachweis dokumentiert Schulung und bestandenen Abschlusstest je Person, damit Sie das bei Rückfragen belegen können.'],
+  ['Zählt die KI-Schulung als IDD-Weiterbildung?', 'Mit dem IDD-Add-on ja: Die Module mit Versicherungsbezug werden als Weiterbildungszeit ausgewiesen, beim KI-Starttag bis zu 3 und bei der G.R.O.W.-Schulung bis zu 2 Zeitstunden. Jede Person erhält einen Weiterbildungsnachweis mit Datum, Umfang, Inhalt, Bezeichnung und Anbieter.'],
+  ['Wer muss sich nach IDD weiterbilden?', 'Versicherungsvermittler und Versicherungsberater mit Erlaubnis nach § 34d GewO, ihre Beschäftigten, die bei Vermittlung oder Beratung mitwirken, und Mitarbeitende von Versicherungsunternehmen, die am Vertrieb beteiligt sind, auch in Vertragsverwaltung und Schadenbearbeitung. Die Pflicht beträgt 15 Zeitstunden pro Kalenderjahr (§ 34d Abs. 9 GewO, § 48 Abs. 2 VAG).'],
+  ['Was passiert nach dem Starttag?', 'Sie entscheiden. Viele setzen die Hebel aus dem Kurzbericht mit mir um. Beauftragen Sie innerhalb von 3 Monaten, rechne ich 25 % des Festpreises an.'],
+  ['Gibt es Fördermittel?', 'Je nach Bundesland und Programm lassen sich Schulungen und Beratung fördern. Die Prüfung von Fördermitteln gehört bei mir zu jeder Beratung dazu.'],
+];
+
+const seitenUrl = `${site.url}/ki-schulung/`;
+const kurs = (id: string, name: string, description: string, modus: string[], stunden: string) => ({
+  '@type': 'Course',
+  '@id': `${seitenUrl}#${id}`,
+  name,
+  description,
+  url: seitenUrl,
+  inLanguage: 'de-DE',
+  provider: { '@id': `${site.url}/#unternehmen` },
+  instructor: { '@id': `${site.url}/#inhaber` },
+  about: ['Künstliche Intelligenz', 'KI-Kompetenz nach Art. 4 EU AI Act', 'Datenschutz', 'Prompting', 'KI-Agenten'],
+  audience: { '@type': 'BusinessAudience', audienceType: 'Mittelstand, Kanzleien, Praxen, Versicherungsvermittler' },
+  hasCourseInstance: { '@type': 'CourseInstance', courseMode: modus, courseWorkload: stunden },
+  offers: { '@type': 'Offer', url: seitenUrl, category: 'Festpreis auf Anfrage' },
+});
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    kurs('ki-starttag', 'KI-Starttag', 'KI-Schulung vor Ort mit Übungen an echten Aufgaben, Bordmittel-Check und Kurzbericht für die Geschäftsführung, Lernplattform mit Abschlusstest und Nachweis der KI-Kompetenz nach Art. 4 EU AI Act je Person.', ['Onsite'], 'PT4H'),
+    kurs('grow-schulung', 'G.R.O.W.-Schulung', 'Kompakte KI-Schulung nach G.R.O.W. (Grundlagen, Risiken, Orientierung, Wirkung), remote als interaktives Webinar oder vor Ort, mit Teilnahmezertifikat je Person.', ['Online', 'Onsite'], 'PT2H'),
+    {
+      '@type': 'Service',
+      '@id': `${seitenUrl}#idd-add-on`,
+      name: 'IDD-Add-on: KI-Schulung mit Weiterbildungsstunden für Versicherungsvermittler',
+      serviceType: 'IDD-Weiterbildung nach § 34d Abs. 9 GewO und § 48 Abs. 2 VAG',
+      description: 'Versicherungsbezogene Module zu KI in Beratung und Dokumentation, Datenschutz, Bedingungsvergleich, Schadenfall, Agentursteuerung, EU AI Act und Kundenkommunikation. Bis zu 3 Zeitstunden beim KI-Starttag, bis zu 2 Zeitstunden bei der G.R.O.W.-Schulung, mit Weiterbildungsnachweis je Person nach Anlage 3 VersVermV.',
+      provider: { '@id': `${site.url}/#unternehmen` },
+      audience: { '@type': 'BusinessAudience', audienceType: 'Versicherungsvermittler, Versicherungsmakler, Versicherungsunternehmen' },
+      areaServed: { '@type': 'Country', name: 'Deutschland' },
+      url: `${seitenUrl}#idd`,
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': `${seitenUrl}#faq`,
+      mainEntity: fragen.map(([f, antwort]) => ({ '@type': 'Question', name: f, acceptedAnswer: { '@type': 'Answer', text: antwort } })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${site.url}/` },
+        { '@type': 'ListItem', position: 2, name: 'KI-Schulung', item: seitenUrl },
+      ],
+    },
+  ],
+};
 
 const ablauf = [
   {
@@ -102,10 +164,12 @@ const leistungen = [
 ];
 ---
 <Base
-  title={`KI-Schulung: KI-Starttag und G.R.O.W.-Schulung | ${site.name}`}
+  title={`KI-Schulung mit Nachweis nach EU AI Act, auch mit IDD-Stunden | ${site.name}`}
   image={url('/og/ki-schulung.png')}
-  description="KI-Schulung für Ihr Team mit Nachweis gemäß Art. 4 EU AI Act: der KI-Starttag mit Bordmittel-Check (4 Stunden vor Ort) oder die kompakte G.R.O.W.-Schulung (2 Stunden, remote oder vor Ort). Für Mittelstand, Kanzleien und Praxen."
+  description="KI-Schulung mit Nachweis nach Art. 4 EU AI Act: KI-Starttag vor Ort oder G.R.O.W. kompakt, remote oder vor Ort. Auch mit IDD-Weiterbildungsstunden."
+  keywords={['KI-Schulung', 'KI-Schulung für Mitarbeitende', 'KI-Kompetenz Art. 4 EU AI Act', 'KI-Schulung Nachweis', 'KI-Starttag', 'G.R.O.W.-Schulung', 'KI-Webinar', 'IDD-Weiterbildung', 'IDD-Weiterbildungsstunden', 'Weiterbildung Versicherungsvermittler', '§ 34d GewO Weiterbildung', 'KI im Versicherungsvertrieb', 'Mittelstand', 'Kanzleien', 'Arztpraxen', 'Versicherungsmakler']}
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <section class="kopf dark" aria-labelledby="schulung-title">
     <div class="wrap kopf-grid">
       <div>
@@ -202,6 +266,7 @@ const leistungen = [
                 </p>
                 <h3>{f.titel}</h3>
                 <p>{f.text}</p>
+                <a class="idd-format-link" href={f.link}>Angebot anfordern <Icon name="arrow-right" /></a>
               </article>
             ))}
           </div>
@@ -308,43 +373,14 @@ const leistungen = [
     <div class="wrap fragen">
       <h2 id="fragen-title">Gut zu wissen</h2>
       <div class="fragen-grid">
-        <div>
-          <h3>Für wen ist der KI-Starttag?</h3>
-          <p>
-            Für mittelständische Unternehmen, Kanzleien, Steuerberatungen und Praxen mit etwa 5 bis 50 Mitarbeitenden, die KI
-            sicher einführen wollen, statt sie im Verborgenen nutzen zu lassen.
-          </p>
-        </div>
-        <div>
-          <h3>Was ist die G.R.O.W.-Schulung?</h3>
-          <p>
-            Die kompakte Variante in 2 Stunden, remote oder vor Ort: Grundlagen, Risiken, Orientierung und Wirkung von KI, mit guten
-            Beispielen aus dem Büroalltag. Ohne Bordmittel-Check und ohne Abschlusstest, dafür mit Teilnahmezertifikat je Person. 10 % des Preises
-            rechne ich auf einen KI-Starttag oder weitere Projekte an.
-          </p>
-        </div>
-        <div>
-          <h3>Ist der Nachweis ein offizielles Zertifikat?</h3>
-          <p>
-            Eine offizielle Zertifizierung für Art. 4 EU AI Act gibt es nicht. Verlangt wird, dass Sie Maßnahmen zur
-            KI-Kompetenz ergreifen. Der Nachweis dokumentiert Schulung und bestandenen Abschlusstest je Person, damit Sie das
-            bei Rückfragen belegen können.
-          </p>
-        </div>
-        <div>
-          <h3>Was passiert nach dem Starttag?</h3>
-          <p>
-            Sie entscheiden. Viele setzen die Hebel aus dem Kurzbericht mit mir um. Beauftragen Sie innerhalb von 3 Monaten,
-            rechne ich 25 % des Festpreises an.
-          </p>
-        </div>
-        <div>
-          <h3>Gibt es Fördermittel?</h3>
-          <p>
-            Je nach Bundesland und Programm lassen sich Schulungen und Beratung fördern. Das prüfe ich gern gemeinsam mit
-            meinem Partner für Fördermittelberatung.
-          </p>
-        </div>
+        {
+          fragen.map(([f, antwort]) => (
+            <div>
+              <h3>{f}</h3>
+              <p>{antwort}</p>
+            </div>
+          ))
+        }
       </div>
     </div>
   </section>
@@ -638,6 +674,22 @@ const leistungen = [
   .idd-format p:last-child {
     margin-top: 0.5rem;
     color: var(--on-dark);
+  }
+
+  .idd-format-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+    font-weight: 600;
+    color: var(--gold);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+  }
+
+  .idd-format-link :global(svg) {
+    width: 1rem;
+    height: 1rem;
   }
 
   .idd-zwischen {

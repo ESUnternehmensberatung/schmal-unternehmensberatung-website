@@ -2,13 +2,16 @@
 
 > Unternehmensberatung für digitale Transformation und KI-Einführung im Mittelstand, in familiengeführten KMU, Kanzleien, Steuerberatungen und Arztpraxen. Inhaber: Eduard Schmal, Eyendorf (Niedersachsen, Raum Lüneburg/Hamburg). Tätig in ganz Deutschland.
 
-Ansatz: Zuerst prüfen, was im Unternehmen schon vorhanden ist (Bordmittel wie Microsoft 365, ERP, Telefonanlage), dann schnelle, messbare Verbesserungen (Quick Wins) umsetzen und daraus ein System aufbauen, das im Alltag weiterläuft. 20 Jahre Führungs- und Prozesserfahrung, unter anderem Aufbau eines zentralen Servicebereichs mit fast 50 Mitarbeitenden. Manager für angewandte KI-Transformation (IHK) und IHK-Dozent.
+Ansatz: Zuerst prüfen, was im Unternehmen schon vorhanden ist (Bordmittel wie Microsoft 365, ERP, Telefonanlage), dann schnelle, messbare Verbesserungen (Quick Wins) umsetzen und daraus ein System aufbauen, das im Alltag weiterläuft. 20 Jahre Führungs- und Prozesserfahrung, davon 17 Jahre als Führungskraft und Manager in der Versicherungsbranche, unter anderem Aufbau eines zentralen Servicebereichs mit fast 50 Mitarbeitenden und Einführung eines internen Weiterbildungsprogramms bei einem Versicherer. Qualifikationen: Fachwirt für Versicherungen und Finanzen (IHK), MBA mit Schwerpunkt Digital Innovation, Manager für angewandte KI-Transformation (IHK), IHK-Dozent. Erlaubnisse nach §§ 34d und 34i GewO.
 
 ## Leistungen
 
 - Consulting: KI-Einführung (DSGVO-konform), Bordmittelprüfung, Prozessautomatisierung, Behebung von Systembrüchen und doppelter Datenhaltung.
 - Coaching: Begleitung von Geschäftsführung und Führungskräften durch die Transformation.
-- Training: Praxisnahe KI-Schulung für Mitarbeitende, auch zur KI-Kompetenz nach Art. 4 EU AI Act.
+- Training: Praxisnahe KI-Schulung für Mitarbeitende mit Nachweis der KI-Kompetenz nach Art. 4 EU AI Act, in zwei Formaten:
+  - KI-Starttag: 4 Stunden vor Ort für bis zu 12 Teilnehmende, mit Bordmittel-Check und Kurzbericht für die Geschäftsführung, Lernplattform, Abschlusstest und Nachweis je Person. Jede Person geht mit eigenen Anwendungsfällen raus.
+  - G.R.O.W.-Schulung: 2 Stunden remote (interaktives Webinar) oder vor Ort, kompakt nach Grundlagen, Risiken, Orientierung, Wirkung, mit Teilnahmezertifikat.
+  - IDD-Add-on für Versicherungsvermittler, Versicherungsberater und Versicherungsunternehmen: versicherungsbezogene Module (Beratung und Dokumentation nach VVG, Datenschutz, Bedingungsvergleich, Schadenfall, Agentursteuerung, EU AI Act, Kundenkommunikation). Bis zu 3 Zeitstunden (KI-Starttag) bzw. 2 Zeitstunden (G.R.O.W.) für die Weiterbildungspflicht von 15 Stunden pro Jahr nach § 34d Abs. 9 GewO bzw. § 48 Abs. 2 VAG, mit Weiterbildungsnachweis nach Anlage 3 VersVermV.
 - Kostenfreie Quick-Win-Analyse (45 Minuten) als Einstieg.
 
 ## Ergebnisse aus Projekten
@@ -29,8 +32,13 @@ Auf Google, unter anderem: „Besonders überzeugt haben die klaren Analysen, pr
 
 - [Startseite](https://schmal-unternehmensberatung.de/)
 - [Quick-Win-Analyse anfragen](https://schmal-unternehmensberatung.de/quick-win/)
+- [KI-Schulung: KI-Starttag, G.R.O.W.-Schulung und IDD-Add-on](https://schmal-unternehmensberatung.de/ki-schulung/)
+- [Angebot anfordern](https://schmal-unternehmensberatung.de/angebot/)
+- [Blog: Fachartikel zu KI, Digitalisierung und Krisenfrüherkennung](https://schmal-unternehmensberatung.de/blog/)
+- [KI-Pflicht nach Art. 4 AI Act: Was KMU jetzt tun müssen](https://schmal-unternehmensberatung.de/blog/ki-pflicht-art-4-ai-act/)
 - [Whitepaper: 5 Gründe, warum KI-Projekte im Mittelstand scheitern](https://schmal-unternehmensberatung.de/whitepaper/)
 - [Impressum](https://schmal-unternehmensberatung.de/impressum/)
+- [Datenschutz](https://schmal-unternehmensberatung.de/datenschutz/)
 - [Bewertungen auf ProvenExpert](https://www.provenexpert.com/de-de/es-unternehmensberatung/)
 - [Google-Unternehmensprofil](https://maps.google.com/?cid=3350734573139222131)
 - [LinkedIn: Eduard Schmal](https://www.linkedin.com/in/eduard-schmal-998611253)

@@ -12,6 +12,20 @@ const { a } = Astro.props;
 const { Content } = await render(a);
 const datum = new Intl.DateTimeFormat('de-DE', { dateStyle: 'long' }).format(a.data.datum);
 const fachartikel = a.data.kategorie === 'fachartikel';
+const artikelUrl = `${site.url}/blog/${a.id}/`;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BlogPosting',
+  '@id': `${artikelUrl}#artikel`,
+  headline: a.data.title,
+  description: a.data.description,
+  datePublished: a.data.datum.toISOString().slice(0, 10),
+  inLanguage: 'de-DE',
+  mainEntityOfPage: artikelUrl,
+  author: { '@type': 'Person', '@id': `${site.url}/#inhaber`, name: site.owner, url: site.url },
+  publisher: { '@type': 'ProfessionalService', '@id': `${site.url}/#unternehmen`, name: site.name },
+  image: `${site.url}/og-image.png`,
+};
 ---
 <Text
   title={`${a.data.title} | ${site.name}`}
@@ -19,6 +33,7 @@ const fachartikel = a.data.kategorie === 'fachartikel';
   heading={a.data.title}
   meta={fachartikel ? `Fachartikel von Eduard Schmal, ${datum}` : `${a.data.produkt}, ${datum}`}
 >
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   {
     fachartikel ? (
       <p slot="vorspann" class="hinweis">
