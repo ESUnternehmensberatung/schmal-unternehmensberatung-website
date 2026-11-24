@@ -21,6 +21,8 @@ export default defineConfig({
     '/privacy-policy/': '/datenschutz/',
     '/kontakt/': '/quick-win/',
     '/ki-starttag/': '/ki-schulung/',
+    '/concierge/': '/',
+    '/empfehlung/': '/angebot/',
   },
   integrations: [sitemap({ filter: (page) => hatBlog || !page.includes('/blog/') })],
 });

@@ -1,7 +1,7 @@
 ---
 title: Datenschutzerklärung
 description: Datenschutzerklärung von Schmal Unternehmensberatung.
-quelle: "Stand: Oktober 2026"
+quelle: "Stand: November 2026"
 ---
 
 ## Verantwortlicher
@@ -40,12 +40,11 @@ Sollten wir künftig Dienste einsetzen, für die eine Einwilligung erforderlich 
 
 ## Kontaktformulare (Jotform)
 
-Für Anfragen (Quick-Win-Analyse, Angebot, Empfehlung) und für die Anforderung unseres Whitepapers nutzen wir Formulare des Dienstes **Jotform**. Anbieter ist die Jotform Inc., 4 Embarcadero Center, Suite 780, San Francisco, CA 94111, USA. Die Formulare sind auf unserer Website eingebettet. Beim Laden des Formulars werden Inhalte von Servern von Jotform abgerufen, wobei Ihre IP-Adresse an Jotform übertragen wird.
+Für Anfragen (Quick-Win-Analyse, Angebot) und für die Anforderung unseres Whitepapers nutzen wir Formulare des Dienstes **Jotform**. Anbieter ist die Jotform Inc., 4 Embarcadero Center, Suite 780, San Francisco, CA 94111, USA. Die Formulare sind auf unserer Website eingebettet. Beim Laden des Formulars werden Inhalte von Servern von Jotform abgerufen, wobei Ihre IP-Adresse an Jotform übertragen wird.
 
 - **Verarbeitete Daten:** Ihre Angaben im Formular (z. B. Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Ihr Anliegen), die Information, über welchen Weg Sie zum Formular gekommen sind (z. B. Website, Whitepaper, LinkedIn), sowie technische Daten wie IP-Adresse und Zeitpunkt der Übermittlung.
 - **Zweck:** Bearbeitung Ihrer Anfrage, Versand des angeforderten Whitepapers und einer Eingangsbestätigung per E-Mail.
 - **Rechtsgrundlage:** Vorvertragliche Maßnahmen bzw. Ihre Anfrage (Art. 6 Abs. 1 lit. b DSGVO) sowie Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie über das Pflicht-Häkchen im Formular erteilen.
-- **Weitergabe an Partner:** Nur beim Formular „Empfehlung anfragen“ geben wir Ihre Angaben an den von Ihnen ausgewählten Partner weiter, damit dieser Sie kontaktieren kann. Darauf weist das Formular ausdrücklich hin.
 - **Auftragsverarbeitung und Drittlandübermittlung:** Mit Jotform besteht ein Vertrag zur Auftragsverarbeitung. Die Datenübermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework (Art. 45 DSGVO) bzw. von Standardvertragsklauseln (Art. 46 DSGVO).
 - **Weitere Informationen:** [Datenschutzerklärung von Jotform](https://www.jotform.com/privacy/)
 
@@ -66,10 +65,6 @@ Wenn Sie uns per E-Mail oder telefonisch kontaktieren, verarbeiten wir Ihre Anga
 ## Terminbuchung
 
 Für die Terminbuchung verlinken wir auf die Terminbuchungsseite von Google Kalender (Google Ireland Limited). Erst wenn Sie dort einen Termin buchen, verarbeitet Google Ihren Namen, Ihre E-Mail-Adresse und den gewählten Termin in unserem Auftrag (Art. 6 Abs. 1 lit. b DSGVO). Es gelten ergänzend die [Datenschutzhinweise von Google](https://policies.google.com/privacy).
-
-## Empfehlungen und Partnerlinks (Business-Concierge)
-
-Auf der Seite „Business-Concierge“ empfehlen wir Tools und Partner. Einige Links sind Partnerlinks: Wenn Sie über einen solchen Link einen Vertrag abschließen, erhalten wir eine Provision. Ihr Preis ändert sich dadurch nicht. Wir selbst übermitteln dabei keine personenbezogenen Daten. Der jeweilige Anbieter kann jedoch nach dem Klick erfassen, dass Sie über unseren Link gekommen sind, und dafür Cookies oder ähnliche Techniken einsetzen. Hierfür ist allein der jeweilige Anbieter verantwortlich.
 
 ## Links zu sozialen Netzwerken und Bewertungsplattformen
 
