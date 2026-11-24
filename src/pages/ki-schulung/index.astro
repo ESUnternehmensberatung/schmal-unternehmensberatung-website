@@ -23,16 +23,41 @@ const anfrageIdd = `${site.links.angebot}?quelle=idd-add-on`;
 
 const iddInhalte = [
   ['KI in Beratung und Dokumentation', 'Bedarfsermittlung und Beratungsdokumentation nach §§ 61, 62 VVG mit KI vorbereiten, und was der Mensch vor dem Versand prüfen muss.'],
-  ['Datenschutz in der Versicherungsvermittlung', 'Gesundheitsdaten bei der Antragsaufnahme, Art. 9 DSGVO, welche Kundendaten in welches Werkzeug dürfen.'],
-  ['Bedingungen und Angebote vergleichen', 'Versicherungsbedingungen mit KI zusammenfassen und gegenüberstellen, ohne erfundene Leistungsinhalte zu übernehmen.'],
+  ['Datenschutz in der Vermittlung', 'Gesundheitsdaten bei der Antragsaufnahme, Art. 9 DSGVO und welche Kundendaten in welches Werkzeug dürfen.'],
+  ['Bedingungen und Angebote vergleichen', 'Bedingungswerke mit KI zusammenfassen und gegenüberstellen, ohne erfundene Leistungsinhalte zu übernehmen.'],
   ['Schadenfall und Vertragsverwaltung', 'Schadenmeldungen, Obliegenheiten und Kundenkorrespondenz mit KI vorbereiten, für Innendienst und Schadenbearbeitung.'],
-  ['EU AI Act in der Versicherungsbranche', 'Hochrisiko-Einstufung bei Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung, Pflichten im Vertrieb.'],
-  ['Kundenkommunikation und Werbung', 'KI-Texte im Vertrieb: Wettbewerbsrecht, unzulässige Werbung und Umgang mit Interessenkonflikten.'],
+  ['Agentur und Maklerbüro steuern', 'Vertriebseinheiten mit KI führen: Kennzahlen zur Kundenbetreuung, Bestandspflege, Qualitätsstandards und Wochenberichte für die Führungskraft.'],
+  ['EU AI Act in der Versicherungsbranche', 'Hochrisiko bei Risikobewertung und Preisbildung in der Lebens- und Krankenversicherung und was das für den Vertrieb heißt.'],
+  ['Kundenkommunikation und Werbung', 'KI-Texte im Vertrieb: Wettbewerbsrecht, unzulässige Werbung und der Umgang mit Interessenkonflikten.'],
 ];
 
 const iddFormate = [
-  ['KI-Starttag + IDD', 'bis zu 3 Zeitstunden', '2 Zeitstunden versicherungsbezogene Module vor Ort, dazu 1 Zeitstunde E-Learning mit Lernerfolgskontrolle'],
-  ['G.R.O.W. + IDD', 'bis zu 2 Zeitstunden', '1 Zeitstunde versicherungsbezogenes Modul remote (interaktives Webinar) oder vor Ort, dazu 1 Zeitstunde E-Learning mit Lernerfolgskontrolle'],
+  {
+    zahl: '3',
+    titel: 'KI-Starttag + IDD',
+    text: 'Die Schulung vor Ort, mit Übungen an Fällen aus Ihrem Vertrieb. Danach vertiefen Ihre Mitarbeitenden die Inhalte online und schließen mit einem kurzen Test ab.',
+  },
+  {
+    zahl: '2',
+    titel: 'G.R.O.W. + IDD',
+    text: 'Kompakt im interaktiven Webinar oder bei Ihnen vor Ort. Die Vertiefung mit kurzem Test folgt online, wann es in den Arbeitstag passt.',
+  },
+];
+
+const iddProfil = [
+  'Fachwirt für Versicherungen und Finanzen (IHK)',
+  '17 Jahre Führungskraft und Manager in der Versicherungsbranche',
+  'Internes Weiterbildungsprogramm eines Versicherers eingeführt, mehrfach durch BaFin-Prüfungen und interne Revision bestätigt',
+  'MBA mit Schwerpunkt Digital Innovation',
+  'Manager für angewandte KI-Transformation (IHK)',
+  'Erlaubnisse nach §§ 34c, 34d und 34i GewO',
+];
+
+const iddSchritte = [
+  ['Einladung', 'in Textform, mit Inhalten, erwerbbaren Kompetenzen und Zeitstunden'],
+  ['Teilnahme', 'vor Ort oder im Webinar, Anwesenheit wird dokumentiert'],
+  ['Vertiefung', 'online mit Abschlusstest als Lernerfolgskontrolle'],
+  ['Nachweis', 'je Person mit allen Pflichtangaben, bereit für Ihre Unterlagen'],
 ];
 
 const ablauf = [
@@ -155,58 +180,77 @@ const leistungen = [
 
   {
     zeigeIdd && (
-      <section class="section idd" id="idd" aria-labelledby="idd-title">
+      <section class="section idd dark" id="idd" aria-labelledby="idd-title">
         <div class="wrap">
-          <p class="eyebrow-hell">Für die Versicherungsbranche</p>
-          <h2 id="idd-title">IDD-Add-on: Weiterbildungsstunden inklusive</h2>
-          <p class="formate-lead">
-            Für Versicherungsvermittler, Versicherungsberater und Beschäftigte von Versicherungsunternehmen, die am Vertrieb
-            mitwirken: Beide Schulungen gibt es mit versicherungsspezifischen Inhalten. Die Zeitstunden mit Versicherungsbezug
-            weise ich im Weiterbildungsnachweis gesondert aus, für die Weiterbildungspflicht von 15 Stunden im Jahr nach
-            § 34d Abs. 9 GewO bzw. § 48 Abs. 2 VAG.
-          </p>
-
-          <div class="zwei idd-grid">
-            <div>
-              <h3>Versicherungsbezogene Module</h3>
-              <dl class="inhalte">
-                {iddInhalte.map(([t, d]) => (
-                  <div>
-                    <dt>{t}</dt>
-                    <dd>{d}</dd>
-                  </div>
-                ))}
-              </dl>
-            </div>
-            <div>
-              <h3>Anrechenbare Zeitstunden</h3>
-              <dl class="inhalte">
-                {iddFormate.map(([t, z, d]) => (
-                  <div>
-                    <dt>
-                      {t}: <strong>{z}</strong>
-                    </dt>
-                    <dd>{d}</dd>
-                  </div>
-                ))}
-              </dl>
-              <h3 class="idd-abstand">So erfüllen wir die Vorgaben (Anlage 3 VersVermV)</h3>
-              <ul class="haken">
-                <li><Icon name="check" />Beschreibung und Ablaufplan stehen vor dem Termin fest</li>
-                <li><Icon name="check" />Einladung in Textform mit erwerbbaren Kompetenzen und Zeitstunden</li>
-                <li><Icon name="check" />Anwesenheit wird dokumentiert und archiviert, auch im Webinar und E-Learning</li>
-                <li><Icon name="check" />Weiterbildungsnachweis je Person mit Datum, Umfang, Inhalt, Bezeichnung und Anbieter</li>
-                <li><Icon name="check" />Durchführung durch Eduard Schmal, Versicherungsmakler mit Erlaubnis nach § 34d GewO</li>
-              </ul>
-            </div>
+          <div class="idd-kopf">
+            <p class="eyebrow">Für die Versicherungsbranche</p>
+            <h2 id="idd-title">IDD-Add-on: KI-Schulung mit Weiterbildungsstunden</h2>
+            <p class="idd-lead">
+              Für Versicherungsvermittler, Versicherungsberater und Beschäftigte von Versicherungsunternehmen, die am Vertrieb
+              mitwirken. Beide Schulungen gibt es mit Modulen aus dem Versicherungsalltag. Die Zeit zählt für Ihre
+              Weiterbildungspflicht von 15 Stunden im Jahr nach § 34d Abs. 9 GewO bzw. § 48 Abs. 2 VAG.
+            </p>
           </div>
 
-          <p class="idd-hinweis">
-            Wichtig: Allgemeine KI- und Softwareinhalte zählen nicht als IDD-Weiterbildung. Deshalb weise ich nur die Teile mit
-            Versicherungsbezug als Weiterbildungszeit aus. Eine staatliche Zertifizierung von Weiterbildungsanbietern gibt es
-            nicht. Ob eine Maßnahme anerkannt wird, prüft im Zweifel die zuständige IHK. Die Nachweise bewahren Sie fünf Jahre auf.
-          </p>
-          <a class="btn btn-navy" href={anfrageIdd}>Angebot mit IDD-Add-on anfordern <Icon name="arrow-right" /></a>
+          <div class="idd-formate">
+            {iddFormate.map((f, i) => (
+              <article class={i === 0 ? 'idd-format haupt' : 'idd-format'}>
+                <p class="idd-zahl">
+                  <span class="idd-bis">bis zu</span>
+                  <span class="idd-ziffer">{f.zahl}</span>
+                  <span class="idd-einheit">Zeitstunden</span>
+                </p>
+                <h3>{f.titel}</h3>
+                <p>{f.text}</p>
+              </article>
+            ))}
+          </div>
+
+          <h3 class="idd-zwischen">Module mit Versicherungsbezug</h3>
+          <ol class="idd-module">
+            {iddInhalte.map(([t, d], i) => (
+              <li>
+                <span class="idd-nr" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <h4>{t}</h4>
+                <p>{d}</p>
+              </li>
+            ))}
+            <li class="idd-modul-eigen">
+              <span class="idd-nr" aria-hidden="true">+</span>
+              <h4>Ihr Thema fehlt?</h4>
+              <p>Die Module passe ich an Ihren Vertrieb an: Makler, Ausschließlichkeit oder Innendienst eines Versicherers.</p>
+            </li>
+          </ol>
+
+          <div class="idd-unten">
+            <div class="idd-profil">
+              <p class="eyebrow">Durchführung</p>
+              <h3>Eduard Schmal</h3>
+              <ul>
+                {iddProfil.map((p) => (
+                  <li>
+                    <Icon name="check" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div>
+              <p class="eyebrow">So erhalten Sie Ihre Stunden</p>
+              <ol class="idd-schritte">
+                {iddSchritte.map(([t, d], i) => (
+                  <li>
+                    <span class="idd-schritt-nr" aria-hidden="true">{i + 1}</span>
+                    <div>
+                      <strong>{t}</strong>
+                      <span>{d}</span>
+                    </div>
+                  </li>
+                ))}
+              </ol>
+              <a class="btn btn-primary" href={anfrageIdd}>Angebot mit IDD-Add-on anfordern <Icon name="arrow-right" /></a>
+            </div>
+          </div>
         </div>
       </section>
     )
@@ -532,35 +576,192 @@ const leistungen = [
     color: var(--stone);
   }
 
-  .eyebrow-hell {
-    font-size: 0.875rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold-deep);
-    margin-bottom: 0.75rem;
-  }
-
-  .idd-grid {
-    margin-top: clamp(2rem, 4vw, 3rem);
-  }
-
-  .idd h3 {
-    font-size: var(--step-1);
-  }
-
-  .idd-abstand {
-    margin-top: 2.5rem;
-  }
-
-  .idd-hinweis {
-    margin: 2.5rem 0 1.75rem;
+  .idd-kopf {
     max-width: 52rem;
-    padding: 1.25rem 1.5rem;
-    border-left: 3px solid var(--gold);
-    background: var(--white);
-    color: var(--stone);
+  }
+
+  .idd h2 {
+    font-size: var(--step-3);
+    line-height: 1.1;
+  }
+
+  .idd-lead {
+    margin-top: 1.25rem;
+    color: var(--on-dark);
+    font-size: var(--step-1);
+    line-height: 1.55;
+  }
+
+  .idd-formate {
+    margin-top: clamp(2.5rem, 5vw, 3.5rem);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .idd-format {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    background: rgb(255 255 255 / 0.04);
+  }
+
+  .idd-format.haupt {
+    border-color: var(--gold);
+  }
+
+  .idd-zahl {
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+    color: var(--gold);
+  }
+
+  .idd-bis,
+  .idd-einheit {
     font-size: 0.95rem;
+    color: var(--on-dark-muted);
+  }
+
+  .idd-ziffer {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 2rem + 3vw, 4.5rem);
+    line-height: 1;
+    color: var(--gold);
+  }
+
+  .idd-format h3 {
+    margin-top: 0.75rem;
+    font-size: var(--step-2);
+  }
+
+  .idd-format p:last-child {
+    margin-top: 0.5rem;
+    color: var(--on-dark);
+  }
+
+  .idd-zwischen {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+    font-size: var(--step-2);
+  }
+
+  .idd-module {
+    list-style: none;
+    padding: 0;
+    margin: 1.5rem 0 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+    gap: 1px;
+    background: var(--line-dark);
+    border: 1px solid var(--line-dark);
+    border-radius: var(--radius);
+    overflow: hidden;
+  }
+
+  .idd-module li {
+    padding: 1.5rem;
+    background: var(--navy-deep);
+  }
+
+  .idd-module li.idd-modul-eigen {
+    background: linear-gradient(rgb(201 168 124 / 0.14), rgb(201 168 124 / 0.14)), var(--navy-deep);
+  }
+
+  .idd-nr {
+    font-family: var(--serif);
+    font-size: var(--step-1);
+    color: var(--gold);
+  }
+
+  .idd-module h4 {
+    margin-top: 0.5rem;
+    font-family: var(--serif);
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--white);
+  }
+
+  .idd-module p {
+    margin-top: 0.4rem;
+    font-size: 0.95rem;
+    color: var(--on-dark-muted);
+  }
+
+  .idd-unten {
+    margin-top: clamp(3rem, 6vw, 4.5rem);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(2.5rem, 5vw, 5rem);
+    align-items: start;
+  }
+
+  .idd-profil {
+    padding: clamp(1.5rem, 3vw, 2.25rem);
+    border-radius: var(--radius);
+    background: rgb(255 255 255 / 0.06);
+  }
+
+  .idd-profil h3 {
+    font-size: var(--step-2);
+  }
+
+  .idd-profil ul {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 0.75rem;
+  }
+
+  .idd-profil li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+    align-items: start;
+    color: var(--on-dark);
+  }
+
+  .idd-profil :global(svg) {
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.25rem;
+    color: var(--gold);
+  }
+
+  .idd-schritte {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem;
+    display: grid;
+    gap: 1.25rem;
+  }
+
+  .idd-schritte li {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1rem;
+    align-items: start;
+  }
+
+  .idd-schritt-nr {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-family: var(--serif);
+    font-size: 1.1rem;
+  }
+
+  .idd-schritte strong {
+    display: block;
+    color: var(--white);
+  }
+
+  .idd-schritte span {
+    color: var(--on-dark-muted);
   }
 
   .formate-lead {
@@ -654,6 +855,13 @@ const leistungen = [
 
   @media (max-width: 1180px) {
     .kopf-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .idd-formate,
+    .idd-unten {
       grid-template-columns: 1fr;
     }
   }
