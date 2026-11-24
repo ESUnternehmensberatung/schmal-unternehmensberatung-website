@@ -17,7 +17,6 @@ E-Mail: [info@schmal-unternehmensberatung.de](mailto:info@schmal-unternehmensber
 
 ## Gewerbeerlaubnisse und Registereinträge
 
-- Darlehensvermittler mit Erlaubnis nach § 34c Abs. 1 Satz 1 Nr. 1 GewO
 - Versicherungsmakler mit Erlaubnis nach § 34d Abs. 1 GewO, Registrierungsnummer D-WMF0-JRPOG-35
 - Immobiliardarlehensvermittler mit Erlaubnis nach § 34i Abs. 1 Satz 1 GewO, Registrierungsnummer D-W-151-WTQZ-46
 
@@ -40,7 +39,7 @@ Gemäß § 36 VSBG und § 15 Abs. 1 Nr. 12 VersVermV teilen wir mit, dass wir ve
 - Ombudsmann Private Kranken- und Pflegeversicherung, Postfach 06 02 22, 10052 Berlin, [www.pkv-ombudsmann.de](https://www.pkv-ombudsmann.de)
 ## Berufsrechtliche Regelungen
 
-Berufsrechtliche Regelungen sind insbesondere: §§ 34c, 34d und 34i Gewerbeordnung (GewO), §§ 59 bis 68 Versicherungsvertragsgesetz (VVG), die Versicherungsvermittlungsverordnung (VersVermV), die Makler- und Bauträgerverordnung (MaBV) und die Immobiliardarlehensvermittlungsverordnung (ImmVermV). Die berufsrechtlichen Regelungen können über die vom Bundesministerium der Justiz und von der juris GmbH betriebenen Homepage [www.gesetze-im-internet.de](https://www.gesetze-im-internet.de) eingesehen und abgerufen werden. Unsere Tätigkeit beinhaltet auch Beratung.
+Berufsrechtliche Regelungen sind insbesondere: §§ 34d und 34i Gewerbeordnung (GewO), §§ 59 bis 68 Versicherungsvertragsgesetz (VVG), die Versicherungsvermittlungsverordnung (VersVermV) und die Immobiliardarlehensvermittlungsverordnung (ImmVermV). Die berufsrechtlichen Regelungen können über die vom Bundesministerium der Justiz und von der juris GmbH betriebenen Homepage [www.gesetze-im-internet.de](https://www.gesetze-im-internet.de) eingesehen und abgerufen werden. Unsere Tätigkeit beinhaltet auch Beratung.
 
 ## Informationen zur Nachhaltigkeit in der Versicherungsvermittlung
 
