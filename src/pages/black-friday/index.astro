@@ -1,6 +1,6 @@
 ---
 // Black-Friday-Aktion 2026: Buchung bis 06.12.2026, Bezahlung über Jotform mit Stripe Checkout.
-// Preise netto. Der IDD-Zusatz ist nicht rabattiert und erscheint im Formular nur für die Versicherungsbranche.
+// Preise netto. Der IDD-Zusatz (ebenfalls −20 %) erscheint im Formular nur für die Versicherungsbranche.
 import Base from '../../layouts/Base.astro';
 import Icon from '../../components/Icon.astro';
 import { site } from '../../config/site';
@@ -56,7 +56,7 @@ const bedingungen = [
   'Das Angebot richtet sich ausschließlich an Unternehmen, Selbstständige und Freiberufler (§ 14 BGB).',
   'Beim KI-Starttag und der G.R.O.W.-Schulung vor Ort ist die Anfahrt bis 50 km inklusive, darüber berechne ich 0,50 € je km.',
   'Weitere Teilnehmende beim KI-Starttag (über 12 Personen): 55,20 € statt 69 € je Person.',
-  'Der IDD-Zusatz für die Versicherungsbranche ist vom Rabatt ausgenommen.',
+  'Auch der IDD-Zusatz für die Versicherungsbranche ist rabattiert: 680 € statt 850 € zum KI-Starttag, 400 € statt 500 € zur G.R.O.W.-Schulung (netto).',
 ];
 ---
 <Base
@@ -114,8 +114,9 @@ const bedingungen = [
         }
       </ul>
       <p class="idd-zeile">
-        <strong>Für die Versicherungsbranche:</strong> KI-Starttag und G.R.O.W.-Schulung gibt es auch mit IDD-Weiterbildungsstunden. Den
-        Zusatz wählen Sie direkt im Bestellformular. <a href={`${site.links.kiSchulung}#idd`}>Mehr zum IDD-Zusatz</a>
+        <strong>Für die Versicherungsbranche:</strong> KI-Starttag und G.R.O.W.-Schulung gibt es auch mit IDD-Weiterbildungsstunden, ebenfalls
+        20&nbsp;% günstiger: <s>850&nbsp;€</s> 680&nbsp;€ zum KI-Starttag, <s>500&nbsp;€</s> 400&nbsp;€ zur G.R.O.W.-Schulung (netto). Den Zusatz wählen Sie
+        direkt im Bestellformular. <a href={`${site.links.kiSchulung}#idd`}>Mehr zum IDD-Zusatz</a>
       </p>
     </div>
   </section>
