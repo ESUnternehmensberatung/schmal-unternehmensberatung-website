@@ -1,0 +1,427 @@
+---
+// Black-Friday-Aktion 2026: Buchung bis 06.12.2026, Bezahlung über Jotform mit Stripe Checkout.
+// Preise netto. Der IDD-Zusatz ist nicht rabattiert und erscheint im Formular nur für die Versicherungsbranche.
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { site } from '../../config/site';
+
+const formId = '263286175031051';
+const formSrc = `https://form.jotform.com/${formId}`;
+// Interner Jotform-Name des versteckten Feldes „quelle“ (siehe Formular.astro); leer lassen, falls unbekannt.
+const quelleFeld = 'q22_textbox20';
+
+const euro = (n: number) =>
+  new Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: n % 1 ? 2 : 0 }).format(n);
+
+const schulungen = [
+  {
+    name: 'KI-Starttag',
+    form: '4 Stunden vor Ort, bis 12 Personen',
+    regulaer: 2490,
+    aktion: 1992,
+    einheit: 'pro Termin',
+    punkte: ['Übungen an echten Aufgaben aus Ihrem Betrieb', 'Bordmittel-Check und Kurzbericht', 'Abschlusstest und Nachweis je Person'],
+    haupt: true,
+  },
+  {
+    name: 'G.R.O.W.-Schulung vor Ort',
+    form: '2 Stunden bei Ihnen im Haus',
+    regulaer: 1290,
+    aktion: 1032,
+    einheit: 'pro Termin',
+    punkte: ['Grundlagen, Risiken, Orientierung, Wirkung', 'Gute Beispiele aus dem Büroalltag', 'Teilnahmezertifikat je Person'],
+  },
+  {
+    name: 'G.R.O.W.-Schulung remote',
+    form: '2 Stunden, interaktives Webinar, bis 20 Personen',
+    regulaer: 990,
+    aktion: 792,
+    einheit: 'pro Termin',
+    punkte: ['Ohne Anfahrt, für verteilte Teams', 'Interaktiv mit Umfragen und Übungen', 'Teilnahmezertifikat je Person'],
+  },
+  {
+    name: 'G.R.O.W. offener Termin',
+    form: '2 Stunden online, für kleine Teams',
+    regulaer: 149,
+    aktion: 119.2,
+    einheit: 'pro Person',
+    punkte: ['Ab einer Person buchbar', 'Gemeinsam mit anderen Unternehmen', 'Teilnahmezertifikat'],
+  },
+];
+
+const bedingungen = [
+  'Die Aktion gilt für Buchungen vom 27.11. bis einschließlich 06.12.2026.',
+  'Der Schulungstermin wird nach der Buchung gemeinsam abgestimmt und kann auch in 2027 liegen.',
+  'Alle Preise netto zuzüglich 19 % Umsatzsteuer. Die Bezahlung erfolgt bei der Buchung über Stripe.',
+  'Das Angebot richtet sich ausschließlich an Unternehmen, Selbstständige und Freiberufler (§ 14 BGB).',
+  'Beim KI-Starttag und der G.R.O.W.-Schulung vor Ort ist die Anfahrt bis 50 km inklusive, darüber berechne ich 0,50 € je km.',
+  'Weitere Teilnehmende beim KI-Starttag (über 12 Personen): 55,20 € statt 69 € je Person.',
+  'Der IDD-Zusatz für die Versicherungsbranche ist vom Rabatt ausgenommen.',
+];
+---
+<Base
+  title={`Black Friday: 20 % auf alle KI-Schulungen | ${site.name}`}
+  description="Black Friday bis 06.12.2026: 20 % auf KI-Starttag und G.R.O.W.-Schulung, vor Ort oder remote. Direkt online buchen, Termin auch in 2027."
+  keywords={['Black Friday KI-Schulung', 'KI-Schulung Angebot', 'KI-Schulung buchen', 'KI-Starttag', 'G.R.O.W.-Schulung', 'KI-Kompetenz Art. 4 EU AI Act', 'IDD-Weiterbildung']}
+>
+  <section class="bf-kopf dark" aria-labelledby="bf-title">
+    <div class="wrap bf-kopf-grid">
+      <div>
+        <p class="eyebrow">Black Friday · bis 06.12.2026</p>
+        <h1 id="bf-title">20&nbsp;% auf alle <em class="accent">KI-Schulungen.</em></h1>
+        <p class="lead">
+          Statt Fernseher und Sneaker: KI-Kompetenz für Ihr Team, mit Nachweis nach Art. 4 EU AI Act. Jetzt zum Aktionspreis
+          buchen, den Termin stimmen wir danach gemeinsam ab, gern auch in 2027.
+        </p>
+        <a class="btn btn-primary" href="#bestellen">Jetzt buchen <Icon name="arrow-right" /></a>
+      </div>
+      <div class="bf-kreis" aria-hidden="true">
+        <span class="bf-minus">−20&nbsp;%</span>
+        <span class="bf-bis">bis 06.12.</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section weiss" aria-labelledby="preise-title">
+    <div class="wrap">
+      <h2 id="preise-title">Die Aktionspreise</h2>
+      <p class="preise-lead">Alle Preise netto zuzüglich 19&nbsp;% Umsatzsteuer.</p>
+      <ul class="preise">
+        {
+          schulungen.map((s) => (
+            <li class={s.haupt ? 'preis-karte haupt' : 'preis-karte'}>
+              {s.haupt && <span class="preis-badge">Beliebt</span>}
+              <h3>{s.name}</h3>
+              <p class="preis-form">{s.form}</p>
+              <p class="preis-zeile">
+                <span class="preis-alt">
+                  <span class="sr-only">statt </span>
+                  {euro(s.regulaer)}
+                </span>
+                <span class="preis-neu">{euro(s.aktion)}</span>
+              </p>
+              <p class="preis-einheit">{s.einheit}, netto</p>
+              <ul class="preis-punkte">
+                {s.punkte.map((p) => (
+                  <li>
+                    <Icon name="check" />
+                    {p}
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+      <p class="idd-zeile">
+        <strong>Für die Versicherungsbranche:</strong> KI-Starttag und G.R.O.W.-Schulung gibt es auch mit IDD-Weiterbildungsstunden. Den
+        Zusatz wählen Sie direkt im Bestellformular. <a href={`${site.links.kiSchulung}#idd`}>Mehr zum IDD-Zusatz</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="bestellen dark" id="bestellen" aria-labelledby="bestellen-title">
+    <div class="wrap bestellen-kopf">
+      <h2 id="bestellen-title">Schulung buchen</h2>
+      <p>Formular ausfüllen, sicher über Stripe bezahlen, fertig. Ich melde mich innerhalb von zwei Werktagen für den Termin.</p>
+    </div>
+    <div class="wrap rahmen">
+      <iframe
+        id={`JotFormIFrame-${formId}`}
+        title="Black Friday: KI-Schulung buchen"
+        src={`${formSrc}?quelle=black-friday`}
+        data-src={formSrc}
+        data-quelle="black-friday"
+        data-quelle-feld={quelleFeld}
+        allow="fullscreen; payment"
+        loading="eager"
+        scrolling="no"></iframe>
+      <noscript>
+        <p>Das Formular benötigt JavaScript. Alternativ: <a href={`${formSrc}?quelle=black-friday`}>Formular direkt öffnen</a>.</p>
+      </noscript>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="bedingungen-title">
+    <div class="wrap bedingungen">
+      <h2 id="bedingungen-title">Aktionsbedingungen</h2>
+      <ul>
+        {bedingungen.map((b) => <li>{b}</li>)}
+      </ul>
+      <p class="bedingungen-fuss">
+        Fragen vorab? Schreiben Sie mir an <a href={`mailto:${site.email}`}>{site.email}</a> oder buchen Sie eine{' '}
+        <a href={site.links.quickWin}>kostenfreie Quick-Win-Analyse</a>.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<script is:inline src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+<script is:inline>
+  (function () {
+    var f = document.querySelector('iframe[id^="JotFormIFrame-"]');
+    if (!f) return;
+    var p = new URLSearchParams(window.location.search);
+    if (!p.has('quelle')) p.set('quelle', f.dataset.quelle);
+    if (f.dataset.quelleFeld) p.set(f.dataset.quelleFeld, p.get('quelle'));
+    f.src = f.dataset.src + '?' + p.toString();
+    if (window.jotformEmbedHandler) window.jotformEmbedHandler('iframe[id="' + f.id + '"]', 'https://form.jotform.com/');
+  })();
+</script>
+
+<style>
+  .bf-kopf {
+    padding-block: clamp(4rem, 8vw, 6.5rem);
+  }
+
+  .bf-kopf-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: center;
+  }
+
+  .eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+
+  h1 {
+    color: var(--white);
+    font-size: var(--step-4);
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+
+  .bf-kopf .lead {
+    margin: 1.5rem 0 2rem;
+    color: var(--on-dark);
+  }
+
+  .bf-kreis {
+    justify-self: center;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    gap: 0.25rem;
+    width: clamp(12rem, 24vw, 17rem);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #000;
+    border: 2px solid var(--gold);
+    box-shadow: 0 0 0 10px rgb(201 168 124 / 0.12);
+  }
+
+  .bf-minus {
+    font-family: var(--serif);
+    font-size: clamp(3rem, 2rem + 3.5vw, 4.75rem);
+    line-height: 1;
+    color: var(--gold);
+  }
+
+  .bf-bis {
+    font-size: 1rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--white);
+  }
+
+  .weiss {
+    background: var(--white);
+  }
+
+  .preise-lead {
+    margin-top: 0.5rem;
+    color: var(--stone);
+  }
+
+  .preise {
+    list-style: none;
+    padding: 0;
+    margin: clamp(2rem, 4vw, 3rem) 0 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+
+  .preis-karte {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 1.75rem 1.5rem;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+  }
+
+  .preis-karte.haupt {
+    border: 2px solid var(--gold);
+  }
+
+  .preis-badge {
+    position: absolute;
+    top: -0.8rem;
+    left: 1.5rem;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .preis-karte h3 {
+    font-size: var(--step-1);
+  }
+
+  .preis-form {
+    margin-top: 0.35rem;
+    font-size: 0.95rem;
+    color: var(--stone);
+  }
+
+  .preis-zeile {
+    margin-top: 1.25rem;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+  }
+
+  .preis-alt {
+    color: var(--stone);
+    text-decoration: line-through;
+    text-decoration-thickness: 2px;
+  }
+
+  .preis-neu {
+    font-family: var(--serif);
+    font-size: var(--step-3);
+    line-height: 1;
+    color: var(--navy);
+  }
+
+  .preis-einheit {
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
+    color: var(--stone);
+  }
+
+  .preis-punkte {
+    list-style: none;
+    padding: 0;
+    margin: 1.25rem 0 0;
+    display: grid;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+  }
+
+  .preis-punkte li {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.5rem;
+    align-items: start;
+  }
+
+  .preis-punkte :global(svg) {
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-top: 0.2rem;
+    color: var(--gold-deep);
+  }
+
+  .idd-zeile {
+    margin-top: 2rem;
+    padding: 1rem 1.25rem;
+    border-left: 3px solid var(--gold);
+    background: var(--cream, #f6f3ec);
+    color: var(--stone);
+    font-size: 0.95rem;
+  }
+
+  .bestellen {
+    padding-block: clamp(3.5rem, 7vw, 5.5rem);
+  }
+
+  .bestellen-kopf {
+    max-width: 46rem;
+    text-align: center;
+  }
+
+  .bestellen-kopf h2 {
+    font-size: var(--step-3);
+  }
+
+  .bestellen-kopf p {
+    margin-top: 0.75rem;
+    color: var(--on-dark-muted);
+  }
+
+  .rahmen {
+    max-width: 52rem;
+    margin-top: clamp(1.5rem, 3vw, 2.5rem);
+    padding-top: clamp(1.5rem, 3vw, 2.5rem);
+    border-top: 1px solid var(--line-dark);
+  }
+
+  iframe {
+    display: block;
+    width: 100%;
+    min-height: 1200px;
+    border: 0;
+    background: var(--navy-deep);
+  }
+
+  .bedingungen {
+    max-width: 52rem;
+  }
+
+  .bedingungen ul {
+    margin: 1.5rem 0 0;
+    padding-left: 1.2rem;
+    display: grid;
+    gap: 0.5rem;
+    color: var(--stone);
+  }
+
+  .bedingungen-fuss {
+    margin-top: 1.5rem;
+    color: var(--stone);
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  @media (max-width: 1100px) {
+    .preise {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 760px) {
+    .bf-kopf-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .bf-kreis {
+      justify-self: start;
+      width: 11rem;
+    }
+  }
+
+  @media (max-width: 560px) {
+    .preise {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

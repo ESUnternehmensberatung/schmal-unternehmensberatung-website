@@ -40,13 +40,23 @@ Sollten wir künftig Dienste einsetzen, für die eine Einwilligung erforderlich 
 
 ## Kontaktformulare (Jotform)
 
-Für Anfragen (Quick-Win-Analyse, Angebot) und für die Anforderung unseres Whitepapers nutzen wir Formulare des Dienstes **Jotform**. Anbieter ist die Jotform Inc., 4 Embarcadero Center, Suite 780, San Francisco, CA 94111, USA. Die Formulare sind auf unserer Website eingebettet. Beim Laden des Formulars werden Inhalte von Servern von Jotform abgerufen, wobei Ihre IP-Adresse an Jotform übertragen wird.
+Für Anfragen (Quick-Win-Analyse, Angebot), Buchungen und für die Anforderung unseres Whitepapers nutzen wir Formulare des Dienstes **Jotform**. Anbieter ist die Jotform Inc., 4 Embarcadero Center, Suite 780, San Francisco, CA 94111, USA. Die Formulare sind auf unserer Website eingebettet. Beim Laden des Formulars werden Inhalte von Servern von Jotform abgerufen, wobei Ihre IP-Adresse an Jotform übertragen wird.
 
 - **Verarbeitete Daten:** Ihre Angaben im Formular (z. B. Name, Unternehmen, E-Mail-Adresse, Telefonnummer, Ihr Anliegen), die Information, über welchen Weg Sie zum Formular gekommen sind (z. B. Website, Whitepaper, LinkedIn), sowie technische Daten wie IP-Adresse und Zeitpunkt der Übermittlung.
 - **Zweck:** Bearbeitung Ihrer Anfrage, Versand des angeforderten Whitepapers und einer Eingangsbestätigung per E-Mail.
 - **Rechtsgrundlage:** Vorvertragliche Maßnahmen bzw. Ihre Anfrage (Art. 6 Abs. 1 lit. b DSGVO) sowie Ihre Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie über das Pflicht-Häkchen im Formular erteilen.
 - **Auftragsverarbeitung und Drittlandübermittlung:** Mit Jotform besteht ein Vertrag zur Auftragsverarbeitung. Die Datenübermittlung in die USA erfolgt auf Grundlage des EU-US Data Privacy Framework (Art. 45 DSGVO) bzw. von Standardvertragsklauseln (Art. 46 DSGVO).
 - **Weitere Informationen:** [Datenschutzerklärung von Jotform](https://www.jotform.com/privacy/)
+
+## Online-Buchung und Zahlung (Stripe)
+
+Schulungen können Sie über ein Bestellformular (Jotform, siehe oben) buchen und direkt bezahlen. Die Zahlung wickeln wir über **Stripe** ab. Anbieter ist die Stripe Payments Europe, Ltd., 1 Grand Canal Street Lower, Grand Canal Dock, Dublin, D02 H210, Irland.
+
+- **Verarbeitete Daten:** Name, E-Mail-Adresse, Rechnungsadresse, Bestelldaten und Zahlungsdaten (z. B. Kartendaten oder Kontoverbindung). Ihre Zahlungsdaten geben Sie direkt bei Stripe ein, wir erhalten sie nicht vollständig.
+- **Zweck:** Abwicklung der Bezahlung, Betrugsprävention und Erfüllung gesetzlicher Pflichten.
+- **Rechtsgrundlage:** Vertragserfüllung (Art. 6 Abs. 1 lit. b DSGVO), gesetzliche Pflichten (Art. 6 Abs. 1 lit. c DSGVO) und unser berechtigtes Interesse an einer sicheren Zahlungsabwicklung (Art. 6 Abs. 1 lit. f DSGVO).
+- **Drittlandübermittlung:** Stripe kann Daten auch in die USA übermitteln, auf Grundlage des EU-US Data Privacy Framework bzw. von Standardvertragsklauseln.
+- **Weitere Informationen:** [Datenschutzerklärung von Stripe](https://stripe.com/de/privacy)
 
 ## Newsletter und werbliche E-Mails
 
