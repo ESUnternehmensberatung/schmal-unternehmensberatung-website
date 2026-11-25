@@ -170,6 +170,24 @@ const leistungen = [
   keywords={['KI-Schulung', 'KI-Schulung für Mitarbeitende', 'KI-Kompetenz Art. 4 EU AI Act', 'KI-Schulung Nachweis', 'KI-Starttag', 'G.R.O.W.-Schulung', 'KI-Webinar', 'IDD-Weiterbildung', 'IDD-Weiterbildungsstunden', 'Weiterbildung Versicherungsvermittler', '§ 34d GewO Weiterbildung', 'KI im Versicherungsvertrieb', 'Mittelstand', 'Kanzleien', 'Arztpraxen', 'Versicherungsmakler']}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <!-- Black-Friday-Aktion: sichtbar nur vom 27.11. bis 06.12.2026 (Datumsprüfung im Browser). Danach entfernen. -->
+  <aside class="aktion-bf" id="black-friday" hidden aria-label="Black-Friday-Aktion">
+    <div class="wrap aktion-bf-inner">
+      <p><strong>Black Friday: 20&nbsp;% auf alle Schulungsformate</strong>, auch mit IDD-Stunden. Gilt für Buchungen bis 06.12.2026, der Schulungstermin kann auch 2027 liegen.</p>
+      <a class="btn btn-primary" href={`${site.links.angebot}?quelle=black-friday`}>Angebot anfordern <Icon name="arrow-right" /></a>
+    </div>
+  </aside>
+  <script is:inline>
+    (function () {
+      var jetzt = new Date();
+      var start = new Date('2026-11-27T00:00:00+01:00');
+      var ende = new Date('2026-12-07T00:00:00+01:00');
+      if (jetzt >= start && jetzt < ende) {
+        var el = document.getElementById('black-friday');
+        if (el) el.hidden = false;
+      }
+    })();
+  </script>
   <section class="kopf dark" aria-labelledby="schulung-title">
     <div class="wrap kopf-grid">
       <div>
@@ -399,6 +417,31 @@ const leistungen = [
 </Base>
 
 <style>
+  .aktion-bf {
+    background: var(--gold);
+    color: var(--navy-deep);
+  }
+  .aktion-bf-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem 1.5rem;
+    padding-block: 0.9rem;
+  }
+  .aktion-bf p {
+    flex: 1 1 28rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.45;
+  }
+  .aktion-bf .btn-primary {
+    flex: none;
+    background: var(--navy-deep);
+    color: var(--ivory);
+    border-color: var(--navy-deep);
+  }
+
   .kopf {
     padding-block: clamp(4rem, 9vw, 7rem);
   }
