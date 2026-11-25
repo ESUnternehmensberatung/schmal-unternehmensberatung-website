@@ -3,7 +3,7 @@ title: "KI-Schulung mit IDD-Weiterbildungsstunden: zwei Pflichten in einem Termi
 description: "Versicherungsvermittler müssen sich jedes Jahr 15 Stunden weiterbilden, und der EU AI Act verlangt KI-Kompetenz. Wie Sie beides in einer Schulung verbinden und was dabei als Weiterbildungszeit zählt."
 kategorie: fachartikel
 datum: 2026-11-25
-entwurf: true
+entwurf: false
 ---
 
 **Kurz beantwortet:** Wer im Versicherungsvertrieb arbeitet, muss sich **15 Stunden pro Jahr** weiterbilden (§ 34d Abs. 9 GewO, § 48 Abs. 2 VAG). Gleichzeitig verlangt der **EU AI Act** von Unternehmen, die KI einsetzen, Maßnahmen zur KI-Kompetenz ihrer Mitarbeitenden (Art. 4). Mit Modulen aus dem Versicherungsalltag lässt sich beides in einem Termin verbinden: Beim **KI-Starttag** zählen bis zu **3 Zeitstunden**, bei der **G.R.O.W.-Schulung** bis zu **2 Zeitstunden** für die Weiterbildungspflicht.
@@ -21,7 +21,7 @@ Beides kostet Zeit, und beides wird oft getrennt organisiert. Dabei passt es inh
 
 Die Pflicht trifft nicht nur die Vermittlerin oder den Vermittler selbst:
 
-- Versicherungsvermittler und Versicherungsberater mit Erlaubnis nach § 34d GewO
+- Versicherungsvermittler und Versicherungsmakler mit Erlaubnis nach § 34d GewO
 - Beschäftigte, die unmittelbar bei Beratung oder Vermittlung mitwirken
 - Mitarbeitende von Versicherungsunternehmen, die am Vertrieb beteiligt sind, zum Beispiel in der Vertragsverwaltung mit Einfluss auf den Vertragsinhalt oder in der Schadenbearbeitung
 
