@@ -11,7 +11,7 @@ Ansatz: Zuerst prüfen, was im Unternehmen schon vorhanden ist (Bordmittel wie M
 - Training: Praxisnahe KI-Schulung für Mitarbeitende mit Nachweis der KI-Kompetenz nach Art. 4 EU AI Act, in zwei Formaten:
   - KI-Starttag: 4 Stunden vor Ort für bis zu 12 Teilnehmende, mit Bordmittel-Check und Kurzbericht für die Geschäftsführung, Lernplattform, Abschlusstest und Nachweis je Person. Jede Person geht mit eigenen Anwendungsfällen raus.
   - G.R.O.W.-Schulung: 2 Stunden remote (interaktives Webinar) oder vor Ort, kompakt nach Grundlagen, Risiken, Orientierung, Wirkung, mit Teilnahmezertifikat.
-  - IDD-Add-on für Versicherungsvermittler, Versicherungsberater und Versicherungsunternehmen: versicherungsbezogene Module (Beratung und Dokumentation nach VVG, Datenschutz, Bedingungsvergleich, Schadenfall, Agentursteuerung, EU AI Act, Kundenkommunikation). Bis zu 3 Zeitstunden (KI-Starttag) bzw. 2 Zeitstunden (G.R.O.W.) für die Weiterbildungspflicht von 15 Stunden pro Jahr nach § 34d Abs. 9 GewO bzw. § 48 Abs. 2 VAG, mit Weiterbildungsnachweis nach Anlage 3 VersVermV.
+  - IDD-Add-on für Versicherungsvermittler, Versicherungsmakler und Versicherungsunternehmen: versicherungsbezogene Module (Beratung und Dokumentation nach VVG, Datenschutz, Bedingungsvergleich, Schadenfall, Agentursteuerung, EU AI Act, Kundenkommunikation). Bis zu 3 Zeitstunden (KI-Starttag) bzw. 2 Zeitstunden (G.R.O.W.) für die Weiterbildungspflicht von 15 Stunden pro Jahr nach § 34d Abs. 9 GewO bzw. § 48 Abs. 2 VAG, mit Weiterbildungsnachweis nach Anlage 3 VersVermV.
 - Kostenfreie Quick-Win-Analyse (45 Minuten) als Einstieg.
 
 ## Ergebnisse aus Projekten
