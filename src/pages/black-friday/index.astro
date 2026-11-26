@@ -1,0 +1,18 @@
+---
+// Black-Friday-Aktion 2026: Buchung bis 06.12.2026, Bezahlung über Jotform mit Stripe Checkout.
+// Gleicher Aufbau wie die anderen Formularseiten (Formular.astro). Pakete, Streichpreise,
+// IDD-Zusatz (nur für die Versicherungsbranche sichtbar) und Aktionsbedingungen stehen im Formular.
+import Formular from '../../layouts/Formular.astro';
+import { url } from '../../utils/url';
+---
+<Formular
+  image={url('/og/ki-schulung.png')}
+  formId="263286175031051"
+  quelle="black-friday"
+  quelleFeld="q22_textbox20"
+  title="Black Friday: 20 % auf alle KI-Schulungen"
+  description="Bis 06.12.2026 buchen: KI-Starttag und G.R.O.W.-Schulung 20 % günstiger, Termin nach Absprache, auch 2027. Auf Wunsch mit IDD-Weiterbildungsstunden."
+  kicker="Black Friday · bis 06.12.2026"
+  heading="20 % auf alle KI-Schulungen"
+  intro="Jetzt buchen, den Termin stimmen wir danach gemeinsam ab, gern auch in 2027. Sicher bezahlen per Stripe."
+/>
