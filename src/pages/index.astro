@@ -72,7 +72,7 @@ const jsonLd = {
       name: site.name,
       slogan: 'Digitale Transformation für Mittelstand und freie Berufe',
       description:
-        'Unternehmensberatung für digitale Transformation und KI-Einführung im Mittelstand, in Kanzleien, Steuerberatungen und Arztpraxen. Consulting, Coaching und Training mit Fokus auf vorhandenen Systemen (Bordmitteln) und schnellen, messbaren Ergebnissen.',
+        'Ich bin Unternehmensberater aus Eyendorf bei Lüneburg und führe KI im Mittelstand, in Kanzleien, Steuerberatungen und Arztpraxen ein: vor Ort in Niedersachsen, remote in ganz Deutschland. Consulting, Coaching und Training mit Fokus auf vorhandenen Systemen (Bordmitteln) und schnellen, messbaren Ergebnissen.',
       url: site.url,
       logo: `${site.url}/og-image.png`,
       image: `${site.url}/og-image.png`,
@@ -89,7 +89,7 @@ const jsonLd = {
       areaServed: [
         { '@type': 'Country', name: 'Deutschland' },
         { '@type': 'State', name: 'Niedersachsen' },
-        { '@type': 'State', name: 'Hamburg' },
+        { '@type': 'City', name: 'Lüneburg' },
       ],
       founder: { '@id': `${site.url}/#inhaber` },
       knowsAbout: themen,
@@ -140,8 +140,8 @@ const jsonLd = {
 ---
 <Base
   title={`Digitale Transformation für Mittelstand und freie Berufe | ${site.name}`}
-  description="KI-Einführung, Coaching und Training für Mittelstand, Kanzleien, Steuerberater und Arztpraxen. 20 Jahre Praxis. Kostenfreie Quick-Win-Analyse."
-  keywords={[...themen, ...zielgruppen, 'Unternehmensberatung', 'Eyendorf', 'Lüneburg', 'Hamburg', 'Niedersachsen']}
+  description="Unternehmensberater aus Eyendorf bei Lüneburg: KI-Einführung für Mittelstand, Kanzleien, Steuerberatungen und Arztpraxen. Vor Ort in Niedersachsen, remote bundesweit."
+  keywords={[...themen, ...zielgruppen, 'Unternehmensberatung', 'Eyendorf', 'Lüneburg', 'Unternehmensberater Lüneburg', 'Niedersachsen']}
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <Hero />
