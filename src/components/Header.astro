@@ -5,14 +5,31 @@ import { url } from '../utils/url';
 import Icon from './Icon.astro';
 import { site } from '../config/site';
 
-const nav = [
-  { href: url('/#leistungen'), label: 'Leistungen' },
-  { href: url('/#ablauf'), label: 'Ablauf' },
+// Desktop: die wichtigsten Seiten direkt sichtbar, alles Weitere im Menü (Burger).
+const hauptlinks = [
   { href: url('/ki-schulung/'), label: 'KI-Schulung' },
-  { href: url('/#ueber-mich'), label: 'Über mich' },
-  { href: url('/#ergebnisse'), label: 'Ergebnisse' },
-  { href: url('/#faq'), label: 'FAQ' },
+  { href: url('/versicherungen/'), label: 'Versicherungsbranche' },
   { href: url('/blog/'), label: 'Blog' },
+];
+const gruppen = [
+  {
+    titel: 'Angebot',
+    links: [
+      { href: url('/#leistungen'), label: 'Leistungen' },
+      { href: url('/ki-schulung/'), label: 'KI-Schulung' },
+      { href: url('/versicherungen/'), label: 'Für die Versicherungsbranche' },
+      { href: url('/#ablauf'), label: 'Ablauf' },
+    ],
+  },
+  {
+    titel: 'Mehr erfahren',
+    links: [
+      { href: url('/#ueber-mich'), label: 'Über mich' },
+      { href: url('/#ergebnisse'), label: 'Ergebnisse' },
+      { href: url('/#faq'), label: 'FAQ' },
+      { href: url('/blog/'), label: 'Blog' },
+    ],
+  },
 ];
 ---
 <header class="header dark">
@@ -23,25 +40,33 @@ const nav = [
 
     <nav class="nav" aria-label="Hauptnavigation">
       <ul>
-        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+        {hauptlinks.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
       </ul>
     </nav>
 
     <a class="btn btn-primary header-cta" href={site.links.quickWin}>Quick-Win-Analyse anfragen</a>
 
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu">
-      <span class="visually-hidden">Menü</span>
+      <span class="menu-label">Menü</span>
       <Icon name="list" class="i-open" />
       <Icon name="x" class="i-close" />
     </button>
   </div>
 
   <div class="mobile-menu" id="mobile-menu" hidden>
-    <nav class="wrap" aria-label="Mobile Navigation">
-      <ul>
-        {nav.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
-      </ul>
-      <a class="btn btn-primary" href={site.links.quickWin}>Quick-Win-Analyse anfragen</a>
+    <nav class="wrap menu-grid" aria-label="Menü">
+      {gruppen.map((g) => (
+        <div class="gruppe">
+          <p class="gruppe-titel">{g.titel}</p>
+          <ul>
+            {g.links.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+          </ul>
+        </div>
+      ))}
+      <div class="menu-cta">
+        <p>Kostenfrei, 45 Minuten, zwei konkrete Hebel.</p>
+        <a class="btn btn-primary" href={site.links.quickWin}>Quick-Win-Analyse anfragen</a>
+      </div>
     </nav>
   </div>
 </header>
@@ -70,7 +95,6 @@ const nav = [
         toggle.focus();
       }
     });
-    matchMedia('(min-width: 1120px)').addEventListener('change', (e) => e.matches && setOpen(false));
   }
 </script>
 
@@ -128,11 +152,13 @@ const nav = [
   }
 
   .menu-toggle {
-    display: none;
-    place-items: center;
-    width: 2.75rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     height: 2.75rem;
-    padding: 0;
+    padding: 0 0.9rem;
+    font: inherit;
+    font-size: 0.975rem;
     border: 1px solid var(--line-dark);
     border-radius: var(--radius);
     background: transparent;
@@ -160,6 +186,8 @@ const nav = [
   }
 
   .mobile-menu {
+    max-height: calc(100dvh - 4.5rem);
+    overflow-y: auto;
     border-top: 1px solid var(--line-dark);
     padding-block: 1rem 1.75rem;
     opacity: 0;
@@ -174,31 +202,76 @@ const nav = [
     transform: none;
   }
 
+  .menu-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) minmax(0, 0.9fr);
+    gap: 1.5rem clamp(2rem, 4vw, 4rem);
+    padding-top: 1rem;
+  }
+
+  .gruppe-titel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.25rem;
+  }
+
   .mobile-menu ul {
     list-style: none;
-    margin: 0 0 1.25rem;
+    margin: 0;
     padding: 0;
   }
 
   .mobile-menu li a {
     display: block;
-    padding: 0.8rem 0;
+    padding: 0.7rem 0;
     font-family: var(--serif);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     text-decoration: none;
     color: var(--white);
     border-bottom: 1px solid var(--line-dark);
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    .mobile-menu li a:hover {
+      color: var(--gold);
+    }
+  }
+
+  .menu-cta {
+    align-self: end;
+  }
+
+  .menu-cta p {
+    color: var(--on-dark-muted);
+    margin-bottom: 1rem;
   }
 
   @media (max-width: 1119px) {
     .nav {
       display: none;
     }
-    .menu-toggle {
-      display: grid;
-    }
     .bar {
       gap: 1rem;
+    }
+  }
+
+  @media (max-width: 860px) {
+    .menu-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .menu-label {
+      display: none;
+    }
+    .menu-toggle {
+      padding: 0;
+      width: 2.75rem;
+      justify-content: center;
     }
   }
 
