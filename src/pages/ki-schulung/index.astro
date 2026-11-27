@@ -333,6 +333,7 @@ const leistungen = [
                 ))}
               </ol>
               <a class="btn btn-primary" href={anfrageIdd}>Angebot mit IDD-Add-on anfordern <Icon name="arrow-right" /></a>
+              <p class="idd-mehr"><a href={url('/versicherungen/')}>Mehr zu KI im Versicherungsbüro: Beratung und Automatisierung</a></p>
             </div>
           </div>
         </div>
@@ -417,6 +418,14 @@ const leistungen = [
 </Base>
 
 <style>
+  .idd-mehr {
+    margin-top: 1rem;
+    font-size: var(--step--1);
+  }
+  .idd-mehr a {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
   .aktion-bf {
     background: var(--gold);
     color: var(--navy-deep);

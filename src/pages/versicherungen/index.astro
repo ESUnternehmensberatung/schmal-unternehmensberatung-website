@@ -1,0 +1,376 @@
+---
+// Zielgruppenseite Versicherungsbranche: Agenturen, Maklerbüros, Versicherer.
+// Verknüpft Beratung (Quick-Win, Bordmittel, Automatisierung) mit der KI-Schulung samt IDD-Add-on.
+import { url } from '../../utils/url';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { site } from '../../config/site';
+
+const quickWin = `${site.links.quickWin}?quelle=versicherungen`;
+const anfrageIdd = `${site.links.angebot}?quelle=versicherungen&q10_checkbox8=${encodeURIComponent('KI-Starttag für bis zu 12 Personen mit IDD Stunden')}`;
+
+const hebel = [
+  ['Beratung und Dokumentation', 'Bedarfsermittlung vorbereiten und Beratungsprotokolle nach §§ 61, 62 VVG schneller erstellen. Die KI entwirft, der Mensch prüft und zeichnet ab.'],
+  ['Schaden und Korrespondenz', 'Schadenmeldungen sortieren, fehlende Unterlagen erkennen und Antworten an Kunden und Gesellschaften vorbereiten.'],
+  ['Bestand und Wiedervorlagen', 'Fälligkeiten, Anpassungen und Servicekontakte im Bestand automatisch anstoßen, statt sie im Kalender zu suchen.'],
+  ['Angebote und Bedingungen', 'Tarife und Bedingungswerke zusammenfassen und gegenüberstellen, mit Quellenangabe statt erfundener Leistungen.'],
+  ['Vertrieb steuern', 'Kennzahlen aus Verwaltungsprogramm und Excel zusammenführen: Wochenberichte für die Agenturleitung ohne Handarbeit.'],
+  ['Datenschutz und EU AI Act', 'Klare Regeln, welche Kundendaten in welches Werkzeug dürfen, gerade bei Gesundheitsdaten nach Art. 9 DSGVO.'],
+];
+
+const leistungen = [
+  {
+    label: 'Einstieg',
+    titel: 'Quick-Win-Analyse',
+    text: '45 Minuten, kostenfrei. Wir schauen auf Ihre größten Zeitfresser im Innendienst und Vertrieb. Sie gehen mit zwei konkreten Hebeln raus.',
+    link: quickWin,
+    linkText: 'Quick-Win-Analyse anfragen',
+  },
+  {
+    label: 'Umsetzung',
+    titel: 'Bordmittel und Automatisierung',
+    text: 'Zuerst prüfe ich, was Ihre Softwareanwendungen bereits können. Dann automatisieren wir die Abläufe mit dem größten Hebel, Schritt für Schritt.',
+    link: site.links.angebot + '?quelle=versicherungen',
+    linkText: 'Angebot anfordern',
+  },
+  {
+    label: 'Schulung',
+    titel: 'KI-Schulung mit IDD-Stunden',
+    text: 'KI-Starttag (bis zu 3 Zeitstunden) oder G.R.O.W.-Schulung (bis zu 2 Zeitstunden) mit Modulen aus dem Versicherungsalltag und Weiterbildungsnachweis je Person.',
+    link: url('/ki-schulung/#idd'),
+    linkText: 'Zur KI-Schulung mit IDD',
+  },
+];
+
+const profil = [
+  'Fachwirt für Versicherungen und Finanzen (IHK)',
+  '17 Jahre Führungskraft und Manager in der Versicherungsbranche',
+  'Zentralen Servicebereich mit fast 50 Mitarbeitenden aufgebaut',
+  'Internes Weiterbildungsprogramm eines Versicherers eingeführt, mehrfach durch BaFin-Prüfungen und interne Revision bestätigt',
+  'MBA mit Schwerpunkt Digital Innovation, Manager für angewandte KI-Transformation (IHK)',
+  'Erlaubnisse nach §§ 34d und 34i GewO',
+];
+
+// Fragen und Antworten: sichtbar und als FAQPage für Google und KI-Suche.
+const fragen = [
+  ['Für wen ist das Angebot?', 'Für Ausschließlichkeitsagenturen, Mehrfachagenturen, Maklerbüros und für Vertrieb, Innendienst und Schadenbearbeitung von Versicherungsunternehmen.'],
+  ['Dürfen wir Kundendaten in ChatGPT eingeben?', 'Nicht ohne Weiteres. Gerade Gesundheitsdaten aus Anträgen sind besonders geschützt (Art. 9 DSGVO). Ich zeige Ihnen, welche Werkzeuge sich datenschutzkonform einsetzen lassen und welche Daten draußen bleiben.'],
+  ['Zählt die KI-Schulung als IDD-Weiterbildung?', 'Mit dem IDD-Add-on ja: Die versicherungsbezogenen Module zählen als Weiterbildungszeit, beim KI-Starttag bis zu 3 und bei der G.R.O.W.-Schulung bis zu 2 Zeitstunden, mit Weiterbildungsnachweis je Person nach Anlage 3 VersVermV.'],
+  ['Müssen wir neue Software kaufen?', 'Meist nicht. Ich prüfe zuerst, was Ihre Softwareanwendungen bereits können. Neue Werkzeuge kommen nur dazu, wenn sie sich rechnen.'],
+  ['Arbeiten Sie vor Ort?', 'Ja, in Hamburg und Niedersachsen. Bundesweit arbeite ich remote, Schulungen auch als interaktives Webinar.'],
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Service',
+      '@id': `${site.url}/versicherungen/#leistung`,
+      name: 'KI und Digitalisierung für Versicherungsbüros, Makler und Versicherer',
+      serviceType: 'KI-Beratung und KI-Schulung für die Versicherungsbranche',
+      description:
+        'Unternehmensberatung für KI-Einführung, Prozessautomatisierung und KI-Schulung mit IDD-Weiterbildungsstunden für Versicherungsagenturen, Maklerbüros und Versicherungsunternehmen. Vor Ort in Hamburg und Niedersachsen, remote in ganz Deutschland.',
+      provider: { '@id': `${site.url}/#unternehmen` },
+      areaServed: [
+        { '@type': 'Country', name: 'Deutschland' },
+        { '@type': 'State', name: 'Niedersachsen' },
+        { '@type': 'State', name: 'Hamburg' },
+      ],
+      audience: ['Versicherungsagenturen', 'Versicherungsmakler', 'Versicherungsvermittler', 'Versicherungsunternehmen'].map((a) => ({
+        '@type': 'BusinessAudience',
+        audienceType: a,
+      })),
+      url: `${site.url}/versicherungen/`,
+    },
+    {
+      '@type': 'FAQPage',
+      mainEntity: fragen.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+    },
+    {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Startseite', item: `${site.url}/` },
+        { '@type': 'ListItem', position: 2, name: 'Versicherungen', item: `${site.url}/versicherungen/` },
+      ],
+    },
+  ],
+};
+---
+<Base
+  title={`KI für Versicherungsbüros, Makler und Versicherer | ${site.name}`}
+  description="KI-Einführung, Automatisierung und KI-Schulung mit IDD-Stunden für Agenturen, Maklerbüros und Versicherer. Von einem Berater mit 17 Jahren Branchenerfahrung."
+  keywords={['KI Versicherungsmakler', 'KI Versicherungsagentur', 'KI im Versicherungsvertrieb', 'Digitalisierung Maklerbüro', 'Automatisierung Versicherungsbüro', 'KI-Schulung IDD', 'IDD-Weiterbildung KI', 'Beratungsdokumentation KI', 'Versicherer KI-Einführung', 'Hamburg', 'Niedersachsen']}
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+  <section class="kopf dark" aria-labelledby="vers-title">
+    <div class="wrap kopf-inner">
+      <p class="eyebrow">Für Agenturen, Maklerbüros und Versicherer</p>
+      <h1 id="vers-title">KI im Versicherungsalltag, <em class="accent">mit jemandem aus der Branche.</em></h1>
+      <p class="lead">
+        17 Jahre war ich Führungskraft in der Versicherungsbranche. Heute helfe ich Agenturen, Maklerbüros und Versicherern,
+        Routine im Innendienst abzugeben, Beratung sauber zu dokumentieren und KI rechtssicher einzusetzen.
+      </p>
+      <div class="aktion">
+        <a class="btn btn-primary" href={quickWin}>Quick-Win-Analyse anfragen <Icon name="arrow-right" /></a>
+        <a class="btn btn-ghost" href={url('/ki-schulung/#idd')}>KI-Schulung mit IDD-Stunden</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section weiss" aria-labelledby="hebel-title">
+    <div class="wrap">
+      <p class="eyebrow eyebrow-hell">Wo KI im Versicherungsbüro Zeit spart</p>
+      <h2 id="hebel-title">Sechs typische Hebel</h2>
+      <ol class="hebel">
+        {hebel.map(([t, d], i) => (
+          <li>
+            <span class="nr" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+            <h3>{t}</h3>
+            <p>{d}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="leistung-title">
+    <div class="wrap">
+      <h2 id="leistung-title">So arbeiten wir zusammen</h2>
+      <div class="karten">
+        {leistungen.map((l, i) => (
+          <article class={i === 0 ? 'karte haupt' : 'karte'}>
+            <p class="karte-label">{l.label}</p>
+            <h3>{l.titel}</h3>
+            <p>{l.text}</p>
+            <a class="karte-link" href={l.link}>{l.linkText} <Icon name="arrow-right" /></a>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" aria-labelledby="profil-title">
+    <div class="wrap profil">
+      <div>
+        <p class="eyebrow">Ihr Ansprechpartner</p>
+        <h2 id="profil-title">Eduard Schmal</h2>
+        <p class="profil-text">
+          Ich kenne Vertrieb, Innendienst und Aufsicht von innen. Deshalb fangen wir nicht bei der Technik an, sondern bei
+          Ihren Abläufen, und KI kommt dort zum Einsatz, wo sie Ihnen wirklich Arbeit abnimmt.
+        </p>
+      </div>
+      <ul>
+        {profil.map((p) => (
+          <li>
+            <Icon name="check" />
+            {p}
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <section class="section weiss" aria-labelledby="fragen-title">
+    <div class="wrap">
+      <h2 id="fragen-title">Gut zu wissen</h2>
+      <div class="fragen-grid">
+        {fragen.map(([f, a]) => (
+          <div>
+            <h3>{f}</h3>
+            <p>{a}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="schluss dark" aria-labelledby="schluss-title">
+    <div class="wrap schluss-inner">
+      <h2 id="schluss-title">Wo verliert Ihr Büro die meiste Zeit?</h2>
+      <p>In 45 Minuten finden wir es heraus. Kostenfrei, mit zwei Hebeln, die Sie sofort umsetzen können.</p>
+      <div class="aktion">
+        <a class="btn btn-primary" href={quickWin}>Quick-Win-Analyse anfragen <Icon name="arrow-right" /></a>
+        <a class="btn btn-ghost" href={anfrageIdd}>Angebot KI-Starttag mit IDD</a>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .kopf {
+    padding-block: clamp(4rem, 9vw, 7rem);
+  }
+  .kopf-inner {
+    max-width: 60rem;
+  }
+  .eyebrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.25rem;
+  }
+  .eyebrow-hell {
+    color: var(--gold-deep);
+  }
+  h1 {
+    color: var(--white);
+    font-size: var(--step-4);
+    line-height: 1.06;
+    text-wrap: balance;
+  }
+  .kopf .lead {
+    margin-top: 1.5rem;
+    color: var(--on-dark);
+  }
+  .aktion {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 2.25rem;
+  }
+  h2 {
+    font-size: var(--step-3);
+    text-wrap: balance;
+  }
+  .weiss {
+    background: var(--white);
+  }
+
+  .hebel {
+    list-style: none;
+    padding: 0;
+    margin: clamp(2rem, 4vw, 3rem) 0 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem);
+  }
+  .hebel li {
+    border-top: 1px solid var(--line);
+    padding-top: 1.25rem;
+  }
+  .nr {
+    display: block;
+    font-family: var(--serif);
+    font-size: var(--step-2);
+    color: var(--gold-deep);
+    margin-bottom: 0.5rem;
+  }
+  .hebel h3,
+  .karte h3,
+  .fragen-grid h3 {
+    font-size: var(--step-1);
+    margin-bottom: 0.5rem;
+  }
+  .hebel p,
+  .karte p,
+  .fragen-grid p {
+    color: var(--stone);
+  }
+
+  .karten {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+  .karte {
+    display: flex;
+    flex-direction: column;
+    padding: clamp(1.5rem, 2.5vw, 2rem);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--white);
+  }
+  .karte.haupt {
+    border-color: var(--gold);
+  }
+  .karte-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin-bottom: 0.5rem;
+  }
+  .karte-link {
+    margin-top: auto;
+    padding-top: 1.25rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 600;
+    color: var(--navy);
+  }
+
+  .profil {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: start;
+  }
+  .profil-text {
+    margin-top: 1rem;
+    color: var(--on-dark-muted);
+    max-width: 32em;
+  }
+  .profil ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.9rem;
+  }
+  .profil li {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+  }
+  .profil li :global(svg) {
+    width: 1.15rem;
+    height: 1.15rem;
+    color: var(--gold);
+    margin-top: 0.25rem;
+  }
+  .karte-link :global(svg) {
+    flex: none;
+    width: 1rem;
+    height: 1rem;
+  }
+
+  .fragen-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(1.5rem, 3vw, 2.5rem) clamp(2rem, 5vw, 4rem);
+    margin-top: clamp(2rem, 4vw, 3rem);
+  }
+
+  .schluss {
+    padding-block: clamp(4rem, 8vw, 6rem);
+  }
+  .schluss-inner {
+    text-align: center;
+    max-width: 46rem;
+  }
+  .schluss-inner p {
+    margin-top: 1rem;
+    color: var(--on-dark-muted);
+  }
+  .schluss .aktion {
+    justify-content: center;
+  }
+
+  @media (max-width: 900px) {
+    .hebel,
+    .karten {
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .profil,
+    .fragen-grid {
+      grid-template-columns: minmax(0, 1fr);
+    }
+  }
+</style>
